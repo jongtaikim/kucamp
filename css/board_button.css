@@ -1,0 +1,715 @@
+@charset "euc-kr";
+
+/* 이웃닷컴(e-wut.com) 
+웹 퍼블리싱 
+작업자:이승희,김동우,김은정 */
+
+/* 레이아웃 */
+.board {
+	display:inline;
+	float:left;
+	width:600px;
+	margin-left:25px;
+	}
+
+/* 버튼 시작 */
+span.button , span.button a , span.button input {
+	display:inline-block;
+	overflow:visible;
+	position:relative;
+	font-family:"돋움",dotum;
+	font-size:12px;
+	line-height:normal;
+	text-decoration:none !important;
+	vertical-align:middle;
+	white-space:nowrap;
+	border:0;
+	color:#fff;
+	background:url(../images/board/boardSearchFormBg.gif) no-repeat left top;
+	}
+span.button.small , span.button.small a , span.button.small input {
+	font-size:11px;
+	}
+	span.button {
+		overflow:visible;
+		height:21px;
+		padding-left:10px;
+		background-position:left top;
+		background:url(../images/board/boardSearchArrow.gif) no-repeat left top;
+		}
+	span.button a , span.button input {
+		overflow:visible;
+		float:left;
+		left:0;
+		height:21px;
+		padding:0 10px 0 4px;
+		line-height:180%;
+		cursor:pointer;
+		background-position:right top;
+		}
+	span.button.strong { 
+		font-weight:bold;
+		}
+		 span.button.strong * {
+			font-weight:bold !important;
+			}
+/* 버튼 끝 */
+
+/* 게시판 상단 정보 및 검색 시작 */
+.boardInfo {
+	float:left;
+	position: relative; 
+	width:600px;
+	margin-bottom:5px;
+	}
+.boardInfo .infoleft {
+	display:inline;
+	float:left;
+	margin-left:11px;
+	padding:5px 0 0 15px;
+	background: url(../images/board/infoleftbg.gif) no-repeat left 6px;
+	}
+	.boardInfo strong {
+		color: #41740a;
+		font: bold 0.92em "돋움", dotum;
+		}
+.boardInfo .inforight {
+	float:right;
+	}
+	.boardInfo .inforight.search{
+		width:273px;
+		}
+	.boardSearchForm {
+		margin:0;
+		padding:0;
+		}
+	.boardSearchForm fieldset {
+		position: relative;
+		border:0;
+		}
+	.boardSearchForm select {
+		font-size: 12px;
+		}
+	.boardSearchForm .inputtxt {
+		width:94px;
+		height:13px;
+		padding:2px;
+		font-size: 12px;
+		border: #c0c0c0 1px solid; 
+		background:transparent url(../images/board/inputtxtBg.gif) repeat-x left top;
+		}
+	.boardSearchForm img {
+		display:inline;
+		vertical-align:middle;
+		}
+/* 게시판 상단 정보 및 검색 끝 */	
+
+/* 게시판 리스트 뷰 시작 */
+.boardListView {
+	float:left;
+	margin-bottom:15px;
+	}
+	.boardListView .boardList {
+		border-collapse:collapse;
+		border:0;
+		}
+	.boardListView .boardList th {
+		width:20%;
+		padding-left:20px;
+		color:#4d4d4d;
+		font-weight:bold;
+		vertical-align:middle;
+		text-align:left;
+		border:1px solid #e4e4e4;
+		background:url(../images/board/boardListViewTitBg.gif) no-repeat 5px 50%;
+		}
+	.boardListView .boardList td {
+		border:1px solid #e4e4e4;
+		line-height:160%;
+		}
+		.boardListView .boardList .left {
+			float:left;
+			}
+		.boardListView .boardList .right {
+			float:right;
+			}
+	
+/* 게시판 리스트 뷰 끝 */
+
+/* 명예의전당 시작 */
+.boardHonor {
+	float:left;
+	width:584px;
+	padding-left:16px;
+	}
+.boardHonor li {
+	float:left;
+	width:126px;
+	margin-right:20px;
+	padding-bottom:30px;
+	}
+	.boardHonor span {
+		display:block;
+		}
+	.boardHonor .img {
+		width:104px;
+		height:112px;
+		margin-bottom:7px;
+		padding:11px;
+		background:url(../images/board/boardHonorViewBg.gif);
+		}
+	.boardHonor .name {
+		width:100px;
+		margin:0 0 10px 10px;
+		font-weight:bold;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		}
+	.boardHonor .class {
+		margin-left:10px;
+		}
+	.boardHonor .title {
+		float:left;
+		width:100%;
+		margin-bottom:15px;
+		padding-bottom:5px;
+		border-bottom:1px solid #cecece;
+		}
+	.boardHonor .content {
+		float:left;
+		width:100%;
+		margin-bottom:10px;
+		line-height:170%;
+		}
+/* 명예의전당 끝 */
+
+/* 게시판 리스트 시작 */		
+.boardListForm , .onlineApplication {
+	float:left;
+	width:100%;
+	line-height:170%;
+	border:0;
+	}
+	.boardListForm .boardlist , .onlineApplication .boardlist {
+		float:left;
+		width:100%; 
+		margin-bottom:10px;
+		border:0;
+		background:url(../images/board/boardListTop.gif) no-repeat left top;
+		}
+		.boardListForm .boardlist .top , .onlineApplication .boardlist .top{
+			height:36px;
+			}
+	.boardListForm .boardlist th , .onlineApplication .boardlist th {
+		height:31px;
+		padding:5px 10px 0 10px;
+		font-weight:bold;
+		color:#333;
+		border-collapse:collapse;
+		border:0;
+		background:url(../images/board/boardlistBg.gif) no-repeat right 50%;
+		}
+		.boardListForm .boardlist th.last , .onlineApplication .boardlist th.last{
+			background:none;
+			}
+	.boardListForm .boardlist tr.notice , .onlineApplication .boardlist tr.notice{
+		background:#f4f5ec;
+		}
+	.boardListForm .boardlist tr.bg1 , .onlineApplication .boardlist tr.bg1{
+		background:#f8f8f8;
+		}
+	.boardListForm .boardlist .re , .onlineApplication .boardlist .re{
+		display:block;
+		padding-left:28px;
+		background:transparent url(../images/board/boardlistReBg.gif) no-repeat left top;
+		}
+	.boardListForm .boardlist tr.notice .num, .boardListForm .boardlist tr.notice .title , .onlineApplication .boardlist tr.notice .num, .onlineApplication .boardlist tr.notice .title {
+		font-weight:bold;
+		}
+		.boardListForm .boardlist tr.notice .title , .onlineApplication .boardlist tr.notice .title {
+			padding-left:25px;
+			white-space:nowrap;
+			text-overflow:ellipsis;
+			background:#f4f5ec url(../images/board/boardlistNoticeBg.gif) no-repeat left 50%;
+			}
+	.boardListForm .boardlist td , .onlineApplication .boardlist td {
+		padding:6px 0;
+		font-weight:normal;
+		color:#545454;
+		text-align:center;
+		border-left:0;
+		border-right: 0;
+		border-bottom:#cecece 1px solid;
+		}
+		.boardListForm .boardlist a:hover , .onlineApplication .boardlist a:hover  {
+			color:#3d6a07;
+			text-decoration:none;
+			}
+		.boardListForm .boardlist td.title , .onlineApplication .boardlist td.title {
+			padding:6px 0 0 6px;
+			font-weight:normal;
+			color:#545454;
+			text-align:left;
+			border-bottom:#cecece 1px solid;
+			}
+		.boardListForm .boardlist .replyNum , .onlineApplication .boardlist .replyNum {
+			color:#780000;
+			font-size:0.92em;
+			font-weight:bold;
+			}
+		.boardListForm .boardlist .newIco , .onlineApplication .boardlist .newIco {
+			display:inline;
+			vertical-align:middle;
+			}
+/* 게시판 리스트 끝 */
+
+/* 글쓰기 글읽기 시작 */
+.boardWrite , .boardWriteFrom , .boardRead {
+	float:left;
+	width:600px;
+	}
+.boardWriteHeader , .boardReadHeader {
+	float:left;
+	width:600px;
+	margin-bottom:15px;
+	background:url(../images/board/boardBgBottom.gif) no-repeat left bottom;
+	}
+	.boardWrite h4 , .boardRead h4 {
+		display:block;
+		margin:0 0 4px 15px;
+		}
+	.boardWrite	.infoArea , .boardRead .infoArea {
+		float:left;
+		width:584px;
+		padding:16px 0 10px 16px;
+		background: url(../images/board/boardBgTop.gif) no-repeat left top;
+		}
+	.boardWrite	.infoArea dl label, .boardRead .infoArea label{
+		margin-top:3px;
+		}
+	.boardWrite	.infoArea dl, .boardRead .infoArea dl{
+		float:left;
+		}
+		.boardWrite	.infoArea .title {
+			float:left;
+			margin:0 15px 10px 0;
+			}
+			.boardWrite	.infoArea .title .inputtxt {
+				width:350px;
+				}
+		.boardWrite	.infoArea .info{
+			float:left;
+			width:250px;
+			margin:0 20px 10px 0;
+			}
+		 .boardRead .infoArea .infoPre {
+			float:left;
+			width:570px;
+			margin-bottom:7px;
+			padding-bottom:7px;
+			border-bottom:1px solid #c3c3c3;
+			}
+	.boardWrite .infoArea dl dt {
+		display:inline;
+		float:left;
+		width:60px;
+		padding-top:3px;
+		font-weight:bold;
+		}
+	.boardWrite .infoArea dl dd {
+		float:left;
+		}
+	.boardRead .infoArea dl dt {
+		display:inline;
+		float:left;
+		font-weight:bold;
+		margin-right:9px;
+		padding:3px 12px 0 0;
+		background: url(../images/board/boardReadTitBg.gif) no-repeat right top;
+		}
+	.boardRead .infoArea dl dd {
+		float:left;
+		width:200px;
+		}
+	.boardWrite .infoArea .inputtxt {
+		display:inline;
+		float:left;
+		width:180px;
+		height:11px;
+		padding:2px;
+		font-size: 12px;
+		border: #c0c0c0 1px solid; 
+		background:transparent url(../images/board/inputtxtBg.gif) repeat-x left top;
+		}
+	.boardWrite .boardleft {
+		float:left;
+		margin-left:6px;
+		padding-left:17px;
+		font-size:0.92em;
+		background:transparent url(../images/board/boardWriteFile.gif) no-repeat left top;
+		}
+.boardWriteBody {
+	margin-bottom:15px;
+	}
+	.boardWriteBody textarea {
+		border:1px solid #b2b2a6;
+		}
+.boardReadBody {
+	float:left;
+	padding:14px;
+	border:1px solid #b2b2a6;
+	}
+	.boardReadBody img {
+		margin-bottom:20px;
+		}
+	.boardReadBody p {
+		line-height:170%;
+		}
+	.boardReadBody strong {
+		display:block;
+		}
+.boradReadFooter {
+	float:left;
+	width:598px;
+	margin-bottom:26px;
+	padding-top:5px;
+	height:17px;
+	border-top:0;
+	border-right:1px solid #b2b2a6;
+	border-bottom:1px solid #b2b2a6;
+	border-left:1px solid #b2b2a6;
+	background:url(../images/board/boradReadFooterBg.gif) repeat-x left top;
+	}
+	.boradReadFooter dl {
+		margin-left:15px;
+		vertical-align:middle;
+		}
+	.boradReadFooter dt {
+		display:inline;
+		float:left;
+		font-weight:bold;
+		margin-right:8px;
+		padding-right:10px;
+		}
+	.boradReadFooter dd {
+		float:left;
+		padding-left:20px;
+		background:url(../images/board/boradReadFooterFile.gif) no-repeat left top;
+		}
+/* 나도한마디 */
+.replyForm {
+	float:left;
+	width:602px;
+	padding-bottom:30px;
+	background:url(../images/board/replyformbottomBg.gif) no-repeat left bottom;
+	}
+.replyForm h4 {
+	display:block;
+	margin:0 0 10px 0;
+	padding-left:17px;
+	font-size:1em;
+	background:url(../images/board/boardWriteFile.gif) no-repeat left top;
+	}
+.replyFormArea {
+	float:left;
+	width:550px;
+	height:120px;
+	margin-bottom:20px;
+	padding:18px 0 0 52px;
+	background:url(../images/board/replyformBg.gif) no-repeat left top;
+	}
+.replyContent {
+	font-size:0.92em;
+	margin-bottom:12px;
+	}
+.replyInfo {
+	float:left;
+	width:100%;
+	}
+	.replyInfo .info {
+		float:left;
+		margin-bottom:7px;
+		}
+	.replyInfo dt {
+		float:left;
+		display:inline;
+		font-size:0.92em;
+		color:#848484;
+		margin-right:5px;
+		vertical-align:middle;
+		}
+	.replyInfo dd {
+		display:inline;
+		}
+	.replyInfo .inputtxt {
+		display:inline;
+		float:left;
+		width:138px;
+		height:11px;
+		margin-right:7px;
+		padding:2px;
+		font-size:1em;
+		border:#c0c0c0 1px solid; 
+		background: url(../images/board/inputtxtBg.gif) repeat-x left top;
+		}
+	.replyInfo p {
+		float:left;
+		font-size:0.92em;
+		vertical-align:middle;
+		}
+	.replyInfo .textlimit {
+		font-weight:bold;
+		color:#a50000;
+		}
+	.reply textarea {
+		float:left;
+		margin-right:6px;
+		border:1px solid #d3d3d3;
+		}
+	.reply .replyBtn input {
+		display:inline-block;
+		overflow:visible;
+		float:left;
+		position:relative;
+		width:121px;
+		height:49px;
+		font-family:"돋움",dotum;
+		font-size:0;
+		line-height:normal;
+		text-decoration:none !important;
+		vertical-align:middle;
+		white-space:nowrap;
+		border:0;
+		background: url(../images/board/replyBtn.gif) no-repeat left top;
+		}
+.feedbackList {
+	float:left;
+	width:600px;
+	color:#333;
+	}
+.feedbackList dl {
+	float:left;
+	width:100%;
+	}
+.feedbackList .pre{
+	margin-bottom:10px;
+	padding-bottom:10px;
+	border-bottom:1px solid #c1c1c1;
+	}
+.feedbackList dt {
+	float:left;
+	display:inline;
+	width:75px;
+	padding-left:17px;
+	}
+.feedbackList dd.text {
+	float:left;
+	width:370px;
+	font-size:0.92em;
+	line-height:160%;
+	}
+.feedbackList dd.date {
+	float:right;
+	color:#666;
+	padding-right:10px;
+	font-size:0.92em;
+	}
+/* 이전글 및 다음글 */
+.prevNext {
+	float:left;
+	}
+	.prevNextlist dl {
+		float:left;
+		}
+	.prevNextlist dl.prev {
+		margin-bottom:14px;
+		padding-bottom:12px;
+		border-bottom:1px solid #c1c1c1;
+		}
+	.prevNextlist dt {
+		margin-bottom:9px;
+		color:#333;
+		font-weight:bold;
+		}
+	.prevNextlist dd.preTitle , .prevNextlist dd.NextTitle{
+		display:inline;
+		float:left;
+		margin:0 6px 13px 0;
+		color:#00c;
+		}
+	.prevNextlist dd.admin{
+		float:left;
+		color:#333;
+		margin-right:5px;
+		}
+	.prevNextlist dd.time{
+		float:left;
+		color:#333;
+		}
+	.prevNextlist dd.content{
+		float:left;
+		width:100%;
+		line-height:160%;
+		font-size:0.92em;
+		color:#666;
+		}
+/* 글쓰기/글읽기끝 */
+
+/* 포토갤러리 시작 */
+.photoArea {
+	float:left;
+	width:600px;
+	margin-bottom:10px;
+	background:url(../images/board/boardBgBottom.gif) no-repeat left bottom;
+	}
+	.photo {
+		float:left;
+		width:600px;
+		background:url(../images/board/boardBgTop.gif) no-repeat left top;
+		}
+	.photoArea .list {
+		float:left;
+		padding:30px 0 0 30px;
+		}
+	.photoArea li {
+		float:left;
+		width:119px;
+		margin-right:20px;
+		padding-bottom:30px;
+		}
+		.photoArea span {
+			display:block;
+			}
+		.photoArea .img {
+			float:left;
+			width:103px;
+			height:107px;
+			margin-bottom:7px;
+			padding:8px;
+			background:url(../images/board/photoBg.gif);
+			}
+		.photoArea .title {
+			display:inline;
+			float:left;
+			width:100px;
+			margin:0 0 10px 4px;
+			padding-left:7px;
+			font-weight:bold;
+			white-space:nowrap;
+			text-overflow:ellipsis;
+			background:url(../images/board/photoTitBg.gif) no-repeat left center;
+			}
+		.photoArea .name , .photoArea .date, .photoArea .count {
+			margin:0 0 5px 11px;
+			}
+/* 포토갤러리 끝 */
+
+/* 온라인 신청보기페이지 */
+.onlineView{
+	float:left;
+	width:600px;
+	}
+	.onlineView h4{
+		display:block;
+		font-size:12px;
+		font-weight:bold;
+		margin:0 0 4px 15px;
+		}
+	.onlineViewForm{
+		float:left;
+		margin-bottom:10px;
+		}
+	.onlineViewForm .boardList , .onlineViewList {
+		float:left;
+		width:600px;
+		color:#868686;
+		border-collapse:collapse;
+		border:0;
+		}
+	.onlineViewForm .boardList th {
+		width:20%;
+		padding:3px 5px;
+		color:#000;
+		font-weight:normal;
+		text-align:left;
+		border:1px solid #e7e7e7;
+		background:#f1f1ed;
+		}
+	.onlineViewForm .boardList td {
+		border:1px solid #e7e7e7;
+		}
+	.onlineViewForm .boardList .address td {
+		border:0;
+		}
+	.onlineViewForm .boardList td .inputtxt {
+		height:13px;
+		padding:2px;
+		color:#868686;
+		border:1px solid #d4d4d4;
+		}
+	.onlineViewForm .boardList .star{
+		color:#a90b0b;
+		}
+	.onlineViewForm .boardList .nocheck {
+		padding-left:15px;
+		}
+	.onlineViewForm .boardList textarea {
+		overflow:auto;
+		border:1px solid #d4d4d4;
+		}
+	.onlineViewForm em {
+		font-style:normal;
+		}
+	.onlineViewForm em.charType{
+		display:block;
+		margin-top:3px;
+		font-size:11px;
+		}
+	.onlineViewList{
+		margin-top:15px;
+		}
+	.onlineViewList th {
+		padding:3px 5px;
+		color:#545454;
+		font-weight:normal;
+		text-align:center;
+		border:1px solid #e7e7e7;
+		background:#efefef;
+		}
+	.onlineViewList td {
+		padding:3px 5px;
+		color:#545454;
+		font-weight:normal;
+		text-align:center;
+		border:1px solid #e7e7e7;
+		background:#fff;
+		}
+			
+/* 온라인 신청보기페이지 끝 */
+
+/* 하단 네비게이션 시작 */ 	
+.boardNavigation {
+	float:left;
+	position:relative;
+	width:600px;
+	}
+	.buttonLeft {
+		float:left;
+		}
+	.buttonRight {
+		float:right;
+		}
+	.pagination {
+		padding-top:3px;
+		text-align:center;
+		}
+	.pagination a ,.pagination input {
+		padding:0 3px;
+		}
+	.pagination a img {
+		display:inline;
+		margin:0;
+		padding:0;
+		vertical-align:middle;
+		}
+/* 하단 네비게이션 끝 */ 

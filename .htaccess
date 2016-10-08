@@ -1,0 +1,20 @@
+ <Files thumb>
+    ForceType application/x-httpd-php
+</Files>
+<Files download>
+    ForceType application/x-httpd-php
+</Files>
+<Files board>
+    ForceType application/x-httpd-php
+</Files>
+<Files cafe>
+    ForceType application/x-httpd-php
+</Files>
+Options FollowSymLinks
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+) index.php [L]
+php_flag register_globals on    
+php_flag magic_quotes_gpc off    
+php_flag display_errors on
+php_value error_reporting "E_ALL & ~E_NOTICE & ~E_DEPRECATED"

@@ -1,0 +1,54 @@
+@charset "euc-kr";
+
+/* ÀÌ¿ô´åÄÄ(e-wut.com) 
+À¥ ÆÛºí¸®½Ì 
+ÀÛ¾÷ÀÚ:±èµ¿¿ì, ±èÀºÁ¤ */
+
+#joinStep {
+	margin-left:6px;
+	}
+#joinComplete {
+	display:inline;
+	float:left;
+	width:588px;
+	margin-top:24px;
+	margin-left:6px;
+	font-family:gulim;
+	}
+	#message {
+		width:390px;
+		margin:0 auto;
+		padding-left:10px;
+		padding-bottom:3px;
+		color:#2582b2;
+		font-size:16px;
+		font-weight:bold;
+		font-family:dotum, gulim;
+		border-bottom:#e3e3e3 1px solid;
+		}
+		#message span {
+			color:#000;
+			}
+	#comment {
+		float:left;
+		width:100%;
+		height:222px;
+		margin-top:14px;
+		position:relative;
+		}
+		#comment .completeAfter {
+			position:absolute;
+			top:0;
+			left:0;
+			}
+		#comment .joinCompleteBtn {
+			position:absolute;
+			top:152px;
+			left:428px;
+			z-index:10;
+			}
+	#btnArea {
+		width:100%;
+		text-align:center;
+		}
+	

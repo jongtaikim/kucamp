@@ -1,0 +1,717 @@
+TABLE.zizibe03 {
+
+
+ border-collapse: collapse;
+ font-size:11px;
+
+}
+
+
+TABLE.zizibe03 TR {
+
+
+}
+
+
+TABLE.zizibe03 TH {
+border-top:1px solid #6897c5;
+background-color:#F6FAFB;
+height:32px; color:#275b95; font-size:11px; font-family:µ¸¿ò;
+ border-bottom:1px solid #bfcfde;
+ padding-top:4px
+}
+
+
+
+
+TABLE.zizibe03 TD {
+color:4a4a4a; font-size:11px; font-family:µ¸¿ò;
+border:0px ;
+border-bottom:1px dotted #D8D8D8;
+padding:5px 1px 3px 1px;
+}
+
+
+/*Á¾ÅÂ¹Ùº¸*/
+
+
+TABLE.zizibe02 {
+
+ border: 1px solid #bfcfde;
+ border-collapse: collapse;
+ font-size:11px;
+
+}
+
+
+TABLE.zizibe02 TR {
+
+}
+
+
+TABLE.zizibe02 TH {
+background-color:F6FAFB;
+height:29; color:275b95; font-size:11px; font-family:µ¸¿ò;
+ border-bottom:1px solid #bfcfde;
+}
+
+
+
+TABLE.zizibe02 TD {
+ color:4a4a4a; font-size:11px; font-family:µ¸¿ò;
+border-bottom:1px dotted #D8D8D8;
+padding:3px 1px 3px 1px;
+}
+
+
+/*Á¾ÅÂ¹Ùº¸*/
+
+
+TABLE.zizibe01 {
+
+ border: 1px solid #bfcfde;
+ border-collapse: collapse;
+ font-size:11px;
+
+}
+
+
+TABLE.zizibe01 TR {
+
+}
+
+
+TABLE.zizibe01 TH {
+background-image:url(./th.gif); background-repeat:repeat-x;
+height:29px; color:#275b95; font-size:11px; font-family:µ¸¿ò;
+ border-bottom:1px solid #bfcfde;
+}
+
+
+
+TABLE.zizibe01 TD {
+ color:4a4a4a; font-size:11px; font-family:µ¸¿ò;
+border-bottom:1px dotted #D8D8D8;
+padding:3px 1px 3px 1px;
+}
+
+
+TABLE.tableNo2 {
+	padding:0px;
+	font-size:11px;
+}
+TABLE.tableNo2 TR {
+}
+
+TABLE.tableNo2 TD {
+padding:0; 
+font-size:11px;
+}
+
+
+
+
+
+
+TABLE.tableNo {
+	border: 1px solid #C0C0C0;
+	border-collapse: collapse;
+	padding:0px;
+	font-size:11px;
+	border:0px;
+}
+TABLE.tableNo TR {
+}
+
+TABLE.tableNo TD {
+padding:0; background-color:FFFFFF;
+font-size:11px;
+border:0px;
+ border: 1px solid #bfcfde;
+ text-align:center;
+}
+
+
+
+
+TABLE.tableNo3 {
+	padding:0px;
+	font-size:11px;
+	border:0px;
+}
+
+
+TABLE.tableNo3 TD {
+padding:3px; background-color:FFFFFF;
+font-size:11px;
+border:0px;
+}
+
+
+
+
+
+
+TABLE.table10 {
+
+}
+
+
+TABLE.table10 TR {
+
+}
+
+TABLE.table10 TH {
+	font-weight:bold; background-color:#f1f7fa;
+	border: 1px solid #699cba;
+	padding:5px;
+
+}
+
+TABLE.table10 TD {
+padding:3; background-color:FFFFFF;
+border: 1px solid #699cba;
+
+}
+
+
+
+
+
+
+/* table11 */
+
+TABLE.table11 {
+	border-bottom: 1px solid #E0E0E0;
+	border-collapse: collapse;
+}
+
+TABLE.table11 TD,
+TABLE.table11 TH {
+	
+	border-bottom: 1px solid #E0E0E0;
+	
+	padding: 5px;
+	font-weight: normal;
+}
+
+TABLE.table11 THEAD TH, TABLE.table11 TH.head {
+
+	line-height: 100%;
+	text-align: left;
+	padding: 15px 5px 5px 20px;
+	font-weight:bolder;
+	background-color: #F8F8F8 ; 
+	color:#666666;
+
+	background-image:url(/html/admin2/images/sub_title_bg.gif);
+	color:#003399;
+	letter-spacing: -1px;
+	font-size:12px;
+	border:1px solid #E8E8E8;
+
+	
+}
+
+TABLE.table11 TR {
+
+}
+
+TABLE.table11 TH {
+		color:#666666;
+		padding: 5px;
+		font-size:12px;
+
+		font-family:±¼¸²;
+	
+}
+
+TABLE.table11 TD {
+color:#626262;
+padding-left:30px
+}
+
+
+
+
+
+
+
+
+
+TABLE.table00 {
+
+	
+	border: 1px solid #C5DAEB;
+	border-collapse: collapse;
+	background-color:#d5e4f0;
+	
+}
+
+
+TABLE.table00 TR {
+
+}
+
+TABLE.table00 TH {
+	 color:126796; font-weight:bold; background-color:fafcfd;
+	border: 1px solid #d5e4f0;
+	padding:5px;
+	height:30px;
+}
+
+TABLE.table00 TD {
+padding:5; background-color:FFFFFF;
+border: 1px solid #d5e4f0;
+
+}
+
+
+
+
+
+
+
+
+/* table21 */
+
+TABLE.table21 {
+	border: 1px solid #C0C0C0;
+	border-collapse: collapse;
+}
+
+TABLE.table21 TD,
+TABLE.table21 TH {
+
+}
+
+TABLE.table21 THEAD TH, TABLE.table21 TH.head {
+
+}
+
+TABLE.table21 TR {
+
+}
+
+TABLE.table21 TH {
+		background-color: #eaeaea ; 
+		font-weight:bold;
+		border: 1px solid #C0C0C0;
+		padding:5px;
+}
+
+TABLE.table21 TD {
+	border: 1px solid #C0C0C0;
+padding:5px;	
+}
+
+
+
+
+/* table01 */
+
+TABLE.table01 {
+	border: 1px solid #C0C0C0;
+	border-collapse: collapse;
+}
+
+TABLE.table01 TD,
+TABLE.table01 TH {
+	border: 1px solid #C0C0C0;
+	border-left: 1px solid #C0C0C0;
+	border-right: 1px solid #C0C0C0;
+	padding: 5px;
+	font-weight: normal;
+		color:#666666;
+}
+
+TABLE.table01 THEAD TH, TABLE.table01 TH.head {
+	color: #000000;
+	line-height: 100%;
+	text-align: left;
+	padding: 10px;
+	font-weight:bold;
+	background-color: #F6F6F6 ; 
+}
+
+TABLE.table01 TR {
+
+}
+
+TABLE.table01 TH {
+		background-color: #F6F6F6;
+		padding: 5px;
+		font-weight:bold;
+			color:#666666;
+}
+
+TABLE.table01 TD {
+
+}
+
+
+/* table02 */
+
+TABLE.table02 {
+	border: 1px solid #C0C0C0;
+	border-left: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	border-collapse: collapse;
+}
+
+TABLE.table02 TD,
+TABLE.table02 TH {
+	border: 1px solid #C0C0C0;
+	border-left: 1px dashed #C0C0C0;
+	border-right: 1px dashed #C0C0C0;
+	padding: 5px;
+	font-weight: normal;
+}
+
+TABLE.table02 THEAD TH {
+	color: #000000;
+	line-height: 100%;
+	text-align: left;
+	padding: 10px;
+	font-weight:bold;
+	background-image: url(./ui/gradient_01.gif); background-repeat: repeat-x; 
+}
+
+TABLE.table02 TR {
+	background-color: #FFFFFF;
+}
+
+TABLE.table02 TH {
+	background-image: url(./ui/gradient_02.gif); background-repeat: repeat-x; 
+}
+
+TABLE.table02 TD {
+
+}
+
+
+
+
+/* table03 */
+
+TABLE.table03 {
+	border: 1px solid #C0C0C0;
+	border-collapse: collapse;
+}
+
+TABLE.table03 TD,
+TABLE.table03 TH {
+	border: 1px solid #C0C0C0;
+	border-collapse: collapse;
+	padding-left:2px;
+	padding-right:2px;
+}
+
+TABLE.table03 THEAD TH, TABLE.table03 TH.head {
+	color: #000000;
+	line-height: 100%;
+	text-align: left;
+	padding: 10px;
+	font-weight:bold;
+	
+}
+
+TABLE.table03 TR {
+	
+}
+
+TABLE.table03 TH {
+		
+		padding-top: 8px;
+		padding-bottom: 8px;
+		font-weight:bold;
+}
+
+TABLE.table03 TD {
+
+}
+
+
+/* table04 */
+
+TABLE.table04 {
+	border: 0px solid #C0C0C0;
+	border-collapse: collapse;
+padding: 0px;	
+background-color: '';
+}
+
+TABLE.table04 TD,
+TABLE.table04 TH {
+border: 0px; 
+background-color: '';
+background-image:'';
+}
+
+
+
+TABLE.table04 TR {
+border: 0px; 
+padding: 0px;	
+background-color: '';
+}
+
+TABLE.table04 TH {
+
+border: 0px; 
+padding: 0px;	
+background-color: '';
+}
+
+TABLE.table04 TD {
+border: 0px; 
+padding-top: 3px;	
+padding-bottom: 3px;	
+background-color: '';
+font-size:11px;
+
+}
+
+
+
+/* table05 */
+
+TABLE.table05 {
+border: 0px; 
+padding: 0px;	
+background-color: '';
+}
+
+TABLE.table05 TD,
+TABLE.table05 TH {
+border: 0px; 
+background-color: '';
+background-image:'';
+}
+
+
+
+TABLE.table05 TR {
+border: 0px; 
+padding: 0px;	
+background-color: '';
+}
+
+TABLE.table05 TH {
+
+border: 0px; 
+padding: 0px;	
+background-color: '';
+}
+
+TABLE.table05 TD {
+border: 0px; 
+padding: 0px;	
+background-color: '';
+
+}
+
+
+/* table05 */
+
+table.basic{
+  margin: 0; padding: 0; line-height: 21px;
+  border-top: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  border-collapse: collapse;
+}
+table.basic th, table.basic td{
+  margin: 0; padding: 3px 0; width: 160px;
+  text-align: center;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+table.basic caption{ margin: 0; padding: 0; }
+table.basic th{ background-color: #e9e9e9; }
+
+
+
+table.chart{
+  margin: 0; padding: 0; line-height: 21px;
+  border-top: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  border-collapse: collapse;
+  }
+table.chart th, table.chart td{
+  margin: 0; padding: 3px 0; width: 160px;
+  text-align: center;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+table.chart caption{
+  margin: 0; padding: 0;
+  text-align: right;
+}
+table.chart thead th{
+  background-color: #e9e9e9;
+  border-bottom: 1px solid #999999;
+}
+table.chart tfoot th{ background-color: #e2e2e2; }
+
+
+
+table.excel{
+  margin: 0; padding: 0; line-height: 21px;
+  border-top: 2px solid #999999;
+  border-bottom: 2px solid #999999;
+  border-collapse: collapse;
+}
+table.excel th, table.excel td{
+  margin: 0; padding: 3px 0;  
+ 
+  border-bottom: 1px solid #cccccc;
+}
+table.excel caption{
+  margin: 0; padding: 0;
+  text-align: right;
+}
+table.excel thead th{
+  background-color: #e9e9e9;
+  border-bottom: 1px solid #999999;
+}
+table.excel tfoot th, table.excel tfoot td{
+  border-bottom: none;
+  background-color: #e2e2e2;
+}
+
+
+
+/*½ÃÈï±³À°Ã» °ü¸®ÀÚ ºí·ç ¶óÀÎÅ×ÀÌºí */
+
+
+table.blue01{
+  margin: 0; padding: 0; line-height: 21px;
+  border-top: 2px solid #aad0eb;
+  border-bottom: 2px solid #cbdbee;
+  border-collapse: collapse;
+}
+table.blue01 th, table.blue01 td{
+  margin: 0; padding: 3px 0;  
+ 
+  border-bottom: 1px solid #d5dfe7;
+
+}
+table.blue01 caption{
+  margin: 0; padding: 0;
+  text-align: right;
+}
+table.blue01 thead th{
+  background-color: #e9e9e9;
+  border-bottom: 1px solid #999999;
+}
+table.blue01 tfoot th, table.blue01 tfoot td{
+  border-bottom: none;
+  background-color: #e2e2e2;
+}
+
+
+
+
+
+
+/* list01 */
+
+TABLE.list01 {
+	border-top: 1px solid #C0C0C0;
+	border-bottom: 1px solid #C0C0C0;
+	border-collapse: collapse;
+}
+
+TABLE.list01 TD,
+TABLE.list01 TH {
+	border-top: 1px dashed #C0C0C0;
+	border-bottom: 1px dashed #C0C0C0;
+	padding: 5px;
+	font-weight: normal;
+}
+
+TABLE.list01 TR {
+	background-color: #FFFFFF;
+}
+
+TABLE.list01 TH {
+	border-bottom: 1px solid #C0C0C0;
+	background-image: url(./ui/gradient_02.gif); background-repeat: repeat-x; 
+}
+
+TABLE.list01 TD {
+
+}
+
+
+
+/* list02 */
+
+TABLE.list02 {
+	border-collapse: collapse;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+TABLE.list02 TD,
+TABLE.list02 TH {
+	border-bottom: 1px dashed #C0C0C0;
+	padding: 5px;
+	font-weight: normal;
+}
+
+TABLE.list02 TR {
+
+}
+
+TABLE.list02 TH {
+	border-bottom: 1px solid #C0C0C0;
+
+}
+
+TABLE.list02 TD {
+
+}
+
+
+
+
+/* zizibe07 */
+
+TABLE.zizibe07 {
+	border: 1px solid #b6b4df;
+	border-collapse: collapse;
+}
+
+TABLE.zizibe07 TD,
+TABLE.zizibe07 TH {
+	border: 1px solid #b6b4df;
+	border-left: 1px solid #b6b4df;
+	border-right: 1px solid #b6b4df;
+	padding: 5px;
+	font-weight: normal;
+		color:#52539a;
+}
+
+TABLE.zizibe07 THEAD TH, TABLE.zizibe07 TH.head {
+	color: #000000;
+	line-height: 100%;
+	text-align: left;
+	padding: 10px;
+	font-weight:bold;
+	background-color: #f8f8ff ; 
+}
+
+TABLE.zizibe07 TR {
+
+}
+
+TABLE.zizibe07 TH {
+		background-color: #f8f8ff;
+		padding: 5px;
+		font-weight:bold;
+			color:#52539a;
+}
+
+TABLE.zizibe07 TD {
+
+}

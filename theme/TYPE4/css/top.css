@@ -1,0 +1,115 @@
+/*상단영역*/
+#topArea .logo {
+	float:left;
+	}
+#topArea .logo img {
+	vertical-align:top;
+	}
+#topArea .showAll {
+	position:absolute;
+	top:0;
+	right:67px;
+	}
+#topArea .gnb {
+	display:inline;
+	overflow:hidden;
+	float:right;
+	margin-right:58px;
+	margin-top:54px;
+	}
+	#topArea .gnb li{
+		float:left;
+		padding:0 8px 0 7px;
+		margin-left:-1px;
+		background:url(../images/gnbBar.gif) no-repeat left 2px;
+		}
+/*상단메뉴*/
+#topMenu {
+	display:inline;
+	float:left;
+	width:868px;
+	margin-left:112px;
+	padding-bottom:1px;
+	}
+	#topMenu .depth1List  {
+		position:relative;
+		float:left;
+		}
+		#topMenu li.depth1List:hover img {
+			margin-top:-42px;
+			}
+		#topMenu .depth1List .tabArea {	
+			display:block;
+			float:left;
+			overflow:hidden;
+			height:42px;
+			}
+				
+	#topMenu .depth2Wrap  {
+		display:none;
+		float:left;
+		width:155px;
+		overflow:hidden;
+		position:absolute;
+		left:-20px;
+		top:41px;
+		margin:0;
+		padding:0 10px;
+		background:#fff;
+		border:3px solid #d6d6d6;
+		border-top:0;
+		z-index:99;
+		}	
+
+	*html #topMenu .depth2Wrap { 
+		background-image:none; 
+		filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/depth2Bg.png',sizingMethod='scale'); /*배경처리를 위한 핵*/
+		background:#fff;
+		}
+
+	#topMenu .depth1List:hover .depth2Wrap {
+		display:block;
+		}
+		#topMenu .depth2 {
+		float:left;
+		width:155px;
+		padding-bottom:10px;
+		z-index:99;
+			}
+		#topMenu .depth2List {
+			padding-top:7px;
+			padding-bottom:5px;
+			font-weight:bold;
+			letter-spacing:-1px;
+			margin-top:-1px;
+			border-top:1px solid #d6d6d6;
+			}
+		#topMenu .depth2List a {
+			color:#5c5c5c;
+			padding-left:19px;
+			background:url(../images/dot3.gif) no-repeat 11px 4px;
+
+			}
+			#topMenu .depth2List a:hover {
+				color:#629012;
+				font-weight:bold;
+				letter-spacing:-1px;
+				}
+			
+		#topMenu .depth3 {
+			width:116px;
+			margin:5px 0 0 20px;
+			font-weight:normal;
+			}
+		#topMenu .depth3 li a {
+			padding-left:10px;
+			font-weight:normal;
+			letter-spacing:0;
+			background:url(../images/depthIcon1.gif) no-repeat left 6px;
+			}
+		#topMenu .depth3 li a:hover {
+			color:#12906e;
+			font-weight:normal;
+			letter-spacing:0;
+			background:url(../images/depthIcon2.gif) no-repeat left 6px;
+			}

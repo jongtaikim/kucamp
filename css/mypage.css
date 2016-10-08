@@ -1,0 +1,444 @@
+
+div.mypageContent table {
+	width:100%;
+	margin-top:0.5em;
+	border-top:#80b3ea 2px solid;
+	}
+div.mypageContent table th {
+	background-color:#f2fbfe;
+	}
+div.mypageContent table th, div.mypageContent table td {
+	padding:0.33em 0;
+	text-align:center;
+	border:#e3e3e3 1px solid;
+	}
+
+div.mypageContent {
+	margin-top:0.75em;
+	color:#454545;
+	}
+div.mypageContent a {
+	color:#454545;
+	}
+	div.mypageContent div.memberInfo {
+		position:relative;
+		width:49.08em;
+		height:3.83em;	
+		}
+	div.mypageContent div.memberInfo p {
+		padding-top:1em;
+		text-align:center;
+		}
+		div.mypageContent div.memberInfo p span.memberInfoName {
+			color:#454545;
+			font-weight:bold;
+			}
+		div.mypageContent div.memberInfo p span.memberInfoType {
+			color:#2169b7;
+			font-weight:bold;
+			}
+	div.mypageContent div.memberInfo img {
+		position:absolute;
+		left:0;
+		top:0;
+		z-index:-1;
+		}
+	.aquaBullet {
+		display:block;	
+		font-size:1em;
+		margin:1.75em 0 0 0;
+		padding:0.1em 0 0 2em;
+		background:url(/images/common/aquablueBullet.gif) no-repeat 0.75em top;
+		}
+
+	div.mypageContent table th.col1, div.mypageContent table th.col2, div.mypageContent table th.col4 {
+		width:11.25em;
+		}
+	div.mypageContent table th.col3 {
+		width:15em;
+		}
+
+div#typeInfo table th.col1 {
+	}
+
+div#typeInfo td a img {
+	margin-left:5px;
+	}
+#btnArea {
+	margin-top:1.25em;
+	}
+#btnAreaLeft {
+	float:left;
+	}
+#btnAreaRight {
+	float:right;
+	}
+
+#withdrawalTop {
+	float:left;
+	position:relative;
+	padding-bottom:1.5em;
+	}
+#withdrawalTop h3 {
+	display:block;
+	margin-left:0.5em;
+	padding-top:0.25em;
+	padding-left:1.5em;
+	background:url(/images/school/mypage/withdrawalIco.gif) no-repeat left top;
+	}
+#withdrawalTop img {
+	position:absolute;
+	left:0;
+	bottom:0;
+	}
+#withdrawal {
+	clear:both;
+	float:left;
+	overflow:hidden;
+	position:relative;
+	width:100%;
+	}
+#withdrawal img.bg {
+	position:absolute;
+	left:0;
+	bottom:2.5em;
+	z-index:-1;
+	}
+#withdrawal fieldset, #changePass fieldset {
+	height:14.5em;
+	padding:0;
+	margin:0;
+	border:none;
+	}
+#withdrawal p.withdrawalInfo {
+	position:relative;
+	width:42.5em;
+	height:3.75em;
+	margin:0.75em 0 1.25em 1.42em;
+	padding:0.75em 0 0 3.5em;
+	line-height:150%;
+	}
+#withdrawal p.withdrawalInfo img {
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:-1;
+	}
+
+#changePassTop {
+	float:left;
+	position:relative;
+	padding-bottom:1.5em;
+	}
+#changePassTop h3 {
+	display:block;
+	margin-left:0.5em;
+	padding-top:0.25em;
+	padding-left:1.5em;
+	background:url(/images/school/mypage/lockIco.gif) no-repeat left top;
+	}
+#changePassTop img {
+	position:absolute;
+	left:0;
+	bottom:0;
+	}
+#changePass {
+	clear:both;
+	float:left;
+	overflow:hidden;
+	position:relative;
+	width:100%;
+	}
+#changePass p.changePassInfo {
+	position:relative;
+	width:42.5em;
+	height:3.75em;
+	margin:0.75em 0 1.25em 1.42em;
+	padding:0.75em 0 0 3.5em;
+	line-height:150%;
+	}
+#changePass img.bg {
+	position:absolute;
+	left:0;
+	bottom:2.5em;
+	z-index:-1;
+	}
+#changePass p.changePassInfo img {
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:-1;
+	}
+#withdrawal div.row, #changePass div.row {
+	margin-top:0.5em;
+	}
+#withdrawal div.row div.title, #changePass div.row div.title {
+	display:inline;
+	float:left;
+	width:9.5em;
+	margin-left:9em;
+	padding-top:0.25em;
+	text-align:right;
+	font-weight:bold;
+	}
+#withdrawal div.row div.input input, #changePass div.row div.input input  {
+	width:18.50em;
+	margin-left:0.75em;
+	font-size:1em;
+	}
+#withdrawal #btnArea, #changePass #btnArea {
+	text-align:center;
+	}
+#withdrawal #btnArea *, #changePass #btnArea * {
+	vertical-align:middle;
+	}
+
+#myInfoTop {
+	float:left;
+	position:relative;
+	padding-bottom:1.5em;
+	}
+#myInfoTop mypageTitle {
+	display:block;
+	margin-left:0.5em;
+	padding-top:0.16em;
+	padding-left:1.5em;
+	background:url(/images/common/aquablueBullet.gif) no-repeat left top;
+	}
+#myInfoTop img {
+	position:absolute;
+	left:0;
+	bottom:0;
+	}
+#myInfo {
+	clear:both;
+	float:left;
+	overflow:hidden;
+	position:relative;
+	width:100%;
+	padding-bottom:0.5em;
+	}
+#myInfo img.bg {
+	position:absolute;
+	left:0;
+	bottom:2.5em;
+	z-index:-1;
+	}
+#myInfo legend {
+	display:none;
+	}
+#myInfo fieldset {
+	width:47.25em;
+	margin-left:1em;
+	border:none;
+	}
+#myInfo div.row {
+	clear:both;
+	height:1.83em;
+	padding:0.75em 0 0.42em 0;
+	border-bottom:#e3e3e3 1px solid;
+	}
+#myInfo div.row.last {
+	border:none;
+	}
+#myInfo div.title {
+	float:left;
+	width:7.15em;
+	height:100%;
+	padding:0.25em 0 0 0.5em;
+	margin-right:1em;
+	border-right:#e3e3e3 1px solid;
+	}
+#myInfo span.divide {
+	margin:0 0.25em 0 0.25em;
+	}
+#myInfo div.title {
+	float:left;
+	width:7.5em;
+	height:100%;
+	padding:0.25em 0 0 0.5em;
+	}
+#myInfo div.input {
+	height:100%;
+	}
+	#myInfo div.row.name *, #myInfo div.row.id * {
+		vertical-align:middle;
+		}
+	#myInfo div.row.birth input {
+		margin-left:0.25em;
+		}
+	#myInfo div.row.email ul {
+		margin-top:0.25em;
+		font-size:0.9em;
+		}
+	#myInfo div.row.email input {
+		width:8em;
+		vertical-align:middle;
+		}
+	#myInfo div.row.email select {
+		width:8em;
+		margin-left:0.5em;
+		vertical-align:middle;
+		}
+	#myInfo div.row.zipcode input {
+		width:4.25em;
+		vertical-align:middle;
+		}
+	#myInfo div.row.zipcode img {
+		margin-left:0.5em;
+		vertical-align:middle;
+		}
+	#myInfo div.row.zipcode input#foreign {
+		width:auto;
+		margin-left:0.5em;
+		}
+	#myInfo div.row.zipcode select {
+		margin-left:0.5em;
+		vertical-align:middle;
+		}
+	#myInfo div.row.address {
+		height:5.25em;
+		}
+	#myInfo div.row.address div {
+		margin-bottom:0.3em;
+		}
+	#myInfo div.row.address label {
+		margin-right:1em;
+		margin-top:0.5em;
+		vertical-align:middle;
+		}
+	#myInfo div.row.address input#str_addr1 {
+		width:27em;
+		vertical-align:middle;
+		}
+	#myInfo div.row.address input#str_addr2 {
+		width:27em;
+		vertical-align:middle;
+		}	
+	#myInfo div.row.phone input, #myInfo div.row.phone select {
+		width:4em;
+		vertical-align:middle;
+		}
+	#myInfo div.row.cellPhone input, #myInfo div.row.cellPhone select {
+		width:4em;
+		vertical-align:middle;
+		}
+	#myInfo div.row.cellPhone ul {
+		margin-top:0.25em;
+		font-size:0.9em;
+		}
+#myInfo #btnArea {
+	text-align:center;
+	}
+#myInfo #btnArea * {
+	vertical-align:middle;
+	}
+
+div.popupTop01 {
+	width:558px;
+	height:20px;
+	padding-top:11px;
+	padding-left:35px;
+	color:#fff;
+	font-weight:bold;
+	background:url(/images/school/mypage/popupTop01.gif) no-repeat left top;
+	}
+div.popupMid01 {
+	width:556px;
+	border-right:#ddd 1px solid;
+	border-left:#ddd 1px solid;
+	}
+div.popupBottom01 {
+	width:558px;
+	background:url(/images/school/mypage/popupBottom01.gif) no-repeat left top;
+	}
+div.popupBottom01 #btnArea {
+	margin-top:30px;
+	text-align:center;
+	}
+div.popupTop02 {
+	width:398px;
+	height:20px;
+	padding-top:11px;
+	padding-left:35px;
+	color:#fff;
+	font-weight:bold;
+	background:url(/images/school/mypage/popupTop02.gif) no-repeat left top;
+	}
+div.popupMid02 {
+	width:376px;
+	padding:10px;
+	border-right:#ddd 1px solid;
+	border-left:#ddd 1px solid;
+	}
+div.popupBottom02 {
+	width:398px;
+	background:url(/images/school/mypage/popupBottom02.gif) no-repeat left top;
+	}
+div.popupBottom02 #btnArea {
+	margin-top:30px;
+	text-align:center;
+	}
+
+#allowInfo {
+	padding:5px;
+	color:#454545;
+	}
+	#allowInfo p#allowInfoInfo {
+		margin-top:21px;
+		text-align:center;
+		font-weight:bold;
+		}
+	#allowInfo div.additionalChange {
+		width:531px;
+		height:179px;
+		margin:21px 0 0 13px;
+		background:url(/images/school/mypage/additionalChangeBg.gif) no-repeat left top;
+		}
+	#allowBtnArea {	
+		margin-top:16px;
+		text-align:center;
+		}
+	#allowBtnArea img {
+		margin-right:3px;
+		}
+	.additionalChange p.info {
+		width:496px;
+		height:25px;
+		margin:10px 0 0 13px;
+		padding:10px 0 0 10px;
+		background:#f8f8f5;
+		}
+	.additionalChange table {
+		width:511px;
+		margin:10px 0 0 10px;
+		border-top:#3aaa0c 3px solid;
+		}
+	.additionalChange table th {
+		height:25px;
+		background:#f9f8f2;
+		border:#ddd 1px solid;
+		}
+	.additionalChange table td {
+		height:25px;
+		text-align:center;
+		border:#ddd 1px solid;
+		}
+	.additionalChange table .col1 {
+		width:100px;
+		}
+
+#changeType, #addType, #toGradu {
+	padding:5px;
+	color:#454545;
+	}
+#changeType p.changeTypeInfo, #addType p.addTypeInfo, #toGradu p.toGraduInfo {
+	width:359px;
+	height:48px;
+	padding:11px 10px;
+	background:url(/images/school/mypage/changeTypeInfoBg.gif) no-repeat left top;
+	}
+#changeType div.title, #addType div.title, #toGradu div.title {
+	margin:15px 0 3px 0;
+	font-weight:bold;
+	}

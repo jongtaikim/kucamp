@@ -1,0 +1,281 @@
+/* 배너모음 */
+#bannerCollectArea, #sitemapArea {
+	margin:0px auto;
+	width:602px;
+	}
+#importantBanner, #bannerCollect , #mainBanner , #menuBanner , #addMenuBanner {
+	float:left;
+	width:602px;
+	margin-bottom:15px;
+	padding-bottom:15px;
+	background: url(/images/banner/bannerCollectBtmBg.gif) no-repeat left bottom;
+	}
+#importantBanner .objContent , #bannerCollect .objContent , #mainBanner .objContent , #menuBanner .objContent , #addMenuBanner .objContent {
+	float:left;
+	width:100%;
+	background:url(/images/banner/bannerCollectBg.gif) repeat-y left top;
+	}
+	#importantBanner .banner , #bannerCollect .banner {
+		float:left;
+		display:inline;
+		width:546px;
+		padding-left:56px;
+		}
+	#menuBanner .sitemap , #addMenuBanner .banner {
+		float:left;
+		display:inline;
+		width:572px;
+		padding-left:30px;
+		}
+	#importantBanner ul, #bannerCollect ul , #mainBanner ul , #menuBanner ul, #addMenuBanner ul {
+		overflow:hidden;
+		float:left;
+		padding:20px 0 0 0;
+		background:url(/images/banner/bannerCollectTopBg.gif) no-repeat left top;
+		}
+	#importantBanner li , #bannerCollect li, #menuBanner li, #addMenuBanner li{
+		float:left;
+		margin:0 20px 20px 0;
+		line-height:180%;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		}
+		#importantBanner li img, #bannerCollect li img, #addMenuBanner li img {
+			width:148px;
+			height:38px;
+			border:#ddd 1px solid;
+			}
+	#importantBanner h4 , #bannerCollect h4 , #mainBanner h4 , #menuBanner h4 , #addMenuBanner h4 {
+		display:block;
+		overflow:hidden;
+		height:25px;
+		margin-left:21px;
+		text-align:center;
+		color:#fff;
+		font-size:14px;
+		line-height:190%;
+
+		}
+	#importantBanner h4 , #bannerCollect h4 {
+		width:148px;
+		}
+	#mainBanner h4, #menuBanner h4 , #addMenuBanner h4 {
+		width:123px;
+		}
+		.importantTit {
+			background:url(/images/banner/importantBannerTitBg.gif) no-repeat left top;
+			}
+		.bannerTit {
+			background:url(/images/banner/bannerCollectTitBg.gif) no-repeat left top;
+			}
+		.bannerEtcTit {
+			background:url(/images/banner/bannerEtcBg.gif) no-repeat left top;
+			font-size:15px;
+			font-weight:bold;
+			padding: 3px 3px 3px 27px;
+			color:#ffffff;
+			margin-left:20px
+			}
+	 #mainBanner ul.list {
+		overflow:hidden;
+		float:left;
+		width:100%;
+		}
+	 #mainBanner .list li {
+		float:left; 
+		margin:3px 0 3px -3px;
+		padding:5px 12px 5px 14px;
+		white-space:nowrap;
+		background: url(/images/banner/mainBannerBu.gif) no-repeat left 5px;
+		}
+	#menuBanner .depth01 {
+		float:left;
+		width:160px;
+		margin:0 30px 25px 0;
+		padding:0;
+		}
+	#menuBanner .depth01 div {
+		display:block;
+		margin:0;
+		padding:4px 0;
+		font-size:1em;
+		color:#4d4d4d;
+		font-weight:bold;
+		text-align:center;
+		}
+		#menuBanner .depth01 div.title1 {
+			border-top:2px solid #4ab8bd;
+			border-bottom:2px solid #4ab8bd;
+			}
+		#menuBanner .depth01 div.title2 {
+			border-top:2px solid #83b02c;
+			border-bottom:2px solid #83b02c;
+			}
+		#menuBanner .depth01 div.title3 {
+			border-top:2px solid #ee9521;
+			border-bottom:2px solid #ee9521;
+			}
+		#menuBanner .depth01 div.title4 {
+			border-top:2px solid #9c87b7;
+			border-bottom:2px solid #9c87b7;
+			}
+		#menuBanner .depth01 div.title5 {
+			border-top:2px solid #ea8391;
+			border-bottom:2px solid #ea8391;
+			}
+		#menuBanner .depth01 div.title6 {
+			border-top:2px solid #4dba9a;
+			border-bottom:2px solid #4dba9a;
+			}
+		#menuBanner .depth01 div.title7 {
+			border-top:2px solid #4d71ba;
+			border-bottom:2px solid #4d71ba;
+			}
+		#menuBanner .depth01 div.title8 {
+			border-top:2px solid #bc7733;
+			border-bottom:2px solid #bc7733;
+			}
+
+		#menuBanner .depth01 div.title9 {
+		border-top:2px solid #83b02c;
+			border-bottom:2px solid #83b02c;
+			}
+
+		#menuBanner .depth01 div.title10 {
+			border-top:2px solid #bc7733;
+			border-bottom:2px solid #bc7733;
+			}
+		#menuBanner .depth01 div.title11 {
+			border-top:2px solid #ea8391;
+			border-bottom:2px solid #ea8391;
+			}
+	#menuBanner .depth01 ul {
+		float:left;
+		width:100%;
+		margin:10px 0 0 0;
+		padding:0;
+		background:#fff;
+		}
+	#menuBanner .depth01 ul.outline1 li{
+		float:left;
+		width:148px;
+		color:#4d4d4d;
+		font-weight:bold;
+		margin:0;
+		padding:0 0 0 12px;
+		background: url(/images/banner/menuBannerBu.gif) no-repeat left 5px;
+		}
+		#menuBanner .depth01 ul.outline1 li a{
+			display:block;
+			}
+	#menuBanner .depth01 ul.outline1 li ul.depth02 {
+		margin:0;
+		padding:0;
+		}
+	#menuBanner .depth01 ul.outline1 li ul.depth02 li {
+		width:130px;
+		margin:0 0 0 5px;
+		padding:0 5px 0 7px;
+		font-weight:normal;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		background:url(/images/banner/menuBannerBu2.gif) no-repeat left 8px;
+		}
+
+/*사이트맵*/
+#sitemap {
+    float:left;
+    width: 671px;
+    background: url(/images/banner/sitemapBg.gif) no-repeat left top;
+}
+#sitemap .objContent {
+    background: url(/images/banner/sitemapBg2.gif) repeat-y left top;
+    float: left;
+    padding-left: 41px;
+    width: 630px;
+	padding-bottom:20px;
+}
+#menuMap {
+    background: url(/images/banner/sitemapBg.gif) no-repeat left bottom;
+    float: left;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+#menuMap .title {
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    display: block;
+    font-family: verdana,dotum;
+    font-size: 1em;
+    font-weight: bold;
+    height: 19px;
+    line-height: 1;
+    margin: 10px 0;
+    padding:10px 0;
+    text-align: center;
+    width: 180px;
+	color:#333;
+}
+#menuMap #mapList .listBox {
+    float: left;
+	padding:20px 0 0 0;
+}
+#menuMap #mapList .box {
+    float: left;
+    margin-right:24px;
+}
+#menuMap #mapList .title1 {
+    border-color: #4AB8BD;
+    height: 100%;
+}
+#menuMap #mapList .title2 {
+    border-color: #83B02C;
+    height: 100%;
+}
+#menuMap #mapList .title3 {
+    border-color: #EE9521;
+    height: 100%;
+}
+#menuMap #mapList .title4 {
+    border-color: #9C87B7;
+    height: 100%;
+}
+#menuMap #mapList .title5 {
+    border-color: #EA8391;
+    height: 100%;
+}
+#menuMap #mapList .title6 {
+    border-color: #4DBA9A;
+    height: 100%;
+}
+#menuMap #mapList .title7 {
+    border-color: #4D71BA;
+    height: 100%;
+}
+#menuMap #mapList .title8 {
+    border-color: #BC7733;
+    height: 100%;
+}
+#menuMap #mapList .title9 {
+    border-color: #C683C8;
+    height: 100%;
+}
+#menuMap #mapList .title10 {
+    border-color: #CBCBCB;
+    height: 100%;
+}
+#menuMap #mapList .listContent {
+    line-height: 180%;
+    overflow: hidden;
+    padding-left: 3px;
+    width: 177px;
+}
+#menuMap #mapList .listContent li {
+    padding-left: 14px;
+	font-weight:bold;
+}
+#menuMap #mapList .listContent li li {
+    padding-left: 12px;
+	font-weight:normal;
+}

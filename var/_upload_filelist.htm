@@ -1,0 +1,59 @@
+<input type="hidden" name="buf" value="">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td width="75%">
+		<select name="listbox" size="3" id="listbox" style="width: 100%;border:1px solid #BCBCBC;padding:4px" ondblclick="copyFileUrl(this.selectedIndex);">
+			<!--{@ %var%}-->
+			<option value="{.num_serial}">{.str_upfile}</option>
+			<!--{/}-->
+		</select>
+	</td>
+	<td width="25%" align="center">
+		<div style="margin-bottom:3px;">총 <input name="sizebox" type="text" size="5" style="width:30px"> KB</div>
+		<img src="/image/editor/btn_attachdel.gif" value="파일제거" onclick="del_file()" style="cursor:hand;" align="absmiddle">
+
+	</td>
+</tr>
+</table>
+더블클릭 하시면 첨부파일의 Url이 클립보드에 복사됩니다.
+<script type="text/javascript" src="js/lib.attachfile.js"></script>
+<script type="text/javascript" src="js/dynamic.js"></script>
+<script type="text/javascript" src="js/JSON.js"></script>
+<script type="text/javascript">
+<!--
+var FA;
+var form = document.forms['%form%'];
+if(form.elements['sizebox']) {
+	FA = new FileAttach();
+	FA.setForm(form);
+	FA.incByte(Number('{total_size}'));
+}
+
+function del_file() {
+	var form = document.forms['%form%'];
+	var listbox = form.elements['listbox'];
+	if (listbox.selectedIndex < 0) return;
+	var fileid = listbox.options[listbox.selectedIndex].value;
+	var result = JSON.decode(dynamic.loadText('core.filehost.del?sect=%sect%&code=%code%&main={id}&id='+fileid));
+	if (result.Code == '00') {
+		FA.removeFile(fileid,result.FileSize);
+	} else {
+		alert(result.Message);
+	}
+}
+
+function copyFileUrl(index) {
+	var els = document.forms['%form%'].elements;
+	var fileid = els['listbox'].options[index].value;
+	var filename = els['listbox'].options[index].text;
+	var fileUrl = "http://<?=$_SERVER[HTTP_HOST]?>";
+	fileUrl += "/download/%oid%/%sect%/%code%/{? num_serial}{num_serial}{:}{id}{/}/";
+	fileUrl += fileid + "/" + filename + "?nocount=1";
+	els['buf'].value = fileUrl;
+	var tRange = els['buf'].createTextRange();
+	tRange.execCommand("Copy");
+	alert(filename + " 파일의 URL이 클립보드에 복사되었습니다.");
+	els['buf'].value = "";
+}
+//-->
+</script>

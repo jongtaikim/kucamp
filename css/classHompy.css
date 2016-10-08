@@ -1,0 +1,51 @@
+@charset "euc-kr";
+
+/* ÀÌ¿ô´åÄÄ(e-wut.com) 
+À¥ ÆÛºí¸®½Ì 
+ÀÛ¾÷ÀÚ:±èµ¿¿ì, ±èÀºÁ¤ */
+
+/*Ä¶¸°´õº»¹®¿µ¿ª*/
+#classHompyArea {	
+	overflow:hidden;
+	width:552px;
+	margin:0 auto;
+	padding-bottom:20px;
+	}
+	#classHompyArea .listBox {
+		float:left;
+		width:582px;
+		margin-top:25px;
+		}
+	#classHompyArea .box {
+		float:left;
+		width:162px;
+		margin-right:30px;
+		padding-bottom:15px;
+		font-family:verdana, dotum;
+		font-weight:bold;
+		background:url(/images/classHompy/classHompyBtmBg.gif) no-repeat left bottom;
+		}
+	#classHompyArea .box .h4 {
+		display:block;
+		width:142px;
+		height:33px;
+		padding-left:20px;
+		padding-top:30px;
+		font-size:12px;
+		background:url(/images/classHompy/classHompyTopBg.gif) no-repeat left top;
+
+		}
+		#classHompyArea .box strong {
+			padding-left:10px;
+			color:#3ababb;
+			background:url(/images/classHompy/classHompyBullet.gif) no-repeat left 5px;
+			}
+	#classHompyArea ul {
+		padding-left:20px;
+		background:url(/images/classHompy/classHompyCenterBg.gif) repeat-y left top;
+		}
+	#classHompyArea ul li {
+		padding-left:10px;
+		line-height:150%;
+		background:url(/images/classHompy/classHompyBullet2.gif) no-repeat left 7px;
+		}

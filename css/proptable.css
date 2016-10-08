@@ -1,0 +1,53 @@
+/* Table decoration */
+table.proptable {
+ clear: both;
+ border-bottom: 1px solid #d7d7d7;
+ border-collapse: collapse;
+ border-spacing: 0;
+ margin-top: 1em;
+/* width: 100%; */
+}
+
+table.proptable td { font-size: 12px; }
+table.proptable th { text-align: left; padding: 0 1em .1em 0; font-size: 12px }
+table.proptable thead { background: #f7f7f0 }
+table.proptable thead th {
+ border: 1px solid #d7d7d7;
+ border-bottom-color: #999;
+ font-size: 12px;
+ font-weight: bold;
+ padding: 2px .5em;
+ text-align: center; 
+ vertical-align: bottom;
+}
+
+table.proptable tbody th {
+ background: #f7f7f0;
+ border: 1px solid #d7d7d7 !important;
+ border-bottom-color: #999 !important;
+ font-size: 12px;
+ font-weight: bold;
+ padding: 2px .5em;
+ vertical-align: middle;
+}
+
+table.proptable thead th :link:hover, table.proptable thead th :visited:hover {
+ background-color: transparent;
+}
+table.proptable thead th a { border: none; padding-right: 12px;}
+table.proptable tbody td, table.proptable tbody th {
+ border: 1px dotted #ddd;
+ padding: .33em .5em;
+ vertical-align: top;
+}
+table.proptable tbody td a:hover, table.proptable tbody th a:hover {
+ background-color: transparent;
+}
+table.proptable tbody tr {
+	border-top: 1px solid #ddd;
+/*	tmp: expression(this.onmouseover=function(){this.tmpClassName=this.className;this.className='tr-hover';};this.onmouseout=function(){this.ClassName=this.tmpclassName;};); */
+}
+table.proptable tbody tr.even { background-color: #fcfcfc }
+table.proptable tbody tr.odd { background-color: #f7f7f7 }
+table.proptable tbody tr:hover { background: #eed !important }
+/* table.proptable tbody tr-hover { background: #eed !important } */

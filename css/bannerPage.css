@@ -1,0 +1,77 @@
+@charset "euc-kr";
+
+/* 이웃닷컴(e-wut.com) 
+웹 퍼블리싱 
+작업자:김동우, 김은정 */
+
+
+/*배너페이지 영역*/
+
+/*공통*/
+#banner {
+	width:602px;
+	margin:0 auto;
+	}
+#banner h3 {
+		display:block;
+		float:left;
+		width:148px;
+		height:19px;
+		margin-left:21px;
+		padding-top:6px;
+		font-size:14px;
+		text-align:center;
+		color:#fff;
+	}
+	#banner .box {
+		float:left;
+		width:100%;
+		padding-bottom:12px;
+		margin-top:15px;
+		background:url(/images/bannerPage/bannerTabBtm.gif) no-repeat left bottom;
+		}
+		#banner .objTop {
+				float:left;
+				width:100%;
+				height:38px;
+				background:url(/images/bannerPage/bannerTabTop.gif) no-repeat left bottom;
+				}
+
+			#banner ul {
+				float:left;
+				width:552px;
+				padding-left:50px;
+				padding-bottom:20px;
+				background:url(/images/bannerPage/bannerTabCenter.gif) repeat-y left top;
+				}
+			
+			#banner ul li {
+				display:inline;
+				float:left;
+				margin-top:20px;
+				margin-right:20px;
+				}
+				#banner ul li img {
+					width:148px;
+					height:38px;
+					border:#ccc 1px solid;
+					}
+
+	/*학교중요배너*/
+		#bannerArea .objTop .h3 {
+			background:url(/images/bannerPage/bannerTab2.gif) no-repeat left top;
+			font-size:14px;
+			padding:5px 5px 5px 25px;
+			color:#ffffff;
+			margin-left:20px
+			}
+	/*배너모음*/
+		#bannerCollect .objTop .h3 {
+			background:url(/images/bannerPage/bannerTab1.gif) no-repeat left top;
+			font-size:14px;
+			padding:5px 5px 5px 42px;
+			color:#ffffff;
+			margin-left:20px
+			}
+				
+

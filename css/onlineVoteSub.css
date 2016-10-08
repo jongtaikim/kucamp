@@ -1,0 +1,72 @@
+@charset "euc-kr";
+
+/* ÀÌ¿ô´åÄÄ(e-wut.com) 
+À¥ ÆÛºí¸®½Ì 
+ÀÛ¾÷ÀÚ:±èµ¿¿ì, ±èÀºÁ¤ */
+#onlineVote {
+	width:493px;
+	padding-left:10px;
+	}
+	#onlineVote .voteBox {
+		margin-bottom:22px;
+		}
+#onlineVote .objTop {
+	width:443px;
+	height:27px;
+	padding-left:47px;
+	padding-top:12px;
+	background:url(/images/onlineVote/onlineVoteObjTopBg.gif) no-repeat left top;
+	}
+	#onlineVote .objTop h2 {
+		display:block;
+		font-size:14px;
+		color:#fff;
+		}
+#onlineVote .objContent {
+	overflow:hidden;
+	width:448px;
+	padding-left:42px;
+	}
+	#onlineVote .comment {
+		line-height:150%;
+		margin:20px 0 20px -42px;
+		}
+	#onlineVote .boxWrapper {
+		float:left;
+		width:192px;
+		height:277px;
+		margin-right:2px;
+		margin-bottom:9px;
+		padding:3px;
+		background:#efefef;
+		}
+	#onlineVote .listBox {
+		text-align:center;
+		}
+		#onlineVote .listBox h3 {
+			display:block;
+			padding:6px 0;
+			font-size:12px;
+			font-family:gulim;
+			color:#fff;
+			text-align:center;
+			background:#333333;
+			}
+		#onlineVote .listBox img {
+			display:inline;
+			width:190px;
+			max-height:217px;
+			margin-top:3px;
+			margin-bottom:5px;
+
+			}
+		#onlineVote .listBox p {
+			vertical-align:bottom;
+			}
+		#onlineVote .listBox label {
+			font-weight:bold;
+			font-size:16px;
+			}
+		#onlineVote .listBox input {
+			margin-top:-5px;
+			}

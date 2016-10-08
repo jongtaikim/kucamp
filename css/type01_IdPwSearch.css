@@ -1,0 +1,101 @@
+@charset "euc-kr";
+
+/*
+웹 퍼블리싱
+작업자:김은정(lulubong@hanmail.net) 
+*/
+
+/*로그인 공통*/
+
+#idPwSearch {
+	width:613px;
+	padding-bottom:12px;
+	margin:0 auto;
+	background:url(images/loginBtmBg.gif) no-repeat left bottom; 
+	}
+	#idPwSearch .objTop img {
+		display:block;
+		}
+		#idPwSearch .objContent form {
+			position:relative;
+			padding:14px 16px 0 16px;
+			background:url(images/loginCenterBg.gif) repeat-y left top;
+			}
+			#idPwSearch h4 {
+				visibility:visible;
+				width:100%;
+				height:21px;
+				margin-bottom:10px;
+				}
+			#idPwSearch fieldset {
+				padding:16px 16px 0 16px;
+				}
+				#idPwSearch fieldset .comment {
+					display:block;
+					margin-bottom:4px;
+					padding-left:9px;
+					background:url(images/commentIcon.gif) no-repeat 1px 4px;
+					}
+				#idPwSearch fieldset .row {
+					height:35px;
+					border-top:#d5aec0 1px solid;
+					}
+					#idPwSearch fieldset .last {
+						border-bottom:#d5aec0 1px solid;
+						}
+				#idPwSearch fieldset .leftCol {
+						float:left;
+						width:99px;
+						height:22px;
+						padding:13px 0 0 16px;
+						color:#bc3b73;
+						font-weight:bold;
+						background:#fef3f9;
+						}
+				#idPwSearch fieldset .rightCol {
+					float:left;
+					width:421px;
+					padding:7px 0 7px 5px;
+					}
+					#idPwSearch fieldset .rightCol input {
+						border:#d5aec0 1px solid;
+						}
+					
+				#idPwSearch fieldset .btnArea {
+					width:100%;
+					margin-top:15px;
+					text-align:center;
+					}
+					#idPwSearch fieldset .btnArea img {
+						margin-left:5px;
+						}
+			/*아이디 찾기*/
+			#idSearch {
+				margin-bottom:25px;
+				}
+			#idSearch fieldset {
+				height:154px;
+				background:url(images/idSearchBg.gif) no-repeat left top;
+				}
+				#idSearch fieldset #email input {
+					float:left;
+					width:170px;
+					}
+				#idPwSearch fieldset .rightCol .caution {
+						float:left;
+						width:230px;
+						margin-left:4px;
+						padding-top:5px;
+						padding-left:13px;
+						font-size:11px;
+						background:url(images/cautionIcon.gif) no-repeat left 5px;
+						}
+			/*비밀번호 찾기*/		
+			#pwSearch fieldset {
+					height:190px;
+					background:url(images/pwSearchBg.gif) no-repeat left top;
+					}
+					#pwSearch fieldset #pwEmail input {
+						width:190px;
+						}
+						

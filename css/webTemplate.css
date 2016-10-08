@@ -1,0 +1,234 @@
+@charset "euc-kr";
+
+/* ÀÌ¿ô´åÄÄ(e-wut.com) 
+À¥ ÆÛºí¸®½Ì 
+ÀÛ¾÷ÀÚ:ÀÌ½ÂÈñ,±èµ¿¿ì,±èÀºÁ¤ */
+
+/* »óÂ¡ */
+#symbolWrap {
+	display:inline;
+	float:left;
+	width:600px;
+	margin-left:20px;
+	}
+	.symbol {
+		margin-bottom:35px;
+		}
+	.symbol h4 {
+		display:block;
+		width:600px;
+		height:40px;
+		text-indent:-2000px;
+		}
+		.symbol h4.schoolMotto {
+			background:url(../images/web/schoolMottoTit.gif) no-repeat left top;
+			}
+		.symbol h4.schoolSymbol{
+			background:url(../images/web/schoolSymbolTit.gif) no-repeat left top;
+			}
+		.symbol h4.schoolFlag {
+			background:url(../images/web/schoolFlagTit.gif) no-repeat left top;
+			}
+		.symbol h4.schoolFlower {
+			background:url(../images/web/schoolFlowerTit.gif) no-repeat left top;
+			}
+		.symbol h4.schoolTree {
+			background:url(../images/web/schoolTreeTit.gif) no-repeat left top;
+			}
+		.symbol h4.schoolMotto{
+			background:url(../images/web/schoolMottoTit.gif) no-repeat left top;
+			}
+		.symbol h4.schoolSong{
+			background:url(../images/web/schoolMottoTit.gif) no-repeat left top;
+			}
+		.symbol .content {
+			margin:15px 0 5px 15px;
+			}
+		.symbol img {
+			margin-left:15px;
+			}
+
+/* ¿¬Çõ */
+#historyWarp {
+	display:inline;
+	float:left;
+	width:600px;
+	margin-left:25px;
+	}
+	.history {
+		float:left;
+		width:600px;
+		margin-bottom:20px;
+		}
+		.historyTit {
+			display:block;
+			float:left;
+			margin-right:20px;
+			padding:30px;
+			}
+			.historyTit.year1910 {
+				background:url(../images/web/1910.gif) no-repeat left top;
+				}
+			.historyTit.year1920 {
+				background:url(../images/web/1920.gif) no-repeat left top;
+				}
+			.historyTit.year1930 {
+				background:url(../images/web/1930.gif) no-repeat left top;
+				}
+			.historyTit.year1940 {
+				background:url(../images/web/1940.gif) no-repeat left top;
+				}
+			.historyTit.year1950 {
+				background:url(../images/web/1950.gif) no-repeat left top;
+				}
+			.historyTit.year1960 {
+				background:url(../images/web/1960.gif) no-repeat left top;
+				}
+			.historyTit.year1970 {
+				background:url(../images/web/1970.gif) no-repeat left top;
+				}
+			.historyTit.year1980 {
+				background:url(../images/web/1980.gif) no-repeat left top;
+				}
+			.historyTit.year1990 {
+				background:url(../images/web/1990.gif) no-repeat left top;
+				}
+			.historyTit.year2000 {
+				background:url(../images/web/2000.gif) no-repeat left top;
+				}
+		.schoolHistory {
+			overflow:hidden;
+			float:left;
+			width:85%;
+			padding-bottom:20px;
+			border-bottom:1px solid #cacaca;
+			}
+			.schoolHistory li{
+				float:left;
+				margin-bottom:1px;
+				}
+			.schoolHistory .historyTitNone {
+				display:none;
+				}
+			.schoolHistory .year {
+				width:66px;
+				margin-right:13px;
+				padding:5px 0;
+				font-weight:bold;
+				text-align:center;
+				background:#f3f2ef;
+				}
+			.schoolHistory .month {
+				width:60px;
+				padding:5px 0;
+				}
+			.schoolHistory .content {
+				width:360px;
+				padding-top:5px;
+				}
+
+/* ±³Á÷¿ø ÇöÈ² */
+#teacher {
+	display:inline;
+	float:left;
+	width:600px;
+	margin-left:25px;
+	}
+	.teacherTabWrap {
+		float:left;
+		width:594px;
+		margin-bottom:15px;
+		border:3px solid #f0f0f0;
+		}
+	.teacherTab {
+		overflow:hidden;
+		float:left;
+		width:100%;
+		border:1px solid #bcbcbc;
+		}
+	.teacherTab li {
+		float:left; 
+		margin:3px 0 3px -3px; 
+		padding:5px 12px 5px 14px;
+		background:url(../images/web/teacherTabBlit.gif) no-repeat left 5px;
+		}
+		.teacherTab li {
+			color:#2387b0;
+			
+			}
+			.teacherTab li.on a {
+				color:#2387b0;
+				text-decoration:underline;
+				}
+	.teacherList, .teacherList th, .teacherList td {
+		border:0;
+		}
+	.teacherState {
+		float:left;
+		width:98%;
+		margin-bottom:25px;
+		padding:0 0 7px 7px;
+		border-bottom:1px solid #dbdbdb;
+		} 
+		.teacherState .objTop {
+			display:block;
+			width:100%;
+			margin-bottom:10px;
+			padding-bottom:4px;
+			background:url(../images/web/teacherStateBg.gif) no-repeat left bottom;
+			} 
+		.teacherState h4 {
+			display:block;
+			padding:2px 0 2px 15px;
+			font-size:12px;
+			font-weight:bold;
+			background:url(../images/web/teacherStateBlit.gif) no-repeat left top;
+			}
+			.teacherState .obj , .teacherStateAlbum .obj{
+				float:left;
+				width:98%;
+				border:3px solid #f0f0f0;
+				}
+				.teacherList {
+					float:left;
+					width:100%;
+					border-collapse:collapse;
+					border:1px solid #cccccc;
+					}
+				.teacherList th {
+					padding:5px 10px 5px 10px;
+					font-weight:bold;
+					color:#414141;
+					text-align:center;
+					border-left:0;
+					border-right:0;
+					border:#ccc 1px solid;
+					white-space:nowrap;
+					}
+				.teacherList td {
+					padding:6px 0;
+					font-weight:normal;
+					color:#545454;
+					text-align:center;
+					white-space:nowrap;
+					vertical-align:baseline;
+					border-top:0;
+					border-left:0;
+					border-right:0;
+					border:#ccc 1px solid;
+					}
+	.teacherStateAlbum {
+		float:left;
+		width:31%;
+		margin:0 10px 10px 0;
+		}
+		.teacherStateAlbum .album {
+			width:100px; 
+			height:125px;
+			margin:0 auto 7px auto;
+			border:#eaeaea 3px solid;
+			}
+	.teacherStateAlbum td {
+		white-space:normal;
+		}
+	

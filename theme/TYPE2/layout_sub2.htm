@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+	<meta name="description" content="<?=_ONAME?> 홈페이지" />
+	<meta name="keywords" content="<?=_ONAME?>, 홈페이지" />
+	<meta name="author" content="김종태" />
+	<meta name="language" content="ko" />
+<title>{__TITLE} {? str_title}- {str_title}{:}{?title_text} - {title_text}{/}{/}</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/sub2.css" />
+<link rel="stylesheet" type="text/css" href="@/custom_sub2.css" />
+<link rel="stylesheet" type="text/css" href="@/sub2_bg.css" />
+<link rel="stylesheet" type="text/css" href="@/custom_layout_sub2.css">
+<link rel="stylesheet" type="text/css" href="@/sub2_plus.css">
+{@ attach_list }
+	{? !strstr(.str_name,"out_bbs")}
+	<link rel="stylesheet" type="text/css" href="/object/{.str_name}/style.css" />
+	{/}
+{/} 
+<link rel="stylesheet" type="text/css" href="@/sub2_obj.css"/>
+<link rel="stylesheet" type="text/css" href="/object/login/style.css" />
+<link rel="stylesheet" type="text/css" href="/object/out_bbs/style.css" />
+<link rel="stylesheet" type="text/css" href="/object/qmenu/style.css" />
+<link rel="stylesheet" type="text/css" href="/object/gnb/style.css" />
+<link rel="stylesheet" type="text/css" href="/object/top_menu/style.css" />
+<script type="text/javascript" src="/js/bannerZone.js" ></script>
+
+</head>
+<body>
+  
+{#TOP_TOOL}
+
+{#EASYSCHOOL}
+<!--레이아웃 영역-->
+<div id="main_layout" >
+
+	<h1>{__TITLE}</h1>
+  
+	<hr />
+	 
+	<div id="accessibility">
+		<h2>시각장애인을 위한 홈페이지 사용 안내</h2>
+		<ul>
+			<li>홈페이지를 이용하실 때는 홈페이지의 헤딩간 이동을 이용하시면 편리합니다.</li>
+			<li>키보드의 탭키를 이용하시면 링크간의 이동이 가능합니다.</li>
+			<li>다음의 컨텐츠 바로가기 메뉴를 통해서 원하시는 정보로 쉽게 이동이 가능합니다.</li>
+		</ul>
+	</div>
+
+	<div id="accessibilityNav">
+		<h3>컨텐츠 바로가기 기능</h3>
+		<ul class="skipNav">
+			<li class="skipLogin"><a href="#loginObj" accesskey="411">로그인 바로가기</a></li>
+			<li class="skipMenu"><a href="#top_menu">메인 메뉴 바로가기</a></li>
+			<li class="skipContent"><a href="#contentArea"><img src="./images/skipNavBtn.gif" alt="본문바로가기" /></a></li>
+			<li class="skipPolicy"><a href="#footerArea">하단 정책 메뉴 및 카피라이트 바로가기</a></li>
+		</ul>
+	</div>
+	
+
+	
+	{#TOP}
+
+
+
+			<div id="cont1" class ="moveLeyer">
+				{#cont1}
+			</div>
+
+<div id="mainBox" class ="moveLeyer">
+			
+			<div id="cont2" class ="moveLeyer">
+				{#cont2}
+			</div>
+			<div id="cont3" class ="moveLeyer">
+				{#cont3}
+			</div>
+			<div id="cont4" class ="moveLeyer" >
+				{#cont4}
+			</div>
+			
+			<div id="cont4" class ="moveLeyer" >
+				{#cont4}
+			</div>
+
+			<div id="cont5" class ="moveLeyer" >
+				{#cont5}
+			</div>
+			<div id="cont6" class ="moveLeyer">
+				{#cont6}
+			</div>
+			<div id="cont7" class ="moveLeyer">
+				{#cont7}
+			</div>
+			<div id="cont8" class ="moveLeyer">
+				{#cont8}
+			</div>
+	</div>
+{#FOOT}
+</div>
+
+		<?if(_QMENU_USE =="Y"){?>
+		<div  id="qmenuBody">
+			<div id="STATICMENU2" style="left:10px">
+				<div id="qmenu">
+				<wa:applet module="qmenu.sub"/>
+				</div>
+			</div>
+		</div>
+		<script language="Javascript" type="text/javascript">
+		new Floating($('STATICMENU2'),10);
+		</script>
+		<? } ?>
+
+<!--레이아웃 영역 끝-->
+
+<script language="javascript" type="text/javascript">
+if($('aniTextContent')) scroll_txt_init();
+</script>
+</body>
+</html>
+

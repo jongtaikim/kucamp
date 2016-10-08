@@ -1,0 +1,21 @@
+body {
+	background:#fff;
+	margin:0;
+	padding:0;
+	color:#000;
+	font:x-small/1.5em Georgia,Serif;
+	voice-family: "\"}\""; voice-family:inherit;
+	font-size:small;
+}
+
+html>body {
+	font-size:small;
+}
+
+#header {
+	float:left;
+	width:100%;
+	background:#DAE0D2 url(./img/bg.gif) repeat-x bottom;
+	font-size:93%;
+	
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="607ac48a-81bc-4749-aae4-1456ff8f9688" name="kucamp.com" url="http://kucamp.com">
+        <fileTransfer host="kucamp.com" port="22" accessType="SFTP" password="dfd8dfcfdfdcdfc5dfc6df99df93df99df93" username="kunetworks1">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

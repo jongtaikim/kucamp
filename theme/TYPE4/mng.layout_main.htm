@@ -1,0 +1,96 @@
+<?
+/* vim: set expandtab tabstop=4 shiftwidth=4 foldmethod=marker: */
+/**
+* 작성일: 2009-06-17
+* 작성자: 김종태
+* 설   명: 레이아웃관리에 타입설정
+*****************************************************************
+* 각 타입 /css/main.css 에서 레이아웃 css를 설정할 수 있음
+*/
+
+
+//2009-06-17 종태 오브젝트를 배치할 레이어 지정
+//배열에서 제거하면 그 위치에는 오브젝트 배치 불가 (※ 아이디는 그대로 유지할것)
+
+$useLay[] = array('name' => "cont1");
+$useLay[] = array('name' => "cont2");
+$useLay[] = array('name' => "cont3");
+$useLay[] = array('name' => "cont4");
+$useLay[] = array('name' => "cont5");
+$useLay[] = array('name' => "cont6");
+$useLay[] = array('name' => "cont7");
+$useLay[] = array('name' => "cont8");
+
+
+{LayerAlign} = $useLay;
+?>
+
+<style type="text/css" title="">
+.moveLeyer {cursor:move;border:1px solid #c0c5c9 ;float:left;}
+</style>
+
+<div id="main_frame" style="width:100%;padding:0px;" >
+		<div id="main_layout" style="width:980px;left:0px;margin-left:0px" >
+			
+			<div class="moveLeyer" style="width:430px;height:20px;background-image:url('/f.php?text=상단영역 (배치불가)&font=yg330&size2=6&bg=616d77&color=FFFFFF');background-repeat:no-repeat;background-position:50% 50%;margin-bottom:10px"></div>
+			
+			<div id="cont1" class="moveLeyer" >
+				<INPUT TYPE="hidden" NAME="lay_be[]" value="cont1" >
+			</div>
+
+			<div id="mainBox" class ="">
+
+			<div id="cont2" class="moveLeyer">
+				<INPUT TYPE="hidden" NAME="lay_be[]" value="cont2" >
+			</div>
+
+			<div id="cont3" class="moveLeyer" >
+				<INPUT TYPE="hidden" NAME="lay_be[]" value="cont3" >
+			</div>
+
+			<div id="cont4" class="moveLeyer">
+				<INPUT TYPE="hidden" NAME="lay_be[]" value="cont4" >
+			</div>
+
+			<div id="cont5" class="moveLeyer">
+				<INPUT TYPE="hidden" NAME="lay_be[]" value="cont5" >
+			</div>
+
+			<div id="cont6" class="moveLeyer">
+				<INPUT TYPE="hidden" NAME="lay_be[]" value="cont6" >
+			</div>
+
+			<div id="cont7" class="moveLeyer" >
+				<INPUT TYPE="hidden" NAME="lay_be[]" value="cont7" >
+			</div>
+
+			<div id="cont8" class="moveLeyer" >
+				<INPUT TYPE="hidden" NAME="lay_be[]" value="cont8" >
+				<div class="float:left;height:30px;border:1px solod #red" id=""></div>
+			</div>
+			
+			</div>
+			
+			<div class="moveLeyer" style="width:430px;height:40px;background-image:url('/f.php?text=하단영역 (배치불가)&font=yg330&size2=6&bg=616d77&color=FFFFFF');background-repeat:no-repeat;background-position:50% 50%;margin-top:10px"></div>
+		</div>
+</div>
+
+
+
+
+
+<script language="Javascript">
+	//def_css('적용할레이어아이디', '줄일비율' ,'bg제거','리사이징여부');
+	def_css('main_layout', '2' ,'N','N');
+	def_css('cont1', '2' ,'Y' ,'Y','cont1 영역');
+	def_css('cont2', '2' ,'Y' ,'Y','cont2 영역');
+	def_css('cont3', '2' ,'Y' ,'Y','cont3 영역');
+	def_css('cont4', '2' ,'Y' ,'Y','cont4 영역');
+	def_css('cont5', '2' ,'Y' ,'Y','cont5 영역');
+	def_css('cont6', '2' ,'Y' ,'Y','cont6 영역');
+	def_css('cont7', '2' ,'Y' ,'Y','cont7 영역');
+	def_css('cont8', '2' ,'Y' ,'Y','cont8 영역');
+
+	def_css('none', '2' ,'N' ,'N'); //NONE 영역은 자동제외됨
+</script>
+

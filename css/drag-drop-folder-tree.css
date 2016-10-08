@@ -1,0 +1,44 @@
+	p{
+
+		
+	}
+	a{
+	
+	}
+	
+	.dhtmlgoodies_tree,#floatingContainer{
+		margin:0px;
+		padding:0px;
+	}
+	.dhtmlgoodies_tree ul{	/* Sub menu groups */
+		margin-left:20px;	/* Left spacing */
+
+		display:none;	/* Initially hide sub nodes */
+	}
+	
+	#floatingContainer ul{
+		margin-left:20px;	/* Left spacing */
+	
+	}
+	.dhtmlgoodies_tree li,#floatingContainer li{	/* Nodes */
+		list-style-type:none;
+		
+		
+	}
+	.dhtmlgoodies_tree li a,#floatingContainer li a{	/* Node links */
+	
+		
+	}
+	.dhtmlgoodies_tree li a.highlightedNodeItem{
+	
+	}
+	
+		
+
+	
+	.dhtmlgoodies_tree input.folderTreeTextBox{	/* Css for the text input - rename item */
+		font-size:10px;
+		margin:0px;
+		padding:0px;
+		height:16px;
+	}

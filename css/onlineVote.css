@@ -1,0 +1,65 @@
+@charset "euc-kr";
+
+/* ÀÌ¿ô´åÄÄ(e-wut.com) 
+À¥ ÆÛºí¸®½Ì 
+ÀÛ¾÷ÀÚ:±èµ¿¿ì, ±èÀºÁ¤ */
+#onlineVote {
+	width:493px;
+	padding-left:10px;
+	}
+	#onlineVote .voteBox {
+		margin-bottom:22px;
+		}
+#onlineVote .objTop {
+	width:443px;
+	height:27px;
+	padding-left:47px;
+	padding-top:12px;
+	background:url(../images/onlineVote/onlineVoteObjTopBg.gif) no-repeat left top;
+	}
+	#onlineVote .objTop h2 {
+		display:block;
+		font-size:14px;
+		color:#fff;
+		}
+#onlineVote .objContent {
+	overflow:hidden;
+	width:480px;
+	padding:0 5px;
+	}
+	#onlineVote .listTop {
+		overflow:hidden;
+		height:19px;
+		padding-left:6px;
+		padding-top:7px;
+		background:#f1f1f1;
+		}
+		#onlineVote .listTop .date {
+			float:left;
+			}
+		#onlineVote .listTop .applicant {
+			float:right;
+			width:141px;
+			text-align:center;
+			border-left:#aeaeae 1px solid;
+			}
+		#onlineVote .listTop .title {
+			margin-right:5px;
+			font-weight:bold;
+			}
+		#onlineVote .listTop .num {
+			font-family:verdana;
+			letter-spacing:-1px;
+			}
+	#onlineVote .listContent {
+		padding:13px 0;
+		line-height:150%;
+		border-top:#aeaeae 3px solid;
+		border-bottom:#aeaeae 3px solid;
+		}
+		#onlineVote .voteBtn {
+			display:inline;
+			float:right;
+			margin-top:5px;
+			margin-right:3px;
+			}

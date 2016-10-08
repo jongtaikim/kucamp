@@ -1,0 +1,37 @@
+<!-- Editor -->
+<script type="text/javascript" src="/SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
+
+<input type="hidden" name="mmcode" id="mmcode" value="{mcode}">
+<textarea name="%name%" id="%name%" style="width: %width%;height:%height%;" nofocus  errmsg="본문을 작성해주세요." required hname="본문" rows="10">%content%</textarea>
+
+<script language="Javascript">
+var oEditors = [];
+nhn.husky.EZCreator.createInIFrame({
+	oAppRef: oEditors,
+	elPlaceHolder: "%name%",
+	sSkinURI: "/SE2/SEditorDemoSkin2.html",
+	fCreator: "createSEditorInIFrame"
+});
+//nhn.husky.EZCreator.createInIFrame(oEditors, "%name%", "/SE/SEditorSkin_basic2.html", "createSEditorInIFrame");
+
+function _onSubmit(elClicked){
+	// 에디터의 내용을 에디터 생성시에 사용했던 textarea에 넣어 줍니다.
+	oEditors.getById["%name%"].exec("UPDATE_IR_FIELD", []);
+	$('%name%').value = oEditors.getById["%name%"].getIR();
+	// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("ir1").value를 이용해서 처리하면 됩니다.
+
+	try{
+	 if(validate(elClicked.form)){
+		
+		elClicked.form.submit();
+	 }
+	}catch(e){}
+}
+
+function pasteHTMLDemo(tag){
+	sHTML = tag;
+	oEditors.getById["%name%"].exec("PASTE_HTML", [sHTML]);
+}
+
+
+</script>

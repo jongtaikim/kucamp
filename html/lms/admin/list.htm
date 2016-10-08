@@ -1,0 +1,183 @@
+<style type="text/css" title="">
+td{text-align:center}
+</style>
+<script type="text/javascript">
+// <![CDATA[
+
+function checkSelected() {
+	form = document.forms['itemForm'];
+	ids = form.elements['ids[]'];
+	if (!ids) return false;
+	if (!ids.length) ids = [ids];
+	flag = false;
+	for (i = 0,cnt=ids.length; i<cnt; i++) {
+		if (ids[i].checked) {
+			flag = true;
+			break;
+		}
+	}
+	if(!flag) {
+		alert('{=_la("항목을 선택하여 주십시오.")}');
+		return false;
+	}
+	return true;
+}
+
+
+
+function checkall() {
+
+var all = document.getElementById("all").value;
+
+if ( all == 'Y')
+{
+uncheckall() 
+ return;
+
+}else{
+  var form = document.itemForm;
+  for (i=0; i < form.elements.length; i++) {
+ if (form.elements[i].name =="ids[]") {
+    form.elements[i].checked = true;
+	
+ }
+  }
+  document.itemForm.all.value = "Y";
+ 
+  
+  return;
+}
+}
+
+function uncheckall() {
+  var form = document.itemForm;
+  for (i=0; i < form.elements.length; i++) {
+ if (form.elements[i].name =="ids[]") {
+  form.elements[i].checked = false;
+ }
+  }
+  document.itemForm.all.value = "";
+
+ return;
+}
+
+
+function deleteItem() {
+	form = document.forms['itemForm'];
+	if (!checkSelected()) return false;
+	if (!confirm('선택하신 교육을 삭제 하시겠습니까?')) return false;
+
+	form.elements['mode'].value = 'delete';
+	form.method="post";
+	form.submit();
+}
+// ]]>
+</script>
+
+
+<div class="" id="ajax_info"></div>
+
+
+<div class="tab">
+	<ul>
+		<li  {? !ccode}class="on"{/}>
+			<a href="/lms.admin.list?PageNum=040102">전체</a>
+		</li>
+		{@ cate_LIST}
+		<li  {? .num_ccode == ccode} class="on"{/}>
+			<a href="/lms.admin.list?ccode={.num_ccode}&PageNum=040102">{.str_title}</a>
+		</li>
+		{/}
+	</ul>
+</div>
+
+
+<form method="POST" id="itemForm" name="itemForm">
+<input type="hidden" name="all" id="all" >
+<input type="hidden" name="mode" id="mode" >
+<input type="hidden" name="types" id="types" >
+
+	<!--ui object -->
+	<table class="tbl_type" border="1" cellspacing="0" summary="교육 목록리스트" style="margin-top:20px">
+	<caption>등록별 교육목록</caption>
+	<colgroup>
+		<col width="5%">
+		<!--col width="12%"-->
+		<col width="8%">
+		<col width="8%">
+		<col>  
+		<col width="17%">
+		<col width="15%">
+		
+		<col width="10%">
+		<col width="8%">
+		<col width="8%">
+
+		
+	</colgroup>  
+
+	<thead>
+		<tr >
+			<th style="text-align:center"><input type="checkbox" name="" onclick ="checkall();"></th>
+			<!--th style="text-align:center">이미지</th-->
+			<th style="text-align:center">기수</th>
+			<th style="text-align:center">시즌</th>
+			<th style="text-align:center">켐프 프로그램</th>
+			<th style="text-align:center">구분(장소)</th>
+			
+			
+			<th style="text-align:center">대상</th>
+			<th style="text-align:center">교육비</th>
+			<th style="text-align:center">숨김</th>
+			<th style="text-align:center">상태</th>
+		</tr>
+	</thead>
+	<tbody>
+		{@ LIST}
+		<tr >
+			<td style="text-align:center"><input type="checkbox" name="ids[]" value="{.num_serial}"></td>
+			<!--td><a href="/lms.admin.add?serial={.num_serial}"><img src="/hosts/<?=HOST?>/lms/{.str_file}_100" width="60px" onerror="this.src='/image/noimage.gif'"  style="border:1px solid #cdcdcd"/></a></td-->
+			
+			<td>제{.num_serial}기</td>
+			<td>{.str_sw}</td>
+
+			<td style="text-align:left">
+				<a href="/lms.admin.add?ccode={.num_ccode}&serial={.num_serial}">
+					<p>
+						<span style="color:#9933ff">{.str_ccode_text} 제{.num_serial}기</span>
+					</p>
+					<p>{.start_date}~{.end_date}</p>
+					
+				</a>
+		 
+			</td>
+			<td>{.str_camp_area}</td>
+			
+			<td>{.str_target}</td>
+			<td>{=number_format(.num_price)}원</td>
+			<td>
+				{? .str_view == "y"}표출{:}숨김{/}
+			
+			</td>
+			<td>
+				{? .num_st == "1"}<span style="color:#0033ff">접수중</span>{/}
+				{? .num_st == "2"}<span style="color:#ff00cc">마감임박</span>{/}
+				{? .num_st == "3"}<span style="color:#990033">마감</span>{/}
+				{? .num_st == "4"}<span style="color:#990033">마감-전화요망</span>{/}
+			</td>
+
+		</tr>
+		{/}
+	</tbody>
+	</table>
+
+
+	<div style="margin:10px 0 10px 0;border-bottom:1px solid #cdcdcd">
+		<wa:paging runat="server" total="{total}" numberformat=" %n " listnum="{listnum}" class="paginate_complex"/>
+	</div>
+	<div >
+		<span class="btn_pack medium icon" style="float:left"><span class="delete"></span><a href="#" onclick="deleteItem();">선택 삭제</a></span>
+		<span class="btn_pack medium icon" style="float:right"><span class="add"></span><a href="/lms.admin.add?ccode={ccode}">신규등록</a></span>
+	</div>
+
+</form>

@@ -1,0 +1,454 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>스마트에디터 데모 페이지</title>
+<link href="css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jindo.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/Husky.SE_Basic.js" charset="utf-8"></script>
+</head>
+<body>
+<p><u><a href="SEditorDemo.html">로컬 데모 입니다. 실제 적용은 SEditorDemo.html을 참고 해 주십시오.</a></u></p>
+<form action="sample.php" method="post">
+	<p>
+		<input type="button" onclick="pasteHTMLDemo()" value="본문에 HTML 삽입"></input>
+		<input type="button" onclick="showHTML()" value="본문 HTML 보기"></input>
+		<input type="button" onclick="_onSubmit(this)" value="서버에 전송"></input>
+	</p>
+	<textarea name="ir1" id="ir1" style="width:800px; height:300px; display:none">에디터에 기본으로 삽입할 글(수정모드)이 없다면 이 값을 지정하지 않으시면 됩니다.</textarea>
+<div id="smart_editor" class="smart_editor">
+	<div id="smart_content"> <a href="#husky_iframe" class="skip">&raquo; 편집 도구모음 건너뛰기</a>
+		<div class="tool">
+			<ul class="type">
+				<li class="husky_seditor_ui_fontName">
+					<select class="husky_seditor_ui_fontName_select">
+						<option value="">글꼴</option>
+						<option value="dotum" style="font-family:Dotum">돋움</option>
+						<option value="gulim" style="font-family:Gulim">굴림</option>
+						<option value="batang" style="font-family:Batang">바탕</option>
+						<option value="arial" style="font-family:Arial">Arial</option>
+						<option value="arial black" style="font-family:'Arial Black'">Arial Black</option>
+						<option value="tahoma" style="font-family:Tahoma">Tahoma</option>
+						<option value="verdana" style="font-family:Verdana">Verdana</option>
+						<option value="sans-serif" style="font-family:Sans-serif">Sans-serif</option>
+						<option value="serif" style="font-family:Serif">Serif</option>
+						<option value="monospace" style="font-family:Monospace">Monospace</option>
+						<option value="cursive" style="font-family:Cursive">Cursive</option>
+						<option value="fantasy" style="font-family:Fantasy">Fantasy</option>
+					</select>
+				</li>
+				<li class="husky_seditor_ui_fontSize">
+					<select class="husky_seditor_ui_fontSize_select">
+						<option value="">크기</option>
+						<option value="9px" style="font-size:9px">9px</option>
+						<option value="10px" style="font-size:10px">10px</option>
+						<option value="11px" style="font-size:11px">11px</option>
+						<option value="12px" style="font-size:12px">12px</option>
+						<option value="13px" style="font-size:13px">13px</option>
+						<option value="14px" style="font-size:14px">14px</option>
+						<option value="16px" style="font-size:16px">16px</option>
+						<option value="18px" style="font-size:18px">18px</option>
+						<option value="24px" style="font-size:24px">24px</option>
+						<option value="32px" style="font-size:32px">32px</option>
+					</select>
+				</li>
+				<li class="husky_seditor_ui_lineHeight">
+					<select class="husky_seditor_ui_lineHeight_select">
+						<option value="">줄간격</option>
+						<option value="1">100%</option>
+						<option value="1.2">120%</option>
+						<option value="1.4">140%</option>
+						<option value="1.6">160%</option>
+						<option value="1.8">180%</option>
+						<option value="2">200%</option>
+					</select>
+				</li>
+			</ul>
+			<ul class="style">
+				<li class="bold husky_seditor_ui_bold">
+					<button type="button" title="굵은글꼴[Ctrl+B]"><span>굵은글꼴</span></button>
+				</li>
+				<li class="underline husky_seditor_ui_underline">
+					<button type="button" title="밑줄[Ctrl+U]"><span>밑줄</span></button>
+				</li>
+				<li class="italic husky_seditor_ui_italic">
+					<button type="button" title="기울임글꼴[Ctrl+I]"><span>기울임글꼴</span></button>
+				</li>
+				<li class="del husky_seditor_ui_lineThrough">
+					<button type="button" title="취소선[Ctrl+D]"><span>취소선</span></button>
+				</li>
+				<li class="fcolor husky_seditor_ui_fontColor">
+					<button type="button" title="글자색"><span>글자색</span></button>
+					<!-- 팔레트 레이어 -->
+					<div class="layer husky_seditor_fontcolor_layer" style="display:none;">
+						<ul class="palette husky_seditor_color_palette">
+							<li><button type="button" title="#ff0000" style="background:#ff0000"><span>#ff0000</span></button></li>
+							<li><button type="button" title="#ff6c00" style="background:#ff6c00"><span>#ff6c00</span></button></li>
+							<li><button type="button" title="#ffaa00" style="background:#ffaa00"><span>#ffaa00</span></button></li>
+							<li><button type="button" title="#ffef00" style="background:#ffef00"><span>#ffef00</span></button></li>
+							<li><button type="button" title="#a6cf00" style="background:#a6cf00"><span>#a6cf00</span></button></li>
+							<li><button type="button" title="#009e25" style="background:#009e25"><span>#009e25</span></button></li>
+							<li><button type="button" title="#00b0a2" style="background:#00b0a2"><span>#00b0a2</span></button></li>
+							<li><button type="button" title="#0075c8" style="background:#0075c8"><span>#0075c8</span></button></li>
+							<li><button type="button" title="#3a32c3" style="background:#3a32c3"><span>#3a32c3</span></button></li>
+							<li><button type="button" title="#7820b9" style="background:#7820b9"><span>#7820b9</span></button></li>
+							<li><button type="button" title="#ef007c" style="background:#ef007c"><span>#ef007c</span></button></li>
+							<li><button type="button" title="#000000" style="background:#000000"><span>#000000</span></button></li>
+							<li><button type="button" title="#252525" style="background:#252525"><span>#252525</span></button></li>
+							<li><button type="button" title="#464646" style="background:#464646"><span>#464646</span></button></li>
+							<li><button type="button" title="#636363" style="background:#636363"><span>#636363</span></button></li>
+							<li><button type="button" title="#7d7d7d" style="background:#7d7d7d"><span>#7d7d7d</span></button></li>
+							<li><button type="button" title="#9a9a9a" style="background:#9a9a9a"><span>#9a9a9a</span></button></li>
+							<li><button type="button" title="#ffe8e8" style="background:#ffe8e8"><span>#ffe8e8</span></button></li>
+							<li><button type="button" title="#f7e2d2" style="background:#f7e2d2"><span>#f7e2d2</span></button></li>
+							<li><button type="button" title="#f5eddc" style="background:#f5eddc"><span>#f5eddc</span></button></li>
+							<li><button type="button" title="#f5f4e0" style="background:#f5f4e0"><span>#f5f4e0</span></button></li>
+							<li><button type="button" title="#edf2c2" style="background:#edf2c2"><span>#edf2c2</span></button></li>
+							<li><button type="button" title="#def7e5" style="background:#def7e5"><span>#def7e5</span></button></li>
+							<li><button type="button" title="#d9eeec" style="background:#d9eeec"><span>#d9eeec</span></button></li>
+							<li><button type="button" title="#c9e0f0" style="background:#c9e0f0"><span>#c9e0f0</span></button></li>
+							<li><button type="button" title="#d6d4eb" style="background:#d6d4eb"><span>#d6d4eb</span></button></li>
+							<li><button type="button" title="#e7dbed" style="background:#e7dbed"><span>#e7dbed</span></button></li>
+							<li><button type="button" title="#f1e2ea" style="background:#f1e2ea"><span>#f1e2ea</span></button></li>
+							<li><button type="button" title="#acacac" style="background:#acacac"><span>#acacac</span></button></li>
+							<li><button type="button" title="#c2c2c2" style="background:#c2c2c2"><span>#c2c2c2</span></button></li>
+							<li><button type="button" title="#cccccc" style="background:#cccccc"><span>#cccccc</span></button></li>
+							<li><button type="button" title="#e1e1e1" style="background:#e1e1e1"><span>#e1e1e1</span></button></li>
+							<li><button type="button" title="#ebebeb" style="background:#ebebeb"><span>#ebebeb</span></button></li>
+							<li><button type="button" title="#ffffff" style="background:#ffffff"><span>#ffffff</span></button></li>
+							<li><button type="button" title="#e97d81" style="background:#e97d81"><span>#e97d81</span></button></li>
+							<li><button type="button" title="#e19b73" style="background:#e19b73"><span>#e19b73</span></button></li>
+							<li><button type="button" title="#d1b274" style="background:#d1b274"><span>#d1b274</span></button></li>
+							<li><button type="button" title="#cfcca2" style="background:#cfcca2"><span>#cfcca2</span></button></li>
+							<li><button type="button" title="#cfcca2" style="background:#cfcca2"><span>#cfcca2</span></button></li>
+							<li><button type="button" title="#61b977" style="background:#61b977"><span>#61b977</span></button></li>
+							<li><button type="button" title="#53aea8" style="background:#53aea8"><span>#53aea8</span></button></li>
+							<li><button type="button" title="#518fbb" style="background:#518fbb"><span>#518fbb</span></button></li>
+							<li><button type="button" title="#6a65bb" style="background:#6a65bb"><span>#6a65bb</span></button></li>
+							<li><button type="button" title="#9a54ce" style="background:#9a54ce"><span>#9a54ce</span></button></li>
+							<li><button type="button" title="#e573ae" style="background:#e573ae"><span>#e573ae</span></button></li>
+							<li><button type="button" title="#5a504b" style="background:#5a504b"><span>#5a504b</span></button></li>
+							<li><button type="button" title="#767b86" style="background:#767b86"><span>#767b86</span></button></li>
+							<li><button type="button" title="#00ffff" style="background:#00ffff"><span>#00ffff</span></button></li>
+							<li><button type="button" title="#00ff00" style="background:#00ff00"><span>#00ff00</span></button></li>
+							<li><button type="button" title="#a0f000" style="background:#a0f000"><span>#a0f000</span></button></li>
+							<li><button type="button" title="#ffff00" style="background:#ffff00"><span>#ffff00</span></button></li>
+							<li><button type="button" title="#951015" style="background:#951015"><span>#951015</span></button></li>
+							<li><button type="button" title="#6e391a" style="background:#6e391a"><span>#6e391a</span></button></li>
+							<li><button type="button" title="#785c25" style="background:#785c25"><span>#785c25</span></button></li>
+							<li><button type="button" title="#5f5b25" style="background:#5f5b25"><span>#5f5b25</span></button></li>
+							<li><button type="button" title="#4c511f" style="background:#4c511f"><span>#4c511f</span></button></li>
+							<li><button type="button" title="#1c4827" style="background:#1c4827"><span>#1c4827</span></button></li>
+							<li><button type="button" title="#0d514c" style="background:#0d514c"><span>#0d514c</span></button></li>
+							<li><button type="button" title="#1b496a" style="background:#1b496a"><span>#1b496a</span></button></li>
+							<li><button type="button" title="#2b285f" style="background:#2b285f"><span>#2b285f</span></button></li>
+							<li><button type="button" title="#45245b" style="background:#45245b"><span>#45245b</span></button></li>
+							<li><button type="button" title="#721947" style="background:#721947"><span>#721947</span></button></li>
+							<li><button type="button" title="#352e2c" style="background:#352e2c"><span>#352e2c</span></button></li>
+							<li><button type="button" title="#3c3f45" style="background:#3c3f45"><span>#3c3f45</span></button></li>
+							<li><button type="button" title="#00aaff" style="background:#00aaff"><span>#00aaff</span></button></li>
+							<li><button type="button" title="#0000ff" style="background:#0000ff"><span>#0000ff</span></button></li>
+							<li><button type="button" title="#a800ff" style="background:#a800ff"><span>#a800ff</span></button></li>
+							<li><button type="button" title="#ff00ff" style="background:#ff00ff"><span>#ff00ff</span></button></li>
+						</ul>
+					</div>
+					<!-- /팔레트 레이어 -->
+				</li>
+				<li class="bcolor husky_seditor_ui_bgColor">
+					<button type="button" title="배경색"><span>배경색</span></button>
+					<!-- 배경색 + 팔레트 레이어 -->
+					<div class="layer husky_seditor_bgcolor_layer" style="display:none;">
+						<ul class="background">
+							<li><button type="button" title="#000000" style="background:#000000; color:#ffffff"><span>가나다</span></button></li>
+							<li><button type="button" title="#9334d8" style="background:#9334d8; color:#ffffff"><span>가나다</span></button></li>
+							<li><button type="button" title="#ff0000" style="background:#ff0000; color:#ffffff"><span>가나다</span></button></li>
+							<li><button type="button" title="#333333" style="background:#333333; color:#ffff00"><span>가나다</span></button></li>
+							<li><button type="button" title="#0000ff" style="background:#0000ff; color:#ffffff"><span>가나다</span></button></li>
+							<li><button type="button" title="#ff6600" style="background:#ff6600; color:#ffffff"><span>가나다</span></button></li>
+							<li><button type="button" title="#8e8e8e" style="background:#8e8e8e; color:#ffffff"><span>가나다</span></button></li>
+							<li><button type="button" title="#009999" style="background:#009999; color:#ffffff"><span>가나다</span></button></li>
+							<li><button type="button" title="#ffa700" style="background:#ffa700; color:#ffffff"><span>가나다</span></button></li>
+							<li><button type="button" title="#ffdaed" style="background:#ffdaed; color:#000000"><span>가나다</span></button></li>
+							<li><button type="button" title="#e4ff75" style="background:#e4ff75; color:#000000"><span>가나다</span></button></li>
+							<li><button type="button" title="#cc9900" style="background:#cc9900; color:#ffffff"><span>가나다</span></button></li>
+							<li><button type="button" title="#99dcff" style="background:#99dcff; color:#000000"><span>가나다</span></button></li>
+							<li><button type="button" title="#a6ff4d" style="background:#a6ff4d; color:#000000"><span>가나다</span></button></li>
+							<li><button type="button" title="#ffffff" style="background:#ffffff; color:#000000"><span>가나다</span></button></li>
+						</ul>
+					</div>
+					<!-- /배경색 + 팔레트 레이어 -->
+				</li>
+				<li class="sup husky_seditor_ui_superscript">
+					<button type="button" title="윗첨자"><span>윗첨자</span></button>
+				</li>
+				<li class="sub husky_seditor_ui_subscript">
+					<button type="button" title="아래첨자"><span>아래첨자</span></button>
+				</li>
+			</ul>
+			<ul class="paragraph">
+				<li class="left husky_seditor_ui_justifyleft">
+					<button type="button" title="왼쪽정렬"><span>왼쪽정렬</span></button>
+				</li>
+				<li class="center husky_seditor_ui_justifycenter">
+					<button type="button" title="가운데정렬"><span>가운데정렬</span></button>
+				</li>
+				<li class="right husky_seditor_ui_justifyright">
+					<button type="button" title="오른쪽정렬"><span>오른쪽정렬</span></button>
+				</li>
+				<li class="justify husky_seditor_ui_justifyfull">
+					<button type="button" title="양쪽정렬"><span>양쪽정렬</span></button>
+				</li>
+				<li class="ol husky_seditor_ui_orderedlist">
+					<button type="button" title="순차목록"><span>순차목록</span></button>
+				</li>
+				<li class="ul husky_seditor_ui_unorderedlist">
+					<button type="button" title="비순차목록"><span>비순차목록</span></button>
+				</li>
+				<li class="outdent husky_seditor_ui_outdent">
+					<button type="button" title="내어쓰기[Shift+Tab]"><span>내어쓰기</span></button>
+				</li>
+				<li class="indent husky_seditor_ui_indent">
+					<button type="button" title="들여쓰기[Tab]"><span>들여쓰기</span></button>
+				</li>
+			</ul>
+			<ul class="extra">
+				<li class="blockquote husky_seditor_ui_quote">
+					<button type="button" title="인용"><span>인용</span></button>
+					<!-- 인용 레이어 -->
+					<div class="layer husky_seditor_blockquote_layer" style="display:none">
+						<ul>
+							<li class="q1"><button type="button"><span>왼쪽 실선</span></button></li>
+							<li class="q2"><button type="button"><span>인용 부호</span></button></li>
+							<li class="q3"><button type="button"><span>실선</span></button></li>
+							<li class="q4"><button type="button"><span>실선 + 배경</span></button></li>
+							<li class="q5"><button type="button"><span>굵은 실선</span></button></li>
+							<li class="q6"><button type="button"><span>점선</span></button></li>
+							<li class="q7"><button type="button"><span>점선 + 배경</span></button></li>
+							<li class="q8"><button type="button"><span>적용 취소</span></button></li>
+						</ul>
+					</div>
+					<!-- /인용 레이어 -->
+				</li>
+				<li class="url husky_seditor_ui_hyperlink">
+					<button type="button" title="링크"><span>URL</span></button>
+					<!-- URL 레이어 -->
+					<div class="layer husky_seditor_hyperlink_layer" style="display:none;">
+						<fieldset>
+							<h3>하이퍼링크</h3>
+							<input name="" class="link" type="text" value="http://" title="URL" />
+							<p><input name="" id="target" type="checkbox" value="" /><label for="target">새창으로</label></p>
+						</fieldset>
+						<div class="btn_area">
+							<button type="button" class="confirm" title="확인"><span>확인</span></button>
+							<button type="button" class="cancel" title="취소"><span>취소</span></button>
+
+						</div>
+
+					</div>
+					<!-- /URL 레이어 -->
+				</li>
+				<li class="table husky_seditor_ui_table">
+					<button type="button" title="표"><span>표</span></button>
+					<!-- 표 레이어 -->
+					<div class="layer husky_seditor_table_layer" style="display:none;">
+						<fieldset class="num">
+							<h3>칸 수 지정</h3>
+							<dl>
+								<dt>
+									<label for="row">행</label>
+								</dt>
+								<dd>
+									<input id="row" name="" type="text" maxlength="2" value="4" />
+									<button type="button" class="add"><span>1행추가</span></button>
+									<button type="button" class="del"><span>1행삭제</span></button>
+								</dd>
+								<dt>
+									<label for="col">열</label>
+								</dt>
+								<dd>
+									<input id="col" name="" type="text" maxlength="2" value="4" />
+									<button type="button" class="add"><span>1행추가</span></button>
+									<button type="button" class="del"><span>1행삭제</span></button>
+								</dd>
+							</dl>
+							<table border="1">
+								<tr>
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+									<td>&nbsp;</td>
+								</tr>
+							</table>
+						</fieldset>
+						<fieldset class="color">
+							<h3>표 속성 지정</h3>
+							<dl>
+								<dt>
+									<label for="table_border_width">테두리 굵기</label>
+								</dt>
+								<dd>
+									<input id="table_border_width" name="" type="text" maxlength="2" value="1" />
+									<button type="button" class="add"><span>1px 더하기</span></button>
+									<button type="button" class="del"><span>1px 빼기</span></button>
+								</dd>
+								<dt>
+									<label for="table_border_color">테두리 색</label>
+								</dt>
+								<dd>
+									<span class="preview_palette"><button type="button" style="background:#cccccc;">색상찾기</button></span>
+									<input id="table_border_color" name="" type="text" maxlength="7" value="#CCCCCC" />
+									<button type="button" class="find_palette"><span>색상찾기</span></button>
+								</dd>
+								<dt>
+									<label for="table_bg_color">표 배경색</label>
+								</dt>
+								<dd>
+									<span class="preview_palette"><button type="button" style="background:#000000;">색상찾기</button></span>
+									<input id="table_bg_color" name="" type="text" maxlength="7" value="#000000" />
+									<button type="button" class="find_palette"><span>색상찾기</span></button>
+								</dd>
+							</dl>
+						</fieldset>
+						<div class="btn_area">
+							<button type="button" class="confirm" title="확인"><span>확인</span></button>
+							<button type="button" class="cancel" title="취소"><span>취소</span></button>
+						</div>
+					</div>
+					<!-- /표 레이어 -->
+				</li>
+				<li class="character husky_seditor_ui_sCharacter">
+					<button type="button" title="특수문자"><span>특수문자</span></button>
+					<!-- 특수문자 레이어 -->
+					<div class="layer husky_seditor_sCharacter_layer" style="display:none">
+						<h3>특수문자 삽입</h3>
+						<button type="button" class="close" title="특수문자 레이어 닫기"><span>특수문자 레이어 닫기</span></button>
+						<ul class="nav">
+							<li><a href="#character1" class="on" onclick="return false">일반기호</a></li>
+							<li><a href="#character2" onclick="return false">숫자와 단위</a></li>
+							<li><a href="#character3" onclick="return false">원,괄호</a></li>
+							<li><a href="#character4" onclick="return false">한글</a></li>
+							<li><a href="#character5" onclick="return false">그리스,라틴어</a></li>
+							<li><a href="#character6" onclick="return false">일본어</a></li>
+						</ul>
+						<ul style="display: block;" id="character1" class="list"><li><button type="button" class=""><span>｛</span></button></li><li><button type="button" class=""><span>｝</span></button></li><li><button type="button" class=""><span>〔</span></button></li><li><button type="button"><span>〕</span></button></li><li><button type="button"><span>〈</span></button></li><li><button type="button"><span>〉</span></button></li><li><button type="button"><span>《</span></button></li><li><button type="button"><span>》</span></button></li><li><button type="button" class=""><span>「</span></button></li><li><button type="button" class=""><span>」</span></button></li><li><button type="button"><span>『</span></button></li><li><button type="button"><span>』</span></button></li><li><button type="button"><span>【</span></button></li><li><button type="button"><span>】</span></button></li><li><button type="button"><span>‘</span></button></li><li><button type="button"><span>’</span></button></li><li><button type="button"><span>“</span></button></li><li><button type="button"><span>”</span></button></li><li><button type="button"><span>、</span></button></li><li><button type="button"><span>。</span></button></li><li><button type="button" class=""><span>·</span></button></li><li><button type="button"><span>‥</span></button></li><li><button type="button" class=""><span>…</span></button></li><li><button type="button" class=""><span>§</span></button></li><li><button type="button" class=""><span>※</span></button></li><li><button type="button" class=""><span>☆</span></button></li><li><button type="button"><span>★</span></button></li><li><button type="button" class=""><span>○</span></button></li><li><button type="button" class=""><span>●</span></button></li><li><button type="button" class=""><span>◎</span></button></li><li><button type="button"><span>◇</span></button></li><li><button type="button" class=""><span>◆</span></button></li><li><button type="button"><span>□</span></button></li><li><button type="button"><span>■</span></button></li><li><button type="button"><span>△</span></button></li><li><button type="button"><span>▲</span></button></li><li><button type="button"><span>▽</span></button></li><li><button type="button"><span>▼</span></button></li><li><button type="button"><span>◁</span></button></li><li><button type="button"><span>◀</span></button></li><li><button type="button" class=""><span>▷</span></button></li><li><button type="button" class=""><span>▶</span></button></li><li><button type="button" class=""><span>♤</span></button></li><li><button type="button" class=""><span>♠</span></button></li><li><button type="button" class=""><span>♡</span></button></li><li><button type="button" class=""><span>♥</span></button></li><li><button type="button" class=""><span>♧</span></button></li><li><button type="button" class=""><span>♣</span></button></li><li><button type="button" class=""><span>⊙</span></button></li><li><button type="button" class=""><span>◈</span></button></li><li><button type="button" class=""><span>▣</span></button></li><li><button type="button" class=""><span>◐</span></button></li><li><button type="button" class=""><span>◑</span></button></li><li><button type="button" class=""><span>▒</span></button></li><li><button type="button" class=""><span>▤</span></button></li><li><button type="button" class=""><span>▥</span></button></li><li><button type="button"><span>▨</span></button></li><li><button type="button"><span>▧</span></button></li><li><button type="button"><span>▦</span></button></li><li><button type="button"><span>▩</span></button></li><li><button type="button"><span>±</span></button></li><li><button type="button" class=""><span>×</span></button></li><li><button type="button" class=""><span>÷</span></button></li><li><button type="button" class=""><span>≠</span></button></li><li><button type="button" class=""><span>≤</span></button></li><li><button type="button" class=""><span>≥</span></button></li><li><button type="button" class=""><span>∞</span></button></li><li><button type="button" class=""><span>∴</span></button></li><li><button type="button" class=""><span>°</span></button></li><li><button type="button" class=""><span>′</span></button></li><li><button type="button" class=""><span>″</span></button></li><li><button type="button" class=""><span>∠</span></button></li><li><button type="button" class=""><span>⊥</span></button></li><li><button type="button" class=""><span>⌒</span></button></li><li><button type="button" class=""><span>∂</span></button></li><li><button type="button" class=""><span>≡</span></button></li><li><button type="button" class=""><span>≒</span></button></li><li><button type="button" class=""><span>≪</span></button></li><li><button type="button"><span>≫</span></button></li><li><button type="button"><span>√</span></button></li><li><button type="button"><span>∽</span></button></li><li><button type="button"><span>∝</span></button></li><li><button type="button" class=""><span>∵</span></button></li><li><button type="button" class=""><span>∫</span></button></li><li><button type="button" class=""><span>∬</span></button></li><li><button type="button" class=""><span>∈</span></button></li><li><button type="button" class=""><span>∋</span></button></li><li><button type="button" class=""><span>⊆</span></button></li><li><button type="button" class=""><span>⊇</span></button></li><li><button type="button" class=""><span>⊂</span></button></li><li><button type="button" class=""><span>⊃</span></button></li><li><button type="button"><span>∪</span></button></li><li><button type="button"><span>∩</span></button></li><li><button type="button"><span>∧</span></button></li><li><button type="button" class=""><span>∨</span></button></li><li><button type="button"><span>￢</span></button></li><li><button type="button"><span>⇒</span></button></li><li><button type="button"><span>⇔</span></button></li><li><button type="button"><span>∀</span></button></li><li><button type="button"><span>∃</span></button></li><li><button type="button"><span>´</span></button></li><li><button type="button"><span>～</span></button></li><li><button type="button"><span>ˇ</span></button></li><li><button type="button"><span>˘</span></button></li><li><button type="button"><span>˝</span></button></li><li><button type="button"><span>˚</span></button></li><li><button type="button" class=""><span>˙</span></button></li><li><button type="button" class=""><span>¸</span></button></li><li><button type="button" class=""><span>˛</span></button></li><li><button type="button" class=""><span>¡</span></button></li><li><button type="button"><span>¿</span></button></li><li><button type="button"><span>ː</span></button></li><li><button type="button" class=""><span>∮</span></button></li><li><button type="button" class=""><span>∑</span></button></li><li><button type="button" class=""><span>∏</span></button></li><li><button type="button"><span>♭</span></button></li><li><button type="button"><span>♩</span></button></li><li><button type="button"><span>♪</span></button></li><li><button type="button"><span>♬</span></button></li><li><button type="button"><span>㉿</span></button></li><li><button type="button"><span>→</span></button></li><li><button type="button"><span>←</span></button></li><li><button type="button"><span>↑</span></button></li><li><button type="button"><span>↓</span></button></li><li><button type="button"><span>↔</span></button></li><li><button type="button"><span>↕</span></button></li><li><button type="button"><span>↗</span></button></li><li><button type="button"><span>↙</span></button></li><li><button type="button"><span>↖</span></button></li><li><button type="button"><span>↘</span></button></li><li><button type="button"><span>㈜</span></button></li><li><button type="button" class=""><span>№</span></button></li><li><button type="button" class=""><span>㏇</span></button></li><li><button type="button" class=""><span>™</span></button></li><li><button type="button" class=""><span>㏂</span></button></li><li><button type="button" class=""><span>㏘</span></button></li><li><button type="button" class=""><span>℡</span></button></li><li><button type="button" class=""><span>♨</span></button></li><li><button type="button"><span>☏</span></button></li><li><button type="button"><span>☎</span></button></li><li><button type="button"><span>☜</span></button></li><li><button type="button"><span>☞</span></button></li><li><button type="button"><span>¶</span></button></li><li><button type="button"><span>†</span></button></li><li><button type="button"><span>‡</span></button></li><li><button type="button"><span>®</span></button></li><li><button type="button"><span>ª</span></button></li><li><button type="button"><span>º</span></button></li><li><button type="button"><span>♂</span></button></li><li><button type="button"><span>♀</span></button></li></ul>
+						<ul style="display: none;" id="character2" class="list"><li><button type="button"><span>½</span></button></li><li><button type="button"><span>⅓</span></button></li><li><button type="button"><span>⅔</span></button></li><li><button type="button"><span>¼</span></button></li><li><button type="button"><span>¾</span></button></li><li><button type="button"><span>⅛</span></button></li><li><button type="button"><span>⅜</span></button></li><li><button type="button"><span>⅝</span></button></li><li><button type="button"><span>⅞</span></button></li><li><button type="button"><span>¹</span></button></li><li><button type="button"><span>²</span></button></li><li><button type="button"><span>³</span></button></li><li><button type="button"><span>⁴</span></button></li><li><button type="button"><span>ⁿ</span></button></li><li><button type="button"><span>₁</span></button></li><li><button type="button"><span>₂</span></button></li><li><button type="button"><span>₃</span></button></li><li><button type="button"><span>₄</span></button></li><li><button type="button"><span>Ⅰ</span></button></li><li><button type="button"><span>Ⅱ</span></button></li><li><button type="button"><span>Ⅲ</span></button></li><li><button type="button"><span>Ⅳ</span></button></li><li><button type="button"><span>Ⅴ</span></button></li><li><button type="button"><span>Ⅵ</span></button></li><li><button type="button"><span>Ⅶ</span></button></li><li><button type="button"><span>Ⅷ</span></button></li><li><button type="button"><span>Ⅸ</span></button></li><li><button type="button"><span>Ⅹ</span></button></li><li><button type="button"><span>ⅰ</span></button></li><li><button type="button"><span>ⅱ</span></button></li><li><button type="button"><span>ⅲ</span></button></li><li><button type="button"><span>ⅳ</span></button></li><li><button type="button"><span>ⅴ</span></button></li><li><button type="button"><span>ⅵ</span></button></li><li><button type="button"><span>ⅶ</span></button></li><li><button type="button"><span>ⅷ</span></button></li><li><button type="button"><span>ⅸ</span></button></li><li><button type="button"><span>ⅹ</span></button></li><li><button type="button"><span>￦</span></button></li><li><button type="button"><span>$</span></button></li><li><button type="button"><span>￥</span></button></li><li><button type="button"><span>￡</span></button></li><li><button type="button"><span>€</span></button></li><li><button type="button"><span>℃</span></button></li><li><button type="button"><span>Å</span></button></li><li><button type="button"><span>℉</span></button></li><li><button type="button"><span>￠</span></button></li><li><button type="button"><span>¤</span></button></li><li><button type="button"><span>‰</span></button></li><li><button type="button"><span>㎕</span></button></li><li><button type="button"><span>㎖</span></button></li><li><button type="button"><span>㎗</span></button></li><li><button type="button"><span>ℓ</span></button></li><li><button type="button"><span>㎘</span></button></li><li><button type="button"><span>㏄</span></button></li><li><button type="button"><span>㎣</span></button></li><li><button type="button"><span>㎤</span></button></li><li><button type="button"><span>㎥</span></button></li><li><button type="button"><span>㎦</span></button></li><li><button type="button"><span>㎙</span></button></li><li><button type="button"><span>㎚</span></button></li><li><button type="button"><span>㎛</span></button></li><li><button type="button"><span>㎜</span></button></li><li><button type="button"><span>㎝</span></button></li><li><button type="button"><span>㎞</span></button></li><li><button type="button"><span>㎟</span></button></li><li><button type="button"><span>㎠</span></button></li><li><button type="button"><span>㎡</span></button></li><li><button type="button"><span>㎢</span></button></li><li><button type="button"><span>㏊</span></button></li><li><button type="button"><span>㎍</span></button></li><li><button type="button"><span>㎎</span></button></li><li><button type="button"><span>㎏</span></button></li><li><button type="button"><span>㏏</span></button></li><li><button type="button"><span>㎈</span></button></li><li><button type="button"><span>㎉</span></button></li><li><button type="button"><span>㏈</span></button></li><li><button type="button"><span>㎧</span></button></li><li><button type="button"><span>㎨</span></button></li><li><button type="button"><span>㎰</span></button></li><li><button type="button"><span>㎱</span></button></li><li><button type="button"><span>㎲</span></button></li><li><button type="button"><span>㎳</span></button></li><li><button type="button"><span>㎴</span></button></li><li><button type="button"><span>㎵</span></button></li><li><button type="button"><span>㎶</span></button></li><li><button type="button"><span>㎷</span></button></li><li><button type="button"><span>㎸</span></button></li><li><button type="button"><span>㎹</span></button></li><li><button type="button"><span>㎀</span></button></li><li><button type="button"><span>㎁</span></button></li><li><button type="button"><span>㎂</span></button></li><li><button type="button"><span>㎃</span></button></li><li><button type="button"><span>㎄</span></button></li><li><button type="button"><span>㎺</span></button></li><li><button type="button"><span>㎻</span></button></li><li><button type="button"><span>㎼</span></button></li><li><button type="button"><span>㎽</span></button></li><li><button type="button"><span>㎾</span></button></li><li><button type="button"><span>㎿</span></button></li><li><button type="button"><span>㎐</span></button></li><li><button type="button"><span>㎑</span></button></li><li><button type="button"><span>㎒</span></button></li><li><button type="button"><span>㎓</span></button></li><li><button type="button"><span>㎔</span></button></li><li><button type="button"><span>Ω</span></button></li><li><button type="button"><span>㏀</span></button></li><li><button type="button"><span>㏁</span></button></li><li><button type="button"><span>㎊</span></button></li><li><button type="button"><span>㎋</span></button></li><li><button type="button"><span>㎌</span></button></li><li><button type="button"><span>㏖</span></button></li><li><button type="button"><span>㏅</span></button></li><li><button type="button"><span>㎭</span></button></li><li><button type="button"><span>㎮</span></button></li><li><button type="button"><span>㎯</span></button></li><li><button type="button"><span>㏛</span></button></li><li><button type="button"><span>㎩</span></button></li><li><button type="button"><span>㎪</span></button></li><li><button type="button"><span>㎫</span></button></li><li><button type="button"><span>㎬</span></button></li><li><button type="button"><span>㏝</span></button></li><li><button type="button"><span>㏐</span></button></li><li><button type="button"><span>㏓</span></button></li><li><button type="button"><span>㏃</span></button></li><li><button type="button"><span>㏉</span></button></li><li><button type="button"><span>㏜</span></button></li><li><button type="button"><span>㏆</span></button></li></ul>
+						<ul style="display: none;" id="character3" class="list"><li><button type="button"><span>㉠</span></button></li><li><button type="button"><span>㉡</span></button></li><li><button type="button"><span>㉢</span></button></li><li><button type="button"><span>㉣</span></button></li><li><button type="button"><span>㉤</span></button></li><li><button type="button"><span>㉥</span></button></li><li><button type="button"><span>㉦</span></button></li><li><button type="button"><span>㉧</span></button></li><li><button type="button"><span>㉨</span></button></li><li><button type="button"><span>㉩</span></button></li><li><button type="button"><span>㉪</span></button></li><li><button type="button"><span>㉫</span></button></li><li><button type="button"><span>㉬</span></button></li><li><button type="button"><span>㉭</span></button></li><li><button type="button"><span>㉮</span></button></li><li><button type="button"><span>㉯</span></button></li><li><button type="button"><span>㉰</span></button></li><li><button type="button"><span>㉱</span></button></li><li><button type="button"><span>㉲</span></button></li><li><button type="button"><span>㉳</span></button></li><li><button type="button"><span>㉴</span></button></li><li><button type="button"><span>㉵</span></button></li><li><button type="button"><span>㉶</span></button></li><li><button type="button"><span>㉷</span></button></li><li><button type="button"><span>㉸</span></button></li><li><button type="button"><span>㉹</span></button></li><li><button type="button"><span>㉺</span></button></li><li><button type="button"><span>㉻</span></button></li><li><button type="button"><span>ⓐ</span></button></li><li><button type="button"><span>ⓑ</span></button></li><li><button type="button"><span>ⓒ</span></button></li><li><button type="button"><span>ⓓ</span></button></li><li><button type="button"><span>ⓔ</span></button></li><li><button type="button"><span>ⓕ</span></button></li><li><button type="button"><span>ⓖ</span></button></li><li><button type="button"><span>ⓗ</span></button></li><li><button type="button"><span>ⓘ</span></button></li><li><button type="button"><span>ⓙ</span></button></li><li><button type="button"><span>ⓚ</span></button></li><li><button type="button"><span>ⓛ</span></button></li><li><button type="button"><span>ⓜ</span></button></li><li><button type="button"><span>ⓝ</span></button></li><li><button type="button"><span>ⓞ</span></button></li><li><button type="button"><span>ⓟ</span></button></li><li><button type="button"><span>ⓠ</span></button></li><li><button type="button"><span>ⓡ</span></button></li><li><button type="button"><span>ⓢ</span></button></li><li><button type="button"><span>ⓣ</span></button></li><li><button type="button"><span>ⓤ</span></button></li><li><button type="button"><span>ⓥ</span></button></li><li><button type="button"><span>ⓦ</span></button></li><li><button type="button"><span>ⓧ</span></button></li><li><button type="button"><span>ⓨ</span></button></li><li><button type="button"><span>ⓩ</span></button></li><li><button type="button"><span>①</span></button></li><li><button type="button"><span>②</span></button></li><li><button type="button"><span>③</span></button></li><li><button type="button"><span>④</span></button></li><li><button type="button"><span>⑤</span></button></li><li><button type="button"><span>⑥</span></button></li><li><button type="button"><span>⑦</span></button></li><li><button type="button"><span>⑧</span></button></li><li><button type="button"><span>⑨</span></button></li><li><button type="button"><span>⑩</span></button></li><li><button type="button"><span>⑪</span></button></li><li><button type="button"><span>⑫</span></button></li><li><button type="button"><span>⑬</span></button></li><li><button type="button"><span>⑭</span></button></li><li><button type="button"><span>⑮</span></button></li><li><button type="button"><span>㈀</span></button></li><li><button type="button"><span>㈁</span></button></li><li><button type="button"><span>㈂</span></button></li><li><button type="button"><span>㈃</span></button></li><li><button type="button"><span>㈄</span></button></li><li><button type="button"><span>㈅</span></button></li><li><button type="button"><span>㈆</span></button></li><li><button type="button"><span>㈇</span></button></li><li><button type="button"><span>㈈</span></button></li><li><button type="button"><span>㈉</span></button></li><li><button type="button"><span>㈊</span></button></li><li><button type="button"><span>㈋</span></button></li><li><button type="button"><span>㈌</span></button></li><li><button type="button"><span>㈍</span></button></li><li><button type="button"><span>㈎</span></button></li><li><button type="button"><span>㈏</span></button></li><li><button type="button"><span>㈐</span></button></li><li><button type="button"><span>㈑</span></button></li><li><button type="button"><span>㈒</span></button></li><li><button type="button"><span>㈓</span></button></li><li><button type="button"><span>㈔</span></button></li><li><button type="button"><span>㈕</span></button></li><li><button type="button"><span>㈖</span></button></li><li><button type="button"><span>㈗</span></button></li><li><button type="button"><span>㈘</span></button></li><li><button type="button"><span>㈙</span></button></li><li><button type="button"><span>㈚</span></button></li><li><button type="button"><span>㈛</span></button></li><li><button type="button"><span>⒜</span></button></li><li><button type="button"><span>⒝</span></button></li><li><button type="button"><span>⒞</span></button></li><li><button type="button"><span>⒟</span></button></li><li><button type="button"><span>⒠</span></button></li><li><button type="button"><span>⒡</span></button></li><li><button type="button"><span>⒢</span></button></li><li><button type="button"><span>⒣</span></button></li><li><button type="button"><span>⒤</span></button></li><li><button type="button"><span>⒥</span></button></li><li><button type="button"><span>⒦</span></button></li><li><button type="button"><span>⒧</span></button></li><li><button type="button"><span>⒨</span></button></li><li><button type="button"><span>⒩</span></button></li><li><button type="button"><span>⒪</span></button></li><li><button type="button"><span>⒫</span></button></li><li><button type="button"><span>⒬</span></button></li><li><button type="button"><span>⒭</span></button></li><li><button type="button"><span>⒮</span></button></li><li><button type="button"><span>⒯</span></button></li><li><button type="button"><span>⒰</span></button></li><li><button type="button"><span>⒱</span></button></li><li><button type="button"><span>⒲</span></button></li><li><button type="button"><span>⒳</span></button></li><li><button type="button"><span>⒴</span></button></li><li><button type="button"><span>⒵</span></button></li><li><button type="button"><span>⑴</span></button></li><li><button type="button"><span>⑵</span></button></li><li><button type="button"><span>⑶</span></button></li><li><button type="button"><span>⑷</span></button></li><li><button type="button"><span>⑸</span></button></li><li><button type="button"><span>⑹</span></button></li><li><button type="button"><span>⑺</span></button></li><li><button type="button"><span>⑻</span></button></li><li><button type="button"><span>⑼</span></button></li><li><button type="button"><span>⑽</span></button></li><li><button type="button"><span>⑾</span></button></li><li><button type="button"><span>⑿</span></button></li><li><button type="button"><span>⒀</span></button></li><li><button type="button"><span>⒁</span></button></li><li><button type="button"><span>⒂</span></button></li></ul>
+						<ul style="display: none;" id="character4" class="list"><li><button type="button"><span>ㄱ</span></button></li><li><button type="button"><span>ㄲ</span></button></li><li><button type="button"><span>ㄳ</span></button></li><li><button type="button"><span>ㄴ</span></button></li><li><button type="button"><span>ㄵ</span></button></li><li><button type="button"><span>ㄶ</span></button></li><li><button type="button"><span>ㄷ</span></button></li><li><button type="button"><span>ㄸ</span></button></li><li><button type="button"><span>ㄹ</span></button></li><li><button type="button"><span>ㄺ</span></button></li><li><button type="button"><span>ㄻ</span></button></li><li><button type="button"><span>ㄼ</span></button></li><li><button type="button"><span>ㄽ</span></button></li><li><button type="button"><span>ㄾ</span></button></li><li><button type="button"><span>ㄿ</span></button></li><li><button type="button"><span>ㅀ</span></button></li><li><button type="button"><span>ㅁ</span></button></li><li><button type="button"><span>ㅂ</span></button></li><li><button type="button"><span>ㅃ</span></button></li><li><button type="button"><span>ㅄ</span></button></li><li><button type="button"><span>ㅅ</span></button></li><li><button type="button"><span>ㅆ</span></button></li><li><button type="button"><span>ㅇ</span></button></li><li><button type="button"><span>ㅈ</span></button></li><li><button type="button"><span>ㅉ</span></button></li><li><button type="button"><span>ㅊ</span></button></li><li><button type="button"><span>ㅋ</span></button></li><li><button type="button"><span>ㅌ</span></button></li><li><button type="button"><span>ㅍ</span></button></li><li><button type="button"><span>ㅎ</span></button></li><li><button type="button"><span>ㅏ</span></button></li><li><button type="button"><span>ㅐ</span></button></li><li><button type="button"><span>ㅑ</span></button></li><li><button type="button"><span>ㅒ</span></button></li><li><button type="button"><span>ㅓ</span></button></li><li><button type="button"><span>ㅔ</span></button></li><li><button type="button"><span>ㅕ</span></button></li><li><button type="button"><span>ㅖ</span></button></li><li><button type="button"><span>ㅗ</span></button></li><li><button type="button"><span>ㅘ</span></button></li><li><button type="button"><span>ㅙ</span></button></li><li><button type="button"><span>ㅚ</span></button></li><li><button type="button"><span>ㅛ</span></button></li><li><button type="button"><span>ㅜ</span></button></li><li><button type="button"><span>ㅝ</span></button></li><li><button type="button"><span>ㅞ</span></button></li><li><button type="button"><span>ㅟ</span></button></li><li><button type="button"><span>ㅠ</span></button></li><li><button type="button"><span>ㅡ</span></button></li><li><button type="button"><span>ㅢ</span></button></li><li><button type="button"><span>ㅣ</span></button></li><li><button type="button"><span>ㅥ</span></button></li><li><button type="button"><span>ㅦ</span></button></li><li><button type="button"><span>ㅧ</span></button></li><li><button type="button"><span>ㅨ</span></button></li><li><button type="button"><span>ㅩ</span></button></li><li><button type="button"><span>ㅪ</span></button></li><li><button type="button"><span>ㅫ</span></button></li><li><button type="button"><span>ㅬ</span></button></li><li><button type="button"><span>ㅭ</span></button></li><li><button type="button"><span>ㅮ</span></button></li><li><button type="button"><span>ㅯ</span></button></li><li><button type="button"><span>ㅰ</span></button></li><li><button type="button"><span>ㅱ</span></button></li><li><button type="button"><span>ㅲ</span></button></li><li><button type="button"><span>ㅳ</span></button></li><li><button type="button"><span>ㅴ</span></button></li><li><button type="button"><span>ㅵ</span></button></li><li><button type="button"><span>ㅶ</span></button></li><li><button type="button"><span>ㅷ</span></button></li><li><button type="button"><span>ㅸ</span></button></li><li><button type="button"><span>ㅹ</span></button></li><li><button type="button"><span>ㅺ</span></button></li><li><button type="button"><span>ㅻ</span></button></li><li><button type="button"><span>ㅼ</span></button></li><li><button type="button"><span>ㅽ</span></button></li><li><button type="button"><span>ㅾ</span></button></li><li><button type="button"><span>ㅿ</span></button></li><li><button type="button"><span>ㆀ</span></button></li><li><button type="button"><span>ㆁ</span></button></li><li><button type="button"><span>ㆂ</span></button></li><li><button type="button"><span>ㆃ</span></button></li><li><button type="button"><span>ㆄ</span></button></li><li><button type="button"><span>ㆅ</span></button></li><li><button type="button"><span>ㆆ</span></button></li><li><button type="button"><span>ㆇ</span></button></li><li><button type="button"><span>ㆈ</span></button></li><li><button type="button"><span>ㆉ</span></button></li><li><button type="button"><span>ㆊ</span></button></li><li><button type="button"><span>ㆋ</span></button></li><li><button type="button"><span>ㆌ</span></button></li><li><button type="button"><span>ㆍ</span></button></li><li><button type="button"><span>ㆎ</span></button></li></ul>
+						<ul style="display: none;" id="character5" class="list"><li><button type="button"><span>Α</span></button></li><li><button type="button"><span>Β</span></button></li><li><button type="button"><span>Γ</span></button></li><li><button type="button"><span>Δ</span></button></li><li><button type="button"><span>Ε</span></button></li><li><button type="button"><span>Ζ</span></button></li><li><button type="button"><span>Η</span></button></li><li><button type="button"><span>Θ</span></button></li><li><button type="button"><span>Ι</span></button></li><li><button type="button"><span>Κ</span></button></li><li><button type="button"><span>Λ</span></button></li><li><button type="button"><span>Μ</span></button></li><li><button type="button"><span>Ν</span></button></li><li><button type="button"><span>Ξ</span></button></li><li><button type="button"><span>Ο</span></button></li><li><button type="button"><span>Π</span></button></li><li><button type="button"><span>Ρ</span></button></li><li><button type="button"><span>Σ</span></button></li><li><button type="button"><span>Τ</span></button></li><li><button type="button"><span>Υ</span></button></li><li><button type="button"><span>Φ</span></button></li><li><button type="button"><span>Χ</span></button></li><li><button type="button"><span>Ψ</span></button></li><li><button type="button"><span>Ω</span></button></li><li><button type="button"><span>α</span></button></li><li><button type="button"><span>β</span></button></li><li><button type="button"><span>γ</span></button></li><li><button type="button"><span>δ</span></button></li><li><button type="button"><span>ε</span></button></li><li><button type="button"><span>ζ</span></button></li><li><button type="button"><span>η</span></button></li><li><button type="button"><span>θ</span></button></li><li><button type="button"><span>ι</span></button></li><li><button type="button"><span>κ</span></button></li><li><button type="button"><span>λ</span></button></li><li><button type="button"><span>μ</span></button></li><li><button type="button"><span>ν</span></button></li><li><button type="button"><span>ξ</span></button></li><li><button type="button"><span>ο</span></button></li><li><button type="button"><span>π</span></button></li><li><button type="button"><span>ρ</span></button></li><li><button type="button"><span>σ</span></button></li><li><button type="button"><span>τ</span></button></li><li><button type="button"><span>υ</span></button></li><li><button type="button"><span>φ</span></button></li><li><button type="button"><span>χ</span></button></li><li><button type="button"><span>ψ</span></button></li><li><button type="button"><span>ω</span></button></li><li><button type="button"><span>Æ</span></button></li><li><button type="button"><span>Ð</span></button></li><li><button type="button"><span>Ħ</span></button></li><li><button type="button"><span>Ĳ</span></button></li><li><button type="button"><span>Ŀ</span></button></li><li><button type="button"><span>Ł</span></button></li><li><button type="button"><span>Ø</span></button></li><li><button type="button"><span>Œ</span></button></li><li><button type="button"><span>Þ</span></button></li><li><button type="button"><span>Ŧ</span></button></li><li><button type="button"><span>Ŋ</span></button></li><li><button type="button"><span>æ</span></button></li><li><button type="button"><span>đ</span></button></li><li><button type="button"><span>ð</span></button></li><li><button type="button"><span>ħ</span></button></li><li><button type="button"><span>I</span></button></li><li><button type="button"><span>ĳ</span></button></li><li><button type="button"><span>ĸ</span></button></li><li><button type="button"><span>ŀ</span></button></li><li><button type="button"><span>ł</span></button></li><li><button type="button"><span>ł</span></button></li><li><button type="button"><span>œ</span></button></li><li><button type="button"><span>ß</span></button></li><li><button type="button"><span>þ</span></button></li><li><button type="button"><span>ŧ</span></button></li><li><button type="button"><span>ŋ</span></button></li><li><button type="button"><span>ŉ</span></button></li><li><button type="button"><span>Б</span></button></li><li><button type="button"><span>Г</span></button></li><li><button type="button"><span>Д</span></button></li><li><button type="button"><span>Ё</span></button></li><li><button type="button"><span>Ж</span></button></li><li><button type="button"><span>З</span></button></li><li><button type="button"><span>И</span></button></li><li><button type="button"><span>Й</span></button></li><li><button type="button"><span>Л</span></button></li><li><button type="button"><span>П</span></button></li><li><button type="button"><span>Ц</span></button></li><li><button type="button"><span>Ч</span></button></li><li><button type="button"><span>Ш</span></button></li><li><button type="button"><span>Щ</span></button></li><li><button type="button"><span>Ъ</span></button></li><li><button type="button"><span>Ы</span></button></li><li><button type="button"><span>Ь</span></button></li><li><button type="button"><span>Э</span></button></li><li><button type="button"><span>Ю</span></button></li><li><button type="button"><span>Я</span></button></li><li><button type="button"><span>б</span></button></li><li><button type="button"><span>в</span></button></li><li><button type="button"><span>г</span></button></li><li><button type="button"><span>д</span></button></li><li><button type="button"><span>ё</span></button></li><li><button type="button"><span>ж</span></button></li><li><button type="button"><span>з</span></button></li><li><button type="button"><span>и</span></button></li><li><button type="button"><span>й</span></button></li><li><button type="button"><span>л</span></button></li><li><button type="button"><span>п</span></button></li><li><button type="button"><span>ф</span></button></li><li><button type="button"><span>ц</span></button></li><li><button type="button"><span>ч</span></button></li><li><button type="button"><span>ш</span></button></li><li><button type="button"><span>щ</span></button></li><li><button type="button"><span>ъ</span></button></li><li><button type="button"><span>ы</span></button></li><li><button type="button"><span>ь</span></button></li><li><button type="button"><span>э</span></button></li><li><button type="button"><span>ю</span></button></li><li><button type="button"><span>я</span></button></li></ul>
+						<ul style="display: none;" id="character6" class="list"><li><button type="button"><span>ぁ</span></button></li><li><button type="button"><span>あ</span></button></li><li><button type="button"><span>ぃ</span></button></li><li><button type="button"><span>い</span></button></li><li><button type="button" class=""><span>ぅ</span></button></li><li><button type="button"><span>う</span></button></li><li><button type="button" class=""><span>ぇ</span></button></li><li><button type="button"><span>え</span></button></li><li><button type="button"><span>ぉ</span></button></li><li><button type="button"><span>お</span></button></li><li><button type="button" class=""><span>か</span></button></li><li><button type="button"><span>が</span></button></li><li><button type="button"><span>き</span></button></li><li><button type="button"><span>ぎ</span></button></li><li><button type="button"><span>く</span></button></li><li><button type="button"><span>ぐ</span></button></li><li><button type="button"><span>け</span></button></li><li><button type="button"><span>げ</span></button></li><li><button type="button"><span>こ</span></button></li><li><button type="button"><span>ご</span></button></li><li><button type="button"><span>さ</span></button></li><li><button type="button"><span>ざ</span></button></li><li><button type="button"><span>し</span></button></li><li><button type="button"><span>じ</span></button></li><li><button type="button"><span>す</span></button></li><li><button type="button"><span>ず</span></button></li><li><button type="button"><span>せ</span></button></li><li><button type="button"><span>ぜ</span></button></li><li><button type="button"><span>そ</span></button></li><li><button type="button"><span>ぞ</span></button></li><li><button type="button"><span>た</span></button></li><li><button type="button"><span>だ</span></button></li><li><button type="button"><span>ち</span></button></li><li><button type="button"><span>ぢ</span></button></li><li><button type="button"><span>っ</span></button></li><li><button type="button"><span>つ</span></button></li><li><button type="button"><span>づ</span></button></li><li><button type="button"><span>て</span></button></li><li><button type="button"><span>で</span></button></li><li><button type="button"><span>と</span></button></li><li><button type="button"><span>ど</span></button></li><li><button type="button"><span>な</span></button></li><li><button type="button"><span>に</span></button></li><li><button type="button"><span>ぬ</span></button></li><li><button type="button"><span>ね</span></button></li><li><button type="button"><span>の</span></button></li><li><button type="button"><span>は</span></button></li><li><button type="button"><span>ば</span></button></li><li><button type="button"><span>ぱ</span></button></li><li><button type="button"><span>ひ</span></button></li><li><button type="button"><span>び</span></button></li><li><button type="button"><span>ぴ</span></button></li><li><button type="button"><span>ふ</span></button></li><li><button type="button"><span>ぶ</span></button></li><li><button type="button"><span>ぷ</span></button></li><li><button type="button"><span>へ</span></button></li><li><button type="button"><span>べ</span></button></li><li><button type="button"><span>ぺ</span></button></li><li><button type="button"><span>ほ</span></button></li><li><button type="button"><span>ぼ</span></button></li><li><button type="button"><span>ぽ</span></button></li><li><button type="button"><span>ま</span></button></li><li><button type="button"><span>み</span></button></li><li><button type="button"><span>む</span></button></li><li><button type="button"><span>め</span></button></li><li><button type="button"><span>も</span></button></li><li><button type="button"><span>ゃ</span></button></li><li><button type="button"><span>や</span></button></li><li><button type="button"><span>ゅ</span></button></li><li><button type="button"><span>ゆ</span></button></li><li><button type="button"><span>ょ</span></button></li><li><button type="button"><span>よ</span></button></li><li><button type="button"><span>ら</span></button></li><li><button type="button"><span>り</span></button></li><li><button type="button"><span>る</span></button></li><li><button type="button"><span>れ</span></button></li><li><button type="button"><span>ろ</span></button></li><li><button type="button"><span>ゎ</span></button></li><li><button type="button"><span>わ</span></button></li><li><button type="button"><span>ゐ</span></button></li><li><button type="button"><span>ゑ</span></button></li><li><button type="button"><span>を</span></button></li><li><button type="button"><span>ん</span></button></li><li><button type="button"><span>ァ</span></button></li><li><button type="button"><span>ア</span></button></li><li><button type="button"><span>ィ</span></button></li><li><button type="button"><span>イ</span></button></li><li><button type="button"><span>ゥ</span></button></li><li><button type="button"><span>ウ</span></button></li><li><button type="button"><span>ェ</span></button></li><li><button type="button"><span>エ</span></button></li><li><button type="button"><span>ォ</span></button></li><li><button type="button"><span>オ</span></button></li><li><button type="button"><span>カ</span></button></li><li><button type="button"><span>ガ</span></button></li><li><button type="button"><span>キ</span></button></li><li><button type="button"><span>ギ</span></button></li><li><button type="button"><span>ク</span></button></li><li><button type="button"><span>グ</span></button></li><li><button type="button"><span>ケ</span></button></li><li><button type="button"><span>ゲ</span></button></li><li><button type="button"><span>コ</span></button></li><li><button type="button"><span>ゴ</span></button></li><li><button type="button"><span>サ</span></button></li><li><button type="button"><span>ザ</span></button></li><li><button type="button"><span>シ</span></button></li><li><button type="button"><span>ジ</span></button></li><li><button type="button"><span>ス</span></button></li><li><button type="button"><span>ズ</span></button></li><li><button type="button"><span>セ</span></button></li><li><button type="button"><span>ゼ</span></button></li><li><button type="button"><span>ソ</span></button></li><li><button type="button"><span>ゾ</span></button></li><li><button type="button"><span>タ</span></button></li><li><button type="button"><span>ダ</span></button></li><li><button type="button"><span>チ</span></button></li><li><button type="button"><span>ヂ</span></button></li><li><button type="button"><span>ッ</span></button></li><li><button type="button"><span>ツ</span></button></li><li><button type="button"><span>ヅ</span></button></li><li><button type="button"><span>テ</span></button></li><li><button type="button"><span>デ</span></button></li><li><button type="button"><span>ト</span></button></li><li><button type="button"><span>ド</span></button></li><li><button type="button"><span>ナ</span></button></li><li><button type="button"><span>ニ</span></button></li><li><button type="button"><span>ヌ</span></button></li><li><button type="button"><span>ネ</span></button></li><li><button type="button"><span>ノ</span></button></li><li><button type="button"><span>ハ</span></button></li><li><button type="button"><span>バ</span></button></li><li><button type="button"><span>パ</span></button></li><li><button type="button"><span>ヒ</span></button></li><li><button type="button"><span>ビ</span></button></li><li><button type="button"><span>ピ</span></button></li><li><button type="button"><span>フ</span></button></li><li><button type="button"><span>ブ</span></button></li><li><button type="button"><span>プ</span></button></li><li><button type="button"><span>ヘ</span></button></li><li><button type="button"><span>ベ</span></button></li><li><button type="button"><span>ペ</span></button></li><li><button type="button"><span>ホ</span></button></li><li><button type="button"><span>ボ</span></button></li><li><button type="button"><span>ポ</span></button></li><li><button type="button"><span>マ</span></button></li><li><button type="button"><span>ミ</span></button></li><li><button type="button"><span>ム</span></button></li><li><button type="button"><span>メ</span></button></li><li><button type="button"><span>モ</span></button></li><li><button type="button"><span>ャ</span></button></li><li><button type="button"><span>ヤ</span></button></li><li><button type="button"><span>ュ</span></button></li><li><button type="button"><span>ユ</span></button></li><li><button type="button"><span>ョ</span></button></li><li><button type="button"><span>ヨ</span></button></li><li><button type="button"><span>ラ</span></button></li><li><button type="button"><span>リ</span></button></li><li><button type="button"><span>ル</span></button></li><li><button type="button"><span>レ</span></button></li><li><button type="button"><span>ロ</span></button></li><li><button type="button"><span>ヮ</span></button></li><li><button type="button"><span>ワ</span></button></li><li><button type="button"><span>ヰ</span></button></li><li><button type="button"><span>ヱ</span></button></li><li><button type="button"><span>ヲ</span></button></li><li><button type="button"><span>ン</span></button></li><li><button type="button"><span>ヴ</span></button></li><li><button type="button"><span>ヵ</span></button></li><li><button type="button"><span>ヶ</span></button></li></ul>
+						<p>
+							<label for="preview">선택한 기호</label>
+							<input id="preview" name="" type="text" />
+							<button type="button" title="확인"><span>확인</span></button>
+						</p>
+						<button type="button" class="close" title="특수문자 레이어 닫기"><span>특수문자 레이어 닫기</span></button>
+					</div>
+					<!-- /특수문자 레이어 -->
+				</li>
+				<li class="find husky_seditor_ui_findAndReplace">
+					<button type="button" title="찾기"><span>찾기</span></button>
+					<!-- 찾기 바꾸기 레이어 -->
+					<div class="layer find husky_seditor_findAndReplace_layer" style="display:none">
+					<!-- class="layer find" | class="layer replace"-->
+						<h3>찾기/바꾸기</h3>
+						<button type="button" class="close" title="찾기/바꾸기 레이어 닫기"><span>찾기/바꾸기 레이어 닫기</span></button>
+						<div class="menu_tab">
+							<ul class="layer_tab">
+								<li class="tab1"><a href="#find" onclick="return false">찾기</a></li>
+								<li class="tab2"><a href="#replace" onclick="return false">바꾸기</a></li>
+							</ul>
+						</div>
+						<div class="container">
+							<div class="bx" id="find">
+								<fieldset>
+									<label for="keyword1">찾을단어</label>
+									<input id="keyword1" name="" type="text" />
+								</fieldset>
+								<span class="cap"></span> </div>
+							<div class="bx" id="replace">
+								<fieldset>
+									<label for="keyword2">찾을단어</label>
+									<input id="keyword2" name="" type="text" />
+									<br />
+									<label for="keyword3">바꿀단어</label>
+									<input id="keyword3" name="" type="text" />
+								</fieldset>
+							</div>
+						</div>
+						<div class="btn_area">
+							<button type="button" class="find_next" title="다음찾기"><span>다음찾기</span></button>
+							<button type="button" class="replace" title="바꾸기"><span>바꾸기</span></button>
+							<button type="button" class="replace_all" title="모두바꾸기"><span>모두바꾸기</span></button>
+							<button type="button" class="cancel" title="취소"><span>취소</span></button>
+						</div>
+						<button type="button" class="close" title="찾기/바꾸기 레이어 닫기"><span>찾기/바꾸기 레이어 닫기</span></button>
+					</div>
+					<!-- /찾기 바꾸기 레이어 -->
+				</li>
+			</ul>
+			<button type="button" class="html husky_seditor_mode_toggle_button" title="HTML 편집기"><span>HTML</span></button>
+		</div>
+		<hr />
+		<!-- 입력 -->
+		<div class="input_area husky_seditor_editing_area_container">
+			<iframe src="se_blank.html" id="husky_iframe" name="husky_iframe" class="input_wysiwyg" frameborder="0" scrolling="yes" title="리치 에디터 - 편집기에서 빠져 나오시려면 ESC키를 누르세요" style="display:block;"></iframe>
+			<textarea name="" rows="10" cols="20" title="HTML 편집 모드" class="input_syntax" style="display:none;">&lt;p&gt;&lt;/p&gt;</textarea>
+			<textarea name="" cols="" rows="" class="blind" title="데이터 전송을 위한 숨은 콘트롤" style="display:none;"></textarea>
+		</div>
+		<!-- /입력 -->
+		<button type="button" class="input_control husky_seditor_editingArea_verticalResizer" title="입력창 크기 조절"><span>입력창 크기 조절</span></button>
+	</div>
+</div>
+
+</form>
+<script>
+// ##################################################################
+// 여기에서 부터 실제 적용시에는 필요 없습니다.
+if(!window.$Jindo){document.body.innerHTML="진도 프레임웍이 필요합니다.<br>\n<a href='http://dev.naver.com/projects/jindo/'>http://dev.naver.com/projects/jindo/</a>에서 jindo.min.js를 다운로드 받아 /js 폴더에 복사 해 주세요.";}
+// 여기까지는 실제 적용시에는 필요 없습니다.
+// ##################################################################
+
+var oEditors = [];
+oEditors[0] = createSEditor("smart_editor", "ir1", "400");
+oEditors[0].run();
+
+function pasteHTMLDemo(){
+	sHTML = "<span style='color:#FF0000'>이미지 등도 이렇게 삽입하면 됩니다.</span>";
+	oEditors[0].exec("PASTE_HTML", [sHTML]);
+}
+
+function showHTML(){
+	alert(oEditors[0].getIR());
+}
+
+function _onSubmit(elClicked){
+	// 에디터의 내용을 에디터 생성시에 사용했던 textarea에 넣어 줍니다.
+	oEditors[0].exec("UPDATE_IR_FIELD", []);
+	
+	// 에디터의 내용에 대한 값 검증은 이곳에서 $("ir1").value를 이용해서 처리하면 됩니다.
+
+	try{
+		elClicked.form.submit();
+	}catch(e){}
+}
+</script>
+</body>
+</html>

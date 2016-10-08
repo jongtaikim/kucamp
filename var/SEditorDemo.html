@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>스마트에디터 데모 페이지</title>
+<link href="css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jindo.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/Husky.SE_Basic.js" charset="utf-8"></script>
+</head>
+<body>
+<form action="sample.php" method="post">
+	<p>
+		<input type="button" onclick="pasteHTMLDemo()" value="본문에 HTML 삽입"></input>
+		<input type="button" onclick="showHTML()" value="본문 HTML 보기"></input>
+		<input type="button" onclick="_onSubmit(this)" value="서버에 전송"></input>
+	</p>
+	<textarea name="ir1" id="ir1" style="width:800px; height:300px">에디터에 기본으로 삽입할 글(수정 모드)이 없다면 이 값을 지정하지 않으시면 됩니다.</textarea>
+</form>
+<script>
+// ##################################################################
+// 여기에서 부터 실제 적용시에는 필요 없습니다.
+if(!window.$Jindo){document.body.innerHTML="진도 프레임웍이 필요합니다.<br>\n<a href='http://dev.naver.com/projects/jindo/'>http://dev.naver.com/projects/jindo/</a>에서 jindo.min.js를 다운로드 받아 /js 폴더에 복사 해 주세요.";}
+
+if(!(""+window.location.href).match(/^http/i)){
+	if($Agent().navigator().ie && $Agent().navigator().version>6){
+		document.body.innerHTML = "<p>IE 7 버전에서는 이 파일을 로컬에서 바로 열 수 없습니다. 다음 중 하나를 선택 해 주십시오.</p>\n\n"+
+				"<ol><li>서버를 통해서 접근. 예) http://127.0.0.1/SEditorDemo.html</li>\n"+
+				"<li><a href='SEditorLocalDemo.html'>SEditorLocalDemo.html</a> 이용 (에디터 데모용으로만 사용 권장)</li>\n"+
+				"<li>IE 7 버전을 제외한 다른 브라우저 이용. 예) IE6, 파이어폭스</li></ol>";
+	}
+}
+// 여기까지는 실제 적용시에는 필요 없습니다.
+// ##################################################################
+
+var oEditors = [];
+nhn.husky.EZCreator.createEditor(oEditors, "ir1", "SEditorSkin.html");
+
+// 복수개의 에디터를 생성하고자 할 경우, 아래와 같은 방식으로 호출하고 oEditors[1]을 이용해 접근하면 됩니다.
+// nhn.husky.EZCreator.createEditor(oEditors, "ir2", "SEditorSkin.html");
+
+function pasteHTMLDemo(){
+	sHTML = "<span style='color:#FF0000'>이미지 등도 이렇게 삽입하면 됩니다.</span>";
+	oEditors[0].exec("PASTE_HTML", [sHTML]);
+}
+
+function showHTML(){
+	alert(oEditors[0].getIR());
+}
+
+function _onSubmit(elClicked){
+	// 에디터의 내용을 에디터 생성시에 사용했던 textarea에 넣어 줍니다.
+	oEditors[0].exec("UPDATE_IR_FIELD", []);
+	
+	// 에디터의 내용에 대한 값 검증은 이곳에서 $("ir1").value를 이용해서 처리하면 됩니다.
+
+	try{
+		elClicked.form.submit();
+	}catch(e){}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!-- 
+** 타입 01 
+** 디자이너 : 겸둥이 이선화 
+** 프로그래머 : 몽몽이 김종태
+** 제작일 : 2007-10-25
+-->
+<table cellpadding="0" cellspacing="0" border="0" width="894" height="3" bgcolor="60BB45">
+	<tr>
+		<td align="left"><img src="/theme/SH1/images/t_l.gif"></td>
+		<td align="right"><img src="/theme/SH1/images/t_r.gif"></td>
+	</tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="0" width="894" height="53">
+	<tr>
+		<td align="left"><a href="/"><img src="@/logo1.gif"></a></td>
+		<td align="right"><a href="/"><img src="/theme/SH1/images/t_home.gif"></a>&nbsp;&nbsp;<a href="mailto:{_EMAIL}"><img src="/theme/SH1/images/t_email.gif"></a>&nbsp;&nbsp;<a href="admin.main"><img src="/theme/SH1/images/t_admin.gif"></a></td>
+		<td width="22"></td>
+	</tr>
+	<tr><td colspan = 4 height = 2></td></tr>
+</table>
+<!-- 메뉴부분입니다. -->
+<table cellpadding="0" cellspacing="0" border="0" width="894" height="48" background="/theme/SH1/images/menu_bg.gif">
+	<tr>
+		<td><script type="text/javascript">docWrite('<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="894" height="48"> ' +
+          '<param name="movie" value="/theme/SH1/menu2.swf"> ' +
+          '<param name="quality" value="high"> ' +
+          '<param name="wmode" value="transparent"> ' +
+          '<embed src="/theme/SH1/menu2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="894" height="48" wmode="transparent"></embed>' +
+          '</object>');</script></td>
+	</tr>
+</table>
+<!-- 메뉴부분입니다. -->
+<table cellpadding="0" cellspacing="0" border="0" width="894" height="256" background="/theme/SH1/images/main_bg.gif">
+	<tr>
+		<td style="padding : 28 0 0 47" valign="top" width = 200 >
+			<table cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td><img src="/theme/SH1/images/login.gif"></td>
+				</tr>
+				<tr>
+					<td height="8"></td>
+				</tr>
+				<tr>
+					<td height="42">
+						
+						<!--{? !_SESSION.AUTH}-->
+						<form name="loginForm" method="post" action="member.login" style="margin:0px;">
+						<table cellpadding="0" cellspacing="0" border="0">
+							<tr>
+								<td><img src="/theme/SH1/images/login_id.gif"></td>
+								<td rowspan="2" width="7"></td>
+								<td rowspan="2">
+								<TABLE>
+								<TR>
+									<TD ><input type = "text" name="userid" hname="아이디" style="width:95; height:17; border:1px solid #DCDCDC;"></TD>
+								</TR>
+								<TR>
+									<TD><input  type = "password" name="passwd" hname="패스워드" style="width:95; height:17; border:1px solid #DCDCDC;"></TD>
+								</TR>
+								</TABLE>
+								
+								</td>
+								<td rowspan="2" width="9"></td>
+								<td rowspan="2"><input type="image" src="/theme/SH1/images/login_b.gif" style= "border:0px"></td>
+							</tr>
+							<tr>
+								<td><img src="/theme/SH1/images/login_pw.gif"></td>
+								
+							</tr>
+						</table>
+					</form>
+	
+					</td>
+				</tr>
+				<tr>
+					<td height="12"></td>
+				</tr>
+				<tr>
+					<td><a href="#"><a href="member.findid"><img src="/theme/SH1/images/login_b1.gif"></a></a></td>
+				</tr>
+				<tr>
+					<td height="7"></td>
+				</tr>
+				<tr>
+					<td><a href="#"><img src="/theme/SH1/images/login_b2.gif"></a></td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td style="padding : 0 0 0 8"><a href="member.join"><img src="/theme/SH1/images/login_join.gif"></a>
+			</td>
+				</tr>
+			</table>
+							<!--{:}-->
+
+					<table cellpadding="0" cellspacing="0" border="0 ">
+							<tr>
+								<td colspan = 2 style = "padding-left:20px">
+								<br><br> <b>{_SESSION.NAME}</b>님이 <br>로그인했습니다.<br>&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<td style = "padding-left:20px;padding-top:15px">
+							<a href="member.modify">회원정보수정</a> | <a href="member.logout">로그아웃</a>
+								</td>
+							</tr>
+							
+						</table>
+
+						</td>
+				</tr>
+			</table>
+
+						<!--{/}-->
+	
+		</td>
+	<td width = 237 align = left style = "padding-left:18px;padding-top:23px" valign = top>
+	<iframe src ="http://<?=$_SERVER[HTTP_HOST]?>/main_fla/mainflash02.swf" width = 337 height = 203  frameborder =  0 name=lastboard scrolling="no"></iframe>
+	</td>
+	<td width = 50>
+	&nbsp;
+	</td>
+	<td>
+	<script type="text/javascript">docWrite('<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="236" height="163"> ' +
+			  '<param name="movie" value="/theme/SH1/main.swf"> ' +
+			  '<param name="quality" value="high"> ' +
+			  '<param name="wmode" value="transparent"> ' +
+			 '<param name="FlashVars" value="&title2=<?=_S_TITLE ?>" />'+
+			  '<embed src="/theme/SH1/main.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="236" height="163" wmode="transparent"></embed>' +
+			  '</object>');</script>
+	</td>
+	</tr>
+</table>
+
+<script language="javascript">
+/*************************************************************************************
+ * Right Sliding Menu Script by now17?!ㅋㅋ  
+*************************************************************************************/
+<!--
+var stmnLEFT = 835; // 스크롤메뉴의 좌측 위치. 필요 없을 경우 삭제 (스크롤바 바로 옆 : 835)
+var stmnGAP1 = 368; // 페이지 헤더부분의 여백 (이보다 위로는 올라가지 않음)
+var stmnGAP2 = 332; // 스크롤시 브라우저 상단과 약간 띄움. 필요없으면 0으로 세팅
+var stmnBASE = 340; // 스크롤메뉴 초기 시작위치 (아무렇게나 해도 상관은 없지만 stmnGAP1과 약간 차이를 주는게 보기 좋음)
+var stmnActivateSpeed = 400; // 움직임을 감지하는 속도 (숫자가 클수록 늦게 알아차림)
+var stmnScrollSpeed = 1; // 스크롤되는 속도 (클수록 늦게 움직임)
+
+var stmnTimer;
+
+// 쿠키 읽기
+function ReadCookie(name)
+{
+		var label = name + "=";
+		var labelLen = label.length;
+		var cLen = document.cookie.length;
+		var i = 0;
+
+		while (i < cLen) {
+				var j = i + labelLen;
+
+				if (document.cookie.substring(i, j) == label) {
+						var cEnd = document.cookie.indexOf(";", j);
+						if (cEnd == -1) cEnd = document.cookie.length;
+
+						return unescape(document.cookie.substring(j, cEnd));
+				}
+
+				i++;
+		}
+
+		return "";
+}
+
+// 쿠키 저장
+function SaveCookie(name, value, expire)
+{
+		var eDate = new Date();
+		eDate.setDate(eDate.getDate() + expire);
+		document.cookie = name + "=" + value + "; expires=" +  eDate.toGMTString()+ "; path=/";
+}
+
+// 스크롤 메뉴의 위치 갱신
+function RefreshStaticMenu()
+{
+		var stmnStartPoint, stmnEndPoint, stmnRefreshTimer;
+
+		stmnStartPoint = parseInt(STATICMENU.style.top, 10);
+		stmnEndPoint = document.body.scrollTop + stmnGAP2;
+		if (stmnEndPoint < stmnGAP1) stmnEndPoint = stmnGAP1;
+
+		stmnRefreshTimer = stmnActivateSpeed;
+
+		if ( stmnStartPoint != stmnEndPoint ) {
+				stmnScrollAmount = Math.ceil( Math.abs( stmnEndPoint - stmnStartPoint ) / 15 );
+				STATICMENU.style.top = parseInt(STATICMENU.style.top, 10) + ( ( stmnEndPoint<stmnStartPoint ) ? -stmnScrollAmount : stmnScrollAmount );
+				stmnRefreshTimer = stmnScrollSpeed;
+		}
+
+		stmnTimer = setTimeout ("RefreshStaticMenu();", stmnRefreshTimer);
+}
+
+// 메뉴 ON/OFF 하기
+function ToggleAnimate()
+{
+		if (document.all.ANIMATE.checked) { // 이동하기 버튼이 체크되었다면
+				RefreshStaticMenu(); // 메뉴위치를 다시 조정
+				SaveCookie("ANIMATE", "true", 300); // 이동이 ON 상태라고 쿠키를 설정
+		}
+		else { // 아니라면... (이동하기 버튼이 체크되어 있지 않으면)
+				clearTimeout(stmnTimer); // 이동용 타이머 해제
+				STATICMENU.style.top = stmnGAP1; // 메뉴의 위치를 상단으로 옮긴다.
+				SaveCookie("ANIMATE", "false", 300); // 이동상태가 "OFF" 임
+		}
+}
+
+// 메뉴 초기화
+function InitializeStaticMenu()
+{
+		if (ReadCookie("ANIMATE") == "false") { // 이동상태가 off 상태라면
+				document.all.ANIMATE.checked = false; // 체크표시를 지우고
+				STATICMENU.style.top = document.body.scrollTop + stmnGAP1; // 맨 위에 들러 붙는다.
+		}
+		else { // 이동 on 상태라면
+				document.all.ANIMATE.checked = true; // 체크표시를 하고
+				STATICMENU.style.top = document.body.scrollTop + stmnBASE; // 기본위치로 이동한다.
+				RefreshStaticMenu(); // 스크립트 가동
+		}
+
+
+}
+//-->
+</script>
+
+

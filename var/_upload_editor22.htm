@@ -1,0 +1,139 @@
+<script type="text/javascript" src="/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="/module/webconfig_2.js"></script>
+
+
+
+	<textarea id="%name%" name="%name%"  style="width: %width%;height:%height%;">%content%</textarea>
+
+<!-- Editor --> 
+
+<script>
+function vvimg(htm){
+tinyMCE.activeEditor.execCommand('mceInsertContent', false, htm);
+}
+
+function vvview(){
+if(document.getElementById('help').style.display=='none') {
+	document.getElementById('help').style.display=''
+}else{
+document.getElementById('help').style.display='none'
+}
+}
+</script>
+
+
+<!-- Editor --> 
+<script>
+function inCommand(html,note){
+if(note) {
+alert(note);	
+}
+parent.tinyMCE.execCommand(html, true, null);
+return;
+
+}
+</script>
+
+<TABLE  border=0    cellspacing=0 cellpadding=0 width = 100%>
+<tr>
+  <td height = 5></td>
+</tr>
+<TR style = "padding-right:4px">
+	<TD valign = top><a href = "javascript:inCommand('mceAdvImage');"><img src = "/image/editor/ed_image_txt.gif"></TD>
+	<TD valign = top><a href = "javascript:inCommand('mceMedia');"><img src = "/image/editor/ed_mncast_txt.gif"></TD>
+
+  <td align = right width = 80% >
+</td>
+
+</TR>
+</table>
+
+
+<TABLE width = 100% border="0" cellpadding="0" cellspacing="0">
+<tr>
+  <td>
+
+ 
+<TABLE width = 400 border="0" cellpadding="0" cellspacing="0">
+  <TR>
+	  <td width = 10 style = "padding-top:3px">
+	   <img src = "/img_lay/help.gif" align="absmiddle"> </td>
+	   <TD style = "padding-top:5px" width = 250>&nbsp; 새롭게 바뀐 에디터 어떠세요?  &nbsp;&nbsp;&nbsp;<a href="javascript:vvview();" style = "color:#0066FF">바뀐점 보기</TD>
+	     <td align = left style = "padding-top:3px;padding-left:3">
+	      <a href="javascript:vvview();"><img src = "/img_lay/tip.gif" align="absmiddle">
+	     </td>
+</tr>
+</table>
+
+  </td>
+</tr>
+		 <tr style = "display:none" id = "help">
+		   <td  style = "padding-top:10">
+		   
+		   <TABLE class=table01>
+		  
+		   
+		   <TR>
+			<TD colspan = 2><img src = "/img_lay/help/1.gif"></TD>
+			<TD style = "padding-left:10px">문서양식,각종아이콘,이미지 편집툴을 에디터에 적용 합니다.</TD>
+		   </TR>
+
+		   <TR>
+			<TD><img src = "/img_lay/help/2.gif"></TD>
+			 <td>찌꺼기 테그 제거</td>
+			<TD style = "padding-left:10px">각종 워드 프로그램으로 작성된 문서를 붙일시, 불필요한 테그를 삭제합니다</TD>
+		   </TR>
+
+		    <TR>
+			<TD><img src = "/img_lay/help/3.gif"></TD>
+			 <td>문서 저장</td>
+			<TD style = "padding-left:10px">현재작성중인 문서를 저장합니다. (단축키 Ctrl + S)</TD>
+		   </TR>
+		   
+		  
+		    <TR>
+			<TD><img src = "/img_lay/help/4.gif"></TD>
+			 <td>표 그리기</td>
+			<TD style = "padding-left:10px">표를 작성합니다. 클래스에서 여러 형태의 표를 선택할 수 있습니다.</TD>
+		   </TR>
+		  
+		  
+ 		    <TR>
+			<TD><img src = "/img_lay/help/5.gif"></TD>
+			 <td>이미지 업로드</td>
+			<TD style = "padding-left:10px">이미지 편집툴을 사용하면 사진을 액자에 넣거나 메모등 편집이 가능합니다.</TD>
+		   </TR>
+		  
+
+		   <TR>
+			<TD><img src = "/img_lay/help/6.gif"></TD>
+			 <td>이전단계</td>
+			<TD style = "padding-left:10px">문서를 편집 바로 전단계로(단축키 Ctrl + Z)  돌아갑니다. </TD>
+		   </TR>
+
+
+		   <TR>
+			<TD><img src = "/img_lay/help/6.gif"></TD>
+			 <td>다음단계</td>
+			<TD style = "padding-left:10px">문서를 편집 다음단계(단축키 Ctrl + Y) 로 돌아갑니다. </TD>
+		   </TR>
+
+
+		   <TR>
+			<TD><img src = "/img_lay/help/7.gif"></TD>
+			 <td>풀스크린</td>
+			<TD style = "padding-left:10px">좁은 에디터 창 답답하셨죠? 클릭해보세요</TD>
+		   </TR>
+
+		   	  <TR>
+			<TD><img src = "/img_lay/help/8.gif"></TD>
+			 <td>드레그 편집창 조절</td>
+			<TD style = "padding-left:10px">에디터 오른쪽 끝을 마우스로 드레그 해보세요. 넓이,높이를 마음대로 조절합니다.</TD>
+		   </TR>
+		   </TABLE>
+
+		   </td>
+		 </tr>
+</TR>
+</TABLE>
+

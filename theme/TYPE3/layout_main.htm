@@ -1,0 +1,453 @@
+<? if(substr($_SERVER[HTTP_HOST],0,4) =="www."){  ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<meta name="description" content="KU CAMP 홈페이지, 멘토링캠프, 고려대학교, 고려대학교 캠프, Mentoring Camp, korea University, 영재, 과학캠프, 수학캠프," />
+<meta name="keywords" content="KU CAMP, 홈페이지,멘토링캠프, 고려대학교, 고려대학교 캠프, Mentoring Camp, korea University, 영재, 과학캠프, 수학캠프" />
+<meta name="author" content="김종태,김용진" />
+<meta name="language" content="ko" />
+
+<script type="text/javascript" src="/js/jquery-1.4.3.min.js"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>고려대학교 진로적성 캠프</title>
+<link rel="stylesheet" type="text/css" href="/css/now_to_css.css" />
+<link rel="stylesheet" type="text/css" href="/css/animate.css" />
+
+
+<body style="height:100%;margin:0px;padding:0px;width:100%">
+<table align="center" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" class="tableTemp01" summary="">
+
+	<tbody>
+		
+		<tr>
+			<td align="center"  class=" pos_r" >
+				
+				<div class=" animated fadeInLeft" id="" style="width:900px;margin:0 auto;height:600px">
+					<div class="actives mode1 "  id=""  style="" >
+						<div class="f_l  fadeInRight  banner1 banners " id="">
+							<a href="#" onclick="ga('send', 'event', '인트로','진로캠프 클릭');location.href='http://www1.kucamp.com'">
+							<img src="/images/a1.png" alt="" border=0/>
+							</a>
+						</div>
+						<div class="f_l   slideInLeft banner2 banners" id="">
+							
+								<img src="/images/a2.png" alt="" border=0 />
+							
+						</div>
+					</div>
+
+					<div class="actives mode2 hide "  id=""  style=" width:900px;height:600px;;" >
+						
+						<div class="f_l   slideInRight banner3 banners" id="">
+							
+								<img src="/images/b2.png" alt="" border=0/>
+
+						</div>
+						<div class="f_l  fadeInLeft  banner4 banners " id="">
+							<a onclick="ga('send', 'event', '인트로','공학캠프 클릭');location.href='http://www2.kucamp.com'">
+								<img src="/images/b1.png" alt="" border=0/>
+							</a>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+				var ani = 'y';
+				$('.banner2').mouseenter(function(){
+					if(!ani){
+						ani = 'y';
+						$('.mode1').hide();
+						$('.mode2').show();
+						
+						//$('.mode1').animate({'left':'-500px'});
+						setTimeout(function(){
+							ani = '';
+						},200);
+					}
+					
+				});
+
+				$('.banner3').mouseenter(function(){
+					if(!ani){
+						ani = 'y';
+						$('.mode2').hide();
+						$('.mode1').show();
+						
+						//$('.mode2').animate({'left':'-500px'});
+						setTimeout(function(){
+							ani = '';
+							//$('.mode2').css('left','0px');
+						},200);
+					}
+				});
+				$(document).ready(function(){ 
+					setTimeout(function(){
+						$('.banners').addClass('animated');
+						ani = '';
+					},300);
+				});
+				$('.tableTemp01').height($(window).height())
+				$(window).resize(function(){ $('.tableTemp01').height($(window).height()) });
+					
+				</script>
+
+
+				
+			
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+</body> 
+
+
+<!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 --> 
+<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"> </script> 
+<script type="text/javascript"> 
+if (!wcs_add) var wcs_add={};
+wcs_add["wa"] = "s_30543923423b";
+if (!_nasa) var _nasa={};
+wcs.inflow("kucamp.com");
+wcs_do(_nasa);
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78129655-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<? }else{ ?>
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<meta name="description" content="<?=_ONAME?> 홈페이지, 멘토링캠프, 고려대학교, 고려대학교 캠프, Mentoring Camp, korea University, 영재, 과학캠프, 수학캠프," />
+<meta name="keywords" content="<?=_ONAME?>, 홈페이지,멘토링캠프, 고려대학교, 고려대학교 캠프, Mentoring Camp, korea University, 영재, 과학캠프, 수학캠프" />
+<meta name="author" content="김종태,김용진" />
+<meta name="language" content="ko" />
+<script type="text/javascript" src="/js/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="/js/rollbar.js"></script>
+<script type="text/javascript" src="/js/Floating.js"></script>
+<title>고려대학교 진로적성캠프 </title>
+<link rel="stylesheet" type="text/css" href="/css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/main.css" />
+<link rel="STYLESHEET" type="text/css" href="./css/20121015_css.css">
+
+</head>
+
+<body leftmargin="0" topmargin="0" bottommargin="0" rightmargin="0">
+
+{#TOP_TOOL}
+
+{#EASYSCHOOL}
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td height="3" bgcolor="#7c0019"></td>
+</tr>
+<tr>
+	<td>
+
+		{#TOP}
+
+	</td>
+</tr>
+<tr>
+	<td height="379">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+		<tr>
+			<td align="center" background="./images/mainbg.jpg"><table width="976" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="469"  style="position:relative;">
+                <? /*
+		    <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="469" height="379">
+                <param name="movie" value="./images/main_150331-1.swf" />
+                <param name="wmode" value="transparent" />
+                  <!--[if !IE]> <-->
+                 <object type="application/x-shockwave-flash" data="./images/main_150331-1.swf" width="469" height="379">
+                <p class="tac">
+                이 컨텐츠는 플래시(flash)로 제작되었습니다. 이 컨텐츠를 보려면
+                <a href="http://www.adobe.com/kr/products/flashplayer/" target="_blank" title="새창에서 열립니다" tabindex="0">Flash Player</a>가 필요합니다.
+                </p>
+                 </object>
+                <!--> <![endif]-->
+                 </object>
+			*/?>
+
+				 <img src="./images/main_gif.gif" alt="" style="margin:-3px 0px 0px 4px"/>
+                </td>
+                <td width="507" style="position:relative;">
+				<a href="/doc.view?mcode=1610&cate=1610">
+					<img src="./images/main_img.jpg" width="507" border="0" >
+				</a>
+
+				
+				<!--a href="/doc.view?mcode=111110&cate=111110" style="border:0px solid blue;display:block;position:absolute;top:322px;left:60px;width:280px;height:40px;"><img src="/b.gif" style="width:100%;height:100%"/></a-->
+
+				
+				<!--a href="/doc.view?mcode=111111&cate=111111" style="border:0px solid blue;display:block;position:absolute;top:348px;left:40px;width:240px;height:20px;"><img src="/b.gif" style="width:100%;height:100%"/></a-->
+				
+				
+				</td>
+              </tr>
+            </table></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td  height="23" background="./images/mainbg_02.gif"></td>
+</tr>
+<tr>
+	<td>
+
+		<table width="940" border="0" align="center" cellpadding="0" cellspacing="0">
+		<tr>
+			<td width="243" valign="top">
+				<table width="243" border="0" cellspacing="0" cellpadding="0">
+				<!--tr>
+					<td><a href="http://www.youtube.com/watch?v=HcGe9fbGfjs&amp;feature=youtu.be" target="_blank"><img src="./images/20121015_left_main_01.gif" alt="공신닷컴 대표 강성태 동영상" width="243" height="110" border="0" /></a></td>
+				</tr-->
+				<tr>
+					<td  style="position:relative;">
+					<!--a href="/doc.view?mcode=1610&cate=1610"-->
+					<a href="http://cafe.naver.com/koreaskymentor" target="_blank">
+						<img src="./images/left_banner1.png" alt="" />
+					</a>
+					
+					<!--a href="/board.list?mcode=151110&cate=151110" style="border:0px solid blue;display:block;position:absolute;top:54px;left:44px;width:180px;height:20px;"><img src="/b.gif" style="width:100%;height:100%"/></a>
+
+				
+					<a href="/board.list?mcode=151111&cate=151111"  style="border:0px solid blue;display:block;position:absolute;top:80px;left:44px;width:180px;height:20px;"><img src="/b.gif" style="width:100%;height:100%"/></a-->
+					
+					<a href=""></a>
+					
+					</td>
+				</tr>
+				
+				<!--tr>
+					<td><a href="/kucamp_doc.pdf" target="_blank"><img src="./images/20121015_left_main_02.gif" alt="캠프안내문" width="243" height="66" border="0" /></a></td>
+				</tr-->
+				<tr>
+					<td><a href="/doc/kucamp1.pdf?v=1" target="_blank"><img src="./images/left_banner2.png" alt="캠프안내문"  border="0" /></a></td>
+				</tr>
+				<tr>
+					<td><a href="/qna.list?mcode=1214&amp;cate=1214"><img src="./images/left_banner3.png" alt="캠프상담게시판"  border="0" /></a></td>
+				</tr>
+				<tr>
+					<td><a href="/lms.tach_main?mcode=1113&amp;cate=1113"><img src="./images/left_banner4.png" alt="캠프선생님소개" border="0" /></a></td>
+				</tr>
+				<tr>
+					<td><a href="/doc.view?mcode=1212&amp;cate=1212"><img src="./images/main_20150128_banner1.jpg" alt="상담센터 1599-3290(국번없이)" /></a></td>
+				</tr>
+				
+				</table>
+			</td>
+			<td valign="top">
+				<table width="443" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="15">&nbsp;</td>
+					<td width="413">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						
+						<tr>
+							<td>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<table width="100%" border="0" cellpadding="0" cellspacing="0" background="./images/main_title_bg.gif">
+										<tr>
+											<td width="23%"><img src="./images/20121015_main_notice.gif" alt="캠프 공지사항" width="93" height="28" /></td>
+											<td width="77%" align="right"><a href="/board.list?mcode=1313"><img src="./images/main_more_01.gif" alt="자세히 보기" width="54" height="28" /></a></td>
+										</tr>
+										</table>									</td>
+								</tr>
+								<tr>
+									<td height="7"></td>
+								</tr>
+								<tr>
+									<td>
+										<wa:applet module="out_bbs.main" code="" mou_name="out_bbs1">
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										{@ LIST_lsat}
+										{@ .tab_data}
+										<tr>
+											<td width="85%" height="23"><strong> {? ..num_notice == "2"}[전체공지]{: ..num_notice=='1'}[공지]{:}[안내]{/}</strong> <a href="{..link}">{..str_title1}</a>  {? ..is_recent || ..num_notice == "2" || ..index_ == "0"}<img src="/image/icon/new2.gif" alt="" align="absmiddle"/>{/}</td>
+											<td width="15%" align="right">{..dt_date1}.{..dt_date2}.{..dt_date3}</td>
+										</tr>
+										{/}
+										{/}
+										</table>
+										</wa:applet>									</td>
+								</tr>
+								</table>							</td>
+						</tr>
+						<tr>
+							<td height="30">&nbsp;</td>
+						</tr>
+						<tr>
+							<td>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<table width="100%" border="0" cellpadding="0" cellspacing="0" background="./images/main_title_bg.gif">
+										<tr>
+											<td width="23%"><img src="./images/20121015_main_gallery.gif" alt="캠프 공지사항" width="93" height="28" /></td>
+											<td width="77%" align="right"><a href="/board.list?mcode=1412"><img src="./images/main_more_01.gif" alt="자세히 보기" width="54" height="28" /></a></td>
+										</tr>
+										</table>									</td>
+								</tr>
+								<tr>
+									<td height="13"></td>
+								</tr>
+								<tr>
+									<td>
+
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td colspan="2">
+												<table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+													<wa:applet module="out_bbs.main" code="" mou_name="out_bbs2">
+													{@ LIST_lsat}
+													{@ .tab_data}
+													<td align="center">
+														<table width="96" border="0" cellpadding="0" cellspacing="0">
+														<tr>
+															<td width="96">
+																<table border="0" cellpadding="0" cellspacing="2" bgcolor="#e7e7e7">
+																<tr>
+																	<td><a href="{..link}"><img src="{..thumb_url}" alt="사진" width="92" height="62" /></a></td>
+																</tr>
+																</table>															</td>
+														</tr>
+														<tr>
+															<td height="30" align="center">{..str_title2}</td>
+														</tr>
+														</table>													</td>
+													{/}
+													{/}													</wa:applet>
+												</tr>
+												</table>											</td>
+										</tr>
+										</table>									</td>
+								</tr>
+								</table>							</td>
+						</tr>
+						<tr>
+						  <td height="25">&nbsp;</td>
+						  </tr>
+						<tr>
+							<td><img src="./images/20121015_main_01.gif" alt="캠프등록절차" width="413" height="251" /></td>
+						</tr>
+						</table>
+				  </td>
+					<td width="15">&nbsp;</td>
+				</tr>
+				</table>
+			</td>
+			<td width="256" valign="top">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td><a href="/lms.order?mcode=1211&amp;cate=1211&amp;ccode=15"><img src="./images/right_banner1.png" alt=""  border="0" /></a></td>
+				</tr>
+				<tr>
+					<td><a href="/doc.view?mcode=1017&cate=1017"><img src="./images/right_banner2.png" alt="위탁캠프"  border="0" /></a></td>
+				</tr>
+				
+				<tr>
+					<td ><a href="http://www2.kucamp.com" target="_blank"><img src="./images/right_banner3.png" alt="고려대학교 전국수학학력인증시험"  border="0" /></a></td>
+				</tr>
+				<tr>
+					<td ><a href="http://www.kutest.co.kr" target="_blank"><img src="./images/right_banner4.png" alt=""  border="0" /></a></td>
+				</tr>
+				
+				
+				</table>
+			</td>
+			
+			
+			<td valign="top">
+			
+				{#QMENU}
+			
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+
+</table>
+
+{#FOOT}
+
+
+
+<wa:applet module="popup.open"/>
+<script language="javascript" type="text/javascript">
+//if($('aniTextContent')) scroll_txt_init();
+//selectVis();
+//setInterval("rollVis()",5000);
+//new Floating(document.getElementById('qmenu'),0,536);
+//setTimeout("rollVis()",3000);
+</script>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<map name="Map">
+  <area shape="rect" coords="245,304,378,321" href="/doc.view?mcode=111212&amp;cate=111212">
+
+<area shape="rect" coords="245,344,378,321" href="/doc.view?mcode=111213&amp;cate=111213">
+
+  <area shape="rect" coords="245,282,378,299" href="/doc.view?mcode=111211&amp;cate=111211">
+  
+  <area shape="rect" coords="39,324,161,344" href="/doc.view?mcode=111113&amp;cate=111113">
+
+  <area shape="rect" coords="39,364,161,344" href="/doc.view?mcode=111112&amp;cate=111112">
+
+<area shape="rect" coords="39,303,161,323" href="/doc.view?mcode=111114&amp;cate=111114">
+<area shape="rect" coords="39,281,161,301" href="/doc.view?mcode=111111&amp;cate=111111"></map>
+
+
+
+<!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 --> 
+<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"> </script> 
+<script type="text/javascript"> 
+if (!wcs_add) var wcs_add={};
+wcs_add["wa"] = "s_30543923423b";
+if (!_nasa) var _nasa={};
+wcs.inflow("kucamp.com");
+wcs_do(_nasa);
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78129655-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
+
+
+ <?}?>

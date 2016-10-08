@@ -1,0 +1,181 @@
+<script type="text/javascript">
+	WebApp.Import('lib.validate.js');
+	WebApp.Import('lib.attachfile.js');
+	WebApp.Import('dynamic.js');
+	WebApp.Import('JSON.js');
+</script>
+<script language="javaScript">
+<!--
+function prepare(form) {
+	if(!validate(form)) {
+		document.getElementById('submit_btn').style.visibility = "visible";
+		return false;
+	}
+	form.elements['content'].value = oFCKeditor_%name%.GetValue();
+	if(document.getElementById('xEditFileCtrl_%name%').GetCount()) {
+		document.getElementById('xEditFileCtrl_%name%').UpLoad();
+		return false;
+	}
+	return true;
+}
+
+function OnUploadCompleted(filelist) {
+	document.forms['writeForm'].elements['upfiles'].value = filelist;
+	document.forms['writeForm'].submit();
+}
+
+function del_file() {
+	var form = document.forms['writeForm'];
+	var listbox = form.elements['listbox'];
+	if (listbox.selectedIndex < 0) return;
+	var fileid = listbox.options[listbox.selectedIndex].value;
+	var result = JSON.decode(dynamic.loadText('core.filehost.del?sect=%sect%&code={code}&main={id}&id='+fileid));
+	if (result.Code == '00') {
+		FA.removeFile(fileid,result.FileSize);
+	} else {
+		alert(result.Message);
+	}
+}
+
+function copyFileUrl(index) {
+	var els = document.forms['writeForm'].elements;
+	var fileid = els['listbox'].options[index].value;
+	var filename = els['listbox'].options[index].text;
+	var fileUrl;
+	fileUrl = "http://{_FILE_HOST}";
+	fileUrl += "/download/{C._OID}/%sect%/{code}/{num_serial}/";
+	fileUrl += fileid + "/" + filename + "?nocount=1";
+	els['buf'].value = fileUrl;
+	var tRange = els['buf'].createTextRange();
+	tRange.execCommand("Copy");
+	alert(filename + " 파일의 URL이 클립보드에 복사되었습니다.");
+	els['buf'].value = "";
+}
+//-->
+</script>
+<script language="JavaScript" event="UploadCompleted(filelist)" for="xEditFileCtrl_%name%">
+<!--
+	OnUploadCompleted(filelist);
+//-->
+</script>
+
+<!-- Editor -->
+
+<textarea name="%name%" id="%name%" style="width:100%;" rows="10">%content%</textarea>
+<script language="javaScript" src="/util/fckeditor_2.4.2/fckeditor.js"></script>
+<script language="javaScript">
+<!--
+var fckeditor_qs = "act=attachimage&";
+fckeditor_qs += "act_getimage=core.filehost.get&";
+fckeditor_qs += "act_deleteimage=core.filehost.del&";
+fckeditor_qs += "FILE_HOST={_FILE_HOST}&";
+fckeditor_qs += "phpsessid={_COOKIE.PHPSESSID}&";
+fckeditor_qs += "sect=%sect%&";
+fckeditor_qs += "code={code}&";
+fckeditor_qs += "oid={C._OID}";
+var oFCKeditor_%name% = new FCKeditor('%name%', '%width%', '%height%', '%toolbar%','','oFCKeditor_%name%',fckeditor_qs);
+oFCKeditor_%name%.ReplaceTextarea();
+//-->
+</script>
+<!-- Editor -->
+
+<!--{? env.upload // 업로드 ActiveX }-->
+<script language=JavaScript>
+<!--
+// 찾아보기 버튼 클릭
+function add_file() {
+	document.getElementById('xEditFileCtrl_%name%').BtnAddFile();
+	sel_all();
+}
+
+// 선택 상태 토글
+function sel_toggle() {
+	document.getElementById('xEditFileCtrl_%name%').ToggleCheck();
+}
+// 전체 선택
+function sel_all() {
+	document.getElementById('xEditFileCtrl_%name%').CheckAll(1);
+	document.getElementById('xEditFileCtrl_%name%').focus();
+}
+// 전체 선택 해제
+function unsel_all() {
+	document.getElementById('xEditFileCtrl_%name%').CheckAll(0);
+}
+// download
+function do_download() {
+	document.getElementById('xEditFileCtrl_%name%').DownLoad();
+}
+
+// 파일 제거
+function remove_file() {
+	document.getElementById('xEditFileCtrl_%name%').BtnRemoveFile();
+}
+// -->
+</script> 
+
+<object
+type="application/x-oleobject"
+codebase="/util/xEditFile/xEditFile.cab#version=1,0,0,6"
+id="xEditFileCtrl_%name%"
+classid="CLSID:F6D408E8-B0D0-4E39-938D-6E5D9FFDE932"
+width="200" height="20">
+<param name="AlignVertical" value="FALSE">
+<param name="AllowedFileType" value="zip, arj, rar, gz, tgz, ace, Z, exe, pdf, doc, hwp, xls, ppt, bmp, jpg, jpeg, png, gif, txt, mp3, ogg, aiff, avi, mpg, mpeg, mov, swf, flv, wmv, html, htm, alz, dat ,wav">
+<param name="ArticleInfo" value="act|attachfile,phpsessid|{_COOKIE.PHPSESSID},timestamp|{=date('U')}">
+<param name="BackgroundColor" value="#FFFFFF">
+<param name="BufferSize" value="40960">
+<param name="FnWidth" value="200">
+<param name="FsWidth" value="200">
+<param name="HideScrollbar" value="FALSE">
+<param name="ListStyle" value="2">
+<param name="MaxFileNum" value="1">
+<param name="MaxFileSize" value="5242880">
+<param name="ServerAddr" value="{_FILE_HOST}">
+<param name="ServerPort" value="80">
+<param name="ServerScript" value="/index.php">
+<param name="ShowBorder" value="TRUE">
+<param name="ShowGrid" value="FALSE">
+<param name="TextColor" value="black">
+<param name="UploadMode" value="TRUE">
+</object>
+
+<input type="button" value="찾아보기.." onClick="add_file();" style="cursor:hand;font-color:9pt;width:90px;height:20px;">
+<input type="button" value="파일제거" onClick="remove_file();" style="cursor:hand;font-color:9pt;width:90px;height:20px;">
+<!--{/ // 업로드 ActiveX }-->
+
+<!--{? FILE_LIST}-->
+<table>
+<tr>
+	<td bgcolor="#F0F0F0"><b>첨부된 파일</b></td>
+	<td bgcolor="#FFFFFF">
+		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="75%">
+				<select name="listbox" size="3" id="listbox" style="width: 100%" ondblclick="copyFileUrl(this.selectedIndex);">
+					<!--{@ FILE_LIST}-->
+					<option value="{.num_serial}">{.str_upfile}</option>
+					<!--{/}-->
+				</select>
+			</td>
+			<td width="25%" align="center">
+				<div style="margin-bottom:3px;">총 <input name="sizebox" type="text" size="5"> KB</div>
+				<input type="button" value="파일삭제" onclick="del_file()">
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+<!--{/}-->
+
+<script language="javaScript">
+<!--
+	var FA;
+	var form = document.getElementById('%name%').form;
+	if(form.elements['sizebox']) {
+		FA = new FileAttach();
+		FA.setForm(form);
+		FA.incByte(Number('{FILE_LIST.total_size}'));
+	}
+//-->
+</script>

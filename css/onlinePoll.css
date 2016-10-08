@@ -1,0 +1,77 @@
+@charset "euc-kr";
+
+/* ÀÌ¿ô´åÄÄ(e-wut.com) 
+À¥ ÆÛºí¸®½Ì 
+ÀÛ¾÷ÀÚ:±èµ¿¿ì, ±èÀºÁ¤ */
+
+
+/*º»¹®¿µ¿ª*/
+#onlinePoll {	
+	width:686px;
+	margin:0 auto;
+	padding-top:20px;
+	padding-left:2px;
+	background:url(/images/onlinePoll/onlinePollTableBg.gif) no-repeat left 44px;
+	}
+#onlinePoll .objTop {
+	overflow:hidden;
+	height:24px;
+	padding-left:11px;
+	}
+#onlinePoll .objTop .comment {
+	float:left;
+	margin-top:9px;
+	padding-left:14px;
+	background:url(/images/onlinePoll/pollBullet.gif) no-repeat left 1px;
+	}
+	#onlinePoll .objTop .comment span {
+		margin-right:3px;
+		}
+#onlinePoll .objTop img {	
+	float:right;
+	}
+#onlinePoll table {
+	overflow:hidden;
+	width:680px;
+	border-bottom:#656565 1px solid;
+	}
+	#onlinePoll table thead th {
+		height:35px;
+		}
+		#onlinePoll table thead .btn {
+			border-top:#9fc983 3px solid;
+			}
+	#onlinePoll table tbody tr.bg {
+		background:#f8f8f8;
+		}
+	#onlinePoll table tbody td {
+		padding:8px 0;
+		border-bottom:#cecece 1px solid;
+		}
+		#onlinePoll table tbody .btn {
+			font-size:11px;
+			width:94px;
+			text-align:center;
+			}
+			#onlinePoll table tbody .pollBtn {
+				display:block;
+				width:87px;
+				height:13px;
+				padding-top:3px;
+				text-decoration:none;
+				background:url(/images/onlinePoll/pollBtn.gif) no-repeat left top;
+				}
+				#onlinePoll table tbody .pollBtn:hover {
+					color:#000;
+					}
+		#onlinePoll table tbody .num {
+			width:46px;
+			text-align:center;
+			}
+		#onlinePoll table tbody .position {
+			width:72px;
+			text-align:center;
+			}
+			#onlinePoll table tbody .on {
+				color:#f80808;
+				}

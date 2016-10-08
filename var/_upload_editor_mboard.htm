@@ -1,0 +1,520 @@
+<script type="text/javascript" src="/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="/module/webconfig.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<?php {timestamp} = {= date('U')}; ?>
+
+
+	 
+
+	<textarea id="%name%_<?=mktime()?>" name="%name%"  style="width: %width%;height:%height%;">%content%</textarea>
+
+
+
+
+<!-- Editor --> 
+<script>
+
+
+function inCommand(html,note){
+if(note) {
+alert(note);	
+}
+parent.tinyMCE.execCommand(html, true, null);
+return;
+
+}
+function fupload(html,note){
+if(note) {
+alert(note);	
+}
+if(document.getElementById('fupload').style.display=='none') {
+document.getElementById('fupload').style.display='';	
+document.getElementById('ffup').style.display='';	
+
+}else{
+document.getElementById('fupload').style.display='none';
+document.getElementById('ffup').style.display='none';	
+}
+
+
+}
+
+</script>
+
+
+<TABLE  border=0    cellspacing=0 cellpadding=0 width = 100%>
+<tr>
+  <td height = 5></td>
+</tr>
+<TR style = "padding-right:4px">
+	<TD valign = top><a href = "javascript:add_file2();"><img src = "/image/editor/ed_image_txt.gif"></TD>
+	<TD valign = top><a href = "javascript:add_file2();"><img src = "/image/editor/ed_mncast_txt.gif"></TD>
+	<!--{? env.use_upload == 'Y'}--> <TD valign = top><a href = "javascript:add_file()"><img src = "/image/editor/ed_attach_txt.gif"></TD>{/}
+
+
+
+
+
+
+
+  <td align = right width = 80% >
+</td>
+
+</TR>
+<!--{? env.use_upload == 'Y'}-->
+<tr>
+  <td colspan = 10>
+
+
+<TABLE border=0  cellspacing=0 cellpadding=0 width = 100%>
+<TR>
+	<TD width = 50%><div id = "fupload" style = "padding-top:5px;display:">
+<!--{? !_%obj%->disable_upload}-->
+<script type="text/javascript" event="UploadCompleted(filelist)" for="xEditFileCtrl_%name%">
+<!--
+	OnUploadCompleted(filelist);
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function OnUploadCompleted(filelist) {
+	document.forms['%form%'].elements['upfiles'].value = filelist;
+	
+		document.getElementById('f_upup').innerHTML = "<p style='text-align:center'>업로드 처리중입니다..</p>";
+		var val = 'mcode={mcode}&serial={id}&timestamp={timestamp}&modet=%modet%&codet=%codet%&upfiles='+filelist;
+		sendRequest("/file.file1", val, FromServer, "POST"); 
+	
+		
+
+	//document.forms['%form%'].submit();
+}
+
+
+ 
+
+	function FromServer() {
+		if (httpRequest.readyState == 4) {
+			if (httpRequest.status == 200) {
+				var str_text = httpRequest.responseText; //받는값을 str_text로 정의
+				
+               
+				//length
+				
+
+				sel_all(); 
+				remove_file();
+				
+
+				var array_data_main = str_text.split("%%%%%%%%%%");  // split 함수사용..
+
+
+				document.getElementById('f_upup').innerHTML = array_data_main[0];
+
+				
+
+				var array_data_sub = array_data_main[1].split("&&&");  // split 함수사용..
+
+				//alert(array_data_sub[0]);
+
+for(ii=0; ii<array_data_sub.length-1; ii++) {
+	
+				var array_data = array_data_sub[ii].split("|||");
+
+				var ftype = array_data[0];
+				var url_tag = array_data[1]; 
+				var id = array_data[2];
+				var w = array_data[3];
+				var h = array_data[4];
+				var mid = array_data[5];
+				var url = array_data[6];
+				
+				//alert(ftype);
+			
+				if(ftype == "gif" ||ftype == "jpg"||ftype == "png") {
+				
+					if(confirm(' 이미지를 에디터에 삽입하시겠습니까?')==true){
+
+					copyFileUrlNoId(id,url_tag,'center',w,mid,url);
+					}
+				}
+				
+				if(ftype == "wmv" || ftype == "avi"|| ftype == "mpeg" ){
+				copyFileUrlNoIdMovie(id,url_tag,url);
+				}
+				
+
+				
+
+}
+				
+
+			}
+		}
+	}
+
+
+
+// 찾아보기 버튼 클릭
+function add_file() {
+	document.getElementById('xEditFileCtrl_%name%').BtnAddFile();
+	check_maxsize();
+}
+function add_file2() {
+	document.getElementById('xEditFileCtrl_%name%').BtnAddFile();
+	check_maxsize2();
+}
+// 전체용량 체크
+function check_maxsize() {
+	sel_all();
+	var uploaded_size = 0;
+	try {
+		if(FA) uploaded_size = FA.bytes;
+	} catch (e) {
+		uploaded_size = 0;
+	}
+	if(document.getElementById('xEditFileCtrl_%name%').GetTotalSize() + uploaded_size > %maxfilesize%) {
+		sel_all();
+		remove_file();
+		alert("첨부파일은 %maxfilesize% Byte 이상 올리실 수 없습니다.");
+		return false;
+	}else{
+	do_upload();
+	}
+	unsel_all();
+	return true;
+}
+
+// 전체용량 체크
+function check_maxsize2() {
+	sel_all();
+	var uploaded_size = 0;
+	try {
+		if(FA) uploaded_size = FA.bytes;
+	} catch (e) {
+		uploaded_size = 0;
+	}
+	if(document.getElementById('xEditFileCtrl_%name%').GetTotalSize() + uploaded_size > %maxfilesize%) {
+		sel_all();
+		remove_file();
+		alert("첨부파일은 %maxfilesize% Byte 이상 올리실 수 없습니다.");
+		return false;
+	}else{
+	do_upload();
+	}
+	unsel_all();
+	return true;
+}
+
+// 선택 상태 토글11
+function sel_toggle() {
+	document.getElementById('xEditFileCtrl_%name%').ToggleCheck();
+}
+// 전체 선택
+function sel_all() {
+	document.getElementById('xEditFileCtrl_%name%').CheckAll(1);
+	document.getElementById('xEditFileCtrl_%name%').focus();
+}
+// 전체 선택 해제
+function unsel_all() {
+	document.getElementById('xEditFileCtrl_%name%').CheckAll(0);
+}
+// download
+function do_download() {
+	document.getElementById('xEditFileCtrl_%name%').DownLoad();
+}
+
+// 파일 제거
+function remove_file() {
+	document.getElementById('xEditFileCtrl_%name%').BtnRemoveFile();
+}
+
+// upload
+function do_upload() {
+document.getElementById('xEditFileCtrl_%name%').UpLoad();
+
+}
+
+// -->
+</script> 
+
+<input type="hidden" name="timestamp" value="{timestamp}">
+<input type="hidden" name="upfiles" value="">
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<td style="border:0px;">
+		<script type="text/javascript">
+		docWrite('<object ' +
+		'type="application/x-oleobject" ' +
+		'codebase="/util/xEditFile/xEditFile.cab#version=1,0,0,6" ' +
+		'id="xEditFileCtrl_%name%" ' +
+		'classid="CLSID:F6D408E8-B0D0-4E39-938D-6E5D9FFDE932" ' +
+		'width="368" height="100"> ' +
+		'<param name="AlignVertical" value="FALSE"> ' +
+		'<param name="AllowedFileType" value="zip, arj, rar, gz, tgz, ace, Z,  pdf, doc, docx, hwp, xls, xlsx, ppt, pptx, bmp, jpg, jpeg, png, gif, txt, wmv, alz, dat"> ' +
+		'<param name="ArticleInfo" value="act|attachfile,phpsessid|{_COOKIE.PHPSESSID},timestamp|{timestamp}"> ' +
+		'<param name="BackgroundColor" value="#FFFFFF"> ' +
+		'<param name="BufferSize" value="40960"> ' +
+		'<param name="FnWidth" value="200"> ' +
+		'<param name="FsWidth" value="100"> ' +
+		'<param name="HideScrollbar" value="FALSE"> ' +
+		'<param name="ListStyle" value="0"> ' +
+		'<param name="MaxFileNum" value="%maxfilenum%"> ' +
+		'<param name="MaxFileSize" value="%maxfilesize%"> ' +
+		'<param name="ServerAddr" value="{_FILE_HOST}"> ' +
+		'<param name="ServerPort" value="80"> ' +
+		'<param name="ServerScript" value="/index.php"> ' +
+		'<param name="ShowBorder" value="TRUE"> ' +
+		'<param name="ShowGrid" value="TRUE"> ' +
+		'<param name="TextColor" value="black"> ' +
+		'<param name="UploadMode" value="TRUE"> ' +
+		'</object> ');
+		</script>
+	</td>
+	</tr>
+	<tr>
+	<td style="border:0px;padding-top:3px;font-size:11px" align = right>
+	
+	<TABLE cellpadding="0" cellspacing="0" border=0 align=right width = 100%  >
+	<TR>
+		<TD style="font-size:11px">업로드 용량은 <font style = "color:red"><? echo %maxfilesize% / 1000000; ?> MB 입니다.</font> <font style = "color:#8A8A8A">(%maxfilenum% 개 가능)<br>선택후 첨부를 클릭해주세요.</font></TD>
+		<TD> <img src="/image/editor/btn_attach.gif" value="찾아보기." onClick="do_upload();" style="cursor:hand;" align="absmiddle"></TD>
+		<TD><img src="/image/editor/btn_attachdel.gif" value="파일제거" onClick="remove_file();" style="cursor:hand;" align="absmiddle"></TD>
+	</TR>
+	</TABLE>
+		
+		
+		
+	</td>
+</tr>
+</table>
+<!--{: _%obj%->disable_upload}-->
+죄송합니다. 파일 업로드 기능을 잠시 중단합니다.<br>
+파일서버 작업이 완료될 때 까지 양해해 주시기 바랍니다.<br>
+서비스에 불편을 드려 죄송합니다.
+<!--{/}-->
+</div>
+
+
+</TD>
+	<TD valign = top style = "padding-top:3px;padding-left:5px" width=50%>
+	
+
+
+  <div id = "ffup" style = "display:">
+  
+
+<input type="hidden" name="buf" value="">
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+
+<tr>
+	<td width="25%" align="center">
+	
+	</td>
+</tr>
+<tr>
+	<td width="75%" >
+
+	<div  style = "border:1px solid #C3C3C3;padding:10px">
+	<div  style = "width:100%;height:105px;overflow:auto;" id="f_upup">
+	<!--{@ %var%}-->
+<div id="files_{.num_serial}" style = "display:">
+
+
+
+{? .str_ftype == "gif" || .str_ftype == "jpg" || .str_ftype == "png"}
+<a href="javascript:copyFileUrl('{.num_serial}','{.str_upfile}','center','400','0','{.real_url}')" > 
+{:}
+	{? .str_ftype == "wmv" || .str_ftype == "avi" || .str_ftype == "mpeg"}
+	<a href="javascript:copyFileUrlNoIdMovie('{.num_serial}','{.str_upfile}','{.real_url}')" > 
+	{:}
+
+		{? .str_ftype == "wma" || .str_ftype == "mp3" }
+		<a href="javascript:copyFileUrlNoIdMp3('{.num_serial}','{.str_upfile}','{.real_url}')" > 
+		{:}
+
+<a href="javascript:copyFileUrl2('{.num_serial}','{.str_upfile}','{.str_ftype}','{id}','{.real_url}')" > 
+		{/}
+	{/}
+{/}
+
+
+<img src="/image/icon/{.str_ftype}.gif" align="absmiddle" onerror="this.src='/image/icon/unknown.gif';" border="0"> {.str_upfile}</a><a href="javascript:del_file('{.num_serial}','{.str_upfile}','{id}','{.str_ftype}');"> <img src="/image/editor/bg_transparent.gif" align="absmiddle"></a> 
+
+
+
+
+<br>
+</div>
+{:}
+
+
+	<!--{/}-->
+	</div>
+	</div>
+	</td>
+</tr>
+</table>
+
+
+<script type="text/javascript">
+<!--
+
+
+function del_file(fileid,filename,id,ftype) {
+	
+if(id) {
+	var result = JSON.decode(dynamic.loadText('core.filehost.del?sect=%sect%&code=%code%&main='+id+'&id='+fileid));	
+}else{
+	var result = JSON.decode(dynamic.loadText('core.filehost.del?sect=%sect%&code=%code%&main={id}&id='+fileid));
+}
+
+
+	if (result.Code == '00') {
+		//alert('파일을 삭제하였습니다.');
+if(ftype == "wmv") {
+document.getElementById('c2').value= '';	
+}
+
+
+document.getElementById('files_'+fileid).style.display="none";
+parent.tinyMCE.activeEditor.execCommand('mceRemoveNode', 'a',fileid+filename+'1');
+parent.tinyMCE.activeEditor.execCommand('mceRemoveNode', 'p',fileid+filename+'2');
+parent.tinyMCE.activeEditor.execCommand('mceRemoveNode', 'img',fileid+filename+'3');
+	
+	
+	
+	} else {
+		alert(result.Message);
+		
+	}
+}
+
+
+function copyFileUrlNoIdMovie(fileid,filename,url) {
+	
+	if(!url) {
+	var fileUrl = "http://{_FILE_HOST}";
+	fileUrl += "/download/%oid%/%sect%/%code%/";
+	fileUrl += fileid + "/" + filename;		
+	}else{
+	var fileUrl = url;
+	}
+
+
+document.getElementById('c2').value= fileUrl;
+
+		//parent.tinyMCE.activeEditor.execCommand('mceInsertRawHTML', true, '<object classid="clsid:6bf52a52-394a-11d3-b153-00c04f79faa6" width="529" height="408" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701"><param name="src" value="'+fileUrl+'" /><param name="url" value="'+fileUrl+'" /><embed type="application/x-mplayer2" width="529" height="408" src="'+fileUrl+'" url="'+fileUrl+'"></embed></object>');
+
+
+}
+
+
+function copyFileUrlNoIdMp3(fileid,filename,url) {
+	
+	if(!url) {
+	var fileUrl = "http://{_FILE_HOST}";
+	fileUrl += "/download/%oid%/%sect%/%code%/";
+	fileUrl += fileid + "/" + filename;		
+	}else{
+	var fileUrl = url;
+	}
+
+	parent.tinyMCE.activeEditor.execCommand('mceInsertRawHTML', true, '<object classid="clsid:6bf52a52-394a-11d3-b153-00c04f79faa6" width="55" height="30" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701"><param name="src" value="'+fileUrl+'" /><param name="url" value="'+fileUrl+'" /><embed type="application/x-mplayer2" width="55" height="30" src="'+fileUrl+'" url="'+fileUrl+'"></embed></object>');
+
+
+}
+
+
+function copyFileUrlNoId(fileid,filename,align,w,id,url) {
+	
+	if(!url) {
+	var fileUrl = "http://{_FILE_HOST}";
+	fileUrl += "/download/%oid%/%sect%/%code%/"+id+"/";
+	fileUrl += fileid + "/" + filename;		
+	}else{
+	var fileUrl = url;
+	}
+
+	if(parseInt(w) > 700) {
+		parent.tinyMCE.activeEditor.execCommand('mceInsertRawHTML', true, '<a href ="'+fileUrl+'"  rel="lightbox1"  id="'+fileid+filename+'1"><p style="text-align:'+align+'"   id="'+fileid+filename+'2"><img src = "'+fileUrl+'" width = 610    id="'+fileid+filename+'3"></p></a><br> ');
+	}else{
+		parent.tinyMCE.activeEditor.execCommand('mceInsertRawHTML', true, '<img src = "'+fileUrl+'"  id="'+fileid+filename+'3"></p>');
+	}
+	
+	
+
+}
+
+function copyFileUrl(fileid,filename,align,w,url) {
+	
+	if(!url) {
+	var fileUrl = "http://{_FILE_HOST}";
+	fileUrl += "/download/%oid%/%sect%/%code%/{id}/";
+	fileUrl += fileid + "/" + filename;		
+	}else{
+	var fileUrl = url;
+	}
+
+
+	if(parseInt(w) > 700) {
+		parent.tinyMCE.activeEditor.execCommand('mceInsertRawHTML', true, '<a href ="'+fileUrl+'"  rel="lightbox1"  id="'+fileid+filename+'1"><p style="text-align:'+align+'"   id="'+fileid+filename+'2"><img src = "'+fileUrl+'" width = 610    id="'+fileid+filename+'3"></p></a> <br>');
+	}else{
+		parent.tinyMCE.activeEditor.execCommand('mceInsertContent', true, '<img src = "'+fileUrl+'"  id="'+fileid+filename+'3"></p>');
+	}
+	
+	
+
+}
+
+function copyFileUrl2(fileid,filename,ftype,id,url) {
+	
+if(!url) {
+	
+
+
+	var fileUrl = "http://{_FILE_HOST}";
+	if(!id) {
+	fileUrl += "/download/%oid%/%sect%/%code%/{? num_serial}{num_serial}{:}{id}{/}/";	
+	}else{
+	fileUrl += "/download/%oid%/%sect%/%code%/"+id+"/";
+	}
+	
+	fileUrl += fileid + "/" + filename;
+	
+}else{
+fileUrl = url;
+}
+	
+	parent.tinyMCE.activeEditor.execCommand('mceInsertRawHTML', true, '<a href = '+fileUrl+'><img src = "/image/icon/'+ftype+'.gif" align="absmiddle"> '+filename+' [다운로드]</a>');
+	
+
+}
+//-->
+</script>
+  
+  </div>
+
+
+
+
+
+	
+	</TD>
+</TR>
+</TABLE>
+
+
+
+
+
+
+
+  </td>
+</tr>
+{/}
+</TABLE>
+
+
+
+

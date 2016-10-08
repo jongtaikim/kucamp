@@ -1,0 +1,153 @@
+/*
+웹 퍼블리싱
+작업자:김종태
+*/
+
+/*바디 기본*/
+body {
+	margin: 0px;
+	color:#3e3e3e;
+	font-family:돋움;
+}
+/*하이퍼링크 기본*/
+a {}
+a:link {color:#3e3e3e;	text-decoration:none; font-family:돋움;}
+a:visited {color:#3e3e3e;	text-decoration:none; font-family:돋움;}
+a:active {color:#285775;text-decoration:none; font-family:돋움;}
+a:hover {color:#285775;text-decoration:none; font-family:돋움;}
+
+img {	border: none;}
+p, ul, ol {ine-height:18px;margin-top:0px;margin-bottom: 0px;}
+
+td,th {font-size: 12px;word-break:break-all;color:#3e3e3e;}
+
+input, textarea {font-size: 9pt;}
+input.image { border: none;}
+input.button {letter-spacing: -1px; 	border:1px solid #B9B8BE;	background-color: #F0F0F0;	color:#435556;	padding-top:2px;	}
+
+
+/*라운드 테이블 용*/
+.rtop, .rbottom{display:block;} 
+.rtop *, .rbottom *{display:block; height:1px; overflow:hidden;} 
+.r1{margin:0 5px; } 
+.r2{margin:0 3px; } 
+.r3{margin:0 2px; } 
+.r4{margin:0 1px; height:2px; } 
+.box{ margin:0; padding:0px 0px 0px 0px; } 
+/*라운트 테이블 끝 */
+
+.tipBox{filter:progid:DXImageTransform.Microsoft.Shadow(color=#DBDBDB,direction=135,strength=2);;padding:5px;cursor: move}
+#popup_box{position:absolute;top:120;left:10px;z-index:99999;}
+#popup_box1{position:absolute;z-index:999991;}
+#popup_box2{position:absolute;z-index:999991;}
+#popup_box3{position:absolute;z-index:999991;}
+#popup_box4{position:absolute;z-index:999991;}
+#popup_box5{position:absolute;z-index:999991;}
+#popup_box6{position:absolute;z-index:999991;}
+
+/* Default Setting */
+* { margin:0; padding:0;}
+
+/* Layer Popup */
+.layer_popup{  overflow:visible; filter:progid:DXImageTransform.Microsoft.Shadow(color=#999999,direction=135,strength=3);}
+.layer_popup *{ line-height:normal;}
+.layer_popup img,
+.layer_popup fieldset{ border:none;}
+.layer_popup legend{ display:none;}
+.layer_popup .layer_content{ border:2px solid #777777; background:#ffffff; position:relative; z-index:2;}
+.layer_popup .layer_header{ padding:8px 0 7px 11px; margin:0 0 5px 0; color:#000000; font:bold 13px 굴림, Gulim, 돋움, Dotum, AppleGothic, Sans-serif; background:#f4f4f4;}
+.layer_popup .layer_body{ padding:13px 0 3px 0; margin:0 20px; text-align:center; font-size:12px; line-height:18px; font-family:돋움, Dotum, 굴림, Gulim, AppleGothic, Sans-serif; color:#222222;}
+.layer_popup .layer_footer{ border-top:1px solid #e8e8e8; margin:0 20px; padding:10px 0 15px 0; text-align:center;}
+.layer_popup .layer_footer *{ vertical-align:top;}
+.layer_popup .layer_footer a{ margin:0 1px 0 0;}
+.layer_popup .close_layer{ position:absolute; top:9px; right:9px;}
+.layer_popup .shadow{ position:absolute; width:100%; height:100%; overflow:visible; z-index:1; _display:none;}
+*:first-child+html .layer_popup .shadow{ display:none;}
+.layer_popup .shadow1{ left:3px; top:3px; background:url(http://static.naver.com/common/layer/shadow1.png);}
+.layer_popup .shadow2{ left:2px; top:2px; background:url(http://static.naver.com/common/layer/shadow2.png);}
+.layer_popup .shadow3{ left:1px; top:1px; background:url(http://static.naver.com/common/layer/shadow3.png);}
+
+.saveTool { border: 1px solid #C1C1C1; color: #5B5B5B}
+
+
+
+DIV.tab08 {float:left;width:100%;background: url(./ui/tab08_bg.gif) repeat-x bottom;	font-size:93%;line-height:normal;margin-bottom:5px}
+
+DIV.tab08 ul {	margin:0;padding:0px 10px 10;	list-style:none;}
+DIV.tab08 li {float:left;	background:url(./ui/tab08_left.gif) no-repeat left top;	margin:0;padding:0 0 0 5px;}
+DIV.tab08 a {float:left;display:block;background:url(./ui/tab08_right.gif) no-repeat right top;padding:5px 6px 1px 4px;text-decoration:none;color:#765;}
+
+DIV.tab08 a {float:none;}
+DIV.tab08 a:hover {color:#333;}
+DIV.tab08 .active {color:#333;background-image:url(./ui/tab08_left_on.gif);}
+
+DIV.tab08 .active a {color:#CC0000;	background-image:url(./ui/tab08_right_on.gif);}
+DIV.tab08 .active a:hover {	color:#333;}
+
+
+DIV.tab01 {float:left;width:100%;background: url(./ui/tab01_bg.gif) repeat-x bottom;font-size:93%;line-height:normal;margin-bottom:10px}
+DIV.tab01 ul {	margin:0;padding:0px 10px 10;	list-style:none;}
+
+DIV.tab01 li {float:left;	background:url(./ui/tab01_left.gif) no-repeat left top;	margin:0;	padding:0 0 0 5px;}
+DIV.tab01 a {	float:left;display:block;background:url(./ui/tab01_right.gif) no-repeat right top;padding:5px 6px 4px 4px;text-decoration:none;	color:#765;}
+
+DIV.tab01 a {float:none;}
+DIV.tab01 a:hover {color:#333;}
+DIV.tab01 .active {color:#333;}
+DIV.tab01 .active a {color:#CC0000;	padding-bottom:5px;}
+DIV.tab01 .active a:hover {color:#333;}
+
+
+
+#smartInput{ margin:0 10px 0 0;}
+.smartOutput{ font-size:12px; line-height:1.6; font-family:Dotum, AppleGothic, Sans-serif;} /* 스마트 에디터의 풍부한 표현이 정상적으로 출력되도록 하려면 콘텐츠가 출력되는 곳에 이 클래스를 적용하여야 한다. 예를 들면 게시물 읽기 페이지의 본문이 이에 해당된다. */
+
+.smartOutput p{ margin-top:7px; margin-bottom:7px;}
+
+ blockquote.q1,
+.smartOutput blockquote.q2,
+.smartOutput blockquote.q3,
+.smartOutput blockquote.q4,
+.smartOutput blockquote.q5,
+.smartOutput blockquote.q6,
+.smartOutput blockquote.q7{ padding:10px; margin-left:15px; margin-right:15px;}
+
+.smartOutput blockquote.q1{ padding:0 10px; border-left:2px solid #ccc;}
+.smartOutput blockquote.q2{ padding:0 10px; background:url(../img/bg_qmark.gif) no-repeat;}
+.smartOutput blockquote.q3{ border:1px solid #d9d9d9;}
+.smartOutput blockquote.q4{ border:1px solid #d9d9d9; background:#fbfbfb;}
+.smartOutput blockquote.q5{ border:2px solid #707070;}
+.smartOutput blockquote.q6{ border:1px dashed #707070;}
+.smartOutput blockquote.q7{ border:1px dashed #707070; background:#fbfbfb;}
+
+.smartOutput sup{ font:10px Tahoma;}
+.smartOutput sub{ font:10px Tahoma;}
+.smartOutput table td{ padding:4px;}
+
+.objStyle{
+border: red 1px dashed; 
+background-image:url(/image/icon/wmv.gif);
+background-position:50% 50%; 
+background-repeat:no-repeat;
+background-color:#DDDDDD
+}
+
+
+/*리모컨 */
+DIV.remoconBody {filter:progid:DXImageTransform.Microsoft.Shadow(color=#999999,direction=135,strength=3); margin-right:2px;float:left; }
+DIV.remoconBody .remoconHead{height:20px;cursor:move;padding-top:5px }
+DIV.remoconBody .itemBody{margin:0 5px 0 5px; }
+
+DIV.remoconBody .item {padding:5px 0px 2px 0px}
+DIV.remoconBody .item A{color:#e4ff93}
+
+DIV.remoconBody .item2 {padding:2px 0px 2px 0px}
+DIV.remoconBody .item2 A{color:#00FFCC}
+
+DIV.remoconBody .remoconFoot{padding-bottom:5px}
+
+DIV.m_body{top:0px;position:absolute;display::none; left:97px;}
+DIV.m_body .title{cursor:move;}
+DIV.m_body .title .nname {float:left;width:80%; text-align:left; }
+DIV.m_body .title .xbtn {float:left; text-align:right; width:20%; }
+DIV.m_body .window{padding:5px;}

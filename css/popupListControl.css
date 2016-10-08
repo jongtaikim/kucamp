@@ -1,0 +1,291 @@
+@charset "euc-kr";
+
+/*
+웹 퍼블리싱
+작업자:김은정(lulubong@hanmail.net) 
+*/
+
+
+
+/*공통*/
+	#popupListControl {
+		width:621px;
+		padding-top:15px;
+		margin:0 auto;
+		}
+		#popupListControl h3 {
+			display:block;
+			width:573px;
+			height:21px;
+			padding-top:8px;
+			padding-left:48px;
+			color:#285775;
+			font-size:12px;
+			font-weight:bold;
+			background:url(/html/popup/images/popupListControlTitBg.gif) no-repeat left top;
+			}
+
+			#popupListControl form {
+				position:relative;
+				padding-bottom:13px;
+				background:url(/html/popup/images/popupControlBtmBg.gif) no-repeat left bottom;
+				}
+
+/*popupListControl1*/
+			#popupControl {
+				border-left:#d8d8d8 1px solid;
+				border-right:#d8d8d8 1px solid;
+				}
+				#popupControl fieldset{
+					padding-left:18px;
+					}
+					#popupControl p {
+						margin:13px 0;
+						}
+					#popupControl p .title {
+						padding-left:10px;
+						background:url(/html/popup/images/titleIcon.gif) no-repeat left 3px;
+						}
+					#popupControl p .changeBtn {
+						vertical-align:-5px;
+						}
+					#popupControl p .skinImg {
+						vertical-align:-45px;
+						}
+					#popupControl p .skinBtn {
+						vertical-align:-7px;
+						}
+				
+				#popupControl fieldset .saveBtn {
+					position:absolute;
+					top:148px;
+					right:90px;
+					}
+				#popupControl fieldset .cancelBtn {
+					position:absolute;
+					top:148px;
+					right:10px;
+					}
+
+
+			#popupList {
+				margin-top:20px;
+				}
+				#popupList .listTop {
+					display:inline;
+					float:right;
+					margin-right:64px;
+					}
+					#popupList .listTop select {
+						width:80px;
+						}
+				#popupList table {
+					clear:both;
+					width:100%;
+					margin-top:5px;
+					border-top:#cbdbee 2px solid;
+					border-collapse:collapse;
+					}
+					
+					#popupList table thead th{
+						height:28px;
+						color:#285775;
+						border-top:#aad0eb 1px solid;
+						border-left:#d5dfe7 1px solid;
+						border-right:#d5dfe7 1px solid;
+						background:#f3f6f8;
+						}
+						/*가로값*/
+						#popupList table .checkbox {
+							width:34px;
+							}
+						#popupList table .title {
+							width:310px;
+							}
+						#popupList table .location {
+							width:81px;
+							}
+						#popupList table .position {
+							width:81px;
+							}
+
+
+					#popupList table td {
+						height:22px;
+						padding:3px 0;
+						text-align:center;
+						border:#d5dfe7 1px solid;
+						}
+						#popupList table td.title {
+							text-align:left;
+							}
+						#popupList table td.num {
+							width:45px;
+							}
+						#popupList table .text {
+							line-height:130%;
+							}
+				#popupList .listBtm {
+					margin-top:10px;
+					}
+				#popupList .deleteBtn {
+					float:left;
+					}
+				#popupList .newPopupBtn {
+					float:right;
+					}
+					#popupList #pagingArea {
+						float:left;
+						width:440px;
+						margin-top:7px;
+						text-align:center;
+						}
+						#popupList #pagingArea .prevBtn, #pagingArea .nextBtn, #pagingArea .firstBtn, #pagingArea .lastBtn {
+							vertical-align:-3px;
+							}
+						#popupList #pagingArea a {
+							margin-right:5px;
+							}
+							#popupList #pagingArea a:hover {
+								font-weight:bold;
+								letter-spacing:-1px;
+								}
+
+
+
+	/*popupListControl2*/
+
+#newPopup {
+	padding-bottom:40px;
+	padding-left:18px;
+	border-left:#d8d8d8 1px solid;
+	border-right:#d8d8d8 1px solid;
+	}
+	#newPopup .row {
+		margin:13px 0;
+		}
+	#newPopup .row .title {
+		padding-left:10px;
+		background:url(/html/popup/images/titleIcon.gif) no-repeat left 3px;
+		}
+		#newPopup input {
+			height:13px;
+			}
+	/*팝업명*/
+	#popupName input {
+		width:300px;
+		}
+	/*팝업존 기간*/
+	#zonePeriod input {
+		vertical-align:2px;
+		}
+		#zonePeriod .calendar {
+			width:90px;
+			}
+		#zonePeriod .calendarImg {
+			margin-left:3px;
+			vertical-align:-3px;
+			}
+	/*팝업존 스킨*/
+	#zoneSkin .skinImg {
+		vertical-align:-45px;
+		}
+	#zoneSkin .skinBtn {
+		margin-left:5px;
+		vertical-align:-7px;
+		
+		}
+	/*편집툴 영역*/
+	#textArea {
+		margin-bottom:10px;
+		}
+	#textArea textarea {
+		width:580px;
+		height:277px;
+		}
+	/*첨부파일*/
+	#attatch .title {
+		display:block;
+		}
+	#attatch .comment {
+		margin-right:5px;
+		color:#236683;
+		vertical-align:6px;
+		}
+	#attatch .caution{
+		display:block;
+		padding-left:13px;
+		background:url(/html/popup/images/commentIcon.gif) no-repeat left 2px;
+		}
+	#attatch input {
+		width:380px;
+		height:18px;
+		margin-bottom:10px;
+		}
+	/*팝업 크기*/
+	#popupSize select {
+		font-family:dotum;
+		}
+	#sizeWidth, #sizeHeight, #locWidth, #locHeight {
+		width:40px;
+		}
+		.width {
+			margin-right:7px;
+			}
+	/*팝업위치*/
+	#popupLocation input {
+		vertical-align:2px;
+		}
+
+	/*하단 버튼*/
+	#newPopup .preViewBtn {
+		position:absolute;
+		left:8px;
+		bottom:16px;
+		}
+	#newPopup .commitBtn {
+		position:absolute;
+		width:78px;
+		height:33px;
+		right:90px;
+		bottom:15px;
+		}
+	#newPopup .cancelBtn {
+		position:absolute;
+		right:8px;
+		bottom:16px;
+		}
+
+
+/*스킨 선택 팝업*/
+#skinSelect {
+	overflow:hidden;
+	width:415px;
+	height:132px;
+	background:url(/html/popup/images/skinSelectBg.gif) no-repeat left top;
+	}
+#skinSelect ul {
+	width:450px;
+	padding-top:10px;
+	padding-left:20px;
+	}
+#skinSelect li {
+	float:left;
+	margin-right:7px;
+	text-align:center;
+	}
+
+#skinSelect #pagingArea {
+	clear:both;
+	margin-top:3px;
+	text-align:center;
+	}
+	#skinSelect #pagingArea .prevBtn, #skinSelect #pagingArea .nextBtn, #skinSelect #pagingArea .firstBtn, #skinSelect #pagingArea .lastBtn {
+		vertical-align:-3px;
+		}
+	#skinSelect #pagingArea a {
+		margin-right:5px;
+		}
+		#skinSelect #pagingArea a:hover {
+			font-weight:bold;
+			letter-spacing:-1px;

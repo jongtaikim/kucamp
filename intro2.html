@@ -1,0 +1,101 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<meta name="description" content="KU CAMP 홈페이지, 멘토링캠프, 고려대학교, 고려대학교 캠프, Mentoring Camp, korea University, 영재, 과학캠프, 수학캠프," />
+<meta name="keywords" content="KU CAMP, 홈페이지,멘토링캠프, 고려대학교, 고려대학교 캠프, Mentoring Camp, korea University, 영재, 과학캠프, 수학캠프" />
+<meta name="author" content="김종태,김용진" />
+<meta name="language" content="ko" />
+<script type="text/javascript" src="/js/jquery-1.4.3.min.js"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>고려대학교 진로적성 캠프</title>
+<link rel="stylesheet" type="text/css" href="/css/now_to_css.css" />
+<link rel="stylesheet" type="text/css" href="/css/animate.css" />
+
+</head>
+
+<body style="height:100%;margin:0px;padding:0px;width:100%">
+<table align="center" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" class="tableTemp01" summary="">
+
+	<tbody>
+		
+		<tr>
+			<td align="center"  class=" pos_r" >
+				
+				<div class=" animated fadeInLeft" id="" style="width:900px;margin:0 auto;height:600px">
+					<div class="actives mode1 "  id=""  style="" >
+						<div class="f_l  fadeInRight  banner1 banners " id="">
+							<a href="http://www1.kucamp.com">
+							<img src="/images/a1.png" alt="" border=0/>
+							</a>
+						</div>
+						<div class="f_l   slideInLeft banner2 banners" id="">
+							
+								<img src="/images/a2.png" alt="" border=0 />
+							
+						</div>
+					</div>
+
+					<div class="actives mode2 hide "  id=""  style=" width:900px;height:600px;;" >
+						
+						<div class="f_l   slideInRight banner3 banners" id="">
+							
+								<img src="/images/b2.png" alt="" border=0/>
+
+						</div>
+						<div class="f_l  fadeInLeft  banner4 banners " id="">
+							<a href="http://www2.kucamp.com">
+								<img src="/images/b1.png" alt="" border=0/>
+							</a>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+				var ani = 'y';
+				$('.banner2').mouseenter(function(){
+					if(!ani){
+						ani = 'y';
+						$('.mode1').hide();
+						$('.mode2').show();
+						
+						//$('.mode1').animate({'left':'-500px'});
+						setTimeout(function(){
+							ani = '';
+						},200);
+					}
+					
+				});
+
+				$('.banner3').mouseenter(function(){
+					if(!ani){
+						ani = 'y';
+						$('.mode2').hide();
+						$('.mode1').show();
+						
+						//$('.mode2').animate({'left':'-500px'});
+						setTimeout(function(){
+							ani = '';
+							//$('.mode2').css('left','0px');
+						},200);
+					}
+				});
+				$(document).ready(function(){ 
+					setTimeout(function(){
+						$('.banners').addClass('animated');
+						ani = '';
+					},300);
+				});
+				$('.tableTemp01').height($(window).height())
+				$(window).resize(function(){ $('.tableTemp01').height($(window).height()) });
+					
+				</script>
+
+
+				
+			
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+</body> 

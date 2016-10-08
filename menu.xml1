@@ -1,0 +1,64 @@
+<Navigation>
+<menu align="left" stageW="607" stageH="75" startX="10" startY="4" mmSpace="19" smSpace="5" smNextTab="10" smMaxX="15">
+<item name="캠프소개" names="" href="menu.blank?mcode=10&cate=10" target="" tabidx="1" mcode="10" >
+<submenu>
+<sub href="doc.view?mcode=1010&cate=1010" target="" tabidx="2" mcode="1010">캠프개요</sub>
+<sub href="doc.view?mcode=1011&cate=1011" target="" tabidx="3" mcode="1011">캠프특징</sub>
+<sub href="doc.view?mcode=1013&cate=1013" target="" tabidx="4" mcode="1013">캠프추천</sub>
+<sub href="doc.view?mcode=1015&cate=1015" target="" tabidx="5" mcode="1015">회사소개</sub>
+<sub href="doc.view?mcode=1012&cate=1012" target="" tabidx="6" mcode="1012">학교소개</sub>
+<sub href="doc.view?mcode=1014&cate=1014" target="" tabidx="7" mcode="1014">협력기관</sub>
+<sub href="doc.view?mcode=1016&cate=1016" target="" tabidx="8" mcode="1016">회사약도</sub>
+<sub href="doc.view?mcode=1017&cate=1017" target="" tabidx="9" mcode="1017">단체위탁캠프</sub>
+</submenu>
+</item>
+<item name="프로그램" names="" href="menu.blank?mcode=11&cate=11" target="" tabidx="10" mcode="11" >
+<submenu>
+<sub href="doc.view?mcode=1110&cate=1110" target="" tabidx="11" mcode="1110">프로그램 개요</sub>
+<sub href="menu.blank?mcode=1111&cate=1111" target="" tabidx="12" mcode="1111">KU진로적성캠프</sub>
+<sub href="/lms.tach_main?mcode=1113&cate=1113" target="_self" tabidx="13" mcode="1113">선생님 소개</sub>
+<sub href="doc.view?mcode=1115&cate=1115" target="" tabidx="14" mcode="1115">생활관리</sub>
+</submenu>
+</item>
+<item name="참가안내" names="" href="menu.blank?mcode=12&cate=12" target="" tabidx="15" mcode="12" >
+<submenu>
+<sub href="doc.view?mcode=1210&cate=1210" target="" tabidx="16" mcode="1210">등록안내</sub>
+<sub href="/lms.order?mcode=1211&cate=1211&ccode=15" target="_self" tabidx="17" mcode="1211">신청하기</sub>
+<sub href="doc.view?mcode=1212&cate=1212" target="" tabidx="18" mcode="1212">결제안내</sub>
+<sub href="doc.view?mcode=1213&cate=1213" target="" tabidx="19" mcode="1213">입금/환불</sub>
+<sub href="doc.view?mcode=1216&cate=1216" target="" tabidx="20" mcode="1216">입·퇴소 안내</sub>
+<sub href="doc.view?mcode=1217&cate=1217" target="" tabidx="21" mcode="1217">캠프장소</sub>
+<sub href="doc.view?mcode=1218&cate=1218" target="" tabidx="22" mcode="1218">사전 설문조사</sub>
+</submenu>
+</item>
+<item name="캠프자료실" names="" href="menu.blank?mcode=13&cate=13" target="" tabidx="23" mcode="13" >
+<submenu>
+<sub href="board.list?mcode=1313&cate=1313" target="" tabidx="24" mcode="1313">공지사항</sub>
+<sub href="qna.list?mcode=1214&cate=1317" target="_self" tabidx="25" mcode="1317">상담게시판</sub>
+<sub href="doc.view?mcode=1310&cate=1310" target="" tabidx="26" mcode="1310">캠프준비물</sub>
+<sub href="board.list?mcode=1215&cate=1318" target="_self" tabidx="27" mcode="1318">등록 FAQ</sub>
+<sub href="doc.view?mcode=1312&cate=1312" target="" tabidx="28" mcode="1312">식단안내</sub>
+</submenu>
+</item>
+<item name="캠프방송국" names="" href="menu.blank?mcode=14&cate=14" target="" tabidx="29" mcode="14" >
+<submenu>
+<sub href="board.list?mcode=1412&cate=1412" target="" tabidx="30" mcode="1412">사진앨범</sub>
+<sub href="board.list?mcode=1413&cate=1413" target="" tabidx="31" mcode="1413">캠프동영상</sub>
+<sub href="board.list?mcode=1314&cate=1414" target="_self" tabidx="32" mcode="1414">보도자료</sub>
+</submenu>
+</item>
+<item name="커뮤니티" names="" href="menu.blank?mcode=15&cate=15" target="" tabidx="33" mcode="15" >
+<submenu>
+<sub href="menu.blank?mcode=1511&cate=1511" target="" tabidx="34" mcode="1511">캠프후기</sub>
+<sub href="doc.view?mcode=1513&cate=1513" target="" tabidx="35" mcode="1513">격려편지쓰기</sub>
+</submenu>
+</item>
+<item name="인증제 안내" names="" href="menu.blank?mcode=16&cate=16" target="" tabidx="36" mcode="16" >
+<submenu>
+<sub href="doc.view?mcode=1610&cate=1610" target="" tabidx="37" mcode="1610">청소년수련활동</sub>
+<sub href="doc.view?mcode=1611&cate=1611" target="" tabidx="38" mcode="1611">인증수련활동 특징</sub>
+<sub href="doc.view?mcode=1612&cate=1612" target="" tabidx="39" mcode="1612">활동기록확인서 발급</sub>
+</submenu>
+</item>
+</menu>
+</Navigation>

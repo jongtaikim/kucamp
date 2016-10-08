@@ -1,0 +1,45 @@
+<!-- 탑로고, 탑메뉴 시작 -->
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="15%">
+												<a href="/main">
+													<img src="./images/top_logo.gif" width="264" height="50" alt="KU캠프 로고">
+												</a>
+											
+											</td>
+											<td width="85%" rowspan="2" style="padding-left:42px;padding-top:14px;position:relative;">
+												<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="637" height="75">
+												<param name="movie" value="./menu.swf" />
+												<param name="wmode" value="transparent" />
+												  <!--[if !IE]> <-->
+												 <object type="application/x-shockwave-flash" data="./menu.swf" width="637" height="75">
+												<p class="tac">
+												이 컨텐츠는 플래시(flash)로 제작되었습니다. 이 컨텐츠를 보려면
+												<a href="http://www.adobe.com/kr/products/flashplayer/" target="_blank" title="새창에서 열립니다" tabindex="0">Flash Player</a>가 필요합니다.
+												</p>
+												 </object>
+												<!--> <![endif]-->
+											     </object>
+
+							     <table  border="0" cellspacing="0" cellpadding="0"  summary="" style="position:absolute;top:24px;right:42px;">
+								 <tr>
+								  <td style="padding-right:6px"><a href="/main"><img src="./images/home.gif" alt="home" /></a></td>
+								  {? !_SESSION.USERID}
+								  <td style="padding-right:6px"><a href="/member.login"><img src="./images/login.gif" alt="login" /></a></td>
+								  <td style="padding-right:6px"><a href="/member.join_step"><img src="./images/join.gif" alt="join" /></a></td>
+								  {:}
+								  <td style="padding-right:6px"><a href="/member.mypage"><img src="./images/mypage.gif" alt="mypage" /></a></td>
+								   <td style="padding-right:6px"><a href="/member.logout"><img src="./images/logout.gif" alt="logout" /></a></td>
+								  {/}
+								  <td style="padding-right:6px"><a href="/sitemap.view"><img src="./images/sitemap.gif" alt="sitemap" /></a></td>
+								  </tr>
+							     </table>
+											   </td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                </tr>
+            </table>
+            <!-- 탑로고, 탑메뉴 끝 -->
+
+

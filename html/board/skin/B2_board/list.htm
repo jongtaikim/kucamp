@@ -1,0 +1,152 @@
+<style>
+.text01 {
+	font-family: verdana;
+	font-size: 12px;
+	line-height: 20px;
+	padding-right: 12px;
+	padding-left: 13px;
+	padding-top: 7px;
+	padding-bottom: 5px;	
+}
+.title01 {
+	padding-top: 2px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+}
+</style>
+
+<script language="Javascript">
+
+function vvie(idx){
+	imgdiv = 'img'+idx;
+	if($(idx).style.display=="none"){
+		$(idx).style.display="";
+		$(imgdiv).src="./images/icon-04.gif";
+	}else{
+		$(idx).style.display="none";
+		$(imgdiv).src="./images/icon-03.gif";
+	}
+}
+
+	function select1(val) { // 코드 입력
+				if(val) {
+					location.href='board.list?mcode={mcode}&str_category='+val;
+					}else{
+					location.href='board.list?mcode={mcode}';
+				}
+				}
+
+
+</script>
+
+<div class="boardCateBody" style="margin:5px 0px 15px 0px;padding-left:2px">
+					
+	<div class="tab">
+	<ul>
+		<li {? !str_category} class="on"{/}>
+			<a href="#" onclick="select1();">전체 ({total+0})</a>
+		</li>
+		{@  cate_LIST}
+		<li {? .str_category == str_category} class="on"{/}>
+			<a href="#" onclick="select1('{.str_category}');">{.str_category} ({.counter})</a>
+		</li>
+		{/}
+			
+		</ul>
+	</div>
+	
+	
+</div>
+
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%" >
+<Tr>
+	<Td height="10"></Td>
+</Tr>
+
+<tr>
+	<td height="2" bgcolor="#940018"></td>
+</tr>
+<!--{@ LIST}-->
+<tr>
+	<td>
+		<table border="0" cellspacing="0" cellpadding="0" width="100%">
+		<tr>
+			<td align="center" width="32" height="34"><img src="./images/icon-01.gif" width="16" height="16" /></td>
+			<td class="title01">
+				<a href="javascript:vvie('{.num_serial}')" style="font-size:12px;	font-family:돋움;">{.str_title}</a>&nbsp;&nbsp;
+				<!--{? env.writable}-->
+				<a href="/board.modify?mcode={.num_mcode}&id={.num_serial}&num={.num_serial}"><img src="/image/iicon/ico-btn-write.gif" align=absmiddle></a>
+				<a href="/board.delete?mcode={.num_mcode}&id={.num_serial}&num={.num_serial}"><img src="/image/icon/delete_.gif"  align=absmiddle></a>
+				<!--{/}-->
+			</td>
+			<td align="center" width="40"><a href="javascript:vvie('{.num_serial}')"><img id="img{.num_serial}" src="./images/icon-03.gif" width="11" height="11" /></a></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr id = "{.num_serial}"  style="display:none">
+	<td>
+		<table width="667" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="top" align="center" style="vertical-align:top" width="32" height="34"><img src="./images/icon-02.gif" width="16" height="16" /></td>
+			<td>
+				<table width="635" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td height="3px" width="3px" background="./images/table-01.gif"></td>
+					<td width="629" height="3" background="./images/table-02.gif"></td>
+					<td width="3px" background="./images/table-03.gif"></td>
+				</tr>
+				<tr>
+					<td background="./images/table-07.gif"></td>
+					<td class="text01" bgcolor="#f8f8f8" style="color:#000">{.str_text_full}</td>
+					<td background="./images/table-08.gif"></td>
+				</tr>
+				<tr>
+					<td height="3" width="3"><img src="./images/table-04.gif" width="3" height="3" /></td>
+					<td height="3" background="./images/table-05.gif"></td>
+					<td width="3"><img src="./images/table-06.gif" width="3" height="3" /></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		</table>
+		<br>
+	</td>
+</tr>
+
+{? .index_+1 != .size_}
+<tr>
+	<td height="1" bgcolor="#cdcdcd"></td>
+</tr>
+{/}
+
+{:}
+
+<tr>
+  <td align =center height = 37>등록된 FAQ가 없습니다.</td>
+</tr>
+
+{/}
+
+<tr>
+	<td height="2" bgcolor="#cdcdcd"></td>
+</tr>
+</table>
+
+<br>
+<br>
+
+<div style="text-align:center">
+	<wa:paging runat="server" total="{total}" numberformat=" %n " listnum="{listnum}" previcon="/html/board/skin/A_board/image/btn_prevpage.gif" nexticon="/html/board/skin/A_board/image/btn_nextpage.gif" firsticon="/html/board/skin/A_board/image/btn_firstpage.gif" lasticon="/html/board/skin/A_board/image/btn_lastpage.gif" />
+
+</div>
+<br>
+<table align="center" width=100% border=0 cellspacing=0 cellpadding=0>
+<tr>
+	<td align = center><!--{? env.writable}--><a href="{writelink}"><img src="./image/btn_write.gif"></a><!--{/}--></td>
+</tr>
+</table>
+
+

@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+	<meta name="description" content="<?=_ONAME?> 홈페이지, 멘토링캠프, 고려대학교, 고려대학교 캠프, Mentoring Camp, korea University, 영재, 과학캠프, 수학캠프," />
+	<meta name="keywords" content="<?=_ONAME?>, 홈페이지,멘토링캠프, 고려대학교, 고려대학교 캠프, Mentoring Camp, korea University, 영재, 과학캠프, 수학캠프" />
+	<meta name="author" content="김종태,김용진" />
+	<meta name="language" content="ko" />
+	<script type="text/javascript" src="/js/jquery-1.4.3.min.js"></script>
+	<script type="text/javascript" src="/js/rollbar.js"></script>
+<title>{__TITLE}</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/sub.css" />
+</head>
+
+  
+
+<body leftmargin="0" topmargin="0" bottommargin="0" rightmargin="0">
+{#TOP_TOOL}
+
+{#EASYSCHOOL}
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td height="3" bgcolor="#7c0019"></td>
+				</tr>
+				<tr>
+					<td height="30">&nbsp;</td>
+				</tr>
+				<tr>
+					<td background="./images/sub_top_bg.gif" style="background-repeat: no-repeat; background-position: 0px 101px;">
+						<table width="969px" border="0" align="center" cellpadding="0" cellspacing="0">
+							<tr>
+								<td>
+									{#TOP}
+								</td>
+							</tr>
+          <!-- 메인플래시 시작 -->
+							<tr>
+								<td style="height:12px"></td>
+							</tr>
+          <!-- 메인플래시 끝 -->
+							<tr>
+								<td>
+									<table width="969" border="0" cellpadding="0" cellspacing="0">
+										<tr valign="top"> 
+											<td width="205" >
+												
+												<wa:applet module="submenuObj.main" code="{mcode}" cate="{cate}" setmodule="{act2}">
+												<table width="205" border="0" cellpadding="0" cellspacing="0">
+													<tr>
+														<td width="206">
+														
+														<? $mcode = {mcode};?>
+														<? if(is_file("images/title_img/".substr($mcode,0,2).".gif")){?>
+														<img src="/images/title_img/<?=substr($mcode,0,2)?>.gif" width="205" height="76" alt="{? current_menu}{current_menu}{:}메인메뉴{/} 이미지" />
+														
+														<? }else{ ?>
+														<img src="/images/title_img/10.gif" width="205" height="76" alt="{? current_menu}{current_menu}{:}메인메뉴{/} 이미지" />
+														<? }?>
+
+														
+														
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<table width="205" border="0" cellspacing="0" cellpadding="0">
+																<tr>
+																	<td valign="top" style="padding-top :20px; padding-bottom :75px;">
+																	
+																	<table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-right:20px">
+																		
+																		{@ SUBMENU}
+																		<tr>
+																			<td style="border-bottom:1px solid #cccccc">
+																				<div class="submenuTd" style="overflow:hidden;">
+																					<a href="{.str_link}">
+																						<img src="/font3.php/submenuBg.gif/ygo330/14/94102a/8c8c8c/?text={=urlencode(.str_title)}" alt="{.str_title}" {? cate == .num_cate || cate_2 == .num_cate }class="on" {/}/>
+																					</a>
+																				</div>
+
+																				{? .SUBMENU_SUB}
+																				<div  id="submenu{.num_cate}_SubMenu" style="{?  .num_cate == cate_22 || .num_cate == cate_2 ||  .num_cate == cate} display:block;{:}display:block;{/};" >
+																					<ul style="border:0px;margin:10px 0px 5px 34px;padding:0px">
+																						{@ SUBMENU_SUB}
+																						
+																						<li  style="overflow:hidden;height:18px;;margin-bottom:2px">
+																							<a href="{..str_link}"  target="{..str_target}" >
+																								
+																								{? cate == ..num_cate}
+																								<img src="/font_2.php/ygo340/13/ffffff/D46178/?text={=urlencode(..str_title)}" alt="{..str_title}" />
+																								{:}
+																								<img src="/font_2.php/ygo340/13/ffffff/727272/?text={=urlencode(..str_title)}" alt="{..str_title}" />
+																								{/}
+																							</a>
+																						</li>
+																						{/}
+																					</ul>
+																				</div>
+																			{/}
+
+																			</td>
+																		</tr>
+																		{/}
+
+																		
+																		
+																	</table>
+																	
+																	
+																	
+																	</td>
+																	<td width="18" rowspan="2" valign="top" background="./images/left_menu_bg.gif" style="background-position:top; background-repeat:repeat-x;">&nbsp;</td>
+																</tr>
+																<tr>
+																	<td valign="top">
+																		<table border="0" cellspacing="0" cellpadding="0">
+																			<tr>
+																				<td><a href="/lms.order?mcode=1211&cate=1211&ccode=10"><img src="./images/banner01.gif" alt="" width="181" height="112" /></a></td>
+																			</tr>
+																			<tr>
+																				<td><img src="./images/banner02.gif" alt="" width="181" height="102" /></td>
+																			</tr>
+																			<tr>
+																				<td  style="padding-top :10px; padding-bottom :10px;"><a href="/qna.list?mcode=1214&cate=1214"><img src="./images/main_banner_20111109.gif"  alt="상담게시판"></a></td>
+																			</tr>
+                                                                            <tr>
+                                                                            	<td><a href="http://www.kumath.co.kr/" target="_blank"><img src="./images/banner20120413.gif" alt="" width="181" height="83" /></a></td>
+                                                                            </tr>
+																		</table>
+																	</td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+													<tr>
+														<td>&nbsp;</td>
+													</tr>
+													<tr>
+														<td>&nbsp;</td>
+													</tr>
+												</table>
+												</wa:applet>
+											</td>
+											<td width="764">
+												<table width="763" border="0" cellpadding="0" cellspacing="0">
+													<tr>
+														<td width="763">
+														<? $mcode = {mcode};?>
+														 <? if(is_file("images/title_img/s".substr($mcode,0,2).".gif")){?>
+														 
+														<img src="/images/title_img/s<?=substr($mcode,0,2)?>.gif" width="763" height="170" alt="{? current_menu}{current_menu}{:}메인메뉴{/} 이미지" />
+														
+														<? }else{ ?>
+														<img src="/images/title_img/s10.gif" width="763" height="170" alt="{? current_menu}{current_menu}{:}메인메뉴{/} 이미지" />
+														<? }?>
+
+														
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<wa:applet module="_titlebar" cate="{cate}" mcode="{mcode}"/>
+															<table width="94%" border="0" align="center" cellpadding="0" cellspacing="0">
+																<tr>
+																	<td align="right">
+																		<table width="70%" border="0" cellspacing="0" cellpadding="0">
+																			<tr>
+																				<td height="25" align="right" style="font-size:11px">
+																				
+																				<img src="./images/icon_home.gif" width="9" height="10" align="absmiddle"> HOME {menu_location5} {? !title_text} > 빈메뉴{:} > {title_text}{/}
+																				</td>
+																			</tr>
+																			<tr>
+																				<td height="1" align="right" bgcolor="#d0d0d0"></td>
+																			</tr>
+																		</table>
+																	</td>
+																</tr>
+																<tr>
+																	<td height="30px">&nbsp;</td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<table width="94%" border="0" align="center" cellpadding="0" cellspacing="0">
+																<tr>
+																	<td valign="top"><img src="/font_2.php/ygo350/23.5/ffffff/000000/?text={=urlencode(title_text)}" alt="{title_text}" align="absmiddle" /></td>
+																</tr>
+																</table>
+																<tr>
+																	<td>
+																		<div class="smartOutput" style="margin:20px auto;width:94%">
+																		{#CONTENT}
+
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td height="30px">&nbsp;</td>
+																</tr>
+															
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td style="padding-top :24px;">
+									{#FOOT}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="35">&nbsp;</td>
+	</tr>
+	<tr>
+		<td height="5" bgcolor="#7c0019"></td>
+	</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,117 @@
+/*basic */
+body, td, input, textarea { font-size:9pt; color:#535353; FONT-FAMILY: "verdana,arial,µ¸¿ò "; letter-spacing:-0.1em;
+	 scrollbar-face-color: #f1f1f1; 
+	 scrollbar-shadow-color: #deeeee; 
+	 scrollbar-highlight-color: #fff; 
+	 scrollbar-3dlight-color: #f0f0f0; 
+	 scrollbar-darkshadow-color: #f7f7f7; 
+	 scrollbar-track-color: #f7f7f7; 
+	 scrollbar-arrow-color: #aeaeae;};
+td {font-size : 9pt ; color : #4D4D4D; line-height : 140%; FONT-FAMILY: "verdana,arial,µ¸¿ò"; letter-spacing:-0.1em;}
+
+
+
+.f-GG8pt {font-size : 9pt ; color : #4D4D4D ; line-height : 140%; FONT-FAMILY: "±¼¸², verdana, arial"; letter-spacing:-0.1em;};
+.f-V8pt {FONT-SIZE: 8pt; FONT-FAMILY: "verdana,arial,µ¸¿ò"; color:#4D4D4D; line-height : 140%;}
+.f-V8pt2 {FONT-SIZE: 8pt; FONT-FAMILY: "verdana,arial,µ¸¿ò"; color:#C0D0CF; line-height : 140%;}
+
+.schedule {FONT-SIZE: 8pt; FONT-FAMILY: "verdana,arial,µ¸¿ò"; color:#FFFFFF; line-height : 140%;}
+
+.lefttitle {font-size : 14px ; color : #FFFFFF; line-height : 140%; FONT-FAMILY: "verdana,arial,µ¸¿ò"; letter-spacing:-0.1em; font-weight:bold;}
+
+.bodytitle {font-size : 14px ; color : #000000; line-height : 140%; FONT-FAMILY: "verdana,arial,µ¸¿ò"; letter-spacing:-0.1em; font-weight:bold;}
+
+A:LINK {font-size:9pt; text-decoration : none; color:#666666;}
+A:VISITED {font-size:9pt; text-decoration : none; color:#666666; }
+A:HOVER {font-size:9pt; text-decoration : underline; color:#269EBB;}
+A:ACTIVE {font-size:9pt; text-decoration : underline; color:#269EBB;}
+	
+a.big-m:link {text-decoration : none ; color : #000000}
+a.big-m:visited {text-decoration : none ; color : #000000} 
+a.big-m:hover {text-decoration : none ; color : #EB7400 ; } 
+
+a.m:link {font-size:9pt; text-decoration : none ; color : #000000;}
+a.m:visited {font-size:9pt; text-decoration : none ; color : #000000;} 
+a.m:hover {font-size:9pt; text-decoration : none ; color : #FFFFFF; background-color:#60C46D; width:100%;} 
+
+a.small-m:link {text-decoration : none ; font-size : 8pt ;  FONT-FAMILY: "µ¸¿ò, arial";color : #000000;}
+a.small-m:visited {text-decoration : none ; font-size : 8pt ;  FONT-FAMILY: "µ¸¿ò, arial";color : #000000;} 
+a.small-m:hover {text-decoration : none ; font-size : 8pt ;  FONT-FAMILY: "µ¸¿ò, arial";color : #000000; font-weight:bold; background-color:#74B4D0;} 
+
+/* EMAIL */
+a.emaillink:LINK {text-decoration : none; color:#5B971B;}
+a.emaillink:VISITED {text-decoration : none; color:#5B971B;}
+a.emaillink:HOVER {text-decoration : none; color:#5B971B;}
+
+/*»ç¹æ ¿©¹éÁÖ±â */
+.padding {padding:12 5 12 5;}
+
+/*½ºÅ©·Ñ Á¦¾î */
+.sroll {
+font-size: 9pt;
+color: 868686;
+margin-left: 0 px;
+margin-top: 0 px;
+background-position: top left;
+background-repeat: no-repeat;
+scrollbar-3dlight-color: #ffffff; 
+scrollbar-arrow-color: #D4D4D4; 
+scrollbar-darkshadow-color: #ffffff; 
+scrollbar-face-color:   #ffffff; 
+scrollbar-highlight-color: #D4D4D4; 
+scrollbar-shadow-color: #D4D4D4; 
+scrollbar-track-color:  #ffffff;
+border:1px solid #D4D4D4;
+}
+
+.scrollbar01 {
+	 scrollbar-face-color: #f9f9f9; 
+	 scrollbar-shadow-color: #6c6c6c; 
+	 scrollbar-highlight-color: #fafafa; 
+	 scrollbar-3dlight-color: #c9c9c9; 
+	 scrollbar-darkshadow-color: #f7f7f7; 
+	 scrollbar-track-color: #f3f3f3; 
+	 scrollbar-arrow-color: #333;
+}	 
+.scrollbar02 {
+	 scrollbar-face-color: #f1f1f1; 
+	 scrollbar-shadow-color: #deeeee; 
+	 scrollbar-highlight-color: #fff; 
+	 scrollbar-3dlight-color: #f0f0f0; 
+	 scrollbar-darkshadow-color: #f7f7f7; 
+	 scrollbar-track-color: #f7f7f7; 
+	 scrollbar-arrow-color: #aeaeae;
+}
+
+.select {font-family:±¼¸²; font-size:11px; color:black; background-color:ffffff; width:98%}
+
+
+input.login{
+border:solid 1 #BEBEC0;
+font-family:µ¸¿ò,verdana;
+font-size:9pt;
+color:#8C8C8C;
+background-color:#FFFFFF;
+vertical-align:top;
+width:98%;
+height:18px;}
+
+select.search{
+border:solid 1 #C0C0C0;
+font-family:µ¸¿ò,verdana;
+font-size:9pt;
+color:#FFFFFF;
+background-color:#9EBA63;
+vertical-align:top;
+width:98%;
+height:19px;}
+
+input.find{
+border:solid 1 #417883;
+font-family:µ¸¿ò,verdana;
+font-size:9pt;
+color:#417883;
+background-color:#E7F4F7;
+vertical-align:top;
+width:98%;
+height:19px;}

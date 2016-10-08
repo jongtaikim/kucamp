@@ -1,0 +1,54 @@
+#footerArea {
+	position:relative;
+	clear:both;
+	float:left;
+	margin:0 auto;
+	width:840px;
+	margin-top:20px
+	
+	}
+
+	#footer {
+		width:840px;
+		text-align:left;
+		float:left; 
+		padding:18px 0 15px 15px;
+		background:url(/theme/TYPE1/images/footerAreaBg.gif) repeat-x left top;
+		}
+	
+	#policyArea {
+		color:#474747;
+		font-family:"µ¸¿ò",dotum;
+		font-size:0.92em;
+		}
+	#policyArea #policyMenu {
+		float:left;
+		clear:both;
+		margin-bottom:18px;
+		}
+		#policyArea #policyMenu li {
+			float:left;
+			}
+	#policyArea address {
+		float:left;
+		clear:both;
+		width:550px;
+		font-style:normal;
+		}
+	#policyArea #copyright {
+		float:left;
+		clear:both;
+		}
+	#policyArea #copyright strong {
+		color:#ce550b;
+		}
+
+	#footerArea #mark {
+		position:absolute;
+		left:623px;
+		top:18px;
+		}
+	
+
+
+

@@ -1,0 +1,20 @@
+<!-- BASE SCRIPT -->
+<script type="text/javascript" src="js/lib.validate.js"></script>
+<script type="text/javascript">
+<!--
+function prepare(form) {
+	if(!validate(form)) {
+		if(document.getElementById('submit_btn')) {
+			document.getElementById('submit_btn').style.visibility = "visible";
+		}
+		return false;
+	}
+	if(document.getElementById('xEditFileCtrl_%name%') && document.getElementById('xEditFileCtrl_%name%').GetCount()) {
+		document.getElementById('xEditFileCtrl_%name%').UpLoad();
+		return false;
+	}
+	return true;
+}
+//-->
+</script>
+<!-- /BASE SCRIPT -->

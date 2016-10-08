@@ -1,0 +1,574 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-03-19 14:34+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=EUC-KR\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../module/board/__get.php:13 ../module/modify/__get.php:13
+#: ../module/class/board/__get.php:13
+#: ../module/class/menu/admin/__init__.php:15
+#: ../module/party/board/__get.php:13
+#: ../module/party/menu/admin/__init__.php:15
+#: ../module/menu/admin/__init__.php:16
+msgid "Bulletin Board"
+msgstr "게시판형"
+
+#: ../module/board/__get.php:13 ../module/modify/__get.php:13
+#: ../module/class/board/__get.php:13
+#: ../module/class/menu/admin/__init__.php:17
+#: ../module/party/board/__get.php:13
+#: ../module/party/menu/admin/__init__.php:17
+#: ../module/menu/admin/__init__.php:18
+msgid "Image Gallery"
+msgstr "겔러리형"
+
+#: ../module/board/__init__.php:12 ../module/modify/__init__.php:12
+#, fuzzy
+msgid "Bulletin board"
+msgstr "게시판형"
+
+#: ../module/board/admin/manage/basic.php:68
+#: ../module/board/admin/manage/skin.php:64
+#: ../module/board/admin/manage.php:84
+#: ../module/modify/admin/manage/basic.php:68
+#: ../module/modify/admin/manage/skin.php:64
+#: ../module/modify/admin/manage.php:84
+#: ../module/class/board/admin/manage.php:58
+#: ../module/party/board/admin/manage.php:58
+#, php-format
+msgid "Error: Failed saving config ( %s )"
+msgstr "에러: 설정파일 저장 실패( %s )"
+
+#: ../module/class/council/__get.php:14
+#: ../module/class/menu/admin/__init__.php:16 ../module/council/__get.php:14
+#: ../module/party/council/__get.php:14
+#: ../module/party/menu/admin/__init__.php:16
+#: ../module/menu/admin/__init__.php:17
+msgid "Counselling Room"
+msgstr "상담실형"
+
+#: ../module/class/admin/login.php:31 ../module/admin/login.php:36
+#: ../module/party/admin/login.php:31
+msgid "Invalid Password"
+msgstr "패스워드가 틀립니다"
+
+#: ../module/class/doc/__get.php:14 ../module/class/menu/admin/__init__.php:14
+#: ../module/doc/__get.php:14 ../module/party/doc/__get.php:14
+#: ../module/party/menu/admin/__init__.php:14
+#: ../module/menu/admin/__init__.php:14
+msgid "HTML Document"
+msgstr "웹문서형"
+
+#: ../module/class/menu/__get.php:14
+#: ../module/class/menu/admin/__init__.php:13
+#: ../module/party/menu/__get.php:14
+#: ../module/party/menu/admin/__init__.php:13 ../module/menu/__get.php:14
+#: ../module/menu/admin/__init__.php:13
+#, fuzzy
+msgid "Blank Menu"
+msgstr "빈 메뉴"
+
+#: ../module/class/menu/admin/add.php:17
+#, fuzzy
+msgid "Can Not Add Mainmenu more than 20"
+msgstr "메인메뉴는 10개이상 추가할 수 없습니다"
+
+#: ../module/class/menu/admin/add.php:73 ../module/party/menu/admin/add.php:73
+#: ../module/menu/admin/add.php:97 ../module/menu/admin/add.php:109
+#, fuzzy
+msgid "Can not add menu"
+msgstr "메뉴를 추가할 수 없습니다"
+
+#: ../module/class/menu/admin/__init__.php:18
+#: ../module/class/link/__get.php:14
+#: ../module/party/menu/admin/__init__.php:18
+#: ../module/party/link/__get.php:14 ../module/menu/admin/__init__.php:19
+#: ../module/link/__get.php:17
+msgid "URL Link"
+msgstr "URL링크형"
+
+#: ../module/class/menu/admin/settype.php:77
+#: ../module/party/menu/admin/settype.php:77
+#: ../module/menu/admin/settype.php:84
+msgid "Can Not Add Menu"
+msgstr "메뉴를 추가할 수 없습니다"
+
+#: ../module/admin/common.php:83 ../module/admin/chg_pass.php:21
+msgid "Modified"
+msgstr "수정됨"
+
+#: ../module/admin/chg_pass.php:23
+#, fuzzy
+msgid "Modify Failed"
+msgstr "수정 실패"
+
+#: ../module/party/menu/admin/add.php:17 ../module/menu/admin/add.php:20
+#: ../module/menu/admin/add.php:33
+msgid "Can Not Add Mainmenu more than 10"
+msgstr "메인메뉴는 10개이상 추가할 수 없습니다"
+
+#: ../module/test/gettext2.php:2 ../module/test/gettext.php:3
+msgid "Hello"
+msgstr "안녕하세요"
+
+#: ../module/test/gettext.php:4 ../var/dummy.php:35
+#, php-format
+msgid "%1$d of %2$d"
+msgstr "%2$d 중 %1$d"
+
+#: ../module/menu/admin/add.php:26
+msgid "Can Not Add Submenu more than 15"
+msgstr "서브메뉴는 15개 이상 추가할 수 없습니다"
+
+#: ../module/menu/admin/add.php:43 ../module/menu/admin/settype.php:28
+msgid "Main"
+msgstr "메인"
+
+#: ../module/popup/admin/write.php:19
+msgid "  ."
+msgstr ""
+
+#: ../cache/template/html/error.htm.php:19
+#: ../cache/template/html/class/menu/admin/settype.htm.php:34
+#: ../cache/template/html/test/gettext.htm.php:8
+#: ../cache/template/html/test/gettext.htm.php:11
+#: ../cache/template/html/menu/admin/settype.htm.php:38 ../var/dummy.php:12
+msgid "OK"
+msgstr "확인"
+
+#: ../cache/template/html/class/menu/admin/option.htm.php:64
+#: ../cache/template/html/admin/main/compose.htm.php:170
+#: ../cache/template/html/party/menu/admin/option.htm.php:63
+#: ../cache/template/html/menu/admin/option.htm.php:64
+msgid "Save changes"
+msgstr "변경사항 저장"
+
+#: ../cache/template/html/class/menu/admin/add.htm.php:23
+#: ../cache/template/html/party/menu/admin/add.htm.php:23
+#: ../cache/template/html/test/gettext.htm.php:5
+#: ../cache/template/html/menu/admin/add.htm.php:32 ../var/dummy.php:20
+msgid "Add"
+msgstr "추가"
+
+#: ../cache/template/html/admin/main.htm.php:5 ../var/dummy.php:18
+msgid "Administrator"
+msgstr "관리자"
+
+#: ../cache/template/html/admin/main/compose.htm.php:53
+msgid "[Multiple select]"
+msgstr ""
+
+#: ../cache/template/html/admin/main/compose.htm.php:87
+msgid "can not remove required components"
+msgstr "필수 기능은 삭제할 수 없습니다"
+
+#: ../cache/template/html/admin/main/compose.htm.php:132
+msgid "Required options"
+msgstr "필수 기능"
+
+#: ../cache/template/html/admin/main/compose.htm.php:137
+msgid "Free choice"
+msgstr "선택 가능한 기능"
+
+#: ../cache/template/html/admin/main/compose.htm.php:157
+msgid "Configure Component"
+msgstr "기능 설정"
+
+#: ../cache/template/html/admin/main/compose.htm.php:161
+msgid "Selected component"
+msgstr "선택된 기능"
+
+#: ../cache/template/html/admin/main/compose.htm.php:163
+#, fuzzy
+msgid "Set permission"
+msgstr "권한설정"
+
+#: ../cache/template/html/admin/main/compose.htm.php:164
+#, fuzzy
+msgid "Manage contents"
+msgstr "내용입력"
+
+#: ../cache/template/html/admin/main/compose.htm.php:172
+msgid "Note: Will effect after submit changes"
+msgstr "알림: 저장버튼을 눌러야 적용됩니다"
+
+#: ../cache/template/html/test/gettext.htm.php:4
+#, fuzzy
+msgid "administrator"
+msgstr "관리자"
+
+#: ../cache/template/html/test/gettext.htm.php:4 ../var/dummy.php:19
+msgid "password"
+msgstr "패스워드"
+
+#: ../cache/template/html/test/gettext.htm.php:6 ../var/dummy.php:15
+msgid "Save"
+msgstr "저장"
+
+#: ../cache/template/html/test/gettext.htm.php:12 ../var/dummy.php:13
+msgid "Cancel"
+msgstr "취소"
+
+#: ../cache/template/html/menu/admin/settype.htm.php:20
+msgid "Location"
+msgstr "위치"
+
+#: ../cache/template/html/menu/admin/settype.htm.php:24
+msgid "Menu Title"
+msgstr "메뉴 제목"
+
+#: ../cache/template/html/menu/admin/settype.htm.php:28
+msgid "Menu Option"
+msgstr "메뉴옵션"
+
+#: ../var/dummy.php:14
+msgid "Apply"
+msgstr "적용"
+
+#: ../var/dummy.php:16
+msgid "Browse.."
+msgstr "찾아보기.."
+
+#: ../var/dummy.php:17
+msgid "ex)"
+msgstr "예)"
+
+#: ../var/dummy.php:21
+msgid "Delete"
+msgstr "삭제"
+
+#: ../var/dummy.php:22
+msgid "Del"
+msgstr "삭제"
+
+#: ../var/dummy.php:23
+msgid "Modify"
+msgstr "고치기"
+
+#: ../var/dummy.php:24
+msgid "Refresh"
+msgstr "갱신"
+
+#: ../var/dummy.php:25
+msgid "Loading.."
+msgstr "불러오는중.."
+
+#: ../var/dummy.php:26
+msgid "Option"
+msgstr "옵션"
+
+#: ../var/dummy.php:27
+msgid "Permission"
+msgstr "접근권한"
+
+#: ../var/dummy.php:28
+msgid "Edit"
+msgstr "편집"
+
+#: ../var/dummy.php:29
+msgid "Notice"
+msgstr "공지"
+
+#: ../var/dummy.php:30
+msgid "Date"
+msgstr "날짜"
+
+#: ../var/dummy.php:31
+msgid "Name"
+msgstr "이름"
+
+#: ../var/dummy.php:32
+msgid "userid"
+msgstr "아이디"
+
+#: ../var/dummy.php:33
+msgid "member"
+msgstr "회원"
+
+#: ../var/dummy.php:34
+msgid "Search"
+msgstr "검색"
+
+#: ../lib/class.FormChecker.php:26
+msgid "Access Denied"
+msgstr "접근 거부"
+
+#: ../lib/WebApp/namespace/wa/zipsearch.php:11
+#, fuzzy
+msgid "Search zipcode"
+msgstr "우편번호 검색"
+
+#: ../lib/class.WebApp.php:229
+msgid "ERROR"
+msgstr "에러"
+
+#: ../lib/class.Calendar.php:68
+msgid "Sun"
+msgstr "일"
+
+#: ../lib/class.Calendar.php:69
+msgid "Mon"
+msgstr "월"
+
+#: ../lib/class.Calendar.php:70
+msgid "Tue"
+msgstr "화"
+
+#: ../lib/class.Calendar.php:71
+msgid "Wed"
+msgstr "수"
+
+#: ../lib/class.Calendar.php:72
+msgid "Thu"
+msgstr "목"
+
+#: ../lib/class.Calendar.php:73
+msgid "Fri"
+msgstr "금"
+
+#: ../lib/class.Calendar.php:74
+msgid "Sat"
+msgstr "토"
+
+#: ../lib/class.IniFile.php:55 ../lib/class.IniFile.php:57
+#, php-format
+msgid "File already exists [ %s ]"
+msgstr "같은이름의 파일이 존재합니다 [ %s ]"
+
+#: ../lib/class.IniFile.php:65
+#, php-format
+msgid "File not exists [ %s ]"
+msgstr "파일이 없습니다 [ %s ]"
+
+#: ../lib/class.FtpClient.php:53
+msgid "Error: ftp extension not loaded"
+msgstr "에러: FTP 확장기능을 사용할 수 없습니다"
+
+#: ../lib/class.FtpClient.php:89
+msgid "Error: invalid user or password"
+msgstr "에러: 아이디 또는 패스워드가 틀립니다"
+
+#: ../lib/class.FtpClient.php:95
+msgid "Error: Can not connect to server"
+msgstr "에러: 서버에 접속할 수 없습니다"
+
+#~ msgid "Failed Modified OperateInfo"
+#~ msgstr "관리자 정보 수정 실패"
+
+#~ msgid "Preview cannot access by direct"
+#~ msgstr "[미리보기]는 직접 호출될 수 없습니다"
+
+#~ msgid "DB Insert Failed"
+#~ msgstr "DB 입력 실패"
+
+#~ msgid "History"
+#~ msgstr "기관연혁"
+
+#~ msgid "Operate Info Register"
+#~ msgstr "관리자 정보 등록"
+
+#~ msgid "BasicInfo Input"
+#~ msgstr "기본 정보 입력"
+
+#~ msgid "Organization Name"
+#~ msgstr "기관 이름"
+
+#~ msgid "Organization Address"
+#~ msgstr "기관 주소"
+
+#~ msgid "Zipcode"
+#~ msgstr "우편번호"
+
+#~ msgid "Find Zipcode"
+#~ msgstr "우편번호 찾기"
+
+#~ msgid "Phone"
+#~ msgstr "전화번호"
+
+#~ msgid "ex"
+#~ msgstr "예"
+
+#~ msgid "Fax"
+#~ msgstr "팩스"
+
+#~ msgid "CEO"
+#~ msgstr "기관장"
+
+#~ msgid "Email"
+#~ msgstr "이메일"
+
+#~ msgid "Input Administrator Infomation"
+#~ msgstr "관리자 정보 입력"
+
+#~ msgid "Mobile"
+#~ msgstr "핸드폰"
+
+#, fuzzy
+#~ msgid "Administrator Area. Please Input Password"
+#~ msgstr "관리자 비밀번호 변경"
+
+#~ msgid "Compose Mainpage Components"
+#~ msgstr "메인페이지 기능관리"
+
+#~ msgid "Available Components"
+#~ msgstr "사용 가능한 기능"
+
+#~ msgid "Using Components"
+#~ msgstr "사용중인 기능"
+
+#~ msgid "Show >>"
+#~ msgstr "사용 >>"
+
+#~ msgid "<< Hide"
+#~ msgstr "<< 숨김"
+
+#~ msgid "Add Child Menu of Seleted Menu"
+#~ msgstr "선택한 메뉴의 하위메뉴 추가"
+
+#~ msgid "Delete Selected Menu"
+#~ msgstr "선택한 메뉴 삭제"
+
+#~ msgid "Reload"
+#~ msgstr "갱신"
+
+#~ msgid "MainPage"
+#~ msgstr "메인페이지"
+
+#~ msgid "Homepage"
+#~ msgstr "홈페이지"
+
+#~ msgid "Agreement"
+#~ msgstr "동의"
+
+#~ msgid "Help"
+#~ msgstr "도움말"
+
+#~ msgid "Update"
+#~ msgstr "업데이트"
+
+#~ msgid "Infomation"
+#~ msgstr "정보"
+
+#~ msgid "Q&A"
+#~ msgstr "질문과 답변"
+
+#~ msgid "BasicInfo"
+#~ msgstr "기본정보"
+
+#~ msgid "OperateInfo"
+#~ msgstr "관리자 정보"
+
+#~ msgid "Register"
+#~ msgstr "등록"
+
+#~ msgid "Modify Administrator Password"
+#~ msgstr "관리자 비밀번호 변경"
+
+#~ msgid "Class Composition"
+#~ msgstr "학급 편성"
+
+#~ msgid "Professorship Composition"
+#~ msgstr "교직 편성"
+
+#~ msgid "Menu Management"
+#~ msgstr "메뉴 관리"
+
+#~ msgid "Main Menu Management"
+#~ msgstr "메인메뉴 관리"
+
+#~ msgid "Extension Menu Management"
+#~ msgstr "추가메뉴 관리"
+
+#~ msgid "Main Page Management"
+#~ msgstr "메인페이지 관리"
+
+#~ msgid "Screen Formation"
+#~ msgstr "화면 구성"
+
+#~ msgid "Popup Management"
+#~ msgstr "팝업창 관리"
+
+#~ msgid "Banner Management"
+#~ msgstr "배너 관리"
+
+#~ msgid "InternetOffice"
+#~ msgstr "인터넷오피스"
+
+#~ msgid "Memeber Management"
+#~ msgstr "회원 관리"
+
+#~ msgid "Waiting Member"
+#~ msgstr "인증대기 회원"
+
+#~ msgid "Member Management"
+#~ msgstr "회원 관리"
+
+#~ msgid "Group Management"
+#~ msgstr "그룹 관리"
+
+#~ msgid "Design Management"
+#~ msgstr "디자인 관리"
+
+#~ msgid "Modify FlashImage"
+#~ msgstr "플래시 이미지 변경"
+
+#~ msgid "Back Homepage"
+#~ msgstr "홈페이지로 돌아가기"
+
+#~ msgid "Logout"
+#~ msgstr "로그아웃"
+
+#~ msgid "Administrator Menual"
+#~ msgstr "관리자 도움말"
+
+#~ msgid "Class Menual"
+#~ msgstr "학급홈페이지 도움말"
+
+#~ msgid "InternetOffice Menual"
+#~ msgstr "인터넷교무실 도움말"
+
+#~ msgid "UseInfo"
+#~ msgstr "사용 정보"
+
+#~ msgid "ExpireDay"
+#~ msgstr "사용기한"
+
+#~ msgid "UsedScale"
+#~ msgstr "사용량"
+
+#, fuzzy
+#~ msgid "Helper"
+#~ msgstr "도움말"
+
+#~ msgid "QuestionAndAnswer"
+#~ msgstr "질문과 답변"
+
+#~ msgid "Program"
+#~ msgstr "프로그램"
+
+#~ msgid "Design"
+#~ msgstr "디자인"
+
+#~ msgid "New Password"
+#~ msgstr "새로운 비밀번호"
+
+#~ msgid "Confirm New Password"
+#~ msgstr "패스워드 확인"
+
+#~ msgid "Professor Introduce Wizard"
+#~ msgstr "교사소개 마법사"
+
+#~ msgid "Add Menu"
+#~ msgstr "메뉴추가"

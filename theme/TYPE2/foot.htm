@@ -1,0 +1,53 @@
+<!-- 하단 시작 -->
+												<table width="100%" border="0" cellspacing="0" cellpadding="0">
+													<tr>
+														<td height="3" colspan="3" bgcolor="#e3e3e3"></td>
+													</tr>
+													<tr>
+														<td height="20" colspan="3"></td>
+													</tr>
+													<tr>
+														<td width="21%" valign="top" ><img src="./images/bottom_logo.gif" width="183" height="35" alt="하단로고"></td>
+														<td width="45%">
+															<table border="0" cellspacing="0" cellpadding="0">
+																<tr>
+																	<td style="padding-left:10px">
+																		<a href="/doc.view?mcode=1110&cate=1110">
+																		<img src="./images/camp_introduction.gif" width="42" height="12" alt="캠프소개"></a>
+																		<a href="/pra_view?mode=pra&layout=Y">
+																			<img src="./images/personal_information.gif" width="86" height="12" alt="개인정보보호정책">
+																		</a>
+																		<a href="/pra_view?mode=pra3&layout=Y">
+																			<img src="./images/use.gif" width="43" height="12" alt="이용약관">
+																		</a>
+																	</td>
+																</tr>
+																<tr>
+																	<td style="padding:10px;"><img src="./images/address.gif"  alt="주소"></td>
+																</tr>
+															</table>
+														</td>
+														<td width="34%">
+														<select name="" style="margin-bottom:10px" onchange="location.href=this.value">
+															<option value="">Family Site--------------------</option>
+															<option value="http://www.kumath.co.kr">www.kumath.co.kr</option>
+														</select>
+														<img src="./images/bank_no.gif"  alt="계좌번호"></td>
+													</tr>
+													<tr>
+														<td colspan="3" style="padding-top :15px;">
+														<wa:applet module="bannerZone.main">
+															{? LIST}
+															<div id="imageScroller">
+																<ul class="mitem">
+																	{@ LIST}
+																	<li><a class="wrapper" href="{.str_link}" target="{.chr_open}" title="{.str_title}"><img class="logo" src="{.file_url}" alt="{.str_title}" ></a></li>
+																	{/}
+																</ul>
+															</div>
+															{/}
+														</wa:applet>	
+														</td>
+													</tr>
+												</table>
+            <!-- 하단 끝 -->

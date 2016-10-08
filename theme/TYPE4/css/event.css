@@ -1,0 +1,206 @@
+BODY {background-color:#ffffff; font-size : 9pt; font-family: "µ¸¿ò", "±¼¸²", "±¼¸²Ã¼", Gulim, arial, sans-serif; color: #8E8E8E;
+	scrollbar-face-color:#E9E9E9;
+	scrollbar-highlight-color: #ffffff;
+	scrollbar-shadow-color: #ffffff;
+	scrollbar-3dlight-color: #829797;
+	scrollbar-darkshadow-color: #829797;
+	scrollbar-track-color: #E5E5E5;
+	scrollbar-arrow-color: #000000;
+	margin: 0 0 0 0;
+	background-image: ;}
+TD, TH {font-size:9pt;}
+img {border:none;}
+
+.sfont{ font-size:11px;COLOR: #838383; FONT-FAMILY:  "µ¸¿ò";line-height:150%;}
+.smallfont{ font-size:11px;COLOR: #323232; TEXT-DECORATION: none;}
+.mainstitle{ font-size:12px;COLOR: #000000; TEXT-DECORATION: none; font-weight: bold; }
+.mainstitle A { font-size:12px;COLOR: #000000; TEXT-DECORATION: none; font-weight: bold; }
+.mainstitle A:visited { font-size:12px;COLOR: #000000; TEXT-DECORATION: none; font-weight: bold; }
+.mainstitle A :hover{ font-size:12px;COLOR: #000000; TEXT-DECORATION: none; font-weight: bold; }
+.stitle{ font-size:14px;COLOR: #000000; TEXT-DECORATION: none; font-weight: bold; }
+.Avatartitle{ COLOR: #464646; TEXT-DECORATION: none;  font-weight: bold;}
+.Itemprice{ COLOR: #FF7536; TEXT-DECORATION: none; }
+
+.big { COLOR: #000000; FONT-SIZE: 16px; font-weight: bold;FONT-FAMILY: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; }
+.bigwhite { COLOR: #ffffff; FONT-SIZE: 16px; font-weight: bold;FONT-FAMILY: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; }
+.bigwhite2 { COLOR: #ffffff; FONT-SIZE: 14px; font-weight: bold;FONT-FAMILY: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; }
+.bigred { COLOR: #FF1500; FONT-SIZE: 28px; font-weight: bold;FONT-FAMILY: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; }
+.pname { COLOR: #FFD800; FONT-SIZE: 18px; font-weight: bold;FONT-FAMILY: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; }
+.num { COLOR: #FB2003; FONT-SIZE: 12px; font-weight: bold;FONT-FAMILY: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; }
+
+.list {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #8e8e8e;}
+.list A:link {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #8e8e8e;}
+.list A:visited {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #8e8e8e; }
+.list A:hover {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #000000; }
+
+.K_refill { COLOR: #000000; FONT-SIZE: 12px; FONT-FAMILY: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; }
+.K_refill A { COLOR: #000000; TEXT-DECORATION:  none }
+.K_refill A:visited { COLOR: #000000; TEXT-DECORATION: none }
+.K_refill A:hover { COLOR: #B774C4; TEXT-DECORATION: none; font-weight: bold; }
+
+.K_use { COLOR: #000000; FONT-SIZE: 12px; FONT-FAMILY: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; }
+.K_use A { COLOR: #000000; TEXT-DECORATION:  none }
+.K_use A:visited { COLOR: #000000; TEXT-DECORATION: none }
+.K_use A:hover { COLOR: #8574C4; TEXT-DECORATION: none; font-weight: bold; }
+
+.category { COLOR: #464646; FONT-SIZE: 12px; FONT-FAMILY: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; }
+.category A { COLOR: #464646; TEXT-DECORATION:  none }
+.category A:visited { COLOR: #464646; TEXT-DECORATION: none }
+.category A:hover { COLOR: #464646; TEXT-DECORATION: none; font-weight: bold; }
+
+A { color: #8e8e8e;text-decoration: none; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif;}
+A:link {color: #8e8e8e; text-decoration: none; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif;}
+A:visited { color: #8e8e8e; text-decoration: none; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif;}
+A:hover { color: #000000; text-decoration: underline; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif;}
+
+A.submenu { color: #ffffff; text-decoration: none; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; font-weight: bold;}
+A.submenu:visited { color: #ffffff; text-decoration: none; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif;}
+A.submenu:hover { color: #ffffff; text-decoration: underline; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif;}
+
+A.mainmenu { color: #333333; text-decoration: none; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif;}
+A.mainmenu:visited { color: #333333; text-decoration: none; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif;}
+A.mainmenu:hover { color: #333333; text-decoration: none; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif;}
+
+.jo {font-size: 12px; font-family: "µ¸¿ò", "µ¸¿òÃ¼", arial, sans-serif; color: #4793D3;}
+
+.hompi { color:#3979DE; text-decoration:none; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; font-weight: bold;}
+.hompi:visited { color:#3979DE; text-decoration:none; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif;}
+.hompi:hover { color:#3979DE; text-decoration:underline; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif;}
+
+.club { color:#DA9F38; text-decoration:none; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; font-weight: bold;}
+.club:visited { color:#DA9F38;  text-decoration:none; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif;}
+.club:hover { color:#DA9F38; text-decoration:underline; font-size: 9pt; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif;}
+
+.g1_11 {font-size: 11px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #808080;} /* 11p */
+.g1_11_b {font-size: 11px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #808080; font-weight: bold;} /* 12p  */
+.g1_12 {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #808080;} /* 12p */
+.g1_12_b {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #808080; font-weight: bold;} /* 12p  */
+
+.g2_11 {font-size: 11px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #4d4d4d;} /* 11p */
+.g2_11_b {font-size: 11px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #4d4d4d; font-weight: bold;} /* 11p  */
+.g2_12 {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #4d4d4d;} /* 11p */
+.g2_12_b {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #4d4d4d; font-weight: bold;} /* 11p  */
+
+.smenu {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #000000; font-weight:} /* 11p  */
+.smenu :link {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #000000; font-weight:}
+.smenu :hover {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #000000; font-weight: bold;}
+.smenu :visited {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #000000; font-weight: }
+
+.calendar     {font-size: 11px; color: #cecece}
+.calendar_sat {font-size: 11px; color: #61a4e0}
+.calendar_sum {font-size: 11px; color: #e06161}
+
+
+.d2_12 {font-size: 12px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #4d4d4d;} /* 12p  */
+.d2_12 :link {font-size: 12px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #4d4d4d;}
+.d2_12 :hover {font-size: 12px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #4d4d4d;}
+.d2_12 :visited {font-size: 12px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #4d4d4d;}
+
+.d1_11 {font-size: 11px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #808080;} /* 12p */
+.d1_11_b {font-size: 11px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #808080; font-weight: bold;} /* 12p  */
+.d1_12 {font-size: 12px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #808080;} /* 12p */
+.d1_12_b {font-size: 12px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #808080; font-weight: bold;} /* 12p  */
+
+.d2_11 {font-size: 11px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #4d4d4d;} /* 11p */
+.d2_11_b {font-size: 11px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #4d4d4d; font-weight: bold;} /* 11p  */
+.d2_12 {font-size: 12px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #4d4d4d;} /* 12p */
+.d2_12_b {font-size: 12px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #4d4d4d; font-weight: bold;} /* 12p  */
+
+.padding_top6 {padding-top:6px} /*6 */
+.padding_top5 {padding-top:5px} /*5 */
+.padding_top4 {padding-top:4px} /*4 */
+.padding_top3 {padding-top:3px} /*3 */
+.padding_top2 {padding-top:2px} /*2 */
+.padding_top1 {padding-top:1px} /*1 */
+.padding_left1 {padding-left:10px} /*1 */
+.height_14 {LINE-HEIGHT: 14px;} /* 14 */
+.height_16  {LINE-HEIGHT: 16px;} /* 16 */
+.height_18 {LINE-HEIGHT: 18px;} /* 18 */
+.height_20 {LINE-HEIGHT: 20px;} /* 20 */
+
+/*   */
+.tahoma10 {font-size: 10px; font-family: tahoma, sans-serif; color:#4d4d4d;}
+.tahoma11 {font-size: 11px; font-family: tahoma, "±¼¸²", "±¼¸²Ã¼", "µ¸¿ò", arial, sans-serif; color: #A9D609;} /*tahoma 10*/
+.point {font-size: 31px; font-family: tahoma, sans-serif; font-weight: bold; color:#000000;}
+.pink24 {font-size: 24px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #FF80BB; font-weight: bold;} /* 12p*/
+.white {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #FFFFFF;} /* 12p*/
+.price {font-size: 12px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #f4790b; font-weight: bold;} /* 12p*/
+.refill {font-size: 12px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #47A2D3; font-weight: bold;} /* 12p*/
+.black_b {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #000000;font-weight:bold;} /* 12p*/
+.gray_b {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #919191; font-weight: bold;} /* 12p*/
+.orangy_b {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #ff9800; font-weight: bold;} /* 12p*/
+.bun {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #4d4d4d; LINE-HEIGHT: 16px;} /*   ~*/
+
+.hompi_title {font-size: 14px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #CB6E00; font-weight: bold;} /* 14p*/
+.hompi_member {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #CB3F00; font-weight: bold;} /* 12p*/
+.url {font-size: 10px; font-family: tahoma, "±¼¸²", "±¼¸²Ã¼", "µ¸¿ò", sans-serif; color: #808080;} /*verdana 10*/
+.ver {font-size: 9px; font-family: tahoma, "±¼¸²", "±¼¸²Ã¼", "µ¸¿ò", sans-serif; color: #808080;} /*verdana 9*/
+
+.shop_left {font-weight: bold; color: #2182E7;} /*   */
+.shop_tleft {font-weight: bold; color: #4A4D4A;} /* - */
+
+.top_smenu {font-weight: bold; color: #ffffff;} /*   */
+.top_smenu :link {font-weight: bold; color: #ffffff;}
+.top_smenu :hover {font-weight: bold; color: #ffffff;}
+.top_smenu :visited {font-weight: bold; color: #ffffff;}
+
+/*  */
+.chat_qu {font-size: 14px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #FFE400; font-weight: bold;} /* 14p*/
+.chat_bar {BORDER-RIGHT: #D0946C 1px solid; BORDER-TOP: #D0946C 1px solid; FONT-SIZE: 9pt; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; BORDER-LEFT: #D0946C 1px solid; COLOR: #4D4D4D; BORDER-BOTTOM: #D0946C 1px solid; BACKGROUND-COLOR: #FFFFFF}
+.chat_m {font-size: 12px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #ffffff; font-weight: bold;} /* 12p*/
+.chat_woon {font-size: 12px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #4A9922;} /* 12p*/
+.chat_id {font-size: 12px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #804350; font-weight: bold;} /* 12p*/
+
+/*  */
+.h-comment {border:1px #E0E0E0 solid; font-size:12px; color:#666666; background-color:#F0F0F0;}
+.minihompi_title {font-size: 12px; font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif; color: #3798DD; font-weight: bold;} /* 12p*/
+
+.list_s {font-size: 10px; font-family: verdana, sans-serif; color: #808080;} /*verdana 10*/
+.homemenu { COLOR: #4D4D4D; FONT-SIZE: 12px; FONT-FAMILY: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; }
+.homemenu A { COLOR: #4D4D4D; TEXT-DECORATION:  none }
+.homemenu A:visited { COLOR: #4D4D4D; TEXT-DECORATION: none }
+.homemenu A:hover { COLOR: #1782BC; TEXT-DECORATION: underline; font-weight: bold; }
+
+.minihompi_diary { COLOR: #4D4D4D; FONT-SIZE: 10px; FONT-FAMILY: verdana, sans-serif;  font-weight: bold;}
+.minihompi_diary A { COLOR: #4D4D4D; TEXT-DECORATION:  none; font-weight: bold;}
+.minihompi_diary A:visited { COLOR: #4D4D4D; TEXT-DECORATION: none; font-weight: bold;}
+.minihompi_diary A:hover { COLOR: #1782BC; TEXT-DECORATION: underline; font-weight: bold;}
+
+/*  */
+.game {font-size: 12px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #4d4d4d; TEXT-ALIGN: justify} /* 11p*/
+.re {font-size: 14px; font-family: "±¼¸²", "±¼¸²Ã¼", Gulim, "µ¸¿ò", arial, sans-serif; color: #3669A5; font-weight: bold;} /**/
+
+/*  */
+.bug01 {border:1px #F5F5F5 solid; font-size:12px; color:#818181; background-color:#F5F5F5} /*   */
+.form {border:1px #E8E8E8 solid; font-size:12px; color:#666666;} /**/
+.textfield {border:1px #EEEEE5 solid; font-size:12px; color:#666666; background-color:#EEEEE5} /*   */
+.message {border:1px #86D6F2 solid; font-size:12px; color:#333333; background-color:#86D6F2} /* */
+.input {border:1px #DCDCD1 solid; font-size:12px; color:#666666; background-color:#EEEEE5} /*     */
+.input2 {border:1px #CCCCCC solid; font-size:12px; color:#666666; background-color:#ffffff} /*       */
+.input4 {border:1px #CCCCCC solid; font-size:12px; color:#666666; background-color:#ffffff;width:92;} /*       */
+.input5 {border:1px #CCCCCC solid; font-size:12px; color:#666666; background-color:#ffffff;font-weight:bold;} 
+.input3 {border:1px #FF094A solid; font-size:16px; font-weight:bold; color:#000000; background-color:#ffffff}
+.input6 {border:1px #708189 solid; font-size:21px; font-weight:bold; color:#FF8800; background-color:#ffffff; width:180;font-family:verdana,arial, sans-serif;}
+.input7 {border:1px #708189 solid; font-size:21px; font-weight:bold; color:#FF8800; background-color:#ffffff; width:120;font-family:verdana,arial, sans-serif;}
+.input06 {
+	font-size:25pt;
+	font-weight:normal;
+	color:#333333;
+	background-color:0066cc;
+	font-family: "µ¸¿ò", "±¼¸²", Gulim, arial, sans-serif;
+	font-weight:bold;
+	border: thin solid #CCCCCC;
+}
+.login_main {border:1px #D1D1D1 solid; font-size:12px; color:#333333; background-color:#FFFFFF} /*   */
+.login {border:1px #D7D7D7 solid; font-size:12px; color:#4D4D4D; background-color:#EFEEE3} /*       */
+.club_input {border:1px #E8E8E8 solid; font-size:12px; color:#666666; background-color:#ffffff} /*     */
+.board {border:1px #E8E8E8 solid; font-size:12px; color:#666666; background-color:#F2F2F2} /*     */
+.search {font-size:12px; color:#666666;} /*      */
+.main_hot {border:1px #B0B788 solid; font-size:12px; color:#666666; background-color:#ffffff} /*  */
+.comment {border:1px #E8E8E8 solid; font-size:12px; color:#666666; background-color:#ffffff} /*    */
+.textarea {border:1px #E8E8E8 solid; font-size:12px; color:#666666; background-color:#F2F2F2} /*    */
+.rightpattern {background:   url(file:///I|/c_images/images/main_upperbg.gif) right top;}
+
+/*   */
+.sCursor { cursor: pointer; }
+* html .sCursor { cursor: hand; }

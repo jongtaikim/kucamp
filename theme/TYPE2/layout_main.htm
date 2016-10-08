@@ -1,0 +1,358 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+	<meta name="description" content="<?=_ONAME?> 홈페이지, 멘토링캠프, 고려대학교, 고려대학교 캠프, Mentoring Camp, korea University, 영재, 과학캠프, 수학캠프," />
+	<meta name="keywords" content="<?=_ONAME?>, 홈페이지,멘토링캠프, 고려대학교, 고려대학교 캠프, Mentoring Camp, korea University, 영재, 과학캠프, 수학캠프" />
+	<meta name="author" content="김종태,김용진" />
+	<meta name="language" content="ko" />
+	<script type="text/javascript" src="/js/jquery-1.4.3.min.js"></script>
+	<script type="text/javascript" src="/js/rollbar.js"></script>
+<title>{__TITLE}</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/main.css" />
+</head>
+
+  
+
+<body leftmargin="0" topmargin="0" bottommargin="0" rightmargin="0">
+
+{#TOP_TOOL}
+
+{#EASYSCHOOL}
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td height="3" bgcolor="#7c0019"></td>
+				</tr>
+				<tr>
+					<td height="30">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<table width="969px" border="0" align="center" cellpadding="0" cellspacing="0">
+							<tr>
+								<td>
+            {#TOP}
+											</td>
+										</tr>
+          <!-- 메인플래시 시작 -->
+										<tr>
+											<td>
+											
+											<table width="969" border="0" cellspacing="0" cellpadding="0">
+											  <tr>
+											    <td>
+                                                <table id="Table_01" width="264" height="384" border="0" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td>
+                                                        <img src="./images/main_20120414_left01.gif" width="264" height="176" alt=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="./images/main_20120414_left02.gif" width="264" height="25" alt=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="/doc.view?mcode=111111&cate=111111"><img src="./images/main_20120414_left03.gif" alt="" width="264" height="23" border="0"></a></td>
+                                              </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="/doc.view?mcode=111112&cate=111112"><img src="./images/main_20120414_left04.gif" alt="" width="264" height="25" border="0"></a></td>
+                                              </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="./images/main_20120414_left05.gif" width="264" height="31" alt=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="/doc.view?mcode=111211&cate=111211"><img src="./images/main_20120414_left06.gif" alt="" width="264" height="24" border="0"></a></td>
+                                              </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="/doc.view?mcode=111212&cate=111212"><img src="./images/main_20120414_left07.gif" alt="" width="264" height="24" border="0"></a></td>
+                                              </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img src="./images/main_20120414_left08.gif" width="264" height="56" alt=""></td>
+                                                </tr>
+                                            </table>
+                                                <!-- 2012년 4월 14일 메인좌측 이미지 수정 
+                                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+												<tr>
+												  <td><img src="./images/kumain_01.gif" width="265" height="207" /></td>
+												</tr>
+												<tr>
+												  <td><a href="/doc.view?mcode=111110&cate=111110"><img src="./images/kumain_02.gif" width="265" height="33" /></a></td>
+												</tr>
+												<tr>
+												  <td><a href="/doc.view?mcode=111210&cate=111210"><img src="./images/kumain_03.gif" width="265" height="33" /></a></td>
+												</tr>
+												<tr>
+												  <td><img src="./images/kumain_04.gif" width="265" height="111" /></td>
+												</tr>
+											    </table>
+                                                ------------- 2012년 4월 14일 메인좌측 이미지 수정 ---->
+                                                </td>
+											      <wa:applet module="vis.main">
+												<script type="text/javascript">
+												// <![CDATA[
+												var idxs = 1;
+												var plays = true;
+												function rollVis(){
+													if(plays == true){
+														{@ vis_LIST}
+															if($('vis{.index_+1}')) $('vis{.index_+1}').style.display ='none';
+														 {/}
+														if($('vis'+idxs)) $('vis'+idxs).style.display ='block';
+														if(idxs == {=count(vis_LIST)}){
+														idxs = 1;
+														}else{
+															idxs = idxs +1;
+														}
+														//setTimeout("rollVis()",3000);
+													}
+
+												}
+												
+												function startVis(){
+													plays = true;
+													//rollVis()
+												}
+
+												function stopVis(){
+													plays = false;
+													//rollVis()
+												}
+
+												function selectVis(idx){
+													
+													if(!idx) idx = 1;
+													{@ vis_LIST}
+														if($('vis{.index_+1}')) $('vis{.index_+1}').style.display ='none';
+													 {/}
+													if($('vis'+idx)) $('vis'+idx).style.display ='block';
+												}
+												// ]]>
+												</script>
+											    <td >{@ vis_LIST}{? .str_view =='y'}<a href="{.str_link}"><img src="@/vis/{.str_file}" alt="{.str_alt}" width="340" height="384" id="vis{.index_+1}" /></a>{/}{/}</wa:applet>
+											    </td>
+											    <td>
+												
+												
+												<table id="Table_01" height="385" border="0" cellpadding="0" cellspacing="0">
+												<tr>
+														<td colspan="4">
+															<img src="./images/20120415_main_right_01.gif" width="364" height="153" alt=""></td>
+													</tr>
+													<tr>
+														<td colspan="2">
+															<a href="http://cafe.naver.com/koreaunivmentor" target="_blank"><img src="./images/20120415_main_right_02.gif" alt="" width="185" height="57" border="0"></a></td>
+												<td colspan="2">
+															<a href="http://cafe.naver.com/koreaskymentor" target="_blank"><img src="./images/20120415_main_right_03.gif" alt="" width="179" height="57" border="0"></a></td>
+												  </tr>
+													<tr>
+														<td colspan="4">
+															<img src="./images/20120415_main_right_04.gif" width="364" height="22" alt=""></td>
+													</tr>
+													<tr>
+														<td colspan="3">
+															<img src="./images/20120415_main_right_05.gif" width="239" height="77" alt=""></td>
+														<td rowspan="2">
+															<a href="/doc/kucamp_2015.pdf" target="_blank"><img src="./images/20120415_main_right_06.gif" alt="" width="125" height="107" border="0"></a></td>
+												  </tr>
+													<tr>
+														<td>
+															<a href="/lms.order?mcode=1211&cate=1211&ccode=10" ><img src="./images/20120415_main_right_07.gif" alt="" width="134" height="30" border="0"></a></td>
+												<td colspan="2">
+															<a href="/lms.order?mcode=1211&cate=1211&ccode=10"><img src="./images/20120415_main_right_08.gif" alt="" width="105" height="30" border="0"></a></td>
+												  </tr>
+													<tr>
+														<td colspan="4">
+															<img src="./images/20120415_main_right_09.gif" width="364" height="45" alt=""></td>
+													</tr>
+													<tr>
+														<td>
+														  <img src="./images/spacer.gif" width="134" height="1" alt=""></td>
+														<td>
+															<img src="./images/spacer.gif" width="51" height="1" alt=""></td>
+														<td>
+														  <img src="./images/spacer.gif" width="54" height="1" alt=""></td>
+														<td>
+														  <img src="./images/spacer.gif" width="125" height="1" alt=""></td>
+													</tr>
+												</table>
+
+												
+												</td>
+											  </tr>
+											</table>
+											
+											</td>
+										</tr>
+          <!-- 메인플래시 끝 -->
+
+								  <tr>
+									<td style="padding-bottom:20px">
+									
+									
+									<table id="Table_01" width="969" height="82" border="0" cellpadding="0" cellspacing="0">
+										<tr>
+											<td>
+												<img src="./images/20120415_main_new_01.gif" width="616" height="82" alt=""></td>
+											<td>		  
+											<!-- 20120702 동영상수정요청---<a href="/form.write?code=1&mode=write&mcode=1316&cate=1316"> -->
+                                            <a href="http://www.youtube.com/watch?v=HcGe9fbGfjs&feature=youtu.be" target="_blank">
+											<img src="./images/20120702_main_new_02.gif" alt="" width="219" height="82" border="0"></a>
+                                            <!-- 20120702 동영상수정요청 <img src="./images/20120415_main_new_02.gif" alt="" width="219" height="82" border="0"></a> --></td>
+						  <td>
+												<a href="/doc.view?mcode=1116&cate=1116">
+												<img src="./images/20120415_main_new_03.gif" width="134" height="82" alt=""></a></td>
+										</tr>
+									</table>
+
+									</td>
+								  </tr>
+										<tr>
+											<td>
+												<table width="100%" border="0" cellspacing="0" cellpadding="0">
+													<tr valign="top">
+														<td width="29%">
+															<wa:applet module="out_bbs.main" code="" mou_name="out_bbs1">
+															<script type="text/javascript">
+															// <![CDATA[
+															function selectIdxBbs(idx){
+															
+															$('tabImg1').style.backgroundImage = "url('./images/title_notice_off.gif')";
+															$('tabImg2').style.backgroundImage = "url('./images/title_reviews_off.gif')";
+															
+															$('tabBbs1').style.display = "none";
+															$('tabBbs2').style.display = "none";
+															
+															if(idx == "1"){
+															$('tabImg'+idx).style.backgroundImage = "url('./images/title_notice_on.gif')";
+															$('tabBbs'+idx).style.display = "block";
+															
+															}else{
+															$('tabImg'+idx).style.backgroundImage = "url('./images/title_reviews_on.gif')";
+															$('tabBbs'+idx).style.display = "block";
+															
+															}
+															$('tabMore').href= $('tablink'+idx).href;
+															}
+															// ]]>
+															</script>
+      <!-- 공지사항 캠프후기 시작 -->
+															<table width="260" border="0" cellspacing="0" cellpadding="0">
+																<tr> 
+																	<td width="66">
+																		<a href="/board.list?mcode=1313&cate=1313" onMouseOver="selectIdxBbs(1);" id="tablink1">
+																			<img src="/b.gif" width="66" height="29" style="background-image:url(./images/title_notice_on.gif)" id="tabImg1" >
+																		</a>
+																	</td>
+																	<td width="10">
+																		<a href="/board.list?mcode=1511&cate=1511" onMouseOver="selectIdxBbs(2);" id="tablink2">
+																			<img src="/b.gif" style="background-image:url(./images/title_reviews_off.gif)"  width="69" height="29" id="tabImg2">
+																		</a>
+																	</td>
+																	<td width="184" align="right" valign="bottom" background="./images/title_bg.gif"><a href="#" id="tabMore"><img src="./images/more.gif" width="31" height="14"></a></td>
+																</tr>
+																{@ LIST_lsat}
+																<tr> 
+																	<td colspan="3" style="padding-left :5px;  padding-top :10px;{? .index_ ==1}display:none{/}" id="tabBbs{.index_+1}">
+																		<table  width="100%" border="0" cellspacing="0" cellpadding="0" >
+																			{@ .tab_data}
+																			<tr>
+																				<td height="20px"><a href="{..link}" class="small-m">{..str_title1}</a> {? ..is_recent}<img src="/image/icon/new2.gif" alt="" align="absmiddle"/>{/}</td>
+																			</tr>
+																			{/}
+																		</table>
+																		
+																		</td>
+																</tr>
+																{/}
+															</table>
+                        <!-- 공지사항 캠프후기 끝 -->
+															<script type="text/javascript">
+															// <![CDATA[
+															selectIdxBbs(1);
+															// ]]>
+															</script>
+															</wa:applet>
+														</td>
+														
+														<td width="34%">
+                <!-- 캠프갤러리 시작 -->
+															<wa:applet module="out_bbs.main" code="" mou_name="out_bbs2">
+															<table width="310" border="0" cellspacing="0" cellpadding="0">
+																<tr> 
+																	<td width="60" background="./images/title_bg.gif"><img src="./images/title_gallery.gif" width="60" height="29"></td>
+																	<td width="200" align="right" valign="bottom" background="./images/title_bg.gif"><a href="/board.list?mcode=1412&cate=1412"><img src="./images/more.gif" width="31" height="14"></a></td>
+																</tr>
+																<tr> 
+																	<td colspan="2"  style="padding-top :10px;">
+																		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																			{@ LIST_lsat}
+																			<tr>
+																				{@ .tab_data}
+																				<td><a href="{..link}"><img src="{..thumb_url}" width="96" height="66" alt="{..str_title}"></a></td>
+																				{/}
+																			</tr>
+																			{/}
+																		</table>
+																	</td>
+																</tr>
+															</table>
+															</wa:applet>
+  <!-- 캠프갤러리 끝 -->
+														</td>
+														<td width="37%" valign="middle">
+                <!-- 안내문 다운로드 선생소개 문의전화 시작 -->
+															<table border="0" align="center" cellpadding="5" cellspacing="0">
+																<tr>
+																	<td><a href="/qna.list?mcode=1214&cate=1214"><img src="./images/main_banner_20111109.gif"  alt="상담게시판"></a></td>
+																	<td><a href="/lms.tach_main?mcode=1113&cate=1113"><img src="./images/teacher.gif" width="148" height="43" alt="선생님 소개"></a></td>
+																</tr>
+																<tr>
+																	<td colspan="2" style="padding-left :8px;";><img src="./images/phone.gif" width="309" height="38" alt="문의전화"></td>
+																</tr>
+															</table>
+                <!-- 안내문 다운로드 선생소개 문의전화 끝 -->
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+										<tr>
+											<td style="padding-top :24px;">
+											{#FOOT}
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="25">&nbsp;</td>
+				</tr>
+				<tr>
+					<td height="5" bgcolor="#7c0019"></td>
+				</tr>
+			</table>
+
+			
+
+			</body>
+			</html>
+			
+<wa:applet module="popup.open"/>			
+<script language="javascript" type="text/javascript">
+//if($('aniTextContent')) scroll_txt_init();
+selectVis();
+setInterval("rollVis()",5000);
+//setTimeout("rollVis()",3000);
+</script>

@@ -1,0 +1,154 @@
+/*본문영역*/
+
+/*버튼 기본 스타일*/
+		span.button, span.button a, span.button button, span.button input {
+			display:inline-block;
+			position:relative;
+			overflow:visible;
+			font-size:11px;
+			border:0;
+			vertical-align:middle;
+			white-space:nowrap;
+			background:transparent url(../images/join/btnBg.gif) no-repeat scroll 0 0;
+			}
+		span.button.small {
+			overflow:visible;
+			height:20px;
+			margin-right:2px;
+			padding:0 0 0 2px;
+			background-position:left top;
+			}
+		span.button.small input {
+			float:left;
+			left:2px;
+			cursor:pointer;
+			background-position:right top;
+			height:20px;
+			line-height:18px;
+			padding:0 6px 0 3px;
+			}
+
+
+		/*볼드버튼*/
+		span.button.strong * {
+			font-weight:bold !important;
+			}
+
+		/* Icon 버튼*/
+		span.button .blit { 
+			display:none;
+			position:relative; 
+			float:left;
+			left:6px; 
+			margin:2px 2px 0 0;
+			vertical-align:middle; 
+			border:0; 
+			z-index:2; 
+			}
+
+#foodListArea {
+	width:589px;
+	margin:0 auto;
+	}
+#foodListArea #listTop {
+	position:relative;
+	padding-top:25px;
+	height:40px;
+	text-align:center;
+	}
+	#foodListArea #listContent{
+	height:400px;
+	}
+	#foodListArea #listTop .monthArea {
+		position:relative;
+		width:160px;
+		margin:0 auto;
+		padding-top:7px;
+		font-size:16px;
+		font-weight:bold;
+		}
+		#foodListArea #listTop .monthArea img {
+			position:absolute;
+			top:0;
+			}
+			#foodListArea #listTop .monthArea .prevMonth {
+				left:0;
+				}
+			#foodListArea #listTop .monthArea .nextMonth {
+				right:0;
+				}
+	#foodListArea #listTop .adminBtn {
+		position:absolute;
+		right:0;
+		bottom:10px;
+		}
+	#foodListArea .menuBox {
+		float:left;
+		margin-bottom:16px;
+		padding-right:11px;
+		background:url(../images/foodList/dayBoxRight.gif) no-repeat right top;
+		}
+	#foodListArea .objTop {
+		float:left;
+		}
+	#foodListArea .objContent {
+		float:left;
+		overflow:hidden;
+		width:538px;
+		height:85px;
+		padding:12px 0;
+		border-top:#d3d3d3 1px solid;
+		border-bottom:#d3d3d3 1px solid;
+		}
+		#foodListArea .menuName {
+			float:left;
+			overflow:hidden;
+			width:240px;
+			height:85px;
+			padding-left:11px;
+			padding-right:16px;
+			line-height:140%;
+			border-right:#ddd 1px solid;
+			}
+			#foodListArea .menuName img {
+				float:left;
+				margin-right:12px;
+				border:#d3d3d3 1px solid;
+				}
+		#foodListArea .calorie {
+			float:left;
+			width:123px;
+			padding-left:9px;
+			font-size:11px;
+			line-height:150%;
+			}
+		#foodListArea .valuation {
+			overflow:hidden;
+			float:left;
+			width:119px;
+			padding:9px;
+			font-size:11px;
+			text-align:center;
+			background:#f9f9f2;
+			}
+	#foodListArea .valuation .star {
+		display:inline;
+		margin-bottom:5px;
+		}
+	#foodListArea .valuation .number {
+		font-family:verdana;
+		}
+	#foodListArea .valuation .count {
+		margin-bottom:5px;
+		}
+		#foodListArea .valuation .count span {
+			display:block;
+			}
+	#foodListArea .valuation form {
+		padding-left:5px;
+		}
+	#foodListArea .valuation select {
+		float:left;
+		vertical-align:-5px;
+		}
+	/*버튼영역*/

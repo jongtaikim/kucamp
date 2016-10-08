@@ -1,0 +1,85 @@
+/*전체보기팝업*/
+#totalPopupBody{
+	width:937px;
+	margin:0px auto;
+	
+}
+#totalPopup {
+	position:absolute;
+	top:10%;
+	z-index:4;
+	width:937px;
+	height:540px;
+	padding-top:26px;
+	padding-left:16px;
+	background:url(../images/totalPopupBg.gif) no-repeat 16px 48px;
+	background-color:#fff;
+	z-index:999;
+	}
+#totalPopup a {
+	color:#7d7d7d;
+	}
+#totalPopup .popupTit {
+	float:left;
+	margin-bottom:7px;
+	}
+	#totalPopup .depth1 {
+		clear:both;
+		float:left;
+		width:912px;
+		padding:5px;
+		}
+	#totalPopup .depth1Li {
+		float:left;
+		width:152px;
+		margin-bottom:5px;
+		}
+	#totalPopup .depth1Li .title {
+		display:block;
+		height:23px;
+		padding-left:12px;
+		padding-top:13px;
+		}
+		#totalPopup .depth2 {
+			height:194px;
+			padding-top:8px;
+			padding-left:13px;
+			}
+		#totalPopup .depth2 li {
+			float:left;
+			width:100%;
+			line-height:150%;
+			}
+		#totalPopup .depth2 li a {
+			padding-left:7px;
+			background:url(../images/dot1.gif) no-repeat left 4px;
+			}
+		#totalPopup .depth2 li a:hover {
+			font-weight:bold;
+			color:#16487a;
+			letter-spacing:-1px;
+			background:url(../images/dot2.gif) no-repeat left 4px;
+			}
+			
+			#totalPopup .depth3 {
+				margin-left:10px;
+				}
+			#totalPopup .depth2 li li {
+				float:left;
+				width:100%;
+				}
+			#totalPopup .depth2 li li a {
+				padding:0;
+				background:none;
+				}
+				#totalPopup .depth2 li li a:hover {
+					font-weight:normal;
+					background:none;
+					letter-spacing:0;
+					}
+	
+			#totalPopup .close {
+				display:inline;
+				float:right;
+				margin-right:19px;
+				}

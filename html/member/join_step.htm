@@ -1,0 +1,145 @@
+<link rel="stylesheet" href="/css/joinStep1.css" type="text/css" />
+
+
+<!--회원가입 영역 시작-->
+				<div id="joinStep">
+					<h3>현재 회원가입 절차 - 회원선택,중복확인</h3>
+					<img src="/images/join/joinStep1.gif" alt="회원가입 절차 첫번째, 회원구분 및 중복확인 절차 안내 이미지" />
+				</div>
+				
+				
+				
+				
+		
+				<div id="joinDivide">
+					{? return !="N"}
+					<h4>회원 가입 구분</h4>
+					<div id="joinWelcome">
+						<p class="ppid"><?=_ONAME?></p>
+						<img src="/images/join/joinWelcome.gif" alt="<?=_ONAME?>홈페이지에 오신것을 환영합니다." />
+					</div>
+
+				
+					<div id="joinChoice">
+						<h5 class="icon">해당되는 회원의 종류를 선택해 주세요</h5>
+						<p>“학생”으로 회원 가입의 경우,
+미성년자이기 때문에 “신청하기”를 할 수 없게 되어 있습니다.<br> 향후 “신청하기”를 생각한다면 “학부모회원”으로 재가입해야 하는 경우가 발생하므로 가급적 “학부모회원”으로 회원가입을 바랍니다. </p>
+						<ul>
+							<li class="student" style="margin-left:120px"><label for="student">학생</label><input name="joinChoice" id="student" type="radio" value="s" onclick="$('chr_type').value=this.value" onkeypress="$('chr_type').value=this.value" checked/></li>
+
+							<li class="parents"><label for="parents">학부모회원</label><input name="joinChoice" id="parents" type="radio" value="g" onclick="$('chr_type').value=this.value" onkeypress="$('chr_type').value=this.value"/></li>
+							
+							<li class="teacher"><label for="teacher">멘토</label><input name="joinChoice" id="teacher" type="radio" value="m" onclick="$('chr_type').value=this.value" onkeypress="$('chr_type').value=this.value"/></li>
+							<!--
+							<li class="parents"><label for="parents">학부모회원</label><input name="joinChoice" id="parents" type="radio" value="p" onclick="$('chr_type').value=this.value" onkeypress="$('chr_type').value=this.value"/></li>
+							<li class="graduate"><label for="graduate">졸업생회원</label><input name="joinChoice" id="graduate" value="a" type="radio"  onclick="$('chr_type').value=this.value" onkeypress="$('chr_type').value=this.value"/></li>
+							<li class="normal"><label for="normal">일반회원</label><input name="joinChoice" id="normal" type="radio" value="g"  onclick="$('chr_type').value=this.value" onkeypress="$('chr_type').value=this.value"/></li>
+							-->
+						</ul>
+					</div>
+
+					
+					<form method="post" id="checkOverlap" onsubmit="return validate(this);">
+						<input type="hidden" name="chr_type" id="chr_type" value="s" />
+						
+
+
+						<h5 class="icon">가입여부 확인</h5>
+						<p><?=_ONAME?> 홈페이지에서는 주민등록번호를 사용하지 않고 있습니다.<br />회원식별을 위해서 반드시 <em>본인의 정확한 이름(실명)과 생년월일을 입력해 주세요.</em></p>
+						<fieldset>
+							<legend>가입여부 확인용 입력폼</legend>
+							<div class="row left">
+								<div class="title"><label for="nameInput"><span>이름</span></label></div>
+								<div class="input"><input type="text" name="str_name" id="nameInput" hname="이름" required /></div>
+							</div>
+							<div class="row right">
+								<div class="title"><label for="nameInput"><span>성별</span></label></div>
+								<div class="input">
+									<input type="radio" name="str_sex"  id="str_sex1" value="1" checked/><label for="str_sex1">남자</label>
+									<input type="radio" name="str_sex"  id="str_sex2" value="2"/><label for="str_sex2">여자</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="title"><span>생년월일</span></div>
+								<div class="input">
+
+								
+									<select name="str_y" id="str_y" hname="생년" required>
+										<option value="">생년</option>
+										<? for($ii=1930; $ii<date("Y")+1; $ii++) { ?>
+										<option value="<?=$ii?>"><?=$ii?></option>
+										<? } ?>
+									</select>
+									<span>년</span>
+
+									<select name="str_m" id="str_m" hname="월" required>
+										<option value="">월</option>
+										<? for($ii=1; $ii<13; $ii++) { ?>
+										<option value="<?=$ii?>"><?=$ii?></option>
+										<? } ?>
+									</select>
+									<span>월</span>
+
+									<select name="str_d" id="str_d" hname="일" required>
+										<option value="">일</option>
+										<? for($ii=1; $ii<32; $ii++) { ?>
+										<option value="<?=$ii?>"><?=$ii?></option>
+										<? } ?>
+									</select>
+									<span>일</span>
+									<input type="radio" name="chr_birthday" id="sun" value="s" checked/><label for="sun">양력</label><input type="radio" name="chr_birthday" id="moon" value="m"/><label for="moon">음력</label>
+								</div>
+							</div>
+						</fieldset>
+						<div id="btnArea">
+							<input type="image" src="/images/join/submitBtn.gif" alt="확인버튼, 다음 단계로 이동합니다"  />
+							
+						</div>
+					</form>
+					
+
+					{:}
+					
+					<script language="Javascript" type="text/javascript">
+					function linkTar(){
+					 var val = $('ifval').value;
+				
+						if(val == "findId") {
+							location.href='/member.findid'
+						}else{
+							location.href='/member.join_step2'
+						}
+					}
+					</script>
+
+					<form id="checkOverlapResult">
+						<input type="hidden" id="ifval" value="findId">
+						<h3 class="title bullet">가입여부 확인</h3>
+						<div id="resultArea">
+							<div id="resultInputTop"></div>
+							<div id="resultInputArea">
+								<p class="title"><span>이미 가입된 아이디가 있습니다</span></p>
+								<p class="input"><span>가입된 아이디 :</span><input type="radio" name="checkOverlap" id="findId" value="fildid" checked onclick="$('ifval').value=this.value" onkeypress="$('ifval').value=this.value"/><label for="findId">{str_id}</label></p>
+							</div>
+							<div id="resultInputBtm"></div>
+							<div id="resultBtnArea">
+								<a href="javascript:linkTar()"><img src="/images/join/submitBtn.gif" alt="확인버튼, 다음 단계로 이동합니다" /></a>
+								<a href="/"><img src="/images/join/cancelBtn.gif" alt="취소버튼" /></a>
+							</div>
+						</div>
+					</form>
+
+					{/}
+
+
+					<div id="caution">
+						<ul>
+							<li><em><span class="star">*</span><span class="comment">반드시 본인의 이름과 생년월일 및 성별을 정확히 입력하여 주시기 바랍니다.</span></em></li>
+							<li><em><span class="star">*</span><span class="comment">다른 사람의 개인정보를 도용할 경우에는 정보 통신망 법에 따라 3년 이하의 징역 또는 1천만원 이하의 벌금에 처해질 수 있습니다.</span></em></li>
+						</ul>
+					</div>
+				</div>
+				
+		
+
+				<!-- 회원가입 영역 끝 -->

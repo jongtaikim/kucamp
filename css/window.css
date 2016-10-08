@@ -1,0 +1,81 @@
+/**
+* windows 98-2000 look and feel
+* @author: comfuture
+*/
+body,td,input,select,div,span,option,textarea,button {
+	font-family: 'verdana','dotum';
+	font-size: 9pt;
+}
+
+.window {
+	border-width: 2px;
+	border-style: outset; 
+	border-color: white;
+	background-color: buttonface;
+}
+
+.window td.title {
+	background-color: navy;
+	color: white;
+	font-size: 9pt;
+	font-weight: bold;
+	padding-top: 2px;
+	padding-left: 18px;
+	background-image: url(/icon/gear.gif);
+	background-repeat: no-repeat;
+	height: 18px;
+	-moz-user-select: none;
+	cursor: default;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=#000080, EndColorStr=#8EC0E6);
+}
+
+.window td.body {
+	padding: 5px;
+}
+.window button {
+	border-width: 1px;
+}
+
+.window input.button {
+	border-width: 1px;
+}
+
+.window input.submit {
+	border-width: 1px;
+}
+
+.window input.reset {
+	border-width: 1px;
+}
+
+.window button:hover { /* runs on gekco only */
+	border-width: 2px;
+}
+
+.window button.close {
+	width: 16px;
+	height: 16px;
+}
+
+.window input.text {
+	border-width: 1px;
+}
+
+.window fieldset {
+	padding: 3px;
+	padding-top: 5px;
+}
+
+.window div.tip {
+	background-color: #FEFEFE;
+	border-style: inset;
+	border-width: 1px;
+	padding: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.window div.toolbar {
+	border-width: 2px;
+	border-style: groove;
+}

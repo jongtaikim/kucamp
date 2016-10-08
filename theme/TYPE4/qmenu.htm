@@ -1,0 +1,43 @@
+<div id="qmenu"  style="position:absolute;padding-left:15px" >
+	<table id="Table_01" width="93" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<img src="./images/quick_01.gif" width="93" height="30" alt=""></td>
+		</tr>
+		<tr>
+			<td>
+				<a href="/lms.order?mcode=11111&cate=11111&ccode=16"><img src="./images/quick_02.gif" alt="캠프신청" width="93" height="26" border="0"></a></td>
+	  </tr>
+		<tr>
+			<td>
+				{? !_SESSION.USERID}
+				<a href="javascript:alert('로그인이 필요합니다.');">
+				{:}
+				<a href="/member.mypage">
+				{/}
+				<img src="./images/quick_03.gif" width="93" height="26" alt="등록확인"></a>
+			</td>
+		</tr>
+	  <tr>
+			<td>
+				<a href="/board.list?mcode=11210&cate=11210"><img src="./images/qq1.gif" alt=""  border="0"></a></td>
+	  </tr>
+
+	   <tr>
+			<td>
+				<a href="/qna.list?mcode=11211&cate=11211"><img src="./images/qq2.gif" alt=""  border="0"></a></td>
+	  </tr>
+	   <tr>
+			<td>
+				<a href="/board.list?mcode=11213&cate=11213"><img src="./images/qq3.gif" alt=""  border="0"></a></td>
+	  </tr>
+		
+	 
+		{? mcode}
+		<tr>
+			<td>
+				<img src="./images/quick_08.gif" width="93"  alt=""></td>
+		</tr>
+		{/}
+	</table>
+</div>

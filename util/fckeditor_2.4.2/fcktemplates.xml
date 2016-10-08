@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<!--
+ * FCKeditor - The text editor for Internet - http://www.fckeditor.net
+ * Copyright (C) 2003-2008 Frederico Caldeira Knabben
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * This is the sample templates definitions file. It makes the "templates"
+ * command completely customizable.
+ *
+ * See FCKConfig.TemplatesXmlPath in the configuration file.
+-->
+<Templates imagesBasePath="fck_template/images/">
+	<Template title="교직원소개" image="template1.gif">
+		<Description>교직원 소개입니다. 미리보기는 없습니다.</Description>
+		<Html>
+			<![CDATA[
+
+
+
+	<TABLE cellSpacing=0 cellPadding=3 width=520>
+<TBODY>
+<TR>
+<TD>
+<TABLE cellSpacing=0 cellPadding=0 width="100%">
+<TBODY>
+<TR align=middle>
+<TD>
+<TABLE cellSpacing=0 cellPadding=3 border=0>
+<TBODY>
+<TR>
+<TD align=middle><B>홍길동&nbsp;교장선생님</B></TD></TR>
+<TR>
+<TD align=middle>
+<TABLE style="WIDTH: 105px; HEIGHT: 126px" cellSpacing=3 cellPadding=0 width=105 bgColor=#eaeaea border=0>
+<TBODY>
+<TR>
+<TD width=115 bgColor=#ffffff><IMG height=120 src="/hosts/sh3.hkedu.co.kr/files/image/intro_teacher.gif" width=102 align=absMiddle border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+<TD>
+<TABLE cellSpacing=0 cellPadding=3 border=0>
+<TBODY>
+<TR>
+<TD align=middle><B>홍길동&nbsp;교감선생님</B></TD></TR>
+<TR>
+<TD align=middle>
+<TABLE style="WIDTH: 105px; HEIGHT: 126px" cellSpacing=3 cellPadding=0 width=105 bgColor=#eaeaea border=0>
+<TBODY>
+<TR>
+<TD width=115 bgColor=#ffffff><IMG height=120 src="/hosts/sh3.hkedu.co.kr/files/image/intro_teacher.gif" width=102 align=absMiddle border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD>
+<TABLE cellSpacing=0 cellPadding=5 width="100%">
+<TBODY>
+<TR>
+<TD align=middle height=30>
+<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
+<TBODY>
+<TR>
+<TD align=middle bgColor=#9ed222 height=30><B>부서명 기입</B>&nbsp;</TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD>
+<TABLE cellSpacing=0 cellPadding=5 width="100%">
+<TBODY>
+<TR>
+<TD>
+<TABLE cellSpacing=0 cellPadding=0 width="100%">
+<TBODY>
+<TR>
+<TD>
+<TABLE style="WIDTH: 106px; HEIGHT: 126px" cellSpacing=3 cellPadding=0 bgColor=#eaeaea border=0>
+<TBODY>
+<TR>
+<TD width=115 bgColor=#ffffff><IMG height=120 src="/hosts/sh3.hkedu.co.kr/files/image/intro_teacher.gif" width=102 align=absMiddle border=0></TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD align=middle height=25>성명&nbsp;직책</TD></TR></TBODY></TABLE></TD>
+<TD>
+<TABLE cellSpacing=0 cellPadding=0 width="100%">
+<TBODY>
+<TR>
+<TD>
+<TABLE style="WIDTH: 106px; HEIGHT: 126px" cellSpacing=3 cellPadding=0 bgColor=#eaeaea border=0>
+<TBODY>
+<TR>
+<TD width=115 bgColor=#ffffff><IMG height=120 src="/hosts/sh3.hkedu.co.kr/files/image/intro_teacher.gif" width=102 align=absMiddle border=0></TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD align=middle height=25>성명&nbsp;직책</TD></TR></TBODY></TABLE></TD>
+<TD>
+<TABLE cellSpacing=0 cellPadding=0 width="100%">
+<TBODY>
+<TR>
+<TD>
+<TABLE style="WIDTH: 106px; HEIGHT: 126px" cellSpacing=3 cellPadding=0 bgColor=#eaeaea border=0>
+<TBODY>
+<TR>
+<TD width=115 bgColor=#ffffff><IMG height=120 src="/hosts/sh3.hkedu.co.kr/files/image/intro_teacher.gif" width=102 align=absMiddle border=0></TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD align=middle height=25>성명&nbsp;직책</TD></TR></TBODY></TABLE></TD>
+<TD>
+<TABLE cellSpacing=0 cellPadding=0 width="100%">
+<TBODY>
+<TR>
+<TD>
+<TABLE style="WIDTH: 106px; HEIGHT: 126px" cellSpacing=3 cellPadding=0 bgColor=#eaeaea border=0>
+<TBODY>
+<TR>
+<TD width=115 bgColor=#ffffff><IMG height=120 src="/hosts/sh3.hkedu.co.kr/files/image/intro_teacher.gif" width=102 align=absMiddle border=0></TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD align=middle height=25>성명&nbsp;직책</TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD>
+<TABLE cellSpacing=0 cellPadding=0 width="100%">
+<TBODY>
+<TR>
+<TD>
+<TABLE style="WIDTH: 106px; HEIGHT: 126px" cellSpacing=3 cellPadding=0 bgColor=#eaeaea border=0>
+<TBODY>
+<TR>
+<TD width=115 bgColor=#ffffff><IMG height=120 src="/hosts/sh3.hkedu.co.kr/files/image/intro_teacher.gif" width=102 align=absMiddle border=0></TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD align=middle height=25>성명&nbsp;직책</TD></TR></TBODY></TABLE></TD>
+<TD>
+<TABLE cellSpacing=0 cellPadding=0 width="100%">
+<TBODY>
+<TR>
+<TD>
+<TABLE style="WIDTH: 106px; HEIGHT: 126px" cellSpacing=3 cellPadding=0 bgColor=#eaeaea border=0>
+<TBODY>
+<TR>
+<TD width=115 bgColor=#ffffff><IMG height=120 src="/hosts/sh3.hkedu.co.kr/files/image/intro_teacher.gif" width=102 align=absMiddle border=0></TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD align=middle height=25>성명&nbsp;직책</TD></TR></TBODY></TABLE></TD>
+<TD>
+<TABLE cellSpacing=0 cellPadding=0 width="100%">
+<TBODY>
+<TR>
+<TD>
+<TABLE style="WIDTH: 106px; HEIGHT: 126px" cellSpacing=3 cellPadding=0 bgColor=#eaeaea border=0>
+<TBODY>
+<TR>
+<TD width=115 bgColor=#ffffff><IMG height=120 src="/hosts/sh3.hkedu.co.kr/files/image/intro_teacher.gif" width=102 align=absMiddle border=0></TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD align=middle height=25>성명&nbsp;직책</TD></TR></TBODY></TABLE></TD>
+<TD>
+<TABLE cellSpacing=0 cellPadding=0 width="100%">
+<TBODY>
+<TR>
+<TD>
+<TABLE style="WIDTH: 106px; HEIGHT: 126px" cellSpacing=3 cellPadding=0 bgColor=#eaeaea border=0>
+<TBODY>
+<TR>
+<TD width=115 bgColor=#ffffff><IMG height=120 src="/hosts/sh3.hkedu.co.kr/files/image/intro_teacher.gif" width=102 align=absMiddle border=0></TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD align=middle height=25>성명&nbsp;직책</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+
+
+
+			]]>
+		</Html>
+	</Template>
+	<Template title="학교상징 | 교가소개" image="template1.gif">
+		<Description>학교 상징중 교가를 소개하는 페이지의 기본양식입니다.</Description>
+		<Html>
+			<![CDATA[
+				
+
+
+
+	
+			
+			
+			<TABLE cellSpacing=0 cellPadding=3 width="95%" align=center border=0>
+<TBODY>
+<TR>
+<TD>
+<TABLE cellSpacing=0 cellPadding=3 width="100%" border=0>
+<TBODY>
+<TR>
+<TD colSpan=2>1932년 1월 8일에 제정된 교가는 제 2대 교장이며 국어학자였던 白水 홍길동 선생이 작사하고 유명한 한국현대음악의 선구자 현제명 선생이 작곡하여 詞意의 심원함과 곡의 장중함으로 널리 알려진 名校歌가 되었다.<BR></TD></TR>
+<TR>
+<TD vAlign=top width="58%">
+<TABLE cellSpacing=0 cellPadding=3 width="100%" border=0>
+<TBODY>
+<TR>
+<TD><IMG height=338 src="/hosts/sh3.hkedu.co.kr/files/image/intro_teacher.gif" width=274></TD></TR>
+<TR>
+<TD align=middle><INPUT TYPE="submit" class ="button" value="교가듣기" ></TD></TR></TBODY></TABLE></TD>
+<TD vAlign=top width="42%">1절<BR>삼한대처 김천고을 황악산 밑에 <BR>우뚝솟아 크나큰집 우리의 모교<BR>우리들의 맘과몸이 배우는 포부 <BR>큰이상에 새로운일 현실이 주장<BR><BR>2절<BR>내력깊고 자랑많은 무궁화 동산<BR>아름다운 마음의씨 가신배 없다<BR>굳세거라 송설학원 즈믄 선도들 <BR>할일많은 우리앞에 희망은 찼네<BR><BR>3절<BR>저것보라 낙락장송 느리 푸르름 <BR>다사할손 맘의고향 우리의 모교<BR>들며나며 학우들은 갊아 들어도 <BR>한가지로 맘에새길 이상의 보람<BR><BR>4절<BR>저것보라 낙락장송 느리 푸르름 <BR>다사할손 맘의고향 우리의 모교<BR>들며나며 학우들은 갊아 들어도 <BR>한가지로 맘에새길 이상의 보람 </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+
+
+
+
+
+
+			]]>
+		</Html>
+	</Template>
+	<Template title="학교장 인사말" image="template2.gif">
+		<Description>학교장 인사말 입니다.</Description>
+		<Html>
+			<![CDATA[
+			
+
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tbody>
+        <tr>
+            <td valign="top" width="20%">
+            <table style="width: 197px; height: 239px" cellspacing="0" cellpadding="0" width="197" background="/hosts/sh2.hkedu.co.kr/files/image/back_p.gif" border="0">
+                <tbody>
+                    <tr>
+                        <td align="center">&nbsp;여기에 교장선생님 <br />
+                        사진을 넣으세요</td>
+                    </tr>
+                </tbody>
+            </table>
+            </td>
+            <td style="paddong: 30px" valign="top" rowspan="2">&nbsp;</td>
+            <td style="paddong: 30px" valign="top" rowspan="2"><b><span style="font-family: Verdana"><span><span><span style="font-size: small"><span>안녕하십니까?</span></span></span></span></span></b><span style="font-family: Verdana"><span><span style="font-size: large"> </span><b><span style="font-size: large">교장 홍길동입니다.<br />
+            <br />
+            </span></b><span style="font-size: x-small"><span><span><span>홈페이지 방문을 진심으로 환영합니다.<br />
+            <br />
+            본교는 홈페이지를 통해서 학교교육활동을 알리고<br />
+            유익한 정보를 공유하며 다양한 의견을 수렴하고 있습니다.<br />
+            <br />
+            본교 홈페이지 방문이 유익한 시간이 되기를 바랍니다.</span></span></span></span><span style="font-size: larger"><span><br />
+            <br />
+            </span><span style="color: #339966"><span><span><span><span style="font-family: Times New Roman"><b><span style="font-size: small"><span>본교는 2000년 개교하였으며<br />
+            학급수는 39그학급(특수학급 1학급포함)이고<br />
+            학생수는 1500명입니다.<br />
+            교원은 65명이며 행정실 직원은 21명입니다.<br />
+            <br />
+            </span></span></b></span></span></span></span></span></span></span><span style="font-size: x-small"><span><span><span><span style="font-family: Times New Roman"><span><span>본교의 노력 중심사업은 [어쩌구 저쩌구] , [어쩌구 저쩌구]<br />
+            이며 <br />
+            <br />
+            특색사업은 [어쩌구 저쩌구] , [어쩌구 저쩌구] 입니다.<span style="font-size: larger"><span><span><span style="font-family: Times New Roman"><b><span style="font-size: small"><span><br />
+            </span></span></b></span></span></span></span><span style="font-size: larger"><span><span><span style="font-family: Times New Roman"><b><span style="font-size: small"><span><br />
+            </span></span></b><span style="font-size: small"><span><span style="font-size: x-small">우리 학교의 전 교직원은 혼연일체가 되어 창의성과 성실성을 갖춘 글로벌 인재를 육성하기위해서 최선을 다하고 있습니다.<br />
+            <br />
+            그리고 학생들이 학교생활을 통해서 행복감을 느끼고 실력을 기를 수 있도록 노력하고 있습니다.<br />
+            <br />
+            많은 관심을 갖고 지켜봐 주시기 바라며 지속적인 조언과 지도 편달이 있으시기를 바랍니다.</span></span></span><b><span style="font-size: small"><span><span style="font-size: x-small"><br />
+            </span><br />
+            가정에 건강과 행운이 가득하길 기원합니다.<br />
+            감사합니다.<br />
+            <br />
+            </span></span></b></span></span></span></span></span></span></span></span></span></span></span><span style="font-size: larger"><span><span><span style="font-family: Times New Roman"><b><span style="font-size: small"><span><br />
+            </span></span></b></span></span></span></span></span></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+
+			]]>
+		</Html>
+	</Template>
+
+
+
+
+
+
+
+
+
+<Template title="학교연혁" image="template3.gif">
+		<Description>표 형식의 학교 연혁 페이지입니다.</Description>
+		<Html>
+			<![CDATA[
+				<table cellspacing="1" cellpadding="3" width="90%" align="center" bgcolor="#bbc8be" border="0">
+    <tbody>
+        <tr bgcolor="#e8eed2">
+            <td height="20"><span class="style11">연 월 일 </span></td>
+            <td height="20"><span class="style11">내용</span></td>
+        </tr>
+        <tr bgcolor="#ffffff">
+            <td height="20">
+            <p>1994. 11. 01</p>
+            </td>
+            <td height="20">이지중학교 설립(26학급, 1283명)</td>
+        </tr>
+        <tr bgcolor="#efefef">
+            <td height="20">
+            <p>1995. 03. 01</p>
+            </td>
+            <td height="20">초대 안동옥 교장 취임</td>
+        </tr>
+        <tr bgcolor="#ffffff">
+            <td height="20">1995. 03. 02</td>
+            <td height="20">신입생 입학식(1학급, 27명)</td>
+        </tr>
+        <tr bgcolor="#efefef">
+            <td height="20">
+            <p>1996. 02. 15</p>
+            </td>
+            <td height="20">제 1회 졸업식(2학급, 59명)</td>
+        </tr>
+        <tr bgcolor="#ffffff">
+            <td height="20">
+            <p>1999. 09. 01</p>
+            </td>
+            <td height="20">제 2대 한신진 교장 취임</td>
+        </tr>
+        <tr bgcolor="#efefef">
+            <td height="20">
+            <p>2001. 09. 01</p>
+            </td>
+            <td height="20">제 3대 박희용 교장 취임</td>
+        </tr>
+        <tr bgcolor="#ffffff">
+            <td height="20">
+            <p>2005. 02. 04</p>
+            </td>
+            <td height="20">제 10회 졸업식(14학급, 540명)</td>
+        </tr>
+        <tr bgcolor="#efefef">
+            <td height="20">
+            <p>2005. 03. 02</p>
+            </td>
+            <td height="20">제 4대 박영만 교장 취임</td>
+        </tr>
+        <tr bgcolor="#ffffff">
+            <td height="20">
+            <p>2005. 03. 02</p>
+            </td>
+            <td height="20">제 11회 입학식 (16학급 641명)</td>
+        </tr>
+        <tr bgcolor="#efefef">
+            <td height="20">
+            <p>2006. 02. 15</p>
+            </td>
+            <td height="20">제 11회 졸업식 (14학급 535명)</td>
+        </tr>
+        <tr bgcolor="#ffffff">
+            <td height="20">
+            <p>2006. 03. 02</p>
+            </td>
+            <td height="20">제 12회 입학식 (12학급 492명)</td>
+        </tr>
+        <tr bgcolor="#efefef">
+            <td height="20">2007. 02. 14</td>
+            <td height="20">제 12회 졸업식 (13학급 529명)</td>
+        </tr>
+        <tr bgcolor="#ffffff">
+            <td height="20">2007. 03. 02</td>
+            <td height="20">제 13회 입학식 (10학급 407명)</td>
+        </tr>
+    </tbody>
+</table>
+			]]>
+		</Html>
+	</Template>
+
+</Templates>

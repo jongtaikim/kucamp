@@ -1,0 +1,77 @@
+.dynamic-tab-pane-control.tab-pane {
+	position:	relative;
+	width:		100%;		/* width needed weird IE bug */
+	margin-right:	-2px;	/* to make room for the shadow */
+}
+
+.dynamic-tab-pane-control .tab-row .tab {
+
+	width:				70px;
+	height:				16px;
+	background-image:	url('tab.png');
+	
+	position:		relative;
+	top:			0;
+	display:		inline;
+	float:			left;
+	overflow:		hidden;
+	
+	cursor:			Default;
+
+	border:			0px none;
+
+	z-index:		1;
+	white-space:	nowrap;
+	text-align:		center; font-style:normal; font-variant:normal; font-weight:normal; font-size:11px; font-family:Tahoma; margin-left:2px; margin-right:-1px; margin-top:1px; margin-bottom:1px; padding-left:0px; padding-right:0px; padding-top:2px; padding-bottom:0px
+}
+
+.dynamic-tab-pane-control .tab-row .tab.selected {
+	width:				74px !important;
+	height:				18px !important;
+	background-image:	url('tab.active.png') !important;
+	background-repaet:	no-repeat;
+
+	border-bottom-width:	0;
+	z-index:		3;
+	top:			-2px;
+	font-style:normal; font-variant:normal; font-weight:normal; font-size:11px; font-family:Tahoma; margin-left:0px; margin-right:-3px; margin-top:1px; margin-bottom:-3px; padding-left:0; padding-right:0; padding-top:2px; padding-bottom:0px
+}
+
+.dynamic-tab-pane-control .tab-row .tab a {
+	font:				11px Tahoma;
+	color:				Black;
+	text-decoration:	none;
+	cursor:				default;
+}
+
+.dynamic-tab-pane-control .tab-row .tab.hover {
+	width:				70px;
+	height:				16px;
+	background-image:	url('tab.hover.png');
+	background-repaet:	no-repeat; font-style:normal; font-variant:normal; font-weight:normal; font-size:11px; font-family:Tahoma
+}
+
+
+.dynamic-tab-pane-control .tab-page {
+	clear:			both;
+	border:			1px solid rgb( 145, 155, 156 );
+	background:		'rgb( 252', 252, '254 )';
+	z-index:		2;
+	position:		relative;
+	top:			-2px;
+
+	color:				Black;
+
+	filter:			progid:DXImageTransform.Microsoft.Gradient(StartColorStr=#fffcfcfe, EndColorStr=#fff4f3ee, GradientType=0)
+					progid:DXImageTransform.Microsoft.Shadow(Color=#ff919899, Strength=2, Direction=135);
+	
+	/*244, 243, 238*/
+	/* 145, 155, 156*/
+	
+	padding:		10px; font-style:normal; font-variant:normal; font-weight:normal; font-size:11px; font-family:Tahoma
+}
+
+.dynamic-tab-pane-control .tab-row {
+	z-index:		1;
+	white-space:	nowrap;
+}

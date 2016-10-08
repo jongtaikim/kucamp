@@ -1,0 +1,76 @@
+@charset "euc-kr";
+
+/* ÀÌ¿ô´åÄÄ(e-wut.com) 
+À¥ ÆÛºí¸®½Ì 
+ÀÛ¾÷ÀÚ:±èµ¿¿ì, ±èÀºÁ¤ */
+
+
+/*Ä¶¸°´õº»¹®¿µ¿ª*/
+#calendarArea {	
+	width:630px;
+	
+	}
+	#calendarArea table {
+		float:left;
+		width:100%;
+		border-collapse:collapse;
+		border:#ebebeb 1px solid;
+		}
+		#calendarArea table th {
+			width:83px;
+			height:27px;
+			background:#f0f0e8;
+			}
+		#calendarArea td {
+			font-family:verdana, gulim;
+			vertical-align:top;
+			height:94px;
+			padding:3px;
+			border:#ebebeb 1px solid;
+			}
+			#calendarArea td span {
+				font-weight:bold;
+				}
+			#calendarArea table .sun {
+				color:#990000;
+				}
+			#calendarArea table .sat {
+				color:#003385;
+				}
+				#calendarArea td ul {
+					}
+					#calendarArea td ul li {
+						overflow:hidden;
+						width:80px;
+						white-space:nowrap;
+						text-overflow:ellipsis;
+
+						}
+	#calendarArea .objTop {
+		float:left;
+		width:100%;
+	
+		margin-top:20px;
+		}
+	
+		#calendarArea .objTop .date {
+			display:block;
+			float:left;
+			width:412px;
+			text-align:center;
+			font-size:18px;
+			font-weight:bold;
+			font-family:"verdana", gulim, arial;
+			}
+		#calendarArea .objTop .moveBtn {
+			float:left;
+			width:100px;
+			margin-top:5px;
+			}
+			#calendarArea .objTop .moveBtn li {
+				float:left;
+				}
+		#calendarArea .objTop .admin {
+			float:right;
+			margin-top:5px;
+			}

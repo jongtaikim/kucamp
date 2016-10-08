@@ -1,0 +1,211 @@
+<link rel="stylesheet" href="/css/mypage.css" type="text/css" />
+<script type="text/javascript" src="/js/lib.validate.js"></script>
+<script language="Javascript" type="text/javascript">
+function emailSelect(idx){
+	$('email2').value=idx;
+}
+
+function popup_zip() {
+	form = 'joinForm';
+	wZip = window.open('core.zipcode?el_addr=str_addr1&el_zip=str_zipcode&el_focus=str_addr2&form='+form,'zipsearch','width=400, height=200,scrollbars=yes');
+}
+
+</script>
+
+<body>
+<!--서브컨텐츠 영역 시작-->
+<div id="subContentArea">
+
+
+
+	<div id="subPage">
+		<h2>서브페이지 내용 영역</h2>
+		<div class="mypageContent">
+			<div id="myInfoTop">
+				<h3 class="mypageTitle">회원 개인정보 수정</h3>
+				<img src="/images/school/mypage/mypageTop.gif" alt="" />
+			</div>
+			<div id="myInfo">
+				<form method='post'  name = "joinForm" enctype="multipart/form-data" onsubmit="return validate(this);" >
+				<input type="hidden" name="mode" value = "update" />
+				<input type="hidden" name="str_id" value = "{str_id}" />
+				<fieldset>
+					<legend>회원 개인정보 수정을 위한 입력폼</legend>
+					<div class="row name">
+						<div class="title">이름<span class="colon">:</span></div>
+						<div class="input">{str_name}</div>
+					</div>
+					<div class="row id">
+						<div class="title">아이디<span class="colon">:</span></div>
+						<div class="input">{str_id}</div>
+					</div>
+					
+							<div class="row password">
+							<div class="title"><label for="password"><span class="inputTitle">기존 비밀번호</span></label></div>
+							<div class="input"><input  name="old_passwd" hname="기존 비밀번호" maxlength="10" pattern="^([a-zA-Z0-9]{4,10})?$"  type="password" match="str_passwd_2" /> 
+							<input type="hidden" name="password" id="str_passwd_2" value="{str_passwd}">					
+						</div>
+						</div>
+				
+						<div class="row password">
+							<div class="title"><label for="password"><span class="inputTitle">새 비밀번호</span></label></div>
+							<div class="input"><input  name="str_passwd" id="str_passwd" hname="비밀번호" maxlength="10" pattern="^([a-zA-Z0-9]{4,10})?$" match="str_passwd2" type="password"  /> 
+												
+						</div>
+						</div>
+						<div class="row rePassword">
+							<div class="title"><label for="str_passwd2"><span class="inputTitle">새비밀번호 확인</span></label></div>
+							<div class="input"><input name="str_passwd2" id="str_passwd2" hname="새비밀번호 확인" type="password" maxlength="10"    ></div>
+						</div>
+
+
+					
+					{? chr_mtype == "s"}
+						<div class="row">
+							<div class="left name">
+								<div class="title"><label for="nameInput"><span class="inputTitle">학급선택</span></label></div>
+								<div class="input">
+								
+								<select  name="num_fcode" id="num_fcode" hname="학급선택" required>
+									<option value="">-- 학급 선택 --</option>
+									{@ FMT}
+									<optgroup label="{.str_grade}">
+										{@ classTop}
+										<option value="{..str_cafe_id}" {? ..str_cafe_id  == num_fcode} selected{/}>{.str_grade} {?.str_grade !=..str_class}{..str_class}{/} ({..counter +0})</option>
+										{/}
+									</optgroup>
+									{/}
+								</select>
+								<input type="hidden" name="num_fcode_def" value="{num_fcode}"/>
+								</div>
+							</div>
+							
+						</div>
+						{/}
+
+
+					<div class="row email">
+						<div class="title"><label for="id">이메일<span class="colon">:</span></label></div>
+						<div class="input">
+							
+							<input name="email1" hname="이메일" type="text"  maxbyte="50"  value="{email1}" required  />
+							
+							<span class="divide">@</span>
+							
+							<input name="email2" id="email2" hname="이메일" type="text"  maxbyte="50"  value="{email2}" required />
+
+							<select name="emailSelect1" onchange = "emailSelect(this.value)">
+								<option value="">Email 주소 선택</option>
+								<option value="">직접입력</option>
+								<option value="gmail.com">구글(G메일)</option>
+								<option value="naver.com">네이버</option>
+								<option value="nate.com">네이트</option>
+								<option value="dreamwiz.com">드림위즈</option>
+								<option value="yahoo.co.kr">야후</option>
+								<option value="empal.com">엠파스</option>
+								<option value="paran.com">파란</option>
+								<option value="hanmail.net">한메일</option>
+							</select>
+							
+			
+						</div>
+					</div>
+					
+					<div class="row address">
+						<div class="title">주소<span class="colon">:</span></div>
+						<div class="input">
+						<div>
+										
+						<input type="text" id="sample6_postcode" name="chr_zip" value="{chr_zip}" placeholder="우편번호" class="i_text" style="width:80px">
+						<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+						<input type="text" id="sample6_address" name="str_addr1" placeholder="주소" value="{str_addr1}" required maxbyte="100" readonly class="i_text" style="width:400px"><br>
+						<input type="text" id="sample6_address2" name="str_addr2" placeholder="상세주소" value="{str_addr2}" required maxbyte="100" trim="trim" class="i_text" style="width:400px">
+
+						<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+						<script>
+						    function sample6_execDaumPostcode() {
+							  new daum.Postcode({
+								oncomplete: function(data) {
+								    // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+								    // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+								    // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+								    var fullAddr = ''; // 최종 주소 변수
+								    var extraAddr = ''; // 조합형 주소 변수
+
+								    // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+								    if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+									  fullAddr = data.roadAddress;
+
+								    } else { // 사용자가 지번 주소를 선택했을 경우(J)
+									  fullAddr = data.jibunAddress;
+								    }
+
+								    // 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+								    if(data.userSelectedType === 'R'){
+									  //법정동명이 있을 경우 추가한다.
+									  if(data.bname !== ''){
+										extraAddr += data.bname;
+									  }
+									  // 건물명이 있을 경우 추가한다.
+									  if(data.buildingName !== ''){
+										extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+									  }
+									  // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+									  fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+								    }
+
+								    // 우편번호와 주소 정보를 해당 필드에 넣는다.
+								    document.getElementById('sample6_postcode').value = data.zonecode; //5자리 기초구역번호 사용
+								    document.getElementById('sample6_address').value = fullAddr;
+
+								    // 커서를 상세주소 필드로 이동한다.
+								    document.getElementById('sample6_address2').focus();
+								}
+							  }).open();
+						    }
+						</script>
+
+						</div>
+					</div>
+					<div class="row phone">
+						<div class="title">전화번호<span class="colon">:</span></div>
+						<div class="input">
+						
+						<input name="tel1"  hname="연락처" type="text" maxbyte="50" value="{tel1}" style="ime-mode:active" maxlength="4">
+						<span class="divide">-</span>
+						<input name="tel2"  hname="연락처" type="text" maxbyte="50" value="{tel2}" style="ime-mode:active" maxlength="4">
+						<span class="divide">-</span>
+						<input name="tel3"  hname="연락처" type="text" maxbyte="50"  value="{tel3}" style="ime-mode:active" maxlength="4">
+						
+						</div>
+					</div>
+					<div class="row cellPhone last">
+						<div class="title">휴대폰<span class="colon">:</span></div>
+						<div class="input">
+							
+
+							<input name="tel11" hname="핸드폰" type="text" maxbyte="50" value="{tel11}"  style="ime-mode:active" required maxlength="4">
+							<span class="divide">-</span>
+							<input name="tel22" hname="핸드폰" type="text" maxbyte="50" value="{tel22}" style="ime-mode:active" required maxlength="4">
+							<span class="divide">-</span>
+							<input name="tel33" hname="핸드폰" type="text" maxbyte="50" value="{tel33}"  style="ime-mode:active" required maxlength="4">
+
+
+						</div>
+					</div>
+				</fieldset>
+				<div id="btnArea">
+					<input type="image" src="/images/common/submitBtn.gif" alt="확인버튼, 현재 내용을 저장합니다." />
+					<a href="#"><img src="/images/common/cancelBtn.gif" alt="취소버튼" /></a>
+				</div>
+				</form>
+				<img src="/images/school/mypage/mypageBottom.gif" class="bg" alt="" />
+			</div>
+
+		</div>
+	</div>
+</div>
+<!--서브컨텐츠 영역 끝-->
+</body>
+</html>

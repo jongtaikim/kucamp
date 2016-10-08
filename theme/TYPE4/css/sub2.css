@@ -1,0 +1,35 @@
+@charset "euc-kr";
+
+@import url(./layout.css);
+@import url(./obj.css);
+@import url(./top.css);
+@import url(./foot.css);
+
+
+
+
+
+
+body {width:100%;color:#535353;padding-bottom:15px;}
+
+a {color:#535353;}
+a:hover {color:#926f26;}
+
+
+#main_layout { float:left;	position:relative;	width:850px;	left:50%; margin-left:-415px;	}
+
+#contentArea {clear:both;width:100%;margin:0 auto;}
+#mainContent {display:inline;float:left;position:relative;	width:97%;margin:0 10px;}
+
+DIV.titlebar{margin-bottom:25px;}
+DIV.titlebar .titleTop{border-bottom:1px solid #D2D2D2 ;padding:10px 5px 5px 0;width:100%}
+DIV.titlebar .titlebottom{padding:5px 5px 5px 0;}
+DIV.titlebar .titlebottom .iconImage{float:left;  }
+DIV.titlebar .titlebottom .locationText{float:left; padding-top:1px}
+
+/*Äü¸Þ´º*/
+#qmenuBody{position:relative;float:left;}
+#STATICMENU2{position:absolute;top:0px}
+
+
+

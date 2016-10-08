@@ -1,0 +1,168 @@
+/* 배너모음 */
+#bannerCollectArea, #sitemapArea{
+	float:left;
+	width:602px;
+
+	}
+#importantBanner, #bannerCollect , #mainBanner , #menuBanner , #addMenuBanner {
+	float:left;
+	width:100%;
+	margin-bottom:15px;
+	padding-bottom:15px;
+	background: url(../images/bannerCollectBtmBg.gif) no-repeat left bottom;
+	}
+#importantBanner .objContent, #bannerCollect .objContent, #mainBanner .objContent, #menuBanner .objContent, #addMenuBanner .objContent{
+	float:left;
+	background:url(../images/bannerCollectBg.gif) repeat-y left top;
+	}
+#importantBanner ul, #bannerCollect ul {
+	overflow:hidden;
+	float:left;
+	padding:30px 0 0 0;
+	background:url(../images/bannerCollectTopBg.gif) no-repeat left top;
+	}
+#mainBanner ul , #menuBanner ul, #addMenuBanner ul{
+	overflow:hidden;
+	float:left;
+	padding:20px 0 0 0;
+	background: url(../images/bannerCollectTopBg.gif) no-repeat left top;
+	}
+#importantBanner .banner, #bannerCollect .banner {
+	float:left;
+	display:inline;
+	width:546px;
+	padding-left:56px;
+	}
+#mainBanner .list, #menuBanner .sitemap, #addMenuBanner .banner {
+	float:left;
+	display:inline;
+	width:572px;
+	padding-left:30px;
+	}
+#importantBanner h4, #bannerCollect h4 {
+	display:block;
+	width:148px;
+	height:25px;
+	margin-left:21px;
+	text-align:center;
+	color:#fff;
+	font-size:1.2em;
+	line-height:190%;
+	}
+#mainBanner h4, #menuBanner h4, #addMenuBanner h4 {
+	display:block;
+	width:123px;
+	height:25px;
+	margin-left:21px;
+	text-align:center;
+	color:#fff;
+	font-size:1.2em;
+	line-height:190%;
+	}
+	.importantTit {
+		background:url(../images/importantBannerTitBg.gif) no-repeat left top;
+		}
+	.bannerTit {
+		background:url(../images/bannerCollectTitBg.gif) no-repeat left top;
+		}
+	.bannerEtcTit {
+		background:url(../images/bannerEtcBg.gif) no-repeat left top;
+		}
+	#importantBanner li, #bannerCollect li, #menuBanner li, #addMenuBanner li{
+		float:left;
+		margin:0 20px 20px 0;
+		line-height:180%;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		}
+	#mainBanner li {
+		float: left; 
+		line-height:180%;
+		padding: 0 12px 0 14px;
+		white-space: nowrap; 
+		background: url(../images/mainBannerBu.gif) no-repeat left 2px;
+		}
+		#importantBanner li img, #bannerCollect li img, #addMenuBanner li img {
+			width:148px;
+			height:38px;
+			border:#ddd 1px solid;
+			}
+	#menuBanner .depth01 {
+		float:left;
+		width:160px;
+		margin:0 30px 25px 0;
+		padding:0;
+		}
+	#menuBanner .depth01 h5 {
+		display:block;
+		margin:0;
+		padding:4px 0;
+		font-size:1em;
+		color:#4d4d4d;
+		font-weight:bold;
+		text-align:center;
+		}
+		#menuBanner .depth01 h5.title1 {
+			border-top:2px solid #4ab8bd;
+			border-bottom:2px solid #4ab8bd;
+			}
+		#menuBanner .depth01 h5.title2 {
+			border-top:2px solid #83b02c;
+			border-bottom:2px solid #83b02c;
+			}
+		#menuBanner .depth01 h5.title3 {
+			border-top:2px solid #ee9521;
+			border-bottom:2px solid #ee9521;
+			}
+		#menuBanner .depth01 h5.title4 {
+			border-top:2px solid #9c87b7;
+			border-bottom:2px solid #9c87b7;
+			}
+		#menuBanner .depth01 h5.title5 {
+			border-top:2px solid #ea8391;
+			border-bottom:2px solid #ea8391;
+			}
+		#menuBanner .depth01 h5.title6 {
+			border-top:2px solid #4dba9a;
+			border-bottom:2px solid #4dba9a;
+			}
+		#menuBanner .depth01 h5.title7 {
+			border-top:2px solid #4d71ba;
+			border-bottom:2px solid #4d71ba;
+			}
+		#menuBanner .depth01 h5.title8 {
+			border-top:2px solid #bc7733;
+			border-bottom:2px solid #bc7733;
+			}
+	#menuBanner .depth01 ul {
+		float:left;
+		width:100%;
+		margin:10px 0 0 0;
+		padding:0;
+		background:#fff;
+		}
+	#menuBanner .depth01 ul.outline1 li{
+		float:left;
+		width:148px;
+		color:#4d4d4d;
+		font-weight:bold;
+		margin:0;
+		padding:0 0 0 12px;
+		background: url(../images/menuBannerBu.gif) no-repeat left 5px;
+		}
+		#menuBanner .depth01 ul.outline1 li a{
+			display:block;
+			}
+	#menuBanner .depth01 ul.outline1 li ul.depth02 {
+		margin:0;
+		padding:0;
+		}
+	#menuBanner .depth01 ul.outline1 li ul.depth02 li {
+		width:130px;
+		margin:0 0 0 5px;
+		padding:0 5px 0 7px;
+		font-weight:normal;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		background:url(../images/menuBannerBu2.gif) no-repeat left 8px;
+		}

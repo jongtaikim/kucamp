@@ -1,0 +1,271 @@
+@charset "euc-kr";
+
+/*
+웹 퍼블리싱
+작업자:이승희(didily@naver.com)
+*/
+
+/*기본설정*/
+body {
+	color:#858585;
+	}
+blockquote {
+	float:left;
+	margin:0 0 0 10px;
+	}
+/*이용약관 시작 */
+#userWrap {
+	float:left;
+	width:98%;
+	padding-right:10px;
+	}
+	#userWrap .contentWrap {
+		float:left;
+
+		}
+	#userWrap .contentWrap p {
+		float:left;
+		margin:0;
+		padding:0;
+		}
+		#userWrap .contentWrap .content {
+			float:left;
+			margin:0;
+			padding:0;
+			}
+	#userWrap ol.alpha {
+		margin-left:35px;
+		}
+	#userWrap ol.alpha li {
+		list-style-type: upper-alpha;
+		}
+	#userWrap ol.alpha li ol {
+		margin-left:15px;
+		}
+	#userWrap ol.alpha li ol li {
+		list-style-type: lower-alpha;
+		}
+	#userWrap h1.pageHeader {
+		display:block;
+		float:left;
+		visibility:visible;
+		width:98%;
+		height:18px;
+		margin:0;
+		padding:0;
+		color:#010101;
+		font-size:1.2em;
+		font-weight:bold;
+		line-height:100%;
+		}
+	#userWrap h2.tit02 {
+		display:block;
+		float:left;
+		overflow: visible; 
+		visibility:visible;
+		display:block;
+		width:100%;
+		height:18px;
+		margin:15px 0 5px 0;
+		padding:7px 0;
+		color:#858585;
+		font-size:1em;
+		font-weight:bold;
+		line-height:100%;
+		}
+	#userWrap h3.tit03 {
+		display:block;
+		float:left;
+		overflow: visible; 
+		visibility:visible;
+		display:block;
+		width:100%;
+		height:12px;
+		margin:0 0 5px 0;
+		padding:3px 0;
+		color:#858585;
+		font-size:1em;
+		font-weight:bold;
+		line-height:100%;
+		}
+	
+/*이용약관 끝 */
+
+/*이메일 무단수집거부 */
+#email {
+	float:left;
+	width:630px;
+	height:400px;
+	}
+#email .mailRejectTitle {
+	float:left;
+	width:620px;
+	margin-bottom:5px;
+	padding:7px 0 7px 10px;
+	color:#fff;
+	font-weight:bold;
+	background:#90be7c;
+	}
+#email .mailRejectContents {
+	float:left;
+	width:610px;
+	padding:10px;
+	line-height:140%;
+	}
+	#email .content {
+		float:left;
+		margin-bottom:15px;
+		}
+	#email strong {
+		display:block;
+		}
+
+/*저작권 보호 지침 시작 */
+#copyrightWrap {
+	float:left;
+	width:620px;
+	padding-right:10px;
+	}
+	#copyrightWrap .contentWrap {
+		float:left;
+		}
+	#copyrightWrap .contentWrap p.content {
+		float:left;
+		margin-bottom:10px;
+		padding:0;
+		line-height:180%;
+		}
+	#copyrightWrap .contentWrap .contentBox {
+		float:left;
+		width:610px;
+		padding:5px 10px;
+		}
+		#copyrightWrap .contentBox.gray {
+			background:#efefef;
+			}
+		#copyrightWrap .contentBox.green {
+			background:#e8f2d5;
+			}
+		#copyrightWrap .contentBox strong {
+			float:left;
+			margin-top:10px;
+			}
+		#copyrightWrap .contentBox.red {
+			color:#ff0000;
+			font-weight:bold;
+			background:#e8f2d5;
+			}
+	#copyrightWrap ul.squre {
+		margin-left:15px;
+		}
+	#copyrightWrap ul.squre li {
+		padding-left:10px;
+		line-height:160%;
+		background:url(../images/policy/squreBlit.gif) no-repeat left 5px;
+		}
+	.copyBoxWrap {
+		float:left;
+		padding-bottom:15px;
+		
+		}
+	.copyBox {
+		float:left;
+		}
+		.copyBox ul.squre2  {
+			float:left;
+			margin-left:15px;
+			}
+		.copyBox ul.squre2 li {
+			padding-left:10px;	
+			background:url(../images/policy/squreBlit2.gif) no-repeat left 3px;
+			}
+		.copyBox .download {
+			padding-top:5px;
+			padding-left:15px;
+			padding-bottom:5px;
+			font-weight:bold;
+			}
+		.copyBox .download a{
+				color:#ff6600;
+				}
+	.detailContent ol.custom {
+		margin-left:20px;
+		margin-bottom:15px;
+		}
+	.detailContent ol.custom li{
+		margin:0 5px 0 15px;
+		line-height:160%;
+		list-style-type:decimal-leading-zero;
+		}
+	.detailContent ol.custom li ol li {
+		margin-left:10px;
+		line-height:120%;
+		list-style-type:decimal;
+		}
+	.detailContent strong{
+		display:block;
+		}
+	
+	
+	#copyrightWrap h1.pageHeader {
+		display:block;
+		float:left;
+		width:620px;
+		height:18px;
+		margin:0;
+		padding:0;
+		color:#4d4d4d;
+		font-size:1.3em;
+		font-weight:bold;
+		line-height:100%;
+		}
+	#copyrightWrap h2.tit02 {
+		display:block;
+		float:left;
+		width:620px;
+		height:18px;
+		margin:15px 0 5px 0;
+		padding:0 0 7px 10px;
+		color:#4d4d4d;
+		font-size:1.4em;
+		font-weight:bold;
+		line-height:100%;
+		background:url(../images/policy/icoBlit.gif) no-repeat left top;
+		}
+	#copyrightWrap h3.tit03 {
+		display:block;
+		float:left;
+		width:620px;
+		height:12px;
+		margin:15px 0 5px 0;
+		padding:3px 0;
+		color:#006699;
+		font-size:1em;
+		font-weight:bold;
+		line-height:100%;
+		}
+	
+.corpList {
+	float:left;
+	width:610px;
+	border-collapse:collapse;
+	border:0;
+	}
+.corpList th {
+	color:#4d4d4d;
+	padding:4px;
+	border-top:1px solid #dfdfdf;
+	border-right:1px solid #dfdfdf;
+	border-left:1px solid #dfdfdf;
+	border-bottom:0;
+	background:#e8f8d0;
+	}
+.corpList td {
+	padding:4px;
+	border:1px solid #dfdfdf;
+	}
+.corpList .center {
+	text-align:center;
+	}
+
+/*저작권 보호 지침 끝 */

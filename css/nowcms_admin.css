@@ -1,0 +1,59 @@
+body{height:100%;letter-spacing:-1px}
+
+/*메인*/
+
+.top_gnb{width:900px;margin:0 auto;height:50px;}
+.top_gnb .gnb_logo{width:20%;float:left;padding:5px}
+.top_gnb .gnb_logo .gnb_logo_img{float:left;}
+.top_gnb .gnb_logo .gnb_logo_title{float:left;color:#fff;padding-top:10px;margin-left:10px}
+.top_gnb .gnb_menu{width:75%;float:right;text-align:right; color:#56596d;padding:14px}
+.top_gnb .gnb_menu a {color:#ABACB0}
+.gnb_info {color:#949598;width:900px;margin:0 auto;padding:15px 0 15px 0;}
+.gnb_info .ver{color:#555659;font-weight:bold}
+.gnb_info .id{color:#990000;font-weight:bold}
+
+.content_body{width:900px;margin:0 auto;height:620px}
+.menu_body{background:url(/images/admin/menu_body.gif) no-repeat ;height:620px;width:220px;float:left;margin-right:5px}
+.menu_body .menu_head {padding:20px 0 0 15px}
+.menu_body .menu_head .menu_head_icon{float:left;width:46px}
+.menu_body .menu_head .menu_head_title{float:left;width:140px;margin-top:3px;margin-left:8px;height:60px}
+.menu_body .menu_head .menu_head_title .menu_head_title1{font-size:14px;margin-bottom:3px;font-weight:bold }
+.menu_body .menu_head .menu_head_title .menu_head_title2{font-size:11px;color:#808080;}
+
+.menu_body .menu_content{float:none}
+.menu_body .menu_content UL{margin:70px 18px 10px 18px;}
+.menu_body .menu_content UL li{margin-left:0px;margin-bottom:15px;border-bottom:1px dashed #E5E5E5;padding-bottom:8px }
+.menu_body .menu_content UL li a{font-size:13px;color:#27315c}
+.menu_body .menu_content UL li .menu_content_help{font-size:11px;color:#808080}
+
+.footer{width:900px;margin:20px auto;height:20px ;text-align:center;}
+
+
+/*서브*/
+
+.top_gnb_sub{width:100%;height:40px ;background-color:#232634}
+.top_gnb_sub .gnb_logo{width:45%;float:left;padding:5px 5px 5px 15px}
+.top_gnb_sub .gnb_logo .gnb_logo_img{float:left;}
+.top_gnb_sub .gnb_logo .gnb_logo_title{float:left;color:#fff;padding-top:10px;margin-left:10px}
+.top_gnb_sub .gnb_menu{width:45%;float:right;text-align:right; color:#56596d;padding:14px}
+.top_gnb_sub .gnb_menu a {color:#ABACB0}
+
+.top_menu  {background:url(/images/admin/sub_bg.gif) repeat-x;height:37px;text-align:left;padding-top:10px}
+.top_menu ul {margin-left:20px}
+.top_menu ul li{float:left}
+.top_menu ul li a{margin-right:10px}
+.top_menu ul li .top_menu_icon{float:left}
+.top_menu ul li .top_menu_text{float:left; font-size:14px;margin-bottom:3px;font-weight:bold;margin-top:5px;margin-left:5px;letter-spacing:-1px}
+.top_menu ul li .selected{color:#13b200}
+
+.content_body_sub{width:100%;}
+.content_body_sub .content_body_menu{width:170px;background:url(/images/admin/sub_left_bg.gif) repeat-x;float:left;background-color:#FBFBFB;height:100%;padding-left:10px}
+
+.content_body_sub .content_body_text{width:780px;float:left;margin:0px;background:url(/images/admin/sub_right_bg.gif) repeat-x;border-left:1px solid #D0D0D0;}
+
+#contents{float:left;margin-left:30px;width:95%;min-height:600px;margin-bottom:20px}
+
+.content_body_text .titleBar{border-bottom:2px solid #353535;height:30px;margin-bottom:30px;margin-top:30px;font-size:15px;font-weight: bold}
+
+
+.footer_sub{float:left;width:100%;height:40px ;text-align:center;;background:url(/images/admin/sub_footer_bg.gif) repeat-x;padding-top:20px;}

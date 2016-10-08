@@ -1,0 +1,67 @@
+<PROPERTY NAME="step" />
+<PROPERTY NAME="maxvalue" />
+<EVENT    NAME="onerror"  ID="error"  />
+<ATTACH   EVENT="oncontentready"  HANDLER="init"          />
+
+<script language="jscript">
+/**********************************************
+* 파일명: spinbtn.htc
+* 설  명: 스핀버튼 컨트럴
+* 날  짜: 2003-08-11
+* 작성자: 거친마루 (comfuture@maniacamp.com) 
+***********************************************/
+function init() {
+	if (tagName != "INPUT") raiseError('이 태그에는 spin 버튼을 부착할 수 없습니다!');
+
+	style.textAlign = 'right';
+	if (!value) value = 0;
+	step = (step) ? parseInt(step) : 1;
+	if (maxvalue) maxvalue = parseInt(maxvalue);
+	onfocus = select;
+	var container = document.createElement('SPAN');
+	container.style.width = '14px';
+	container.style.height = '10px';
+
+	var spinUp = document.createElement('INPUT');
+	spinUp.type = 'button';
+	spinUp.value = '▲';
+	spinUp.onfocus = spinUp.blur;
+	with (spinUp.style) {
+		width = '14px';
+		height = '10px';
+		fontSize = '5pt';
+		borderWidth = '1px';
+		borderColor = 'black';
+	}
+	spinUp.onclick = function() {
+		value = parseInt(value) + step;
+		if (maxvalue && parseInt(value) > maxvalue) value = maxvalue;
+	}
+
+	var spinDown = document.createElement('INPUT');
+	spinDown.type = 'button';
+	spinDown.value = '▼';
+	spinDown.onfocus = spinDown.blur;
+	with (spinDown.style) {
+		width = '14px';
+		height = '10px';
+		fontSize = '5pt';
+		borderWidth = '1px';
+		borderColor = 'black';
+	}
+	spinDown.onclick = function() {
+		value = (parseInt(value) > step) ? parseInt(value) - step : 0;
+	}
+
+	container.appendChild(spinUp);
+	container.appendChild(spinDown);
+	insertAdjacentElement('afterEnd',container);
+}
+
+function raiseError(sMsg) {
+    var oEvent = createEventObject();
+    oEvent.setAttribute("error", sMsg);
+    error.fire(oEvent);
+}
+
+</script>

@@ -1,0 +1,677 @@
+/*
+ * FCKeditor - The text editor for Internet - http://www.fckeditor.net
+ * Copyright (C) 2003-2008 Frederico Caldeira Knabben
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * This is the default CSS file used by the editor area. It defines the
+ * initial font of the editor and background color.
+ *
+ * A user can configure the editor to use another CSS file. Just change
+ * the value of the FCKConfig.EditorAreaCSS key in the configuration
+ * file.
+ */
+
+/*
+    The "body" styles should match your editor web site, mainly regarding
+    background color and font family and size.
+*/
+
+body
+{
+	font-family: Arial;Verdana;±º∏≤;µ∏øÚ;πŸ≈¡;±√º≠;Comic Sans MS;Courier New;
+	background-color: #ffffff;
+	padding: 5px 5px 5px 5px;
+	margin: 0px;
+}
+
+body, td
+{
+		font-size: 12px;
+}
+
+a[href]
+{
+	color: -moz-hyperlinktext !important;		/* For Firefox... mark as important, otherwise it becomes black */
+	text-decoration: -moz-anchor-decoration;	/* For Firefox 3, otherwise no underline will be used */
+}
+
+/*
+	Just uncomment the following block if you want to avoid spaces between
+	paragraphs. Remember to apply the same style in your output front end page.
+*/
+
+/*
+p, ul, li
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+*/
+
+/*
+    The following are some sample styles used in the "Styles" toolbar command.
+    You should instead remove them, and include the styles used by the site
+    you are using the editor in.
+*/
+
+.Bold
+{
+	font-weight: bold;
+}
+
+.Title
+{
+	font-weight: bold;
+	font-size: 18px;
+	color: #cc3300;
+}
+
+.Code
+{
+	border: #8b4513 1px solid;
+	padding-right: 5px;
+	padding-left: 5px;
+	color: #000066;
+	font-family: 'Courier New' , Monospace;
+	background-color: #ff9933;
+}
+
+
+/*****************************************************************************
+ *
+ * ¿¸√º ªÁ¿Ã∆Æ ∞¯≈Î style
+ * 
+ ****************************************************************************/
+
+body {
+	scrollbar-3dlight-color:#595959;
+	scrollbar-arrow-color:#ffffff;
+	scrollbar-base-color:#cfcfcf;
+	scrollbar-darkshadow-color:#ffffff;
+	scrollbar-face-color:#cfcfcf;
+	scrollbar-highlight-color:#fffff;
+	scrollbar-shadow-color:#595959;
+	font-family:±º∏≤;
+	font-size:12px;
+	margin: 0px;
+}
+
+a {
+	selector-dummy : expression(this.hideFocus=true);
+}
+
+a:link {
+	color: #000000;
+	text-decoration:none;
+}
+
+a:visited {
+	color: #000000;
+	text-decoration:none;
+}
+
+a:active {
+	color:red;
+	text-decoration:none;
+}
+
+a:hover {
+	color:red;
+	text-decoration:none;
+}
+
+h1, h2, h3, h4 {
+	margin: 1em 0 0;
+	color: #0099CC;
+}
+
+h1 {
+	margin: 0;
+	font-size: 200%;
+	line-height:100%;
+}
+
+h2 {
+	font-size: 160%;
+}
+
+h3 {
+	font-size: 140%;
+}
+
+h4 {
+	font-size: 120%;
+}
+
+
+img {
+	border: none;
+}
+
+td, th, div {
+	font-size:12px;
+	font-family:±º∏≤;
+	color: #333333;
+}
+
+p, ul, ol {
+	font-size: 12px;
+	line-height:150%;
+	font-family:±º∏≤;
+	margin-top:0px;
+	margin-bottom: 0px;
+}
+
+ul {
+	margin-left: 30px;
+}
+
+form {
+	margin: 0px;
+}
+
+input, textarea {
+	font-size: 9pt;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #808080;
+	border-right-color:  #ebebeb;
+	border-bottom-color:  #ebebeb;
+	border-left-color: #808080;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+}
+
+input.image { 
+	border: none;
+}
+
+input.noborder { 
+	border: none;
+}
+
+input.readonly {
+	border:1x dotted #939393;
+	background:#eeeeee
+}
+
+input.button, button {
+	
+/*	letter-spacing: 3px; */
+	border:1px solid #939393;
+	background-color: #F0F0F0;
+	color:#006600;
+	padding-top:2px;
+/*
+	padding-left:10px;
+	padding-right:10px;
+*/
+
+}
+
+input.button1 {
+	
+	letter-spacing: 3px;
+	border:1px solid #939393;
+	background-color: #F0F0F0;
+	color:#006600;
+	padding-top:2px;
+	padding-left:10px;
+	padding-right:10px;
+
+}
+
+input.button2 {
+	
+	font-weight:bold;
+	letter-spacing: 3px;
+	border:1px solid #939393;
+	background-color: #F0F0F0;
+	color:#006600;
+	padding-top:5px;
+	padding-bottom:2px;
+	padding-left:10px;
+	padding-right:10px;
+
+}
+
+input.button3 {
+
+	font-weight:bold;
+	letter-spacing: 3px;
+border:1px solid #939393;
+	background-color: #F0F0F0;
+	color:#006600;
+	padding-top:8px;
+	padding-bottom:4px;
+	padding-left:12px;
+	padding-right:12px;
+
+}
+
+
+pre {
+	font-family: ±º∏≤√º;
+	font-size: 11px;
+	color: #565656;
+	padding: 6px;
+}
+
+fieldset {
+	line-height : 150%;
+	padding: 8px 8px 8px 8px;
+}
+
+hr {
+	border: dotted;
+	color: silver;
+	margin: 8px 8px 8px 8px;
+}
+
+/*****************************************************************************
+ *
+ * ¡§¿« style
+ * 
+ ****************************************************************************/
+
+div.tip {
+        background-color: #FFFFCC !important;
+/*      border-style: inset;  */
+	border: 1px solid #c0c0c0;
+/*      border-width: 1px; */
+        padding: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+}
+
+.usage {
+	color: #006600;
+	font-size: 9pt;
+}
+
+.tooltip {
+	display: none;
+	border: 1px solid #FFCC66;
+	padding: 5px;
+	background-color: #FFFFCC;
+}
+
+
+
+/* table00 */
+
+TABLE.table00 {
+
+	
+	border: 1px solid #C5DAEB;
+	border-collapse: collapse;
+	background-color:#d5e4f0;
+	
+}
+
+
+TABLE.table00 TR {
+
+}
+
+TABLE.table00 TH {
+	 color:126796; font-weight:bold; background-color:fafcfd;
+	border: 1px solid #d5e4f0;
+	padding:5px;
+	height:30px
+}
+
+TABLE.table00 TD {
+padding:5; background-color:FFFFFF;
+border: 1px solid #d5e4f0;
+
+}
+
+
+
+
+/* table01 */
+
+TABLE.table01 {
+	border: 1px solid #C0C0C0;
+	border-collapse: collapse;
+}
+
+TABLE.table01 TD,
+TABLE.table01 TH {
+	border: 1px solid #C0C0C0;
+	border-left: 1px solid #C0C0C0;
+	border-right: 1px solid #C0C0C0;
+	padding: 5px;
+	font-weight: normal;
+}
+
+TABLE.table01 THEAD TH, TABLE.table01 TH.head {
+	color: #000000;
+	line-height: 100%;
+	text-align: left;
+	padding: 10px;
+	font-weight:bold;
+	background-color: #eaeaea ; 
+}
+
+TABLE.table01 TR {
+
+}
+
+TABLE.table01 TH {
+			background-color: #eaeaea ; 
+		padding: 5px;
+		font-weight:bold;
+}
+
+TABLE.table01 TD {
+
+}
+
+
+/* table02 */
+
+TABLE.table02 {
+	border: 1px solid #C0C0C0;
+	border-left: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	border-collapse: collapse;
+}
+
+TABLE.table02 TD,
+TABLE.table02 TH {
+	border: 1px solid #C0C0C0;
+	border-left: 1px dashed #C0C0C0;
+	border-right: 1px dashed #C0C0C0;
+	padding: 5px;
+	font-weight: normal;
+}
+
+TABLE.table02 THEAD TH {
+	color: #000000;
+	line-height: 100%;
+	text-align: left;
+	padding: 10px;
+	font-weight:bold;
+	background-image: url(./ui/gradient_01.gif); background-repeat: repeat-x; 
+}
+
+TABLE.table02 TR {
+	background-color: #FFFFFF;
+}
+
+TABLE.table02 TH {
+	background-image: url(./ui/gradient_02.gif); background-repeat: repeat-x; 
+}
+
+TABLE.table02 TD {
+
+}
+
+
+
+
+/* table03 */
+
+TABLE.table03 {
+	border: 1px solid #C0C0C0;
+	border-collapse: collapse;
+}
+
+TABLE.table03 TD,
+TABLE.table03 TH {
+	border: 1px solid #C0C0C0;
+	border-collapse: collapse;
+	padding-left:4px;
+}
+
+TABLE.table03 THEAD TH, TABLE.table03 TH.head {
+	color: #000000;
+	line-height: 100%;
+	text-align: left;
+	padding: 10px;
+	font-weight:bold;
+	background-image: url(./ui/gradient_033.gif); background-repeat: repeat-x; 
+}
+
+TABLE.table03 TR {
+	background-color: #FFFFFF;
+}
+
+TABLE.table03 TH {
+			background-image: url(./ui/gradient_02.gif); background-repeat: repeat-x; 
+		padding-top: 8px;
+		padding-bottom: 8px;
+		font-weight:bold;
+}
+
+TABLE.table03 TD {
+
+}
+
+
+/* table04 */
+
+TABLE.table04 {
+	border: 0px solid #C0C0C0;
+	border-collapse: collapse;
+padding: 0px;	
+background-color: '';
+}
+
+TABLE.table04 TD,
+TABLE.table04 TH {
+border: 0px; 
+background-color: '';
+background-image:'';
+}
+
+
+
+TABLE.table04 TR {
+border: 0px; 
+padding: 0px;	
+background-color: '';
+}
+
+TABLE.table04 TH {
+
+border: 0px; 
+padding: 0px;	
+background-color: '';
+}
+
+TABLE.table04 TD {
+border: 0px; 
+padding: 0px;	
+background-color: '';
+}
+
+
+
+/* table05 */
+
+TABLE.table05 {
+border: 0px; 
+padding: 0px;	
+background-color: '';
+}
+
+TABLE.table05 TD,
+TABLE.table05 TH {
+border: 0px; 
+background-color: '';
+background-image:'';
+}
+
+
+
+TABLE.table05 TR {
+border: 0px; 
+padding: 0px;	
+background-color: '';
+}
+
+TABLE.table05 TH {
+
+border: 0px; 
+padding: 0px;	
+background-color: '';
+}
+
+TABLE.table05 TD {
+border: 0px; 
+padding: 0px;	
+background-color: '';
+}
+
+
+/* table05 */
+
+table.basic{
+  margin: 0; padding: 0; line-height: 21px;
+  border-top: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  border-collapse: collapse;
+}
+table.basic th, table.basic td{
+  margin: 0; padding: 3px 0; width: 160px;
+  text-align: center;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+table.basic caption{ margin: 0; padding: 0; }
+table.basic th{ background-color: #e9e9e9; }
+
+
+
+table.chart{
+  margin: 0; padding: 0; line-height: 21px;
+  border-top: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  border-collapse: collapse;
+  }
+table.chart th, table.chart td{
+  margin: 0; padding: 3px 0; width: 160px;
+  text-align: center;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+table.chart caption{
+  margin: 0; padding: 0;
+  text-align: right;
+}
+table.chart thead th{
+  background-color: #e9e9e9;
+  border-bottom: 1px solid #999999;
+}
+table.chart tfoot th{ background-color: #e2e2e2; }
+
+
+
+table.excel{
+  margin: 0; padding: 0; line-height: 21px;
+  border-top: 2px solid #999999;
+  border-bottom: 2px solid #999999;
+  border-collapse: collapse;
+}
+table.excel th, table.excel td{
+  margin: 0; padding: 3px 0; width: 160px; 
+  text-align: center;
+  border-bottom: 1px solid #cccccc;
+}
+table.excel caption{
+  margin: 0; padding: 0;
+  text-align: right;
+}
+table.excel thead th{
+  background-color: #e9e9e9;
+  border-bottom: 1px solid #999999;
+}
+table.excel tfoot th, table.excel tfoot td{
+  border-bottom: none;
+  background-color: #e2e2e2;
+}
+
+
+
+
+/* list01 */
+
+TABLE.list01 {
+	border-top: 1px solid #C0C0C0;
+	border-bottom: 1px solid #C0C0C0;
+	border-collapse: collapse;
+}
+
+TABLE.list01 TD,
+TABLE.list01 TH {
+	border-top: 1px dashed #C0C0C0;
+	border-bottom: 1px dashed #C0C0C0;
+	padding: 5px;
+	font-weight: normal;
+}
+
+TABLE.list01 TR {
+	background-color: #FFFFFF;
+}
+
+TABLE.list01 TH {
+	border-bottom: 1px solid #C0C0C0;
+	background-image: url(./ui/gradient_02.gif); background-repeat: repeat-x; 
+}
+
+TABLE.list01 TD {
+
+}
+
+
+
+/* list02 */
+
+TABLE.list02 {
+	border-collapse: collapse;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+TABLE.list02 TD,
+TABLE.list02 TH {
+	border-bottom: 1px dashed #C0C0C0;
+	padding: 5px;
+	font-weight: normal;
+}
+
+TABLE.list02 TR {
+
+}
+
+TABLE.list02 TH {
+	border-bottom: 1px solid #C0C0C0;
+
+}
+
+TABLE.list02 TD {
+
+}
+
+

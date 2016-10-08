@@ -1,0 +1,124 @@
+/*basic */
+body, td, input, textarea { font-size:9pt; color:#454545; line-height :140%; FONT-FAMILY: "verdana,arial,µ¸¿ò "; }
+	 scrollbar-face-color: #f9f9f9; 
+	 scrollbar-shadow-color: #6c6c6c; 
+	 scrollbar-highlight-color: #fafafa; 
+	 scrollbar-3dlight-color: #c9c9c9; 
+	 scrollbar-darkshadow-color: #f7f7f7; 
+	 scrollbar-track-color: #f3f3f3; 
+	 scrollbar-arrow-color: #333;
+td {font-size : 9pt ; color : #666666; line-height :140%; FONT-FAMILY: "verdana,arial,µ¸¿ò"; }
+
+.lefttitle {font-size : 14px ; color : #000000; line-height : 140%; FONT-FAMILY: "verdana,arial,µ¸¿ò";  font-weight:bold;}
+
+.bodytitle {font-size : 14px ; color : #000000; line-height : 140%; FONT-FAMILY: "verdana,arial,µ¸¿ò";  font-weight:bold;}
+
+.small_font{font-size:11px; color : #989898;  FONT-FAMILY: "µ¸¿ò"; letter-spacing:0em;}
+
+A:LINK {font-size:9pt; text-decoration : none; color:#666666;}
+A:VISITED {font-size:9pt; text-decoration : none; color:#666666; }
+A:HOVER {font-size:9pt; text-decoration : underline; color:#487DA2;}	
+
+/* »ýÀÏ */
+A.birthday:LINK {font-size:9pt; text-decoration : none; color:#395D89; font-weight:bold;}
+A.birthday:VISITED {font-size:9pt; text-decoration : none; color:#395D89; font-weight:bold; }
+A.birthday:HOVER {font-size:9pt; text-decoration : underline; color:#395D89; font-weight:bold;}	
+
+/* Çà»çÀÏÁ¤ */
+a.small-m:link {text-decoration : none ; font-size : 8pt ;  FONT-FAMILY: "µ¸¿ò, arial";color : #000000;}
+a.small-m:visited {text-decoration : none ; font-size : 8pt ;  FONT-FAMILY: "µ¸¿ò, arial";color : #000000;} 
+a.small-m:hover {text-decoration : none ; font-size : 8pt ;  FONT-FAMILY: "µ¸¿ò, arial";color : #000000; font-weight:bold; background-color:#C5CDB1; width:"70%"; height:"100%"} 
+
+a.small-b:link {text-decoration : none ; font-size : 8pt ;  FONT-FAMILY: "µ¸¿ò, arial";color : #003366;}
+a.small-b:visited {text-decoration : none ; font-size : 8pt ;  FONT-FAMILY: "µ¸¿ò, arial";color : #003366;} 
+a.small-b:hover {text-decoration : none ; font-size : 8pt ;  FONT-FAMILY: "µ¸¿ò, arial";color : #003366; font-weight:bold; background-color:#C5CDB1; width:"70%"; height:"100%"}
+
+a.small-r:link {text-decoration : none ; font-size : 8pt ;  FONT-FAMILY: "µ¸¿ò, arial";color : #990000;}
+a.small-r:visited {text-decoration : none ; font-size : 8pt ;  FONT-FAMILY: "µ¸¿ò, arial";color : #990000;} 
+a.small-r:hover {text-decoration : none ; font-size : 8pt ;  FONT-FAMILY: "µ¸¿ò, arial";color : #990000; font-weight:bold; background-color:#C5CDB1; width:"70%"; height:"100%"}
+
+a.schedule:link {text-decoration : none ; font-size : 8pt ;  FONT-FAMILY: "µ¸¿ò, arial";color : #000000; font-weight:bold; background-color:#C5CDB1; width:"70%"; height:"100%"}
+a.schedule:visited {text-decoration : none ; font-size : 8pt ;  FONT-FAMILY: "µ¸¿ò, arial";color : #000000; font-weight:bold; background-color:#C5CDB1; width:"70%"; height:"100%"} 
+a.schedule:hover {text-decoration : none ; font-size : 8pt ;  FONT-FAMILY: "µ¸¿ò, arial";color : #000000; font-weight:bold; background-color:#C5CDB1; width:"70%"; height:"100%"}
+
+/* EMAIL */
+a.emaillink:LINK {text-decoration : none; color:#737373; font-weight:bold;}
+a.emaillink:VISITED {text-decoration : none; color:#737373; font-weight:bold;}
+a.emaillink:HOVER {text-decoration : underline; color:#737373; font-weight:bold;}
+
+/* LEFT MENU */
+a.leftmenu:link {text-decoration : none ; font-size : 9pt ;  FONT-FAMILY: "verdana";color : #786D5F;}
+a.leftmenu:visited {text-decoration : none ; font-size : 9pt ;  FONT-FAMILY: "verdana";color : #786D5F;}
+a.leftmenu:hover {text-decoration : none ; font-size : 9pt ;  FONT-FAMILY: "verdana"; color : #993F0E;}
+
+/* NAVI */
+a.navi:link{text-decoration:none ; font-size:8pt ;  FONT-FAMILY:"verdana"; color:#7A7A7A0;}
+a.navi:visited{text-decoration:none ; font-size:8pt ;  FONT-FAMILY:"verdana"; color:#7A7A7A0;}
+a.navi:hover{text-decoration:underline ; font-size:8pt ;  FONT-FAMILY:"verdana"; color:#9F4A1C;}
+a.navi:action{text-decoration:underline ; font-size:8pt ;  FONT-FAMILY:"verdana"; color:#7A7A7A0;}
+
+input.login{
+border:solid 1 #DBDBDB;
+font-family:µ¸¿ò,verdana;
+font-size:9pt;
+color:#989895;
+background-color:#FFFFFF;
+vertical-align:top;
+letter-spacing:0;
+width:115px;
+height:21px;}
+
+input.find{
+border:solid 1 #CDCCCE;
+font-family:µ¸¿ò,verdana;
+font-size:9pt;
+color:#000000;
+background-color:#ffffff;
+letter-spacing:0;
+width:80px;
+height:15px;}
+
+input.text{
+border:solid 1 #CDCCCE;
+font-family:µ¸¿ò,verdana;
+font-size:9pt;
+color:#000000;
+background-color:#ffffff;
+letter-spacing:0;
+width:50px;
+height:15px;}
+
+select.select{
+border:solid 1 #CDCCCE;
+font-family:µ¸¿ò,verdana;
+font-size:9pt;
+color:#FFFFFF;
+background-color:#ED8091;
+vertical-align:top;
+width:115px;
+height:19px;}
+
+
+
+
+input.login2{
+border:solid 0 #CACACA;
+font-family:µ¸¿ò,verdana;
+font-size:9pt;
+color:#818181;
+background-color:#FBFBFB;
+vertical-align:top;
+letter-spacing:0;
+height:18px;}TABLE.table01 TH.head  { font-size: 12px}
+
+<style type="text/css">
+body  {
+scrollbar-shadow-color: #FFFFFF; 
+scrollbar-highlight-color: #FFFFFF; 
+scrollbar-arrow-color: #FFFFFF; 
+scrollbar-face-color: #59ADBB; 
+scrollbar-track-color: #FFFFFF; 
+scrollbar-3dlight-color: #59ADBB; 
+scrollbar-darkshadow-color: #59ADBB; 
+}
+</style>

@@ -1,0 +1,67 @@
+<script language="Javascript">
+			function uploadItemPlus(bodyId){
+			var fBody = $(bodyId).childNodes;
+			var uploadCount = 0;
+	
+				
+				for(i=0;i<fBody.length;i++){
+					uploadCount++;
+				}
+				
+				if(uploadCount > 9){
+				alert('10개 이상 추가 할 수 없습니다.');
+				return;
+				}
+
+				el = document.createElement('DIV');
+				el.id = "upfileLay"+(uploadCount +1);
+				
+				
+				el.innerHTML  = '<input type="file" name="upfile'+(uploadCount +1)+'" id="upfile'+(uploadCount +1)+'" class="fileUpload"  required="false" /><img src="/image/btn_close_1.gif" 	onclick="ItemRm(\''+(uploadCount +1)+'\');" alt="첨부영역 제거하기" align="absmiddle" id="upfile'+(uploadCount +1)+'Img" class="cImage"/>';
+				
+			
+				$(bodyId).appendChild(el);
+				//alert('첨부영역을 추가하였습니다.\n현재 첨부영역은 '+(uploadCount +1)+'개 입니다.');
+
+			}
+
+			function ItemRm(idx){
+		
+			$('fuploadItem').removeChild($("upfileLay"+idx));
+			var fBody = $('fuploadItem').childNodes;
+			var uploadCount = 0;	
+
+				for(i=0;i<fBody.length;i++){
+		
+					uploadCount++;
+		
+				}
+				//alert('첨부영역을 제거하였습니다.\n현재 첨부영역은 '+(uploadCount)+'개 입니다.');
+			
+			}
+			</script>
+
+
+			<style type="text/css">
+			.fuploadBody {width:90%;margin-bottom:20px}
+			.fuploadBody .title {width:90%;color:#0066CC;margin-bottom:5px}
+			.fuploadBody .item .fileUpload{width:70%; border:1px solid #C9C9C9;height:18px;font-size:11px;margin-right:5px}
+			.fuploadBody .item .cImage{cursor: hand}
+			
+			</style>
+			<div class="fuploadBody">
+					<div class="title">
+					첨부파일 개수를 늘리시려면 첨부 추가버튼을 눌러주세요.  
+					&nbsp;<img src="/image/btn_plus_menu.gif" border="0" alt="첨부파일 추가하기" align="absmiddle" onclick="uploadItemPlus('fuploadItem');" style="cursor: hand"/>
+					</div>
+
+					<div class="item" id="fuploadItem">
+
+						<!--{@ %var%}-->
+						<div id="upfileLay{.index_ +1}"><input type="file" name="upfile{.index_ +1}" id="upfile{.index_ +1}" class="fileUpload"  required="false" /><br><div style="padding:3px"><span style="color:red;">{.str_upfile}</span> 가 등록되어있습니다.</div> </div>
+						{:}
+						<div id="upfileLay1"><input type="file" name="upfile1" id="upfile1" class="fileUpload"  required="false"/></div>
+						<!--{/}-->
+					</div>
+			</div>
+	

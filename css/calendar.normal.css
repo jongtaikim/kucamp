@@ -1,0 +1,46 @@
+.calendar {
+/*	background-color: #FFFFFF;	*/
+}
+
+.calendar th {
+	font-weight: normal;
+}
+
+.calendar th.sunday {
+	color: red;
+}
+
+.calendar th.saturday {
+	color: blue;
+}
+
+.calendar td {
+	text-align: right;
+}
+
+.calendar td a {
+	color: black;
+	text-decoration: none;
+}
+
+.calendar td a:hover {
+	text-decoration: underline;
+}
+
+.calendar td.sunday, .calendar td.sunday a {
+	color: red !important;
+}
+
+.calendar td.saturday, .calendar td.saturday a {
+	color: blue !important;
+}
+
+.calendar td.event {
+	font-weight: bold;
+	color: black;
+}
+
+.calendar td.today {
+	background-color: #EFEFEF;
+	text-decoration: underline;
+}

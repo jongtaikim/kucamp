@@ -1,0 +1,23 @@
+
+/*지우지 마시오 레이아웃 관리시 필요 */
+#main_frame { width:100%;  padding:10px ;}
+#main_layout { width:0px;    }
+#cont1 { width:0px;   float:left;  }
+#cont2 { width:0px;   float:left;  }
+#cont3 { width:0px;   float:left;  }
+#cont4 { width:0px;   float:left;  }
+#cont5 { width:0px;   float:left;  }
+#cont6 { width:0px;   float:left;  }
+#cont7 { width:0px;   float:left;  }
+#cont8 { width:0px;   float:left;  }
+
+/*실제 레이아웃*/
+
+#cont1{ display:inline; float:left; width:840px; margin-right:5px ;position:relative}
+#cont2{ display:inline; float:left; width:840px; margin-right:5px ;position:relative}
+#cont3{ display:inline; float:left; width:840px; margin-right:5px ;position:relative}
+#cont4{ display:inline; float:left; width:840px; margin-right:5px ;position:relative}
+#cont5{ display:inline; float:left; width:840px; margin-right:5px ;position:relative}
+#cont6{ display:inline; float:left; width:840px; margin-right:5px ;position:relative}
+#cont7{ display:inline; float:left; width:840px; margin-right:5px ;position:relative}
+#cont8{ display:inline; float:left;width:840px; margin-right:5px  ;position:relative}

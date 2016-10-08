@@ -1,0 +1,21 @@
+{? act2 =="/admin.pra_view"}
+<link rel="stylesheet" href="/css/privacy_policy.css" type="text/css" />
+{/}
+<script type="text/javascript" src="/js/lib.validate2.js"></script>
+
+{? _SESSION.ADMIN}
+<script type="text/javascript" src="/js/prototype.js"></script>
+<script type="text/javascript" src="/js/scriptaculous.js"></script>
+<script type="text/javascript" src="/js/Floating.js"></script>
+{/}
+
+<?if(_COPY_NO=="Y") { //드래그 방지?>
+
+{? !_SESSION.ADMIN}
+<script language="Javascript" type="text/javascript">
+document.oncontextmenu = new Function ('return false');
+document.ondragstart = new Function ('return false');
+document.onselectstart = new Function ('return false');
+</script>
+{/}
+<? } ?>

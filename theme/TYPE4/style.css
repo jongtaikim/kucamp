@@ -1,0 +1,41 @@
+body, td, div {
+	font-size:9pt;
+	color:#636563;
+}
+a:link, a:visited {
+	font-size:9pt;
+	color:#636563;
+	text-decoration:none;
+}
+a:hover {
+	font-size:9pt;
+	color:#636563;
+	text-decoration:underline;
+}
+a.submenu:link a.submenu:visited {
+	font-size:9pt;
+	color:#436350;
+	text-decoration:none;
+}
+a.submenu:hover {
+	font-size:9pt;
+	color:#436350;
+	text-decoration:underline;
+}
+
+.submenu_cur {
+	font-weight:bold;
+	letter-spacing:-1px;
+}
+
+body {margin-left: 0px;	margin-top: 0px; margin-right: 0px;	margin-bottom: 0px; background-color: #F4F6EE;}
+.s_menu {font-family: "±¼¸²", "±¼¸²Ã¼", "µ¸¿ò";	font-size: 9pt;	color: #909D74;}
+.notice {font-family: "±¼¸²", "±¼¸²Ã¼", "µ¸¿ò";	font-size: 9pt;	color: #666666;}
+.today {font-family: "±¼¸²", "±¼¸²Ã¼", "µ¸¿ò";	font-size: 9pt;	color: #666666;}
+.car {font-family: "±¼¸²", "±¼¸²Ã¼", "µ¸¿ò";	font-size: 8pt;	color: #989898;}
+.login {font-family: "±¼¸²", "±¼¸²Ã¼", "µ¸¿ò";	font-size: 9pt;	color: #666666;	height: 18px;	width: 95px;}
+.style5 {font-family: "±¼¸²", "±¼¸²Ã¼", "µ¸¿ò"; font-size: 9pt; color: #0265AB;font-weight: bold;}
+.style6 {font-family: "±¼¸²", "±¼¸²Ã¼", "µ¸¿ò";	font-size: 8pt;	color: #FBAE00;font-weight: bold;}
+.style7 {font-family: "±¼¸²", "±¼¸²Ã¼", "µ¸¿ò"; font-size: 8pt; color: #5FBADD;}
+.style8 {font-family: "±¼¸²", "±¼¸²Ã¼", "µ¸¿ò"; font-size: 8pt; color: #989898;font-weight: bold;}
+img { border : 0px; } 

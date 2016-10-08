@@ -1,0 +1,1213 @@
+<link rel="stylesheet" type="text/css" href="/css/doc_style.css">
+
+<script type="text/javascript" src='https://pay.kcp.co.kr/plugin/payplus.js'></script>
+    <script type="text/javascript">
+        /* 플러그인 설치(확인) */
+        StartSmartUpdate();
+
+
+        
+        /*  해당 스크립트는 타브라우져에서 적용이 되지 않습니다.*/
+        if( document.Payplus.object == null )
+        {
+            openwin = window.open( "/kcp/sample/chk_plugin.html", "chk_plugin", "width=420, height=100, top=300, left=300" );
+        }
+  
+
+        /* Payplus Plug-in 실행 */
+        function  jsf__pay( form )
+        {
+            var RetVal = false;
+			
+			
+            /* Payplus Plugin 실행 */
+            if ( MakePayMessage( form ) == true )
+            {
+                openwin = window.open( "/kcp/sample/proc_win.html", "proc_win", "width=449, height=209, top=300, left=300" );
+                RetVal = true ;
+            }
+            
+            else
+            {
+                /*  res_cd와 res_msg변수에 해당 오류코드와 오류메시지가 설정됩니다.
+                    ex) 고객이 Payplus Plugin에서 취소 버튼 클릭시 res_cd=3001, res_msg=사용자 취소
+                    값이 설정됩니다.
+                */
+                res_cd  = document.order_info.res_cd.value ;
+                res_msg = document.order_info.res_msg.value ;
+
+            }
+
+            return RetVal ;
+        }
+
+        // Payplus Plug-in 설치 안내 
+        function init_pay_button()
+        {
+            if ((navigator.userAgent.indexOf('MSIE') > 0) || (navigator.userAgent.indexOf('Trident/7.0') > 0))
+            {
+                try
+                {
+                    if( document.Payplus.object == null )
+                    {
+                        document.getElementById("display_setup_message").style.display = "block" ;
+                    }
+                    else{
+                    //    document.getElementById("display_pay_button").style.display = "block" ;
+                    }
+                }
+                catch (e)
+                {
+                    document.getElementById("display_setup_message").style.display = "block" ;
+                }
+            }
+            else
+            {
+                try
+                {
+                    if( Payplus == null )
+                    {
+                        document.getElementById("display_setup_message").style.display = "block" ;
+                    }
+                    else{
+                    //    document.getElementById("display_pay_button").style.display = "block" ;
+                    }
+                }
+                catch (e)
+                {
+                    document.getElementById("display_setup_message").style.display = "block" ;
+                }
+            }
+        }
+
+        /* 주문번호 생성 예제 */
+        function init_orderid()
+        {
+            var today = new Date();
+            var year  = today.getFullYear();
+            var month = today.getMonth() + 1;
+            var date  = today.getDate();
+            var time  = today.getTime();
+
+            if(parseInt(month) < 10) {
+                month = "0" + month;
+            }
+
+            if(parseInt(date) < 10) {
+                date = "0" + date;
+            }
+
+            var order_idxx = "TEST" + year + "" + month + "" + date + "" + time;
+
+            document.order_info.ordr_idxx.value = order_idxx;
+
+            /*
+             * 인터넷 익스플로러와 파이어폭스(사파리, 크롬.. 등등)는 javascript 파싱법이 틀리기 때문에 object 가 인식 전에 실행 되는 문제
+             * 기존에는 onload 부분에 추가를 했지만 setTimeout 부분에 추가
+             * setTimeout 300의 의미는 플러그인 인식속도에 따른 여유시간 설정
+             * - 20101018 -
+             */
+            setTimeout("init_pay_button();",300);
+        }
+
+        /* onLoad 이벤트 시 Payplus Plug-in이 실행되도록 구성하시려면 다음의 구문을 onLoad 이벤트에 넣어주시기 바랍니다. */
+        function onload_pay()
+        {
+             if( jsf__pay(document.order_info) )
+                document.order_info.submit();
+        }
+
+    </script>
+
+<script language="javascript">
+
+	
+
+function jumin_check() { //주민번호 검증
+		var jumin1 = document.order_info.jumin1.value.length;
+		var jumin2 = document.order_info.jumin2.value.length;
+		var sign_zumin_length = jumin1 + jumin2;
+
+		if ( !jumin1 || !jumin2 ) {
+			alert("주민등록번호를 입력해 주십시오.");
+			document.getElementById("jumin1").value="";
+			document.getElementById("jumin2").value="";
+			document.getElementById("jumin1").focus();
+			$('chk_jumin').value = ''
+			return false;
+		}
+
+		if (sign_zumin_length != 13) {   // 번호가 13개 아니라면
+			alert("주민등록번호의 개수가 모자랍니다.");
+			document.getElementById("jumin1").value="";
+			document.getElementById("jumin2").value="";
+			document.getElementById("jumin1").focus();
+			$('chk_jumin').value = ''
+			return false;
+		} else {
+			var strjumin = document.getElementById("jumin1").value+""+document.getElementById("jumin2").value;   //변수에 주민번호 앞자리 담음
+		}
+
+		var a1=strjumin.substring(0,1);
+		var a2=strjumin.substring(1,2);
+		var a3=strjumin.substring(2,3);
+		var a4=strjumin.substring(3,4);
+		var a5=strjumin.substring(4,5);
+		var a6=strjumin.substring(5,6);
+		var checkdigit=a1*2+a2*3+a3*4+a4*5+a5*6+a6*7;
+		   
+		var b1=strjumin.substring(6,7);
+		var b2=strjumin.substring(7,8);
+		var b3=strjumin.substring(8,9);
+		var b4=strjumin.substring(9,10);
+		var b5=strjumin.substring(10,11);
+		var b6=strjumin.substring(11,12);
+		var b7=strjumin.substring(12,13);
+		var checkdigit=checkdigit+b1*8+b2*9+b3*2+b4*3+b5*4+b6*5;
+
+		checkdigit = checkdigit%11;
+		checkdigit = 11 - checkdigit;
+		checkdigit = checkdigit%10;
+
+		if (checkdigit != b7) {
+			alert('잘못된 주민등록번호입니다.\n\n다시 확인하고 입력해 주세요.');
+			document.getElementById("jumin1").value="";
+			document.getElementById("jumin2").value="";
+			document.getElementById("jumin1").focus();
+			return false;
+			$('chk_jumin').value = ''
+		}
+		alert('정상적인 주민등록번호 입니다.');
+		$('chk_jumin').value = 'y'
+		return true;
+	}
+
+</script>
+
+
+
+
+<style type="text/css" title="">
+/* UI Object */
+.form_table{margin:1em 0;font-size:12px;font-family:Tahoma, Geneva, sans-serif}
+.form_table input,
+.form_table textarea,
+.form_table select,
+.form_table table,
+.form_table button{font-size:12px}
+.form_table table{width:100%;border:0;border-top:2px solid #940018}
+.form_table caption{padding:8px 0;font-weight:bold;text-align:left}
+.form_table th,
+.form_table td{padding:8px;border:0;vertical-align:top}
+.form_table th{color:#333}
+.form_table td{color:#666}
+.form_table thead th{border-bottom:1px solid #ccc;background:#f8f8f8}
+.form_table tbody th{border-bottom:1px solid #ddd;background:#fafafa;text-align:left}
+.form_table tfoot th{border-bottom:1px solid #ddd}
+.form_table tbody td{border-bottom:1px solid #ddd}
+.form_table tfoot td{border-bottom:1px solid #ddd;font-weight:bold;color:#333}
+.form_table .item{position:relative;margin:-4px 0}
+.form_table .item .i_help{position:absolute;top:4px;right:0}
+.form_table .item .i_label{ top:6px; left:10px}
+.form_table .item .i_dsc{margin:2px 0}
+.form_table .item .i_check,
+.form_table .item .i_radio{width:13px;height:13px;margin:2px 5px 2px 0;padding:0;vertical-align:middle}
+.form_table .item .i_text{position:relative;margin:2px;padding:3px 4px;border:1px solid #b7b7b7;border-right-color:#e1e1e1;border-bottom-color:#e1e1e1;background:transparent}
+.form_table .item .hide{visibility:hidden;position:absolute;top:0;left:0;width:1px;height:1px;font-size:0;line-height:0}
+.form_table .item select{margin:2px}
+.form_table .item label{margin:0 10px 0 0;cursor:pointer}
+input{color:#000}
+/* //UI Object */
+</style>
+
+<script type="text/javascript">
+// <![CDATA[
+function popup_zip() {
+	form = 'order_info';
+	wZip = window.open('core.zipcode?el_addr=str_addr1&el_zip=str_zipcode&el_focus=str_addr2&form='+form,'zipsearch','width=400, height=200,scrollbars=yes');
+}
+
+// ]]>
+</script>
+
+
+                    <!-- Payplus Plug-in 설치 안내 -->
+                    <div id="display_setup_message" style="display:none">
+                       <p class="txt">
+                       결제를 계속 하시려면 상단의 노란색 표시줄을 클릭 하시거나 <a href="http://pay.kcp.co.kr/plugin_new/file/KCPUXWizard.exe"><span>[수동설치]</span></a>를 눌러
+                       Payplus Plug-in을 설치하시기 바랍니다.
+                       [수동설치]를 눌러 설치하신 경우 새로고침(F5)키를 눌러 진행하시기 바랍니다.
+                       </p>
+                     </div>
+
+<div class="progress" style="margin-bottom:20px">
+<strong class="tit">현위치</strong> 
+	<ol>
+		<li >
+			<span>캠프목록</span>
+		</li>
+		
+		<li >
+			<span>참가신청 약관 동의</span>
+		</li>
+		<li class="on">
+			<span>신청서 작성</span>
+		</li>
+		<li>
+			<span>신청완료</span>
+		</li>
+	</ol>
+</div>
+
+
+
+<form name="order_info" id="order_info" method="post" action="/kcp/sample/pp_ax_hub.php" >
+<input type="hidden" name="mcode" id="mcode" value="{mcode}"/>
+<input type="hidden" name="cate" id="cate" value="{cate}"/>
+<input type="hidden" name="ccode" id="ccode" value="{ccode}"/>
+<input type="hidden" name="serial" id="serial" value="{serial}"/>
+<input type="hidden" name="hold" id="hold" value="{_GET.hold}" required="false"/>
+<input type="hidden" name="chk_jumin" id="chk_jumin"  hname="주민번호 유호성 체크" errmsg="{=_la('주민번호 유호성 체크를 실행해주시기 바랍니다.')}"  value="" nofocus required>
+
+
+
+<p class="buTitle33" style="margin-bottom:0px;padding-left:18px">부모님 입력란</p>
+
+<div class="form_table">
+<table border="1" cellspacing="0" summary="표의 요약을 반드시 넣어 주세요">
+<tbody>
+
+<tr>
+	<th scope="row">보호자 성명</th>
+	<td>
+		<div class="item" style="padding-top:5px">
+			<input class="i_text" name="str_pr_name1" id="str_pr_name1" hname="{=_la('아버지 성명')}" type="text"  style="width:100px"  required >부
+			<input class="i_text" name="str_pr_name2" id="str_pr_name2" hname="{=_la('어머니 성명')}" type="text"  style="width:100px"  required >모
+		</div>
+	</td>
+</tr>
+
+<tr>
+	<th scope="row">{=_la('이메일')}</th>
+	<td>
+		<div class="item">
+		<input class="i_text" name="email1" id="email1" hname="{=_la('이메일')}" type="text"  maxbyte="50" style="width:100px" value="{email1}"  required >@<input name="email2" id="email2" hname="이메일" type="text"  value="{email2}" maxbyte="50" required />
+										
+			<select name="emailSelect1"  onchange = "$('email2').value=this.value" required="false">
+				<option value="">Email 주소 선택</option>
+				<option value="">직접입력</option>
+				<option value="gmail.com">구글(G메일)</option>
+				<option value="naver.com">네이버</option>
+				<option value="nate.com">네이트</option>
+				<option value="dreamwiz.com">드림위즈</option>
+				<option value="yahoo.co.kr">야후</option>
+				<option value="empal.com">엠파스</option>
+				<option value="paran.com">파란</option>
+				<option value="hanmail.net">한메일</option>
+			</select>
+			<br>
+			<div class="" id="">
+				적성검사 및 캠프 소견서 등을 이메일로 받을 예정입니다. 주로 사용하는 이메일 주소를 등록해주세요.
+			</div>
+		
+		</div>
+	</td>
+</tr>
+
+<tr>
+	<th scope="row">집 주소<br>(우편물 수령용)</th>
+	<td>
+		<div class="item">
+
+		<input name="str_zipcode" id="str_zipcode" hname="우편번호" size="10" maxlength="7" type="text"    onclick="popup_zip();"   class="codeBox"  readonly required value="{chr_zip}"/>
+		<a href="javascript:popup_zip();"><img src="images/join/findPost.gif" alt="우편번호 찾기, 팝업창으로 뜹니다" /></a><br />
+
+		<input class="i_text" name="str_addr1" id="str_addr1" value="{str_addr1}" hname="{=_la('기본주소')}" type="text" style = "width:70%" maxbyte="255" required> <br>
+		<input class="i_text" name="str_addr2"  id="str_addr2" value="{str_addr2}"  hname="{=_la('상세주소')}" type="text" style = "width:70%"  maxbyte="255" required> 
+		</div>
+		
+	</td>
+</tr>
+
+<tr>
+	<th scope="row">{=_la('전화번호')}</th>
+	<td>
+		<div class="item">
+		<input class="i_text" name="tel1" id="tel1" value="{tel1}"  hname="{=_la('연락처')}" type="text" style="width:60px" maxbyte="50"  style="ime-mode:active" maxlength="4">
+		-<input class="i_text"  name="tel2" id="tel2" value="{tel2}" hname="{=_la('연락처')}" type="text" style="width:60px"  maxbyte="50"  style="ime-mode:active" maxlength="4">
+		-<input class="i_text"  name="tel3" id="tel3" value="{tel3}" hname="{=_la('연락처')}" type="text" style="width:60px"  maxbyte="50"  style="ime-mode:active" maxlength="4">
+		
+		</div>
+	</td>
+</tr>
+
+<tr>
+	<th scope="row">{=_la('휴대폰')}</th>
+	<td>
+		<div class="item">
+		<input class="i_text" name="tel11" id="tel11" value="{tel11}"  hname="{=_la('휴대폰')}" type="text" style="width:60px" maxbyte="50"  style="ime-mode:active" maxlength="4">
+		-<input class="i_text"  name="tel22" id="tel22" value="{tel22}" hname="{=_la('휴대폰')}" type="text" style="width:60px"  maxbyte="50"  style="ime-mode:active" maxlength="4">
+		-<input class="i_text"  name="tel33" id="tel33" value="{tel33}" hname="{=_la('휴대폰')}" type="text" style="width:60px"  maxbyte="50"  style="ime-mode:active" maxlength="4">
+		
+		
+		<span style="color:#ff3333">* 상담 및 입금 확인용</span>
+		</div>
+		
+	</td>
+</tr>
+
+<script type="text/javascript">
+// <![CDATA[
+function scsledk(idx){
+	if(idx != 4){
+		$('skskvie1').style.display = 'block';
+	}else{
+		$('skskvie1').style.display = 'none';
+		<? if(date("Ymd")>=21150601){ ?>
+		$('good_mny').value = {num_price};
+		$('bank_price_info').innerHTML =  number_format($('good_mny').value,0)+"원";
+		<? } ?>
+	}
+	if(idx == "2"){
+		$('namet_1').innerHTML = '교우성명';
+		$('namet_2').innerHTML = '졸업학과';
+		$('namet_3').innerHTML = '입학학번';
+		<? if(date("Ymd")>=21150601){ ?>
+		$('good_mny').value = {num_price} - 50000;
+		$('bank_price_info').innerHTML =  number_format($('good_mny').value,0)+"원";
+		<? } ?>
+	}
+	if(idx == "1"){
+		$('namet_1').innerHTML = '교직원성명';
+		$('namet_2').innerHTML = '근무부서';
+		$('namet_3').innerHTML = '직급';
+		<? if(date("Ymd")>=21150601){ ?>
+		$('good_mny').value = {num_price} - 70000;
+		$('bank_price_info').innerHTML =  number_format($('good_mny').value,0)+"원";
+		<? } ?>
+	}
+	
+	if(idx == "3"){
+		$('namet_1').innerHTML = '학생성명';
+		$('namet_2').innerHTML = '참여과정';
+		$('namet_3').innerHTML = '참여기수';
+		<? if(date("Ymd")>=21150601){ ?>
+		$('good_mny').value = {num_price} - 70000;
+		$('bank_price_info').innerHTML = number_format($('good_mny').value,0)+"원";
+		<? } ?>
+	}
+}
+// ]]>
+</script>
+<tr {? date("Ymd") < "21150601" } style="display:none"{/}>
+	<th scope="row">추가사항</th>
+	<td>
+		<div class="item">
+		<input type="radio" name="str_etc" value="1" onclick="scsledk(this.value)"> 고려대 교직원 자녀
+		<input type="radio" name="str_etc" value="2" onclick="scsledk(this.value)"> 고려대 교우 자녀
+		<input type="radio" name="str_etc" value="3" onclick="scsledk(this.value)"> KU멘토링캠프 재참여자
+		<input type="radio" name="str_etc" id="str_etc_se" value="4" checked onclick="scsledk(this.value)"> 해당없음
+		
+			
+		</div>
+		<div class="item"  id="skskvie1" style="display:none;margin-top:20px">
+			<span id="namet_1">교유성명</span> <input type="text" name="str_etc_text1"  id="str_etc_text1" value="" class="" required="false">
+			<span id="namet_2">교유성명</span> <input type="text" name="str_etc_text2"  id="str_etc_text2" value="" class="" required="false">
+			<span id="namet_3">교유성명</span> <input type="text" name="str_etc_text3"  id="str_etc_text3" value="" class="" required="false">
+		</div>
+	</td>
+</tr>
+
+</table>
+</div>
+</fieldset> 
+
+
+<fieldset>
+<legend>legend</legend>
+
+<p class="buTitle33" style="margin-bottom:0px;padding-left:18px">참가 학생 정보</p>
+
+<div class="form_table">
+<table border="1" cellspacing="0" summary="표의 요약을 반드시 넣어 주세요">
+<tbody>
+
+<tr>
+	<th scope="row" width="100px">분야선택</th>
+	<td colspan="2">
+		<div class="item">
+			<input type="radio" name="str_etc2" value="인문" hname="str_etc2" checked  onclick="$('etc_3_s').style.display='none'">인문 &nbsp;&nbsp;
+			<input type="radio" name="str_etc2" value="사회과학" hname="str_etc2" onclick="$('etc_3_s').style.display='none'">사회과학 &nbsp;&nbsp;
+			<input type="radio" name="str_etc2" value="상경" hname="str_etc2" onclick="$('etc_3_s').style.display='none'">상경 &nbsp;&nbsp;
+			<input type="radio" name="str_etc2" value="교육" hname="str_etc2" onclick="$('etc_3_s').style.display='none'">교육 &nbsp;&nbsp;
+			<input type="radio" name="str_etc2" value="공학" hname="str_etc2" onclick="$('etc_3_s').style.display='none'">공학 &nbsp;&nbsp;
+			<input type="radio" name="str_etc2" value="자연" hname="str_etc2" onclick="$('etc_3_s').style.display='none'">자연 &nbsp;&nbsp;
+			<input type="radio" name="str_etc2" value="의학" hname="str_etc2" onclick="$('etc_3_s').style.display='none'">의학 &nbsp;&nbsp;
+			<input type="radio" name="str_etc2" value="기타" hname="str_etc2" onclick="$('etc_3_s').style.display='block'">기타 &nbsp;&nbsp;
+		
+			<br>
+			<div class="" id="etc_3_s" style="padding:10px;display:none">
+				기타 선택시 입력 : <input type="text" name="str_etc3" value="" class="">
+			</div>
+		</div>
+	</td>
+</tr>
+
+<tr>
+	<th scope="row" width="100px">학생성명</th>
+	<td colspan="2">
+		<div class="item">
+		<input class="i_text" title="학생성명"  type="text" name="str_st_name" id="str_st_name" hname="{=_la('학생성명')}" onchange="$('sndOrdername').value=this.value"  required> 
+		</div>
+	</td>
+</tr>
+<script type="text/javascript">
+// <![CDATA[
+function views_sibal(){
+	if($('views_sibal').style.display == 'none'){
+		$('views_sibal').style.display = 'block';
+	}else{
+		$('views_sibal').style.display = 'none';
+	}
+}
+// ]]>
+</script>
+<tr>
+	<th scope="row">주민등록번호</th>
+	<td colspan="2">
+		<div class="item">
+			<input class="i_text" title="주민등록번호" type="text" name="jumin1" id="jumin1" hname="주민등록번호" style="width:80px"  required> 
+			-
+			<input class="i_text" title="주민등록번호" type="text" name="jumin2" id="jumin2" hname="주민등록번호" style="width:80px"  onkeyup="chkSex()" required> 
+			<span class="btn_pack small" ><input type="button" name="" value="주민번호 유효성 검사"  onclick="jumin_check()" ></span>
+			<span style="color:#ff3333">* 여행자 보험 가입용 <a href="javascript:views_sibal();">[자세히..]</a></span>
+			<br><strong style="color:blue">참가학생의 주민번호를 입력하시기 바랍니다.</strong>
+		</div>
+	</td>
+</tr>
+
+<script type="text/javascript">
+// <![CDATA[
+function chkSex(){
+	var sid = substr($('jumin2').value,0,1);
+	if(sid == "1" || sid == "3"){
+		$('str_sex').value = 1;
+	}else{
+		$('str_sex').value = 2;
+	}
+}
+// ]]>
+</script>
+
+<tr id="views_sibal" style="display:none">
+	<th scope="row">&nbsp;</th>
+	<td colspan="2">
+		<div class="item">
+		<table style="width:80%" border="0" cellspacing="0" cellpadding="0"  summary="">
+			<tbody>
+				<tr>
+					<th width="90px">제 3자</th>
+					<td>보험회사</td>
+				</tr>
+				<tr>
+					<th>제공 항목</th>
+					<td>이름,주민번호</td>
+				</tr>
+				<tr>
+					<th>제공 목적</th>
+					<td>여행자 보험 가입</td>
+				</tr>
+				<tr>
+					<th>제공 기간</th>
+					<td>캠프기간</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+					본 사는 귀하의 공의가 있거나 관련 법령의 규정에 의한 경우를  제외하고는 학생의 정보를 제 3자에게 제공하지 않습니다.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+	</td>
+</tr>
+
+<tr>
+	<th scope="row">성별</th>
+	<td colspan="2">
+		<div class="item">
+		<select name="str_sex" id="str_sex">
+			<option value="1">남자</option>
+			<option value="2">여자</option>
+		</select>
+		</div>
+	</td>
+</tr>
+
+
+
+<tr>
+	<th scope="row">{=_la('학교/학년')}</th>
+	<td colspan="2">
+		<div class="item">
+			
+			<input class="i_text" title="학교명" type="text" name="str_school" id="str_school" hname="{=_la('학교명')}"   required onclick="winOpen('/sch_school',400,400,'yes')" readonly> 
+
+			<select  name="str_class" id="str_class" hname="학년정보" required>
+				<option value="">-- {=_la('학년정보')} --</option>
+				
+				<option value="초3" >초3</option>
+				<option value="초4" >초4</option>
+				<option value="초5" >초5</option>
+				<option value="초6" >초6</option>
+
+				<option value="중1" >중1</option>
+				<option value="중2" >중2</option>
+				<option value="중3" >중3</option>
+
+				<!--option value="고1" >고1</option-->
+				
+			</select>
+		</div>
+	</td>
+</tr>
+
+<!--tr>
+	<th scope="row" >T-셔츠 사이즈</th>
+	<td style="width:360px">
+		<input type="radio" name="str_tsize" id="str_tsize1" value="14" checked><label for="str_tsize1">14호</label>
+		<input type="radio" name="str_tsize" id="str_tsize2" value="15" ><label for="str_tsize2">15호</label>
+		<input type="radio" name="str_tsize" id="str_tsize3" value="16" ><label for="str_tsize3">16호</label>
+		<input type="radio" name="str_tsize" id="str_tsize4" value="17" ><label for="str_tsize4">17호</label>
+		<input type="radio" name="str_tsize" id="str_tsize5" value="18" ><label for="str_tsize5">18호</label>
+		<br>
+		<input type="radio" name="str_tsize" id="str_tsize6" value="85" ><label for="str_tsize6">85호</label>
+		<input type="radio" name="str_tsize" id="str_tsize7" value="90" ><label for="str_tsize7">90호</label>
+		<input type="radio" name="str_tsize" id="str_tsize8" value="95" ><label for="str_tsize8">95호</label>
+		<input type="radio" name="str_tsize" id="str_tsize9" value="100" ><label for="str_tsize9">100호</label>
+		<input type="radio" name="str_tsize" id="str_tsize10" value="105" ><label for="str_tsize10">105호</label>
+		<input type="radio" name="str_tsize" id="str_tsize11" value="110" ><label for="str_tsize11">110호</label>
+	</td>
+	<td style="position:relative;"><span class="btn_pack small" ><input type="button" name="" value="SIZE 보기"  onclick="view_size()" ></span>
+	
+	
+	<div  id="tsize" style="display:none;position:absolute;left:-320px;background-color:#e4e4e4;border:2px solid #cdcdcd;z-index:99;width:460px" onmouseout="view_size()">
+	
+			<script type="text/javascript">
+			// <![CDATA[
+			function view_size(){
+				if($('tsize').style.display =='none'){
+					$('tsize').style.display ="block";
+					//$('str_memo').style.display ="none";
+				}else{
+					$('tsize').style.display ="none";
+					//$('str_memo').style.display ="block";
+				}
+			}
+			// ]]>
+			</script>
+		
+				<table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" class="tableTemp02" summary="" style=";background-color:#fff" >
+				<caption><span>caption</span></caption>
+					<thead>
+						<tr>
+							<th width="70" style="text-align:center">사이즈</th>
+							<th style="text-align:center">가슴둘레 (cm)</th>
+							<th style="text-align:center">총기장 (cm)</th>
+							<th style="text-align:center">신장 (cm)</th>
+							<th style="text-align:center">체중 (kg)</th>
+							<th style="text-align:center">나이 (세)</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th style="text-align:center">14호</th>
+							<td>35</td>
+							<td>46</td>
+							<td>109~110</td>
+							<td>19~20</td>
+							<td>5~6</td>
+						</tr>
+						<tr>
+							<th style="text-align:center">15호</th>
+							<td>37</td>
+							<td>49</td>
+							<td>123~125</td>
+							<td>24~25</td>
+							<td>7~8</td>
+						</tr>
+						<tr>
+							<th style="text-align:center">16호</th>
+							<td>40</td>
+							<td>52</td>
+							<td>134~135</td>
+							<td>30~31</td>
+							<td>9~10</td>
+						</tr>
+						<tr>
+							<th style="text-align:center">17호</th>
+							<td>42</td>
+							<td>55</td>
+							<td>145~147</td>
+							<td>39~40</td>
+							<td>11~12</td>
+						</tr>
+						<tr>
+							<th style="text-align:center">18호</th>
+							<td>44</td>
+							<td>58</td>
+							<td>155~159</td>
+							<td>48~50</td>
+							<td>13~14</td>
+						</tr>
+						<tr>
+							<th style="text-align:center">S (85)</th>
+							<td>46</td>
+							<td>61</td>
+							<td>155~166</td>
+							<td>45~50</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th style="text-align:center">M (90)</th>
+							<td>49</td>
+							<td>64</td>
+							<td>160~170</td>
+							<td>55~60</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th style="text-align:center">L (95)</th>
+							<td>52</td>
+							<td>69</td>
+							<td>167~172</td>
+							<td>65~70</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th style="text-align:center">XL (100)</th>
+							<td>55</td>
+							<td>71</td>
+							<td>170~177</td>
+							<td>71~75</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th style="text-align:center">XXL (105)</th>
+							<td>57</td>
+							<td>74</td>
+							<td>175~180</td>
+							<td>74~85</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th style="text-align:center">XXXL (110)</th>
+							<td>59</td>
+							<td>77</td>
+							<td>177~185</td>
+							<td>77~90</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+
+	</div>
+
+	
+	</td>
+</tr>
+
+
+<!--tr>
+	<td>
+	<strong style="margin-left:10px">아동사이즈</strong>
+	<table align="center"  border="0" cellspacing="0" cellpadding="0" class="tableTemp05" summary="" style="width:95%;border:1px solid #cdcdcd">
+		<thead>
+			<tr>
+				<th>사이즈</th>
+				<th>대상</th>
+				<th>신장</th>
+				<th>가슴둘레</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">14호</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">5~6세</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">100~105cm</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">55cm</td>
+			</tr>
+			<tr>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">15호</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">7~8세</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">110~155cm</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">60cm</td>
+			</tr>
+			<tr>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">16호</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">9~10세</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">120~125cm</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">65cm</td>
+			</tr>
+			<tr>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">17호</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">11~12세</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">130~135cm</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">70cm</td>
+			</tr>
+			<tr>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">18호</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">13~14세</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">140~145cm</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">75cm</td>
+			</tr>
+		</tbody>
+	</table>
+
+	</td>
+	<td>
+	<strong style="margin-left:10px">성인사이즈</strong>
+	<table align="center"  border="0" cellspacing="0" cellpadding="0" class="tableTemp05" summary="" style="width:95%;border:1px solid #cdcdcd">
+		<thead>
+			<tr>
+				<th>사이즈</th>
+				<th>대상</th>
+				<th>신장</th>
+				<th>가슴둘래</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">85호</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">여성(소)</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">150~160cm</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">85</td>
+			</tr>
+			<tr>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">90호</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">여성일반</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">160~165cm</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">90</td>
+			</tr>
+			<tr>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">95호</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">여성(대)</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">165~170cm</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">95</td>
+			</tr>
+			<tr>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">100호</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">남성일반</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">170~175cm</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">100</td>
+			</tr>
+			<tr>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">105호</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">남성(대)</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">175~180cm</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">105</td>
+			</tr>
+			<tr>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">110호</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">특대</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">180cm이상</td>
+				<td style="border-bottom:#e0e0e0 1px solid;	border-right:#e0e0e0 1px solid;">110</td>
+			</tr>
+		</tbody>
+	</table>
+
+	</td>
+</tr-->
+
+<tr>
+	<th scope="row">{=_la('메모')}</th>
+	<td colspan="3">
+		<div class="item">
+		 <textarea  class="i_text" cols="50" rows="10" name="str_memo" id="str_memo" hname="{=_la('메모')}" ></textarea> 
+		<br>
+		<span style="color:#ff3333">* 학생 건강정보 등 특이사항 작성용</span>
+		</div>
+		
+		
+	</td>
+</tr>
+</table>
+
+<script type="text/javascript">
+// <![CDATA[
+function memberCopy(){
+	if($('memberTo').checked == true){
+	 {? _SESSION.CHR_MTYPE == "s"}
+		$('str_st_name').value="{_SESSION.NAME}";
+		//$('str_st_eng_name').value="{str_eng_name}";
+		
+		
+		$('str_school').value= '{str_school}';
+		$('str_class').value= '{str_class}';
+		$('str_sex').value= '{str_sex}';
+	 {/}
+	}else{
+		$('str_st_name').value="";
+		$('str_st_eng_name').value="";
+		$('st_email1').value= '';
+		$('st_email2').value= '';
+		$('st_tel11').value= '';
+		$('st_tel22').value= '';
+		$('st_tel33').value= '';
+		$('str_school').value= '';
+		$('str_class').value= '';
+	}
+}
+// ]]>
+</script>
+ {? _SESSION.CHR_MTYPE == "s"}
+<div style="padding:5px">
+<input type="checkbox" name="memberTo" id="memberTo" value="y" onclick="memberCopy()"><label for="memberTo"> 신청자 회원정보와 학생정보가 동일합니다.</label>
+</div>
+{/}
+</div>
+</fieldset> 
+
+
+<script type="text/javascript">
+// <![CDATA[
+function selectPayMos(idx){
+	if(idx == "bank"){
+		$('bank').style.display='block';
+	
+		$('bank_btn').style.display='block';
+		$('card_btn').style.display='none';
+		$('order_info').target = '';
+		$('order_info').action = '';
+		//_frm.action ='lms.view_ok';
+	}else{
+		$('bank').style.display='none';
+	
+//		$('ordername').value = $('str_pr_name1').value;
+		//$('phoneno').value = $('tel11').value +  $('tel22').value + $('tel33').value;
+		$('bank_btn').style.display='none';
+		$('card_btn').style.display='block';
+
+		$('order_info').action="/kcp/sample/pp_ax_hub.php";
+		
+	}
+}
+
+function submitss(){
+
+	$('buyr_name').value = $('str_st_name').value;
+
+	if($('str_etc_se').checked != true){
+		if($('str_etc_text1').value ==""){
+			alert($('namet_1').innerHTML+'는 필수사항입니다.');
+			$('str_etc_text1').focus();
+			return false;
+		}
+
+		if($('str_etc_text2').value ==""){
+			alert($('namet_2').innerHTML+'는 필수사항입니다.');
+			$('str_etc_text2').focus();
+			return false;
+		}
+		if($('str_etc_text3').value ==""){
+			alert($('namet_3').innerHTML+'는 필수사항입니다.');
+			$('str_etc_text3').focus();
+			return false;
+		}
+	}
+
+
+
+	if($('str_pay_mes1').checked == true){
+		
+		if(validate($('order_info'))) {
+			if($('str_class').value !=""){
+				
+				//_pay(document.order_info)
+				 if(jsf__pay(document.order_info)){
+					document.order_info.submit();
+				 }
+				
+			}else{
+				alert('학년은 필수 선택사항입니다.');
+				$('str_class').focus();
+			}
+		}else{
+			return false;
+		}
+	}else{
+		if(validate($('order_info'))) {
+			if($('str_class').value !=""){
+				$('joinForm').submit();
+			}else{
+				alert('학년은 필수 선택사항입니다.');
+				$('str_class').focus();
+			}
+		}else{
+			return false;
+		}
+	}
+}
+// ]]>
+</script>
+
+
+<p class="buTitle33" style="margin-bottom:0px;padding-left:18px">결제정보 안내</p>
+
+<div class="form_table" style="margin-bottom:0px">
+<table border="1" cellspacing="0" summary="표의 요약을 반드시 넣어 주세요">
+<tbody>
+
+
+<tr>
+	<th scope="row"  style="width:140px">결제금액 안내</th>
+	<td>
+		<div class="item" style="padding-top:5px">
+			<strong style="color:blue" id="bank_price_info">{=number_format(num_price)} 원</strong>
+		</div>
+	</td>
+</tr>
+
+
+<tr>
+	<th scope="row" style="width:140px">결제방법 선택</th>
+	<td>
+		<div class="item" style="padding-top:5px">
+			
+			<input type="radio" name="str_pay_mes" value="card" id="str_pay_mes1" onclick="selectPayMos(this.value)" checked> <label for="str_pay_mes1">신용카드</label>
+	
+			<input type="radio" name="str_pay_mes" value="bank" id="str_pay_mes2" onclick="selectPayMos(this.value)"> <label for="str_pay_mes2">무통장 입금</label>
+		</div>
+	</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<input type="hidden" required="false" name="pay_method" value="100000000000"/>
+<input type="hidden" required="false" name="ordr_idxx" value="{order_code}"/>
+<input type="hidden" required="false" name="good_name" value="{str_title}"/>
+<input type="hidden" required="false" name="good_mny" id="good_mny" value="{num_price}"/>
+
+<input type="hidden" required="false" name="buyr_name" id="buyr_name" value="{_SESSION.NAME}"/>
+<input type="hidden" required="false" name="buyr_mail" value="{email1}@{email2}"/>
+<input type="hidden" required="false" name="buyr_tel1" value=""/>
+<input type="hidden" required="false" name="buyr_tel2" value=""/>
+<input type="hidden" required="false" name="req_tx"          value="pay" />
+<input type="hidden" required="false" name="site_cd"         value="N3862" />
+
+<input type="hidden" required="false" name="site_name"       value="KUNETWORKS" />
+
+<input type="hidden" required="false" name="quotaopt"        value="12"/>
+
+<!-- 필수 항목 : 결제 금액/화폐단위 -->
+<input type="hidden" required="false" name="currency"        value="WON"/>
+
+<!-- PLUGIN 설정 정보입니다(변경 불가) -->
+<input type="hidden" required="false" name="module_type"     value="01"/>
+<!--
+※ 필 수
+필수 항목 : Payplus Plugin에서 값을 설정하는 부분으로 반드시 포함되어야 합니다
+값을 설정하지 마십시오
+-->
+<input type="hidden" required="false" name="res_cd"          value=""/>
+<input type="hidden" required="false" name="res_msg"         value=""/>
+<input type="hidden" required="false" name="tno"             value=""/>
+<input type="hidden" required="false" name="trace_no"        value=""/>
+<input type="hidden" required="false" name="enc_info"        value=""/>
+<input type="hidden" required="false" name="enc_data"        value=""/>
+<input type="hidden" required="false" name="ret_pay_method"  value=""/>
+<input type="hidden" required="false" name="tran_cd"         value=""/>
+<input type="hidden" required="false" name="bank_name"       value=""/>
+<input type="hidden" required="false" name="bank_issu"       value=""/>
+<input type="hidden" required="false" name="use_pay_method"  value=""/>
+
+<!--  현금영수증 관련 정보 : Payplus Plugin 에서 설정하는 정보입니다 -->
+<input type="hidden" required="false" name="cash_tsdtime"    value=""/>
+<input type="hidden" required="false" name="cash_yn"         value=""/>
+<input type="hidden" required="false" name="cash_authno"     value=""/>
+<input type="hidden" required="false" name="cash_tr_code"    value=""/>
+<input type="hidden" required="false" name="cash_id_info"    value=""/>
+
+<!-- 2012년 8월 18일 전자상거래법 개정 관련 설정 부분 -->
+<!-- 제공 기간 설정 0:일회성 1:기간설정(ex 1:2012010120120131)  -->
+<input type="hidden" required="false" name="good_expr" value="0">
+
+<!-- 가맹점에서 관리하는 고객 아이디 설정을 해야 합니다.(필수 설정) -->
+<input type="hidden" required="false" name="shop_user_id"    value="{_SESSION.USERID}"/>
+<!-- 복지포인트 결제시 가맹점에 할당되어진 코드 값을 입력해야합니다.(필수 설정) -->
+<input type="hidden" required="false" name="pt_memcorp_cd"   value=""/>
+
+
+
+
+<div class="form_table" id="bank" style="display:none;margin-top:0px" >
+<table border="1" cellspacing="0" summary="표의 요약을 반드시 넣어 주세요" style="border-top:0px;margin-top:0px">
+<tbody>
+
+
+
+<tr>
+	<th scope="row"  style="width:140px">결제금액 안내</th>
+	<td>
+		<div class="item" style="padding-top:5px">
+			<strong style="color:blue" id="bank_price_info">{=number_format(num_price)} 원</strong>
+		</div>
+	</td>
+</tr>
+
+
+<tr>
+	<th scope="row"  style="width:140px">계좌번호 안내</th>
+	<td>
+		<div class="item" style="padding-top:5px">
+			무통장 : <strong>{str_bank_number}</strong>
+			<input type="hidden" name="str_bank_number" value="{str_bank_number}" required="false">
+		</div>
+	</td>
+</tr>
+
+<tr>
+	<th scope="row">입금예정자 명</th>
+	<td>
+		<div class="item" style="padding-top:5px">
+			<input class="i_text" title="입금예정자 명" type="text" name="str_bank_name" id="str_bank_name" value="{_SESSION.NAME}" hname="{=_la('입금예정자 명')}"  required> 
+		</div>
+	</td>
+</tr>
+
+<tr>
+	<th scope="row">입금예정일</th>
+	<td>
+		<div class="item" style="padding-top:5px">
+			<wa:datepicker2 name="dt_bank_date" value="{dt_bank_date}"/> 
+		</div>
+	</td>
+</tr>
+
+<tr>
+	<th scope="row">현금영수증 신청여부</th>
+	<td style="text-align:left">
+		<div class="item" style="padding-top:5px">
+			<input type="radio" name="str_money_tax" id="str_money_tax1" value="n" {? str_money_tax == "n" || str_money_tax ==""} checked{/} onclick="$('money_number').style.display='none'"><label for="str_money_tax1" onclick="$('money_number').style.display='none'">신청안함</label>
+			<input type="radio" name="str_money_tax" id="str_money_tax2" value="y" onclick="$('money_number').style.display='block'" {? str_money_tax == "y"} checked{/}><label for="str_money_tax2" onclick="$('money_number').style.display='block'">신청함</label>
+		</div>
+	</td>
+</tr>
+
+<tr style="display:none;" id="money_number">
+	<th scope="row">
+	현금영수증 번호<br>
+(주민번호/ 휴대폰)
+</th>
+	<td style="text-align:left">
+		<script type="text/javascript">
+		// <![CDATA[
+		function vissd(idx){
+			$('st_type1').style.display = 'none';
+			$('st_type2').style.display = 'none';
+			$('st_type3').style.display = 'none';
+
+			$('st_type'+idx).style.display = 'block';
+		}
+		// ]]>
+		</script>
+		<div class="item" style="padding-top:5px">
+			<input type="radio" name="numberH" value="1" onclick="vissd(this.value)" checked>휴대폰
+			<input type="radio" name="numberH" value="2" onclick="vissd(this.value)">주민등록번호
+			<input type="radio" name="numberH" value="3" onclick="vissd(this.value)">사업자등록번호
+			
+			<div class="" id="st_type1">
+				
+				<input class="i_text" title="현금영수증 번호" type="text" style="width:30px" name="money_number1" id="money_number1" hname="현금영수증 번호" required="false">
+				-
+				<input class="i_text" title="현금영수증 번호" type="text" style="width:30px" name="money_number2" id="money_number2" hname="현금영수증 번호" required="false"> 
+				-
+				<input class="i_text" title="현금영수증 번호" type="text" style="width:30px" name="money_number3" id="money_number3" hname="현금영수증 번호" required="false"> 
+			</div>
+			<div class="" id="st_type2" style="display:none">
+				<input class="i_text" title="현금영수증 번호" type="text" style="width:80px" name="money_number11" id="money_number1" hname="현금영수증 번호" required="false">
+				-
+				<input class="i_text" title="현금영수증 번호" type="text" style="width:80px" name="money_number22" id="money_number2" hname="현금영수증 번호" required="false">
+			</div>
+			<div class="" id="st_type3" style="display:none">
+				<input class="i_text" title="현금영수증 번호" type="text" style="width:30px" name="money_number111" id="money_number1" hname="현금영수증 번호" required="false">
+				-
+				<input class="i_text" title="현금영수증 번호" type="text" style="width:30px" name="money_number222" id="money_number2" hname="현금영수증 번호" required="false"> 
+				-
+				<input class="i_text" title="현금영수증 번호" type="text" style="width:80px" name="money_number333" id="money_number3" hname="현금영수증 번호" required="false"> 
+			</div>
+		</div>
+	</td>
+</tr>
+
+
+
+</table>
+</div>
+
+
+
+
+
+</fieldset> 
+
+<div style="text-align:center;margin-top:20px" id="card_btn">
+	<span class="btn_pack medium icon"><span class="check"></span><input type="button" name="" value="결제실행"  onclick="javascript:submitss();" ></span>
+	<span class="btn_pack medium "><a href="javascript:history.go(-1)">취소</a></span>
+</div>
+
+<div style="text-align:center;margin-top:20px;display:none" id="bank_btn">
+	<span class="btn_pack medium icon"><span class="check"></span><input type="submit" name="" value="결제완료" class=""></span>
+	<span class="btn_pack medium "><a href="javascript:history.go(-1)">취소</a></span>
+</div>
+
+</form>  
+
+
+
+<script type="text/javascript">
+// <![CDATA[init_orderid();
+//selectPayMos('card');
+selectPayMos('card');
+
+<? if(date("Ymd")<20141115){ ?>
+$('good_mny').value = {num_price-70000};
+$('bank_price_info').innerHTML =  "조기등록 할인 : <del>"+number_format('{num_price}',0)+"원"+"</del>"+" -> "+number_format($('good_mny').value,0)+"원";
+<? } ?>
+
+
+{? _SESSION.USERID == 'now17'}
+	$('str_pr_name1').value="부";
+	$('str_pr_name2').value="모";
+	$('email1').value="sksksk";
+	$('email2').value="nate.com";
+	$('str_zipcode').value="100-100";
+	$('str_addr1').value="1234";
+	$('str_addr2').value="1234";
+
+	$('tel1').value="010";
+	$('tel2').value="010";
+	$('tel3').value="0101";
+
+	$('tel11').value="010";
+	$('tel22').value="010";
+	$('tel33').value="0101";
+
+	$('str_st_name').value="테스트";
+	$('jumin1').value="840210";
+	$('jumin2').value="1626644";
+	
+	$('str_school').value="장충초";
+	$('str_class').value="초3";
+	$('str_memo').value="테스트결제";
+	$('good_mny').value="1000";
+
+{/}
+
+
+// ]]>
+</script>

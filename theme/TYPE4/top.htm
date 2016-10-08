@@ -1,0 +1,51 @@
+<!-- 탑로고, 탑메뉴 시작 -->
+									
+
+	<table width="940" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="304" rowspan="4" valign="top"><a href="/main"><img src="./top_logo2.png" alt="KU멘토링캠프 " width="304" height="121" border="0" /></a></td>
+        <td width="636" height="11"></td>
+      </tr>
+      <tr>
+        <td align="right">
+		
+		<table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><a href="/main"><img src="./images/top_global_menu_01.gif" alt="메인으로" width="50" height="10" border="0" /></a></td>
+            
+
+			{? !_SESSION.USERID}
+			<td><a href="/member.login"><img src="./images/top_global_menu_02.gif" alt="로그인" width="42" height="10" border="0" /></a></td>
+            <td><a href="/member.join_step"><img src="./images/top_global_menu_03.gif" alt="회원가입" width="50" height="10" border="0" /></a></td>
+            {:}
+			
+         
+            <td><a href="/member.logout"><img src="./images/logout_20121016.gif" alt="로그아웃" width="50" height="10" border="0" /></a></td>
+		   <td><a href="/member.modify"><img src="./images/top_global_menu_20121016_01.gif" alt="회원정보 변경" width="50" height="10" border="0" /></a></td>
+			{/}
+			<td><a href="/sitemap.view"><img src="./images/top_global_menu_04.gif" alt="사이트맵" width="50" height="10" border="0" /></a></td>
+            <td><a href="javascript:window.external.AddFavorite('http://www.kucamp.com','<?=_ONAME?>')"><img src="./images/top_global_menu_05.gif" alt="즐겨찾기" width="52" height="10" /></a></td>
+			{? _SESSION.USERID}
+			<td><a href="/member.mypage"><img src="./images/top_global_menu_06.gif" alt="마이페이지" width="50" height="10" /></a></td>
+            {/}
+          </tr>
+        </table>
+		
+		</td>
+      </tr>
+      <tr>
+        <td height="24"></td>
+      </tr>
+      <tr>
+        <td  width="636" height="76" valign="top" style="position:relative;">
+
+			 <embed src="./menu.swf" quality="high" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" wmode="transparent" width="667" height="75"></embed>
+
+		<!--a href="/doc.view?mcode=1512&amp;cate=1512"-->
+        <!--img src="./images/naver_cafe.gif" alt="네이버카페" border="0" class="ncktpaTicketBtn" style="border:0; position:absolute; left:69%; top:9px; z-index:200;" /--></td>
+      </tr>
+      
+    </table>
+									
+
+
