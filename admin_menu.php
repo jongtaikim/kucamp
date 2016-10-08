@@ -214,7 +214,7 @@ $menu[$cate1]['link'] = "/lms.admin.main";
 	
 	$cate2 = 1;
 	$menu[$cate1]['submenu'][$cate2]['title'] = "(진로)캠프관리";
-	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?ins_num_serial=2016%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=15";
+	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%B0%DC%BF%EF%B9%E6%C7%D0&sch_num_ccode=15";
 	$menu[$cate1]['submenu'][$cate2]['tip'] = "캠프 신청현황확인 및 맨토를 관리합니다.";
 		
 		$cate3 = 0;
@@ -224,7 +224,7 @@ $menu[$cate1]['link'] = "/lms.admin.main";
 
 		$cate3++;
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "켐프신청 관리";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?ins_num_serial=2016%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=15";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%B0%DC%BF%EF%B9%E6%C7%D0&sch_num_ccode=15";
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "켐프 신청 목록";
 
 		$cate3++;
@@ -246,7 +246,7 @@ $menu[$cate1]['link'] = "/lms.admin.main";
 	
 	$cate2 ++;
 	$menu[$cate1]['submenu'][$cate2]['title'] = "(공학)캠프관리";
-	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?ins_num_serial=&sch_num_ccode=16";
+	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%B0%DC%BF%EF%B9%E6%C7%D0&sch_num_ccode=16";
 	$menu[$cate1]['submenu'][$cate2]['tip'] = "캠프 신청현황확인 및 맨토를 관리합니다.";
 		
 		$cate3 = 0;
@@ -256,7 +256,7 @@ $menu[$cate1]['link'] = "/lms.admin.main";
 
 		$cate3++;
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "켐프신청 관리";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?ins_num_serial=&sch_num_ccode=16";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%B0%DC%BF%EF%B9%E6%C7%D0&sch_num_ccode=16";
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "켐프 신청 목록";
 
 

@@ -64,7 +64,9 @@
 					<td><a href="http://www.youtube.com/watch?v=HcGe9fbGfjs&amp;feature=youtu.be" target="_blank"><img src="./images/20121015_left_main_01.gif" alt="공신닷컴 대표 강성태 동영상" width="243" height="110" border="0" /></a></td>
 				</tr-->
 			
-				
+				<tr>
+					<td style="padding-left:7px"><a href="http://cafe.naver.com/koreaskymentor" target="_blank"><img src="./images/left_main_01.gif" alt="카페"  border="0" /></a></td>
+				</tr>
 				<tr>
 					<td><a href="/doc/kucamp2.pdf" target="_blank"><img src="./images/20121015_left_main_02.png" alt="캠프안내문"  border="0" /></a></td>
 				</tr>
@@ -109,7 +111,7 @@
 										{@ LIST_lsat}
 										{@ .tab_data}
 										<tr>
-											<td width="85%" height="23"><strong> {? ..num_notice == "2"}[전체공지]{: ..num_notice=='1'}[공지]{:}[안내]{/}</strong> <a href="{..link}">{..str_title1}</a>  {? ..is_recent ||  ..num_notice == "2"  || ..index_ == "0"}<img src="/image/icon/new2.gif" alt="" align="absmiddle"/>{/}</td>
+											<td width="85%" height="23"><strong> {? ..num_notice == "2"}[전체공지]{: ..num_notice=='1'}[공지]{:}[안내]{/}</strong> <a href="{..link}">{..str_title1}</a>  {? ..is_recent  }<img src="/image/icon/new2.gif" alt="" align="absmiddle"/>{/}</td>
 											<td width="15%" align="right">{..dt_date1}.{..dt_date2}.{..dt_date3}</td>
 										</tr>
 										{/}
