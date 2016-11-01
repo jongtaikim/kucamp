@@ -157,20 +157,24 @@
 		$datas[num_serial] = $serial;
 		$datas[str_id] = $_SESSION[USERID];
 		$datas[str_jumin] = $jumin1."-".$jumin2;
-		
 
-		if(date("Ymd") >= 20121101){
-			if($str_etc < 5){
-				if($str_etc == 1) $datas[str_discount] = 80000;
-				if($str_etc == 2) $datas[str_discount] = 50000;
-				
-				if($str_etc == 3) $datas[str_discount] = 80000;
-				if($str_etc == 5) $datas[str_discount] = 50000;
-			}
-		}
-		
-		
-		if($_SESSION[USERID]=="now17"){
+
+//조기할인
+         if($_POST[discount]>0){
+             $datas[str_discount] = $_POST[discount];
+             $datas[str_jo] = 'y';
+         }else{
+
+             //조기할인
+             if(date("Ymd") <= 20161031){
+                 $datas[str_discount] = 80000;
+                 $datas[str_jo] = 'y';
+             }
+
+         }
+
+
+         if($_SESSION[USERID]=="now17"){
 		//	$sqlV ='y';
 			$DB->insertQuery("TAB_ORDER",$datas);	
 			//exit;
