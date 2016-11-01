@@ -119,6 +119,11 @@ function def_ccodes(){
 	<th>신청아이디</th>
 	<td>{str_id}</td>
 </tr>
+<tr>
+    <th>신청날짜</th>
+    <td>{=date("Y-m-d H:i:s",dt_date)}</td>
+</tr>
+
 {? camp_LIST}
 <tr>
 	<th scope="row">신청과정</th>
