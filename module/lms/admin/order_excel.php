@@ -32,7 +32,7 @@
 				$psqlsw = " and a.str_order_st in ('2','8') ";
 			}else{
 				if($_GET[hold] != "y"){
-					$psqlsw = " and  a.str_order_st in ('0','1','5') ";
+					$psqlsw = " and  a.str_order_st in ('0','3','1','5') ";
 				}else{
 					$psqlsw = " and a.str_order_st in (6,7) ";
 				}

@@ -44,7 +44,7 @@ function popup_zip() {
 
 
 <div style="width:980px">
-<div style="width:490px;float:left;border-right:1px dashed #cdcdcd;margin-right:8px;padding-right:10px">
+<div style="width:660px;float:left;border-right:1px dashed #cdcdcd;margin-right:8px;padding-right:10px">
 
 
 <script type="text/javascript" src="/js/ajax.js"></script>
@@ -232,8 +232,8 @@ function def_ccodes(){
 </tr-->
 
 <tr>
-	<th scope="row" >T-셔츠 사이즈</th>
-	<td style="width:360px">
+	<th scope="row" style="width:120px" >T-셔츠 사이즈</th>
+	<td style="">
 		<input type="radio" name="str_tsize" id="str_tsize1" value="xs" {? str_tsize == "xs"}checked{/}><label for="str_tsize1">xs</label>
 		<input type="radio" name="str_tsize" id="str_tsize2" value="s" {? str_tsize == "s"}checked{/}><label for="str_tsize2">s</label>
 		<input type="radio" name="str_tsize" id="str_tsize3" value="m" {? str_tsize == "m"}checked{/}><label for="str_tsize3">m</label>
@@ -357,6 +357,8 @@ function def_ccodes(){
 						<td>
 						{? .str_order_st == "0"}
 						<span style="color:red">입금확인전</span>
+						{: .str_order_st == "3"}
+						<span style="color:#52d3ff">입금대기</span>
 						{: .str_order_st == "1"}
 						<span style="color:blue">입금확인</span>
 						{: .str_order_st == "5"}
@@ -650,7 +652,8 @@ scsledk({str_etc})
 			<th scope="row">결제 상태</th>
 			<td >
 				<select name="str_order_st"  id="str_order_st">
-					<option value="0" {? str_order_st == "0"} selected{/} style="color:red">입금대기중</option>
+					<option value="0" {? str_order_st == "0"} selected{/} style="color:red">입금확인전</option>
+					<option value="3" {? str_order_st == "3"} selected{/} style="color:#52d3ff">입금대기</option>
 					<option value="1" {? str_order_st == "1"} selected{/} style="background-color:blue;color:#fff">입금확인</option>
 					<option value="2" {? str_order_st == "2"} selected{/} style="color:#848484">취소</option>
 					<option value="8" {? str_order_st == "8"} selected{/} style="color:#848484">취소환불</option>
@@ -668,6 +671,7 @@ scsledk({str_etc})
 			<td >
 				<select name="str_order_st"  id="str_order_st">
 					<option value="5" {? str_order_st == "5"} selected{/} style="background-color:blue;color:#fff">카드승인</option>
+                    <option value="3" {? str_order_st == "3"} selected{/} style="color:#52d3ff">입금대기</option>
 					<option value="2" {? str_order_st == "2"} selected{/} style="color:#848484">취소</option>
 					<option value="8" {? str_order_st == "8"} selected{/} style="color:#848484">취소환불</option>
 					<option value="0" {? str_order_st == "0"} selected{/} style="color:red">입금대기중</option>
@@ -703,8 +707,14 @@ scsledk({str_etc})
 		<p class="buTitle01" style="margin-top:0px">주문 메모 로그</p>
 		<wa:applet module="log" code="{order_code}"/>
 	</div>
+
+    <div class="" id="" style="float:left;margin-top:20px">
+        <p class="buTitle01" style="margin-top:00px">상담 메모 로그</p>
+        <wa:applet module="log" code="{no_code}"/>
+    </div>
+
 	<div class="" id="" style="float:left;margin-top:20px">
-		<p class="buTitle01" style="margin-top:00px">상담 메모 로그</p>
+		<p class="buTitle01" style="margin-top:00px">회원 메모 로그</p>
 		<wa:applet module="log" code="{str_id}"/>
 	</div>
 	

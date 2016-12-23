@@ -90,9 +90,10 @@ switch ($REQUEST_METHOD) {
 	$sql = "select str_title as ccode_title   from TAB_LMS_CATE where num_oid = '$_OID' and num_ccode = '".$data[num_ccode]."'";
 	$datas = $DB -> sqlFetch($sql);
 
-
+    $datas['no_code'] = $_GET['order_code']."_to";
 	$tpl->assign($datas);
-	
+
+
 	
 
 	$tpl->setLayout('no3');
@@ -141,8 +142,10 @@ switch ($REQUEST_METHOD) {
 	if($order_st_hi != $str_order_st){
 		if($datas[str_order_st] == "1"){
 			$indata[str_text] = "입금확인";
+		}else if($datas[str_order_st] == "3"){
+			$indata[str_text] = "입금대기";
 		}else if($datas[str_order_st] == "0"){
-			$indata[str_text] = "입금대기중";
+			$indata[str_text] = "입금확인전";
 		}else if($datas[str_order_st] == "6" || $datas[str_order_st] == "7"){
 			$indata[str_text] = "대기자변경";
 		}else{

@@ -111,7 +111,8 @@
 										{@ LIST_lsat}
 										{@ .tab_data}
 										<tr>
-											<td width="85%" height="23"><strong> {? ..num_notice == "2"}[전체공지]{: ..num_notice=='1'}[공지]{:}[안내]{/}</strong> <a href="{..link}">{..str_title1}</a>  {? ..is_recent  }<img src="/image/icon/new2.gif" alt="" align="absmiddle"/>{/}</td>
+											<td width="85%" height="23"><strong> {? ..num_notice == "2"}[전체공지]{: ..num_notice=='1'}[공지]{:}[안내]{/}</strong> <a href="{..link}">{..str_title1}</a>
+                                                {? ..is_recent  || (..num_mcode==1313 && ..num_serial==165) || (..num_mcode==11210 && ..num_serial==14) || (..num_mcode==11210 && ..num_serial==13)}<img src="/image/icon/new2.gif" alt="" align="absmiddle"/>{/}</td>
 											<td width="15%" align="right">{..dt_date1}.{..dt_date2}.{..dt_date3}</td>
 										</tr>
 										{/}
