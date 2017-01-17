@@ -4,15 +4,7 @@
     <list default="true" id="2524dfef-fb10-44b8-a906-31dc07132ec9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/lms/admin/order_excel.html" afterPath="$PROJECT_DIR$/html/lms/admin/order_excel.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/lms/admin/order_list.htm" afterPath="$PROJECT_DIR$/html/lms/admin/order_list.htm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/lms/admin/order_view.htm" afterPath="$PROJECT_DIR$/html/lms/admin/order_view.htm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/member/mypage_view.htm" afterPath="$PROJECT_DIR$/html/member/mypage_view.htm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/lms/admin/__init__.php" afterPath="$PROJECT_DIR$/module/lms/admin/__init__.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/lms/admin/order_excel.php" afterPath="$PROJECT_DIR$/module/lms/admin/order_excel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/lms/admin/order_list.php" afterPath="$PROJECT_DIR$/module/lms/admin/order_list.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/lms/admin/order_view.php" afterPath="$PROJECT_DIR$/module/lms/admin/order_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/TYPE4/layout_main.htm" afterPath="$PROJECT_DIR$/theme/TYPE4/layout_main.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/TYPE3/qmenu.htm" afterPath="$PROJECT_DIR$/theme/TYPE3/qmenu.htm" />
     </list>
     <ignored path="kucamp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,16 +26,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="order.htm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/lms/order.htm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1887">
-              <caret line="111" column="12" selection-start-line="111" selection-start-column="12" selection-end-line="111" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="order_list.htm" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/lms/admin/order_list.htm">
           <provider selected="true" editor-type-id="text-editor">
@@ -100,7 +82,7 @@
       <file leaf-file-name="order_view.htm" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/lms/admin/order_view.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="758">
+            <state relative-caret-position="12189">
               <caret line="717" column="41" selection-start-line="717" selection-start-column="41" selection-end-line="717" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -174,7 +156,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout_main.htm" pinned="false" current-in-tab="true">
+      <file leaf-file-name="layout_main.htm" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/TYPE4/layout_main.htm">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
@@ -186,6 +168,18 @@
                 <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#2;n#tr#0;n#table#0;n#td#0;n#tr#4;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#2;n#tr#0;n#table#0;n#td#0;n#tr#4;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#td#2;n#tr#0;n#table#0;n#td#0;n#tr#4;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qmenu.htm" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/theme/TYPE3/qmenu.htm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="642">
+              <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -391,6 +385,7 @@
         <option value="$PROJECT_DIR$/module/lms/admin/order_view.php" />
         <option value="$PROJECT_DIR$/html/lms/admin/order_view.htm" />
         <option value="$PROJECT_DIR$/theme/TYPE4/layout_main.htm" />
+        <option value="$PROJECT_DIR$/theme/TYPE3/qmenu.htm" />
       </list>
     </option>
   </component>
@@ -435,6 +430,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -503,29 +500,13 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kucamp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kucamp" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gamer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../okhwa" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
@@ -595,7 +576,8 @@
       <workItem from="1480295520847" duration="2004000" />
       <workItem from="1480299901854" duration="447000" />
       <workItem from="1480903168561" duration="396000" />
-      <workItem from="1482458003511" duration="840000" />
+      <workItem from="1482458003511" duration="868000" />
+      <workItem from="1484626351271" duration="324000" />
     </task>
     <task id="LOCAL-00001" summary="111">
       <created>1477963647917</created>
@@ -604,25 +586,32 @@
       <option name="project" value="LOCAL" />
       <updated>1477963647917</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="111">
+      <created>1482458862869</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1482458862869</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11575000" />
+    <option name="totallyTimeSpent" value="11927000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="2" width="1932" height="1045" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23294243" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19070514" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19284189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32858709" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -656,13 +645,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/module/lms/view_ok_kcp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2958">
-          <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/lms/view_ok_to.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -688,7 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6579">
           <caret line="387" column="34" selection-start-line="387" selection-start-column="26" selection-end-line="387" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -814,7 +795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -993,7 +973,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6579">
           <caret line="387" column="34" selection-start-line="387" selection-start-column="26" selection-end-line="387" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1219,7 +1198,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/html/lms/admin/order_view.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="758">
+        <state relative-caret-position="12189">
           <caret line="717" column="41" selection-start-line="717" selection-start-column="41" selection-end-line="717" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -1303,6 +1282,16 @@
             <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#td#2;n#tr#0;n#table#0;n#td#0;n#tr#4;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#2;n#table#0;n#td#2;n#tr#0;n#table#0;n#td#0;n#tr#4;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#td#2;n#tr#0;n#table#0;n#td#0;n#tr#4;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/TYPE3/qmenu.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
