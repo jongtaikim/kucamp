@@ -20,15 +20,15 @@
 
 <script language="Javascript" type="text/javascript">
 
-	function setPng24(obj) { 
-	    obj.width=obj.height=1; 
-	    obj.className=obj.className.replace(/\bpng24\b/i,''); 
-	    obj.style.filter = 
-	    "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+ obj.src +"',sizingMethod='image');" 
-	    obj.src='images/1pixel.gif';  
-	    return ''; 
-	} 
-	
+	function setPng24(obj) {
+	    obj.width=obj.height=1;
+	    obj.className=obj.className.replace(/\bpng24\b/i,'');
+	    obj.style.filter =
+	    "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+ obj.src +"',sizingMethod='image');"
+	    obj.src='images/1pixel.gif';
+	    return '';
+	}
+
 	function layerPopupClose(){
 		$('layerPopupBody').style.display='none';
 		$('layerPopup').innerHTML = '';
@@ -39,13 +39,13 @@
 		//new Draggable('layerPopupBody',"dropOnEmpty: false");
 		var myDrag = new Drag("draggable","dragelement","dragarea","dragdirection","scalepercent");
 		if(!w) w = "500";
-		
+
 		$('layerPopupBody').style.left = (parseInt(screen.availWidth) / 4) - (parseInt(w) / 3);
 		$('layerPopupBody').style.top = '100px';
 		$('layerPopupBody').style.width = w+'px';
 		$('layerPopupBody').style.display='block';
 		$('layerPopupTitle').innerHTML = titles;
-		
+
 		if(url){
 			if(ifr =="y"){
 			$('layerPopup').innerHTML = '<iframe src ="'+url+'" frameborder="0" width="100%" height="560px" name="layPopupifr" scrolling="yes"></iframe>';
@@ -55,7 +55,7 @@
 		}else{
 			$('layerPopup').innerHTML = texts;
 		}
-		
+
 		$('modalBg').style.display = 'block';
 		new Floating($('modalBg'),0,0,1,1);
 		//new Floating($('layerPopupBody'),100,100,10,30);
@@ -65,7 +65,7 @@
 
 </head>
 <body>
-<? 
+<?
 include 'admin_menu.php';
 
 $pn_1 = substr(_PN,1,1)-1;
@@ -76,9 +76,9 @@ $pn_33 = substr(_PN,5,1);
 ?>
 
 {#TOP}
-		
+
 		<div style="min-width:880px">
-		
+
 		<table width="680px" align="center" height="98%" border="0" cellspacing="0" cellpadding="0"  summary="" >
 				<tr>
 					<td valign="top"  style="padding:15px 10px 0 10px" >
@@ -88,21 +88,21 @@ $pn_33 = substr(_PN,5,1);
 		</table>
 
 		</div>
-		
-		
-		
-		
-	
+
+
+
+
+
 </div>
 </div>
 
  <div  id="modalBg"></div>
- <div class="section" id="layerPopupBody">  
-	<h2 class="hx" style="display:block" id="layerPopupTitle" style="cursor: move" draggable="true" dragelement="document.getElementById('layerPopupBody')">제목</h2>  
-	<div class="tx" id="layerPopup">내용</div>  
-	<a class="section_more" href="#" onclick="layerPopupClose();">  
-	<span>x</span> 닫기</a> 
- </div>  
+ <div class="section" id="layerPopupBody">
+	<h2 class="hx" style="display:block" id="layerPopupTitle" style="cursor: move" draggable="true" dragelement="document.getElementById('layerPopupBody')">제목</h2>
+	<div class="tx" id="layerPopup">내용</div>
+	<a class="section_more" href="#" onclick="layerPopupClose();">
+	<span>x</span> 닫기</a>
+ </div>
 
 
 </body>
