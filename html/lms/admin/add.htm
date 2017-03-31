@@ -43,6 +43,12 @@ function selectCate(idx){
 					<option value="{.num_ccode}" {? num_ccode == .num_ccode || ccode == .num_ccode} selected{/}>{.str_title}</option>
 					{/}
 				</select>
+
+                {? !num_serial || _GET.copy}
+
+                &nbsp;&nbsp;|&nbsp; 시작 기수 : <input type="text" name="st_num_serial" value="{? num_serial}{num_serial}{:}1{/}" class="" hname="캠프시작기수" style="width:30px" required>
+
+                {/}
 			</td>
 		</tr>
 
@@ -59,6 +65,8 @@ function selectCate(idx){
 					<option value="2016년 겨울방학">2016년 겨울방학</option>
 					<option value="2017년 여름방학">2017년 여름방학</option>
 					<option value="2017년 겨울방학">2017년 겨울방학</option>
+					<option value="2018년 여름방학">2018년 여름방학</option>
+                    <option value="2018년 겨울방학">2018년 겨울방학</option>
 
 
 					

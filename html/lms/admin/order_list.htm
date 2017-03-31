@@ -301,7 +301,7 @@ function selectItem() {
 					<p>
 						<span style="color:#9933ff">{.str_ccode_text} Á¦{.camp.num_serial}±â</span>
 					</p>
-					<p>{.camp.start_date}~{.camp.end_date}</p>
+					{? substr(.camp.start_date,0,1) == 2}<p>{.camp.start_date}~{.camp.end_date}</p>{/}
 				</a>
 			</td>
 			<td >

@@ -97,7 +97,8 @@ switch ($REQUEST_METHOD) {
 	a.num_serial = c.num_serial  
 	
 	$add_where $psqls    order by a.dt_date desc LIMIT $seek , $listnum   ";
-	
+
+
 
 
 
