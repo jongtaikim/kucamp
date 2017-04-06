@@ -133,7 +133,7 @@ switch ($REQUEST_METHOD) {
 	}else{
 	
 			//조기할인
-		if(date("Ymd") <= 20161031){
+		if(date("Ymd") <= 20170430){
 			 $datas[str_discount] = 80000;
 			 $datas[str_jo] = 'y';
 		}

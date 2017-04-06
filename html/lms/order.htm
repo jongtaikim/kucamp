@@ -94,7 +94,7 @@
 			
 			<!--th style="text-align:center">이미지</th-->
 			<th style="text-align:center">기수</th>
-			<th style="text-align:center">켐프 프로그램</th>
+			<th style="text-align:center">캠프 프로그램</th>
 			
 			
 			
@@ -129,7 +129,7 @@
 			
 			<td  style="text-align:center"><p>{.str_target}</p></td>
 			<td style="color:#000;text-align:center"><p>
-			<? if(date("Ymd")<=20161031){ ?>
+			<? if(date("Ymd")<=20170430){ ?>
 				{=number_format(.num_price-80000)}원
 			<? }else{ ?>
 				{=number_format(.num_price)}원
@@ -139,7 +139,7 @@
 				<p>{? .num_st == "1"}<span style="color:#0033ff">
 				
 				
-					<? if(date("Ymd")<=20161031){ ?>조기 <?}?>
+					<? if(date("Ymd")<=20170430){ ?>조기 <?}?>
 					접수중</span>
 				
 				{/}

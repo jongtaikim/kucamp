@@ -23,8 +23,9 @@ switch ($REQUEST_METHOD) {
 	$tpl->assign(array('cate_LIST'=>$row));
 	
 	if($ccode){
-		$where = " and num_ccode = '".$ccode."' ";
+		$where = " and num_ccode in (".$ccode.") ";
 	}
+
 
 	//$where .= " and num_start_date > ".date("Ymd")." ";
 
@@ -44,7 +45,7 @@ switch ($REQUEST_METHOD) {
 	$offset = $seek + $listnum;
 
 	$sql = "
-	select * from ".$table." where num_oid = '$_OID'  $where  and str_view = 'y' order by num_serial desc LIMIT $seek , $listnum   ";
+	select * from ".$table." where num_oid = '$_OID'  $where  and str_view = 'y' order by  num_serial , num_ccode asc LIMIT $seek , $listnum   ";
 
 //	echo $sql;
 

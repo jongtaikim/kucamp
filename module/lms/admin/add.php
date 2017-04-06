@@ -53,12 +53,25 @@ switch ($REQUEST_METHOD) {
 	//$types = $_POST[num_ccode];
 	 
 	 if(!$serial){
-		
-		$sql = "select max(num_serial)+1 from $table where num_oid = '$_OID' and num_ccode = '$num_ccode' ";
-		$new_serial = $DB -> sqlFetchOne($sql);
-		if(!$new_serial) $new_serial =1;
 
-			
+
+         if($st_num_serial){
+             $sql = "select count(*) from $table where num_oid = '$_OID' and num_ccode = '$num_ccode' and num_serial = '".$st_num_serial."' ";
+
+             $new_serial = $DB -> sqlFetchOne($sql);
+             if(!$new_serial){
+                 $new_serial = $st_num_serial;
+             }else{
+                 echo '<script>alert("해당 프로그램에 이미 사용된 기수 번호입니다.");history.go(-1)</script>';
+                 exit;
+             }
+         }else{
+             $sql = "select max(num_serial)+1 from $table where num_oid = '$_OID' and num_ccode = '$num_ccode' ";
+             $new_serial = $DB -> sqlFetchOne($sql);
+             if(!$new_serial) $new_serial =1;
+         }
+
+
 		if($upfile1) {
 			$file = new FileUpload("upfile1"); // datafile은 form에서의 이름 
 			$file->Path = _DOC_ROOT."/hosts/".HOST."/lms/";  // 마지막에 /꼭 붙여야함

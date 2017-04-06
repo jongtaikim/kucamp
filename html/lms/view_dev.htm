@@ -370,7 +370,7 @@ function scsledk(idx){
 		$('skskvie1').style.display = 'block';
 	}else{
 		$('skskvie1').style.display = 'none';
-		<? if(date("Ymd")<=20161031){ ?>
+		<? if(date("Ymd")<=20170430){ ?>
 		$('sndAmount').value = {num_price-80000};
 		//$('sndAmount2').value = {num_price-80000};
 		$('bank_price_info').innerHTML =  "조기등록 할인 : <del>"+number_format('{num_price}',0)+"원"+"</del>"+" -> "+number_format($('sndAmount').value,0)+"원";
@@ -385,7 +385,7 @@ function scsledk(idx){
 		$('namet_1').innerHTML = '교우성명';
 		$('namet_2').innerHTML = '졸업학과';
 		$('namet_3').innerHTML = '입학학번';
-		<? if(date("Ymd")>20161031){ ?>
+		<? if(date("Ymd")>20170430){ ?>
 		$('sndAmount').value = {num_price} - 50000;
 		//$('sndAmount2').value = {num_price} - 50000;
 
@@ -396,7 +396,7 @@ function scsledk(idx){
 		$('namet_1').innerHTML = '교직원성명';
 		$('namet_2').innerHTML = '근무부서';
 		$('namet_3').innerHTML = '직급';
-		<? if(date("Ymd")>20161031){ ?>
+		<? if(date("Ymd")>20170430){ ?>
 		$('sndAmount').value = {num_price} - 80000;
 		//$('sndAmount2').value = {num_price} - 80000;
 		$('bank_price_info').innerHTML =  number_format($('sndAmount').value,0)+"원";
@@ -407,7 +407,7 @@ function scsledk(idx){
 		$('namet_1').innerHTML = '학생성명';
 		$('namet_2').innerHTML = '참여과정';
 		$('namet_3').innerHTML = '참여기수';
-		<? if(date("Ymd")>20161031){ ?>
+		<? if(date("Ymd")>20170430){ ?>
 		$('sndAmount').value = {num_price} - 80000;
 		//$('sndAmount2').value = {num_price} - 80000;
 		$('bank_price_info').innerHTML = number_format($('sndAmount').value,0)+"원";
@@ -419,7 +419,7 @@ function scsledk(idx){
 		$('namet_3').style.display = 'none';
 		$('str_etc_text3').style.display = 'none';
 
-		<? if(date("Ymd")>20161031){ ?>
+		<? if(date("Ymd")>20170430){ ?>
 		$('sndAmount').value = {num_price-50000};
 		//$('sndAmount2').value = {num_price-50000};
 		$('bank_price_info').innerHTML = number_format($('sndAmount').value,0)+"원";
@@ -1177,7 +1177,7 @@ function set_gogo_mobile(reCommConId,reCommType,reHash){
 selectPayMos('card');
 //selectPayMos('bank');
 
-<? if(date("Ymd")<=20161031){ ?>
+<? if(date("Ymd")<=20170430){ ?>
 $('sndAmount').value = {num_price-80000};
 //$('sndAmount2').value = {num_price-80000};
 $('discount').value = 80000;
