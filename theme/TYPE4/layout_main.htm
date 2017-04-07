@@ -39,11 +39,11 @@
 			<td align="center" background="./images/mainbg.jpg"><table width="976" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td width="469"  style="position:relative;">
-                
+
 
 				 <img src="./images/new_bg.png" alt="" style="margin:31px 0px 0px 4px"/>
                 </td>
-                
+
               </tr>
             </table></td>
 		</tr>
@@ -63,7 +63,7 @@
 				<!--tr>
 					<td><a href="http://www.youtube.com/watch?v=HcGe9fbGfjs&amp;feature=youtu.be" target="_blank"><img src="./images/20121015_left_main_01.gif" alt="공신닷컴 대표 강성태 동영상" width="243" height="110" border="0" /></a></td>
 				</tr-->
-			
+
 				<tr>
 					<td style="padding-left:7px"><a href="http://cafe.naver.com/koreaskymentor" target="_blank"><img src="./images/left_main_01.gif" alt="카페"  border="0" /></a></td>
 				</tr>
@@ -79,7 +79,7 @@
 				<tr>
 					<td><a href="/doc.view?mcode=11112&cate=11112"><img src="./images/left_2323.png" alt="상담센터 1599-3290(국번없이)" /></a></td>
 				</tr>
-				
+
 				</table>
 			</td>
 			<td valign="top">
@@ -88,7 +88,7 @@
 					<td width="15">&nbsp;</td>
 					<td width="413">
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
-						
+
 						<tr>
 							<td>
 								<table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -107,22 +107,35 @@
 								<tr>
 									<td>
 										<wa:applet module="out_bbs.main" code="" mou_name="out_bbs1">
+
 										<table width="100%" border="0" cellspacing="0" cellpadding="0">
-										{@ LIST_lsat}
-										{@ .tab_data}
-										<tr>
-											<td width="85%" height="23"><strong> {? ..num_notice == "2"}[전체공지]{: ..num_notice=='1'}[공지]{:}[안내]{/}</strong> <a href="{..link}">{..str_title1}</a>
-                                                {? ..is_recent  || (..num_mcode==1313 && ..num_serial==165) || (..num_mcode==11210 && ..num_serial==14) || (..num_mcode==11210 && ..num_serial==13)}<img src="/image/icon/new2.gif" alt="" align="absmiddle"/>{/}</td>
-											<td width="15%" align="right">{..dt_date1}.{..dt_date2}.{..dt_date3}</td>
-										</tr>
-										{/}
-										{/}
+                                            {@ LIST_total_gong}
+                                            <tr>
+                                                <td width="85%" height="23"><strong> [전체공지]</strong> <a href="{.link}">{.str_title1}</a>  {? .is_recent || .num_notice == "2" || .index_ == "0"}<img src="/image/icon/new2.gif" alt="" align="absmiddle"/>{/}</td>
+                                                <td width="15%" align="right">{.dt_date1}.{.dt_date2}.{.dt_date3}</td>
+                                            </tr>
+                                            {/}
+
+
+                                            {@ LIST_lsat}
+
+                                            {@ .tab_data}
+                                            {? (..index_) < (5-count(LIST_total_gong))}
+                                            {?  ..num_notice<2}
+                                            <tr>
+                                                <td width="85%" height="23"><strong> {?  ..num_notice=='1'}[공지]{:}[안내]{/}</strong> <a href="{..link}">{..str_title1}</a>  {? ..is_recent || ..num_notice == "2" }<img src="/image/icon/new2.gif" alt="" align="absmiddle"/>{/}</td>
+                                                <td width="15%" align="right">{..dt_date1}.{..dt_date2}.{..dt_date3}</td>
+                                            </tr>
+                                            {/}
+                                            {/}
+                                            {/}
+                                            {/}
 										</table>
 										</wa:applet>									</td>
 								</tr>
 								</table>							</td>
 						</tr>
-						<tr> 
+						<tr>
 							<td height="30">&nbsp;</td>
 						</tr>
 						<tr>
@@ -194,7 +207,7 @@
 				<tr>
 					<td style="padding-top:20px"><a href="/doc.view?mcode=11017&cate=11017"><img src="./images/camp_order_btn2.png" alt="캠프 신청"  border="0" /></a></td>
 				</tr>
-				
+
 
 				<tr>
 					<td style="padding-top:20px"><a href="http://www1.kucamp.com" target="_blank"><img src="./images/right_banner1.png" alt="캠프 신청"  border="0" /></a></td>
@@ -206,8 +219,8 @@
 				<!--tr>
 					<td><a href="/doc.view?mcode=1218&cate=1218"><img src="./images/20130422/1.jpg" alt="사전 설문조사"  border="0" /></a></td>
 				</tr>
-				
-				
+
+
 				<tr>
 					<td><a href="http://cafe.naver.com/kumccamp" target="_blank"><img src="./images/20130422/2.jpg" alt="다문화캠프"  border="0" /></a></td>
 				</tr>
@@ -219,12 +232,12 @@
 				</tr-->
 				</table>
 			</td>
-			
-			
+
+
 			<td valign="top">
-			
+
 				{#QMENU}
-			
+
 			</td>
 		</tr>
 		</table>
@@ -258,7 +271,7 @@
 <area shape="rect" coords="245,344,378,321" href="/doc.view?mcode=111213&amp;cate=111213">
 
   <area shape="rect" coords="245,282,378,299" href="/doc.view?mcode=111211&amp;cate=111211">
-  
+
   <area shape="rect" coords="39,324,161,344" href="/doc.view?mcode=111113&amp;cate=111113">
 
   <area shape="rect" coords="39,364,161,344" href="/doc.view?mcode=111112&amp;cate=111112">
@@ -268,9 +281,9 @@
 
 
 
-<!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 --> 
-<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"> </script> 
-<script type="text/javascript"> 
+<!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 -->
+<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"> </script>
+<script type="text/javascript">
 if (!wcs_add) var wcs_add={};
 wcs_add["wa"] = "s_30543923423b";
 if (!_nasa) var _nasa={};

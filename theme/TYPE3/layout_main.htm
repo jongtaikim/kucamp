@@ -280,13 +280,25 @@ wcs_do(_nasa);
 									<td>
 										<wa:applet module="out_bbs.main" code="" mou_name="out_bbs1">
 										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										{@ LIST_total_gong}
+                                            <tr>
+                                                <td width="85%" height="23"><strong> [전체공지]</strong> <a href="{.link}">{.str_title1}</a>  {? .is_recent || .num_notice == "2" || .index_ == "0"}<img src="/image/icon/new2.gif" alt="" align="absmiddle"/>{/}</td>
+                                                <td width="15%" align="right">{.dt_date1}.{.dt_date2}.{.dt_date3}</td>
+                                            </tr>
+                                        {/}
+
+
 										{@ LIST_lsat}
 										{@ .tab_data}
-										<tr>
-											<td width="85%" height="23"><strong> {? ..num_notice == "2"}[전체공지]{: ..num_notice=='1'}[공지]{:}[안내]{/}</strong> <a href="{..link}">{..str_title1}</a>  {? ..is_recent || ..num_notice == "2" || ..index_ == "0"}<img src="/image/icon/new2.gif" alt="" align="absmiddle"/>{/}</td>
-											<td width="15%" align="right">{..dt_date1}.{..dt_date2}.{..dt_date3}</td>
-										</tr>
-										{/}
+                                            {? (..index_) < (5-count(LIST_total_gong))}
+                                               {?  ..num_notice<2}
+                                                <tr>
+                                                    <td width="85%" height="23"><strong> {?  ..num_notice=='1'}[공지]{:}[안내]{/}</strong> <a href="{..link}">{..str_title1}</a>  {? ..is_recent || ..num_notice == "2" }<img src="/image/icon/new2.gif" alt="" align="absmiddle"/>{/}</td>
+                                                    <td width="15%" align="right">{..dt_date1}.{..dt_date2}.{..dt_date3}</td>
+                                                </tr>
+                                                {/}
+                                            {/}
+                                          {/}
 										{/}
 										</table>
 										</wa:applet>									</td>

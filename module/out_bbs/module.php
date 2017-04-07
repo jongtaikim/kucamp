@@ -99,7 +99,98 @@ if(!is_file($cache_file) || date('Ymd H') > date('Ymd H',filemtime($cache_file))
 
 //if (!is_file($cache_file)) {
 	// 선택적으로 최근게시물 가져오도록 수정(2004-08-30)
- 
+
+
+
+    $sql = "
+
+ select 
+   str_title,
+    str_name,
+    num_mcode,
+    num_notice,
+    str_thumb,
+	num_depth,
+	num_serial,
+	num_input_pass,
+	num_comment,
+	str_text,
+	str_file_url1,
+	str_file_url2,
+	str_tmp1,
+	str_tmp2,
+	str_tmp3,
+	str_tmp4,
+	str_tmp5,
+	str_tmp6,
+	str_tmp7,
+	str_tmp8,
+	str_tmp9,
+	str_tmp10,
+    dt_date,
+	dt_date as dt_date2,
+	str_category
+from
+
+TAB_BOARD
+
+where 
+num_oid = "._OID." and num_notice = 2
+
+
+
+order by   num_group desc
+
+limit 0, 2
+
+";
+
+
+
+$data = $DB->sqlFetchAll($sql);
+
+for($ii=0; $ii<count($data); $ii++) {
+
+    if (!$conf[text_len]) $conf[text_len] = "120";
+    //if ($data[$ii]['num_depth']) $data[$ii]['str_title'] = 'Re: '.$data[$ii]['str_title'];
+    if ($data[$ii]['num_depth']) $data[$ii]['str_title'] = $data[$ii]['str_title'];
+
+
+    $data[$ii]['str_title1'] = Display::text_cut($data[$ii]['str_title'], "40", "..");
+
+    $data[$ii]['str_title2'] = Display::text_cut($data[$ii]['str_title'], 16, "..");
+    $data[$ii]['str_title3'] = Display::text_cut($data[$ii]['str_title'], $len3, "..");
+
+
+    if (!$ime_text1) $ime_text1 = $data[$ii]['str_text'];
+
+
+    if ($data[$ii]['str_text1']) $data[$ii]['str_text1'] = str_replace("&nbsp;", "", $data[$ii]['str_text']);
+
+    $data[$ii]['str_text1'] = Display::text_cut(strip_tags($data[$ii]['str_text']), $len_text, "");
+
+
+    $data[$ii]['link'] = 'board/' . $data[$ii]['num_mcode'] . '/' . $data[$ii]['num_serial'];
+    $data[$ii]['dt_date'] = date("Y-m-d", $data[$ii]['dt_date']);
+    $a = explode("-", $data[$ii]['dt_date']);
+
+    $data[$ii]['dt_date1'] = $a[0];
+
+    $data[$ii]['dt_date2'] = $a[1];
+    $data[$ii]['dt_date3'] = $a[2];
+
+
+    // $data[$ii]['is_recent'] = date('U') - strtotime($data[$ii]['dt_date']) < 241920;
+    $data[$ii]['is_recent'] = date('U') - strtotime($data[$ii]['dt_date']) < 241920;
+}
+
+$tpl->assign('LIST_total_gong',$data);
+
+
+unset($data);
+
+
+
 //가로값대비 글씨 짜를 기준을 정함 2009-08-27 종태
 $sql = "select str_width,str_height from TAB_ATTACH_CONFIG where num_oid = "._OID." and STR_LAYOUT='"._LAYOUT_R."' and num_css = '"._CSS."' and str_name='".$mou_name."' ";
 $sizeD = $DB -> sqlFetch($sql);
@@ -115,7 +206,7 @@ if($array_bbs_code[$i]) {
 
 if(!$array_listnum[$i]) $array_listnum[$i] = 5;
 
-if($mou_name !="new_bbs") $sqlp = " and num_mcode = ".$array_bbs_code[$i]."  ";
+if($mou_name !="new_bbs") $sqlp = " and num_mcode = ".$array_bbs_code[$i]."  and num_notice <2 ";
 
 $sql = "
 
@@ -150,7 +241,7 @@ from
 TAB_BOARD
 
 where 
-num_oid = "._OID." $sqlp
+num_oid = "._OID." $sqlp 
 
 
 

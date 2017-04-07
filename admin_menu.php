@@ -200,7 +200,7 @@ $menu[$cate1]['link'] = "/lms.admin.main";
 		$cate3 = 0;
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "캠프 목록 관리";
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.list";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "켐프프로그램 기수를 등록";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프프로그램 기수를 등록";
 
 		$cate3 = 1;
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "캠프 프로그램 관리";
@@ -212,67 +212,99 @@ $menu[$cate1]['link'] = "/lms.admin.main";
 	
 	
 	
-	$cate2 = 1;
-	$menu[$cate1]['submenu'][$cate2]['title'] = "(진로)캠프관리";
-	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%B0%DC%BF%EF%B9%E6%C7%D0&sch_num_ccode=15";
-	$menu[$cate1]['submenu'][$cate2]['tip'] = "캠프 신청현황확인 및 맨토를 관리합니다.";
-		
-		$cate3 = 0;
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "전체보기";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?all=y&sch_num_ccode=15";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "켐프 신청 목록";
-
-		$cate3++;
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "켐프신청 관리";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%B0%DC%BF%EF%B9%E6%C7%D0&sch_num_ccode=15";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "켐프 신청 목록";
-
-		$cate3++;
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "켐프신청 관리(OLD포함)";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list_old?sch_num_ccode=15";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "켐프 신청 목록";
-
-
-		$cate3++;
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "신청 대기자 관리";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?hold=y&sch_num_ccode=15";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 대기자 목록";
-
-		$cate3++;
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "취소/환불 관리";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?cancel=y&sch_num_ccode=15";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 취소 목록";
-
-	
 	$cate2 ++;
-	$menu[$cate1]['submenu'][$cate2]['title'] = "(공학)캠프관리";
-	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%B0%DC%BF%EF%B9%E6%C7%D0&sch_num_ccode=16";
+	$menu[$cate1]['submenu'][$cate2]['title'] = "(전체) 캠프관리";
+	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&";
 	$menu[$cate1]['submenu'][$cate2]['tip'] = "캠프 신청현황확인 및 맨토를 관리합니다.";
 		
 		$cate3 = 0;
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "전체보기";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?all=y&sch_num_ccode=16";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "켐프 신청 목록";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?all=y?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 목록";
+
 
 		$cate3++;
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "켐프신청 관리";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%B0%DC%BF%EF%B9%E6%C7%D0&sch_num_ccode=16";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "켐프 신청 목록";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "신청 대기자 관리";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?hold=y?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 대기자 목록";
+
+		$cate3++;
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "취소/환불 관리";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?cancel=y?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 취소 목록";
+
+	$cate2 ++;
+	$menu[$cate1]['submenu'][$cate2]['title'] = "(진로) 캠프관리";
+	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=17";
+	$menu[$cate1]['submenu'][$cate2]['tip'] = "캠프 신청현황확인 및 맨토를 관리합니다.";
+
+		$cate3 = 0;
+
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "캠프신청 관리";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=17";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 목록";
+
+
+		$cate3++;
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "신청 대기자 관리";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?hold=y&sch_num_ccode=17";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 대기자 목록";
+
+		$cate3++;
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "취소/환불 관리";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?cancel=y&sch_num_ccode=17";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 취소 목록";
+
+
+	$cate2 ++;
+	$menu[$cate1]['submenu'][$cate2]['title'] = "(공학A) 캠프관리";
+	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=18";
+	$menu[$cate1]['submenu'][$cate2]['tip'] = "캠프 신청현황확인 및 맨토를 관리합니다.";
+		
+
+		$cate3=0;
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "캠프신청 관리";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=18";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 목록";
 
 
 
 		$cate3++;
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "신청 대기자 관리";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?hold=y&sch_num_ccode=16";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?hold=y&sch_num_ccode=18";
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 대기자 목록";
 
 		$cate3++;
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "취소/환불 관리";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?cancel=y&sch_num_ccode=16";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?cancel=y&sch_num_ccode=18";
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 취소 목록";
 
 
-		
+		$cate2 ++;
+	$menu[$cate1]['submenu'][$cate2]['title'] = "(공학B) 캠프관리";
+	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=19";
+	$menu[$cate1]['submenu'][$cate2]['tip'] = "캠프 신청현황확인 및 맨토를 관리합니다.";
+
+
+		$cate3=0;
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "캠프신청 관리";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=19";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 목록";
+
+
+
+		$cate3++;
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "신청 대기자 관리";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?hold=y&sch_num_ccode=19";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 대기자 목록";
+
+		$cate3++;
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "취소/환불 관리";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?cancel=y&sch_num_ccode=19";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 취소 목록";
+
+
+
 	$cate2++;
 	$menu[$cate1]['submenu'][$cate2]['title'] = "맨토 관리";
 	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.tach";
