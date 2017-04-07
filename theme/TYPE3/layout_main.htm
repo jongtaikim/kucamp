@@ -152,6 +152,128 @@ wcs_do(_nasa);
 
 {#EASYSCHOOL}
 
+
+
+<script language="JavaScript">
+
+    function setCookie(cname,cvalue,exdays)
+    {
+        var d = new Date();
+        d.setTime(d.getTime()+(exdays*24*60*60*1000));
+        var expires = "expires="+d.toGMTString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
+    }
+
+    function getCookie(cname)
+    {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++)
+        {
+            var c = ca[i].trim();
+            if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+        }
+        return "";
+    }
+
+    function closeWin(flag) {
+        if ( flag == true ) {
+            setCookie( "ncookie", "done" , 1 );
+        }
+        document.getElementById("popup").style.display = "none";
+    }
+
+
+
+    function closeWin2(flag) {
+        if ( flag == true ) {
+            setCookie( "ncookie2", "done" , 1 );
+        }
+        document.getElementById("popup2").style.display = "none";
+    }
+
+
+</script>
+
+<style>
+    #popup {
+        /*display:none;*/
+        position:absolute;
+        width:500px;
+        height:459px;
+        margin-left:10px;
+        margin-top:10px;
+        z-index:100;
+        color:#fff;
+        border:10px solid #cdcdcd;
+    }
+
+    #popup img {
+        position:absolute;
+    }
+
+    #popup2 {
+        /*display:none;*/
+        position:absolute;
+        width:500px;
+        height:459px;
+        margin-left:540px;
+        margin-top:10px;
+        z-index:100;
+        color:#fff;
+        border:10px solid #cdcdcd;
+    }
+
+    #popup2 img {
+        position:absolute;
+    }
+
+    div.popupUI {
+        width:100%;
+        position:absolute;
+        left:0;
+        bottom:0;
+        padding:0;
+        float:left;
+        text-align:right;
+        height:20px;
+        background-color:#1f1f1f;
+        color:#fff;
+    }
+
+    .popupUI a {
+        line-height:20px;
+        color:#eee;
+        margin-right:10px;
+    }
+
+
+
+</style>
+
+<!-- Layer popup Start -->
+<? if($_COOKIE['ncookie'] != 'done' && date("Ymd") < "20170431"){?>
+<div id="popup">
+    <a href="http://www2.kucamp.com/doc.view?mcode=11510&cate=11510"><img src="/popup/www2.jpg" /></a>
+    <div class="popupUI">
+        <a href="#" onclick="closeWin(true);" class="todayCloseDiv">¿À´ÃÇÏ·ç¿­Áö¾Ê±â</a>
+        <a href="#" onclick="closeWin();" class="closeDiv">´Ý±â</a>
+    </div>
+</div>
+<?}?>
+
+<? if($_COOKIE['ncookie2'] != 'done' && date("Ymd") < "20170431"){?>
+<div id="popup2">
+    <a href="http://www1.kucamp.com/doc.view?mcode=1110&cate=1110"><img src="/popup/www1.jpg" /></a>
+    <div class="popupUI">
+        <a href="#" onclick="closeWin2(true);" class="todayCloseDiv">¿À´ÃÇÏ·ç¿­Áö¾Ê±â</a>
+        <a href="#" onclick="closeWin2();" class="closeDiv">´Ý±â</a>
+    </div>
+</div>
+<?}?>
+
+
+
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr>
 	<td height="3" bgcolor="#7c0019"></td>
