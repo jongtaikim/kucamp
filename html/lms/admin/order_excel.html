@@ -19,6 +19,7 @@
 			<th style="text-align:center">집전화</th>
 			<th style="text-align:center">휴대폰</th>
 			<th style="text-align:center">결제정보</th>
+			<th style="text-align:center">입금예정일</th>
 			<th style="text-align:center">현금영수증</th>
 			<th style="text-align:center">추가사항</th>
 			<th style="text-align:center">추가 사항 항목1</th>
@@ -78,7 +79,9 @@
 				{: .str_order_st == "7"}
 				<span style="color:#73758c">대기자 변경(비결제)</span>
 				{/}</td>
-			<td style="text-align:center" >{?.str_money_tax =="y"}{.str_money_number}{:}신청안함{/}</td>
+            <td style="text-align:center" >{? .dt_bank_date }{=date("Y-m-d",.dt_bank_date)}{:}-{/}</td>
+            <td style="text-align:center" >{?.str_money_tax =="y"}{.str_money_number}{:}신청안함{/}</td>
+
 			<td style="text-align:center" >
 				{? .str_etc == 1}고려대 교직원 자녀{/}
 				{? .str_etc == 2}고려대 교우 자녀{/}

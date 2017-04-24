@@ -327,6 +327,8 @@ function selectItem() {
 			<td>
 				{? .str_order_st == "0"}
 				<span style="color:red">입금확인전</span>
+                <br>
+                <span style="color:#428e72">예정:{=date("Y-m-d",.dt_bank_date)}</span>
 				{: .str_order_st == "3"}
 				<span style="color:#52d3ff">입금대기</span>
 				{: .str_order_st == "1"}
