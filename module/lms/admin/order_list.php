@@ -54,6 +54,13 @@ switch ($REQUEST_METHOD) {
 		$add_where .= " and c.str_sw = '".$_GET[ins_num_serial]."' ";
 	}
 
+    if($_GET['ins_order_st'] && !$_GET['sch_str_order_st']){
+		$add_where .= " and a.str_order_st in (".$_GET[ins_order_st].") ";
+	}
+
+       // &str_order_st=0,3,1,5,7,6
+
+
 	  $search_key = $_REQUEST['search_key'];
         $search_value = $_REQUEST['search_value'];
         if($search_key && $search_value) {
@@ -77,6 +84,8 @@ switch ($REQUEST_METHOD) {
 	a.num_ccode = b.num_ccode
 	$psqls   $add_where  ";
 	$total = $DB->sqlFetchOne($sql);
+
+
 
 	if(!$total) $total = 0;
 
