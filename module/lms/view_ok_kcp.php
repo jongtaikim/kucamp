@@ -166,13 +166,16 @@
          }else{
 
              //조기할인
-             if(date("Ymd") <= 20170430){
+             if(date("Ymd") <= 20170512){
                  $datas[str_discount] = 80000;
                  $datas[str_jo] = 'y';
              }
 
          }
 
+         if( $datas['str_etc1']=='종합운동장역'){
+             $datas['str_busbi'] = '결제전';
+         }
 
          if($_SESSION[USERID]=="now17"){
 		//	$sqlV ='y';

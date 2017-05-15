@@ -22,7 +22,10 @@ if($act !="lms.admin.order_list"){
 				}
 
 			}
-		}
+		}else{
+            $psqls = " and str_order_st in (0,3,1,5,7,6) "; //
+
+        }
 	}
 
 }else{
@@ -41,7 +44,10 @@ if(!$_GET[sch_str_order_st]){
 			}
 
 		}
-	}
+	}else{
+        $psqls = " and str_order_st in (0,3,1,5,7,6) "; //
+
+    }
 }
 
 }

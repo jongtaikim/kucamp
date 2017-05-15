@@ -218,8 +218,35 @@ function selectItem() {
 					</div>
 				</td>
 				</tr>
-				
-				
+
+
+                <tr>
+                    <th scope="row" style="text-align:center">입퇴소</th>
+                    <td>
+                        <div class="item">
+                            <select name="sch_str_etc1" onchange="$('sch_from').submit();">
+                                <option value="" {? sch_str_etc1==''}selected{/}>장소선택</option>
+
+                                <option value="종합운동장역" {? sch_str_etc1=='종합운동장역'}selected{/}>종합운동장역</option>
+                                <option value="오송역" {? sch_str_etc1=='오송역'}selected{/}>오송역</option>
+                                <option value="개별입소" {? sch_str_etc1=='개별입소'}selected{/}>개별입소</option>
+
+                            </select>
+                        </div>
+                    </td>
+                    <th scope="row" style="text-align:center">교통비 결제여부</th>
+                    <td>
+                        <div class="item">
+                            <select name="sch_str_busbi" onchange="$('sch_from').submit();">
+                                <option value="" {? sch_str_busbi==''}selected{/}>선택</option>
+
+                                <option value="결제전" {? sch_str_busbi=='결제전'}selected{/}>결제전</option>
+                                <option value="결제완료" {? sch_str_busbi=='결제완료'}selected{/}>결제완료</option>
+
+                            </select>
+                        </div>
+                    </td>
+            </tr>
 
 			
 			</tbody>
@@ -283,9 +310,10 @@ function selectItem() {
 			<th style="text-align:center">신청과정</th>
 			<th style="text-align:center">학생명</th>
 			<th style="text-align:center">학교/학년</th>
-			<th style="text-align:center">참가횟수</th>
+
 			<th style="text-align:center">보호자</th>
 			<th style="text-align:center">연락처</th>
+            <th style="text-align:center">입/퇴소</th>
 			<th style="text-align:center">상태</th>
 			
 		</tr>
@@ -302,7 +330,10 @@ function selectItem() {
 						<span style="color:#9933ff">{.str_ccode_text} 제{.camp.num_serial}기</span>
 					</p>
 					{? substr(.camp.start_date,0,1) == 2}<p>{.camp.start_date}~{.camp.end_date}</p>{/}
+                    <div style="font-size:11px">참가횟수 : 	{(.num_counter) + 0} </div>
 				</a>
+
+
 			</td>
 			<td >
 			{.str_st_name}<br>
@@ -313,9 +344,7 @@ function selectItem() {
 				{.str_school}<br>
 				{.str_class}
 			</td>
-			<td>
-				{(.num_counter) + 0}
-			</td>
+
 			<td>
 				부:{.str_pr_name1}<br>
 				모:{.str_pr_name2}
@@ -324,6 +353,13 @@ function selectItem() {
 			{.str_phone}<br>
 			{.str_handphone}<br>
 			</td>
+            <td style="text-align:center" >
+                {.str_etc1}<br>
+                <div class=""  style="margin-top:5px;{?.str_busbi=='결제전'}color:red{:}color:blue{/}">
+                    {.str_busbi}
+                </div>
+
+            </td>
 			<td>
 				{? .str_order_st == "0"}
 				<span style="color:red">입금확인전</span>

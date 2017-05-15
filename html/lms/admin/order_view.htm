@@ -571,14 +571,31 @@ function scsledk(idx){
 	</td>
 </tr>
 
-<tr id="skskvie1" style="display:none">
-	<th scope="row"></th>
-	<td>
-		<div class="item">
-			<span id="namet_1">교유성명</span> <input type="text" name="str_etc_text1" id="str_etc_text1" value="{str_etc_text1}" class="" style="width:80px">
-			<span id="namet_2">교유성명</span> <input type="text" name="str_etc_text2" id="str_etc_text2" value="{str_etc_text2}" class="" style="width:80px">
-			<span id="namet_3">교유성명</span> <input type="text" name="str_etc_text3" id="str_etc_text3" value="{str_etc_text3}" class="" style="width:80px">
-		</div>
+
+<tr >
+    <th scope="row">기타</th>
+	<td scope="row" >
+
+        <div id="skskvie1" style="display:none">
+            <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" class="tableTemp01 " summary="^!">
+
+            	<tbody>
+            		<tr>
+            			<td><label id="namet_1">교유성명</label></td>
+            			<td><input type="text" name="str_etc_text1" id="str_etc_text1" value="{str_etc_text1}" class="" ></td>
+            		</tr>
+                    <tr>
+            			<td><label id="namet_2">교유성명</label></td>
+            			<td><input type="text" name="str_etc_text2" id="str_etc_text2" value="{str_etc_text2}" class="" ></td>
+            		</tr>
+                    <tr>
+            			<td><label id="namet_3">교유성명</label></td>
+            			<td><input type="text" name="str_etc_text3" id="str_etc_text3" value="{str_etc_text3}" class="" ></td>
+            		</tr>
+            	</tbody>
+            </table>
+
+        </div>
 	</td>
 </tr>
 <script type="text/javascript">
@@ -689,6 +706,22 @@ scsledk({str_etc})
 		</tr>
 		
 {/}
+{? str_etc1=="종합운동장역"}
+<tr>
+    <th scope="row">교통비 결제 상태</th>
+    <td >
+        <select name="str_busbi"  id="str_busbi">
+            <option value="결제전" {? str_busbi == "결제전"} selected{/} style="color:red">결제전</option>
+            <option value="결제완료" {? str_busbi == "결제완료"} selected{/} style="background-color:blue;color:#fff">결제완료</option>
+
+        </select>
+        <input type="hidden" name="order_st_hi" value="{str_order_st}">
+    </td>
+</tr>
+{:}
+
+{/}
+
 </table>
 </div>
 </fieldset> 

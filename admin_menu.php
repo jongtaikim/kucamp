@@ -214,12 +214,12 @@ $menu[$cate1]['link'] = "/lms.admin.main";
 	
 	$cate2 ++;
 	$menu[$cate1]['submenu'][$cate2]['title'] = "(전체) 캠프관리";
-	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&&ins_order_st=0,3,1,5,7,6";
+	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?all=y&ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&";
 	$menu[$cate1]['submenu'][$cate2]['tip'] = "캠프 신청현황확인 및 맨토를 관리합니다.";
 		
 		$cate3 = 0;
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "전체보기";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?all=y&ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&&ins_order_st=0,3,1,5,7,6";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = $menu[$cate1]['submenu'][$cate2]['link'];
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 목록";
 
 
@@ -235,13 +235,13 @@ $menu[$cate1]['link'] = "/lms.admin.main";
 
 	$cate2 ++;
 	$menu[$cate1]['submenu'][$cate2]['title'] = "(진로) 캠프관리";
-	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=17&ins_order_st=0,3,1,5,7,6";
+	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?all=y&ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=17";
 	$menu[$cate1]['submenu'][$cate2]['tip'] = "캠프 신청현황확인 및 맨토를 관리합니다.";
 
 		$cate3 = 0;
 
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "캠프신청 관리";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=17&in_order_st=0,3,1,5,7,6";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = $menu[$cate1]['submenu'][$cate2]['link'];
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 목록";
 
 
@@ -258,13 +258,13 @@ $menu[$cate1]['link'] = "/lms.admin.main";
 
 	$cate2 ++;
 	$menu[$cate1]['submenu'][$cate2]['title'] = "(공학A) 캠프관리";
-	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=18&ins_order_st=0,3,1,5,7,6";
+	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?all=y&ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=18";
 	$menu[$cate1]['submenu'][$cate2]['tip'] = "캠프 신청현황확인 및 맨토를 관리합니다.";
 		
 
 		$cate3=0;
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "캠프신청 관리";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=18&ins_order_st=0,3,1,5,7,6";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = $menu[$cate1]['submenu'][$cate2]['link'];
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 목록";
 
 
@@ -282,13 +282,13 @@ $menu[$cate1]['link'] = "/lms.admin.main";
 
 		$cate2 ++;
 	$menu[$cate1]['submenu'][$cate2]['title'] = "(공학B) 캠프관리";
-	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=19&ins_order_st=0,3,1,5,7,6";
+	$menu[$cate1]['submenu'][$cate2]['link'] = "/lms.admin.order_list?all=y&ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=19";
 	$menu[$cate1]['submenu'][$cate2]['tip'] = "캠프 신청현황확인 및 맨토를 관리합니다.";
 
 
 		$cate3=0;
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['title'] = "캠프신청 관리";
-		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = "/lms.admin.order_list?ins_num_serial=2017%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0&sch_num_ccode=19&ins_order_st=0,3,1,5,7,6";
+		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['link'] = $menu[$cate1]['submenu'][$cate2]['link'];
 		$menu[$cate1]['submenu'][$cate2]['submenu_sub'][$cate3]['tip'] = "캠프 신청 목록";
 
 
