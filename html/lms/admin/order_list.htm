@@ -355,9 +355,11 @@ function selectItem() {
 			</td>
             <td style="text-align:center" >
                 {.str_etc1}<br>
+                {? .str_etc1 =='종합운동장역'}
                 <div class=""  style="margin-top:5px;{?.str_busbi=='결제전'}color:red{:}color:blue{/}">
                     {.str_busbi}
                 </div>
+                {/}
 
             </td>
 			<td>

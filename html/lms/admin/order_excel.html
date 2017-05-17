@@ -108,7 +108,7 @@
 				{? .str_etc == 3}참여기수 : {.str_etc_text3}{/}
 				</td>
 			<td style="text-align:center" >{.str_etc1}</td>
-			<td style="text-align:center" >{.str_busbi}</td>
+			<td style="text-align:center" >{? .str_etc1 =='종합운동장역'}{.str_busbi}{/}</td>
 			<td style="text-align:center" >{.str_memo}</td>
 		</tr>
 		{/}
