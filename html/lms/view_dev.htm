@@ -370,7 +370,7 @@ function scsledk(idx){
 		$('skskvie1').style.display = 'block';
 	}else{
 		$('skskvie1').style.display = 'none';
-		<? if(date("Ymd")<=20170430){ ?>
+		<? if(date("Ymd")<=20170512){ ?>
 		$('sndAmount').value = {num_price-80000};
 		//$('sndAmount2').value = {num_price-80000};
 		$('bank_price_info').innerHTML =  "조기등록 할인 : <del>"+number_format('{num_price}',0)+"원"+"</del>"+" -> "+number_format($('sndAmount').value,0)+"원";
@@ -385,7 +385,7 @@ function scsledk(idx){
 		$('namet_1').innerHTML = '교우성명';
 		$('namet_2').innerHTML = '졸업학과';
 		$('namet_3').innerHTML = '입학학번';
-		<? if(date("Ymd")>20170430){ ?>
+		<? if(date("Ymd")>20170512){ ?>
 		$('sndAmount').value = {num_price} - 50000;
 		//$('sndAmount2').value = {num_price} - 50000;
 
@@ -396,7 +396,7 @@ function scsledk(idx){
 		$('namet_1').innerHTML = '교직원성명';
 		$('namet_2').innerHTML = '근무부서';
 		$('namet_3').innerHTML = '직급';
-		<? if(date("Ymd")>20170430){ ?>
+		<? if(date("Ymd")>20170512){ ?>
 		$('sndAmount').value = {num_price} - 80000;
 		//$('sndAmount2').value = {num_price} - 80000;
 		$('bank_price_info').innerHTML =  number_format($('sndAmount').value,0)+"원";
@@ -407,7 +407,7 @@ function scsledk(idx){
 		$('namet_1').innerHTML = '학생성명';
 		$('namet_2').innerHTML = '참여과정';
 		$('namet_3').innerHTML = '참여기수';
-		<? if(date("Ymd")>20170430){ ?>
+		<? if(date("Ymd")>20170512){ ?>
 		$('sndAmount').value = {num_price} - 80000;
 		//$('sndAmount2').value = {num_price} - 80000;
 		$('bank_price_info').innerHTML = number_format($('sndAmount').value,0)+"원";
@@ -419,7 +419,7 @@ function scsledk(idx){
 		$('namet_3').style.display = 'none';
 		$('str_etc_text3').style.display = 'none';
 
-		<? if(date("Ymd")>20170430){ ?>
+		<? if(date("Ymd")>20170512){ ?>
 		$('sndAmount').value = {num_price-50000};
 		//$('sndAmount2').value = {num_price-50000};
 		$('bank_price_info').innerHTML = number_format($('sndAmount').value,0)+"원";
@@ -1082,8 +1082,87 @@ function set_gogo_mobile(reCommConId,reCommType,reHash){
 <tr>
 	<th scope="row">입금예정일</th>
 	<td>
-		<div class="item" style="padding-top:5px">
-			<wa:datepicker2 name="dt_bank_date" value="{dt_bank_date}"/>
+		<div class="item" style="padding-top:5px;position: relative">
+			<input type="text" name="dt_bank_date" id="dt_bank_date" value="{dt_bank_date}" onkeyup="javascript:date_mask(this.form.name, this.name);" onchange="date_mask(this.form.name, this.name);checkdate(this)" required hname="입금예정일"/>
+
+            <script type="text/javascript">
+                function date_mask(formd, textid) {
+
+                    /*
+                     input onkeyup에서
+                     formd == this.form.name
+                     textid == this.name
+                     */
+
+                    var form = eval("document."+formd);
+                    var text = eval("form."+textid);
+
+                    var textlength = text.value.length;
+
+                    if (textlength == 4) {
+                        text.value = text.value + "-";
+                    } else if (textlength == 7) {
+                        text.value = text.value + "-";
+                    } else if (textlength > 9) { //날짜 수동 입력 Validation 체크
+                        console.log('<?=date("Y-m-d",strtotime('+7 day'))?>');
+                    }
+                }
+
+
+
+                function checkdate(input) {
+
+                    var startDateArr = explode("-",input.value);
+                    var endDateArr = explode("-",'<?=date("Y-m-d",strtotime('+7 day'))?>');
+                    var sDateArr = explode("-",'<?=date("Y-m-d")?>');
+                    var startDateCompare = new Date(startDateArr[0], startDateArr[1], startDateArr[2]);
+                    var endDateCompare = new Date(endDateArr[0], endDateArr[1], endDateArr[2]);
+                    var sDateCompare = new Date(sDateArr[0], sDateArr[1], sDateArr[2]);
+                    if(startDateCompare.getTime() > endDateCompare.getTime()) {
+
+                        alert("입금확인일은 2주이내로 입력해주시기 바랍니다.");
+
+                        input.select();
+                        input.value='<?=date("Y-m-d")?>';
+                        return false;
+                    }
+
+                    if(sDateCompare.getTime() > startDateCompare.getTime()) {
+
+                        alert("입금확인일을 과거로 입력할 수 없습니다.");
+
+                        input.select();
+                        input.value='<?=date("Y-m-d")?>';
+                        return false;
+                    }
+                    var validformat = /^\d{4}\-\d{2}\-\d{2}$/; //Basic check for format validity
+                    var returnval = false;
+                    if (!validformat.test(input.value)) {
+                        alert("날짜 형식이 올바르지 않습니다. YYYY-MM-DD");
+                    } else { //Detailed check for valid date ranges
+                        var yearfield = input.value.split("-")[0];
+                        var monthfield = input.value.split("-")[1];
+                        var dayfield = input.value.split("-")[2];
+                        var dayobj = new Date(yearfield, monthfield - 1, dayfield);
+                    }
+                    if ((dayobj.getMonth() + 1 != monthfield)
+                            || (dayobj.getDate() != dayfield)
+                            || (dayobj.getFullYear() != yearfield)) {
+                        alert("날짜 형식이 올바르지 않습니다. YYYY-MM-DD");
+
+                    } else {
+                        //alert ('Correct date');
+                        returnval = true;
+                    }
+                    if (returnval == false) {
+                        input.select();
+                        input.value='<?=date("Y-m-d")?>';
+                    }
+                    return returnval;
+                }
+
+            </script>
+
 		</div>
 	</td>
 </tr>
@@ -1177,7 +1256,7 @@ function set_gogo_mobile(reCommConId,reCommType,reHash){
 selectPayMos('card');
 //selectPayMos('bank');
 
-<? if(date("Ymd")<=20170430){ ?>
+<? if(date("Ymd")<=20170512){ ?>
 $('sndAmount').value = {num_price-80000};
 //$('sndAmount2').value = {num_price-80000};
 $('discount').value = 80000;
