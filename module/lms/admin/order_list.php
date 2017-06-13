@@ -189,6 +189,33 @@ switch ($REQUEST_METHOD) {
 		WebApp::moveBack('입금확인 처리되었습니다..');
 		
 		 break;
+            
+            case "price_w":
+		
+			
+		for($ii=0; $ii<count($ids); $ii++) {
+			$datas[str_order_st] = 3;
+			$DB->updateQuery("TAB_ORDER",$datas," num_oid = '"._OID."' and str_order_code = '".$ids[$ii]."' ");
+			$DB->commit();
+			
+			$indata[num_oid] = _OID;
+			$indata[num_date] = mktime();
+			$indata[str_code] = $ids[$ii];
+	
+			$indata[str_text] = "입금대기";
+			
+			$indata[str_name] = $_SESSION[NAME];
+			$DB->insertQuery("TAB_ORDER_DATA_LOG",$indata);
+			$DB->commit();
+
+			
+			//unlink(_DOC_ROOT."/hosts/".HOST."/lms/".$types."-".$ids[$ii].".*");
+		}
+			
+			
+		WebApp::moveBack('입금대기 처리되었습니다..');
+		
+		 break;
 		  case "price_out":
 		
 			
