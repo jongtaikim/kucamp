@@ -28,9 +28,11 @@
     <file url="file://$PROJECT_DIR$/module/news/list.php" charset="EUC-KR" />
     <file url="file://$PROJECT_DIR$/module/out_bbs/module.php" charset="EUC-KR" />
     <file url="file://$PROJECT_DIR$/theme/TYPE3/layout_main.htm" charset="EUC-KR" />
+    <file url="file://$PROJECT_DIR$/theme/TYPE3/layout_sub.htm" charset="EUC-KR" />
     <file url="file://$PROJECT_DIR$/theme/TYPE3/qmenu.htm" charset="EUC-KR" />
     <file url="file://$PROJECT_DIR$/theme/TYPE4/banner.htm" charset="EUC-KR" />
     <file url="file://$PROJECT_DIR$/theme/TYPE4/layout_main.htm" charset="EUC-KR" />
+    <file url="file://$PROJECT_DIR$/theme/TYPE4/layout_sub.htm" charset="EUC-KR" />
     <file url="file://$PROJECT_DIR$/theme/TYPE4/qmenu.htm" charset="EUC-KR" />
   </component>
 </project>
