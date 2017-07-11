@@ -20,7 +20,15 @@ foreach( $_REQUEST as $val => $value )
 
 
 	if(strstr($val,"sch_")){
-		if($value !="") $add_where .=  " and ".str_replace("sch_","a.",$val)." = '$value' ";
+		if($value !="") {
+            if($val == 'sch_str_order_st' && $value=="all"){
+                $add_where .= " and str_order_st in (0,3,1,5,2,8,7,6) "; //
+            }else {
+                $add_where .= " and " . str_replace("sch_", "a.", $val) . " = '$value' ";
+            }
+        }
+        
+        
 	}
 
 	if(strstr($val,"like_")){
@@ -58,6 +66,8 @@ switch ($REQUEST_METHOD) {
        // &str_order_st=0,3,1,5,7,6
 
 
+
+
 	  $search_key = $_REQUEST['search_key'];
         $search_value = $_REQUEST['search_value'];
         if($search_key && $search_value) {
@@ -81,6 +91,7 @@ switch ($REQUEST_METHOD) {
 	a.num_ccode = b.num_ccode
 	$psqls   $add_where  ";
 	$total = $DB->sqlFetchOne($sql);
+
 
 
 	if(!$total) $total = 0;

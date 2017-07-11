@@ -204,6 +204,7 @@ function selectItem() {
 						
 						<select name="sch_str_order_st" id="sch_str_order_st"  onchange="$('sch_from').submit();">
 							<option value="">-- 상태선택 -- </option>
+							<option value="all" {? sch_str_order_st == "all"} selected{/} >-전체-</option>
 							<option value="0" {? sch_str_order_st == "0"} selected{/}  style="color:red">입금확인전</option>
 							<option value="3" {? sch_str_order_st == "3"} selected{/}  style="color:red">입금대기</option>
 							<option value="1" {? sch_str_order_st == "1"} selected{/}  style="color:blue">입금확인</option>
@@ -336,7 +337,8 @@ function selectItem() {
 
 			</td>
 			<td >
-			{.str_st_name}<br>
+
+			 {.str_st_name} ({? .str_sex==1}남{:}여{/})<br>
 			
 			
 			</td>
