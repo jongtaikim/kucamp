@@ -719,6 +719,7 @@ scsledk({str_etc})
         <select name="str_busbi"  id="str_busbi">
             <option value="결제전" {? str_busbi == "결제전"} selected{/} style="color:red">결제전</option>
             <option value="결제완료" {? str_busbi == "결제완료"} selected{/} style="background-color:blue;color:#fff">결제완료</option>
+            <option value="취소환불" {? str_busbi == "취소환불"} selected{/} style=";color:#cdcdcd">취소환불</option>
 
         </select>
         <input type="hidden" name="order_st_hi" value="{str_order_st}">
