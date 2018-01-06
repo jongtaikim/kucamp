@@ -39,7 +39,13 @@
       <tr>
         <td  width="636" height="76" valign="top" style="position:relative;">
 
-			 <embed src="./menu.swf" quality="high" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" wmode="transparent" width="667" height="75"></embed>
+            <div class="" style="border-top:1px solid #747474; border-bottom:3px solid #8b0029 ;padding:6px;margin-left:30px;margin-top:-3px;padding-top:10px;padding-bottom:10px ">
+
+                {@ MENU_DATA}
+
+                <a href="{.str_link}" style="padding:5px;font-size:14px;{? substr(_GET.cate,0,3) == .num_cate}color:#cd0a0a{/}"><strong>{.str_title}</strong></a>
+                {/}
+            </div>
 
 		<!--a href="/doc.view?mcode=1512&amp;cate=1512"-->
         <!--img src="./images/naver_cafe.gif" alt="네이버카페" border="0" class="ncktpaTicketBtn" style="border:0; position:absolute; left:69%; top:9px; z-index:200;" /--></td>

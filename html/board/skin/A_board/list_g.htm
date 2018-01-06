@@ -88,13 +88,14 @@
 						<div class="gallBodyLine">	&nbsp;</div>
 						<div class="layout">
 							<!--ÀÏ¹Ý±Û-->
+
 							{@ LIST}
 							
 								{? .num_notice == 0}
 								<div class="gallBody">
 										
 										<div class="item">		
-											<div class="imageLine">
+											<div class="imageLine" style="padding:0px;overflow: hidden;text-align:center">
 
 											{? .num_input_pass }
 												{?_SESSION.ADMIN || _SESSION.ADMIN_sub}
@@ -106,7 +107,7 @@
 											<a href="/board.read?mcode={.num_mcode}&id={.num_serial}" >
 											 {/}
 											
-											<img src="{.thumb_url}"   width="{?.img_w}{.img_w}{:}100px{/}" height = "{?.img_h}{.img_h}{:}75{/}" class="image" alt="{.title}"/></a>
+											<img src="{.thumb_url}"   style="width:143px" class="image" alt="{.title}"/></a>
 											
 											</div>
 											<br>

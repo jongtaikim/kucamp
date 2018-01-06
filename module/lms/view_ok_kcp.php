@@ -166,8 +166,8 @@
          }else{
 
              //조기할인
-             if(date("Ymd") <= 20170512){
-                 $datas[str_discount] = 80000;
+             if(date("Ymd") <= 20171029){
+                 $datas[str_discount] = 50000;
                  $datas[str_jo] = 'y';
              }
 

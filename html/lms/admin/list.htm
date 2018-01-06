@@ -134,29 +134,34 @@ function deleteItem() {
 	</thead>
 	<tbody>
 		{@ LIST}
+
 		<tr >
 			<td style="text-align:center"><input type="checkbox" name="ids[]" value="{.num_serial}"></td>
 			<!--td><a href="/lms.admin.add?serial={.num_serial}"><img src="/hosts/<?=HOST?>/lms/{.str_file}_100" width="60px" onerror="this.src='/image/noimage.gif'"  style="border:1px solid #cdcdcd"/></a></td-->
 			
-			<td>Á¦{.num_serial}±â</td>
-			<td>{.str_sw}</td>
+			<td style=" {? .str_view != "y"}color:#cdcdcd{/}">Á¦{.num_serial}±â</td>
+			<td style=" {? .str_view != "y"}color:#cdcdcd{/}">{.str_sw}</td>
 
 			<td style="text-align:left">
 				<a href="/lms.admin.add?ccode={.num_ccode}&serial={.num_serial}">
 					<p>
+                        {? .str_view == "y"}
 						<span style="color:#9933ff">{.str_ccode_text} Á¦{.num_serial}±â</span>
+                        {:}
+                        <span style="color:#cdcdcd">{.str_ccode_text} Á¦{.num_serial}±â</span>
+                        {/}
 					</p>
-					<p>{.start_date}~{.end_date}</p>
+					<p style=" {? .str_view != "y"}color:#cdcdcd{/}">{.start_date}~{.end_date}</p>
 					
 				</a>
 		 
 			</td>
-			<td>{.str_camp_area}</td>
+			<td style=" {? .str_view != "y"}color:#cdcdcd{/}">{.str_camp_area}</td>
 			
-			<td>{.str_target}</td>
-			<td>{=number_format(.num_price)}¿ø</td>
+			<td style=" {? .str_view != "y"}color:#cdcdcd{/}">{.str_target}</td>
+			<td style=" {? .str_view != "y"}color:#cdcdcd{/}">{=number_format(.num_price)}¿ø</td>
 			<td>
-				{? .str_view == "y"}Ç¥Ãâ{:}¼û±è{/}
+				{? .str_view == "y"}<span style="color:#0033ff">Ç¥Ãâ</span>{:}<span style="color:#cdcdcd">¼û±è</span>{/}
 			
 			</td>
 			<td>

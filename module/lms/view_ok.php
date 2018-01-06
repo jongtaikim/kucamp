@@ -113,19 +113,27 @@
 
 		if(date("Ymd") >= 20121101){
 			if($str_etc < 6){
-				if($str_etc == 1) $datas[str_discount] = 80000;
+				if($str_etc == 1) $datas[str_discount] = 50000;
 				if($str_etc == 2) $datas[str_discount] = 50000;
 				
-				if($str_etc == 3) $datas[str_discount] = 80000;
+				if($str_etc == 3) $datas[str_discount] = 50000;
 				if($str_etc == 5) $datas[str_discount] = 50000;
 			}
 		}
-		
-		//조기할인
-		if(date("Ymd") <= 20170512){
-			 $datas[str_discount] = 80000;
-			 $datas[str_jo] = 'y';
-		}
+
+         //조기할인
+         if($_POST[discount]>0){
+             $datas[str_discount] = $_POST[discount];
+             $datas[str_jo] = 'y';
+         }else{
+
+             //조기할인
+             if(date("Ymd") <= 20171029){
+                 $datas[str_discount] = 50000;
+                 $datas[str_jo] = 'y';
+             }
+
+         }
 		
 		//$sqlV ='y';
 
@@ -306,20 +314,29 @@
 
 		if(date("Ymd") >= 20121101){
 			if($str_etc < 6){
-				if($str_etc == 1) $datas[str_discount] = 80000;
+				if($str_etc == 1) $datas[str_discount] = 50000;
 				if($str_etc == 2) $datas[str_discount] = 50000;
 				
-				if($str_etc == 3) $datas[str_discount] = 80000;
+				if($str_etc == 3) $datas[str_discount] = 50000;
 				if($str_etc == 5) $datas[str_discount] = 50000;
 			}
 		}
-		
-		//조기할인
-		if(date("Ymd") <= 20170512){
-			 $datas[str_discount] = 80000;
-			 $datas[str_jo] = 'y';
-		}
-		
+
+
+         //조기할인
+         if($_POST[discount]>0){
+             $datas[str_discount] = $_POST[discount];
+             $datas[str_jo] = 'y';
+         }else{
+
+             //조기할인
+             if(date("Ymd") <= 20171029){
+                 $datas[str_discount] = 50000;
+                 $datas[str_jo] = 'y';
+             }
+
+         }
+
 		//$sqlV ='y';
 
          if( $datas['str_etc1']=='종합운동장역'){

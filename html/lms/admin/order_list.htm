@@ -235,7 +235,7 @@ function selectItem() {
                             </select>
                         </div>
                     </td>
-                    <th scope="row" style="text-align:center">교통비 결제여부</th>
+                    <!--<th scope="row" style="text-align:center">교통비 결제여부</th>
                     <td>
                         <div class="item">
                             <select name="sch_str_busbi" onchange="$('sch_from').submit();">
@@ -247,7 +247,7 @@ function selectItem() {
 
                             </select>
                         </div>
-                    </td>
+                    </td>-->
             </tr>
 
 			
@@ -357,11 +357,11 @@ function selectItem() {
 			{.str_handphone}<br>
 			</td>
             <td style="text-align:center" >
-                {.str_etc1}<br>
+                {.str_etc1}
                 {? .str_etc1 =='종합운동장역'}
-                <div class=""  style="margin-top:5px;{?.str_busbi=='결제전'}color:red{:}color:blue{/}">
+                <!--<div class=""  style="margin-top:5px;{?.str_busbi=='결제전'}color:red{:.str_busbi=='취소환불'}color:#808080{:}color:blue{/}">
                     {.str_busbi}
-                </div>
+                </div>-->
                 {/}
 
             </td>

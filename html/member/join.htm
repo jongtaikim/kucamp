@@ -451,7 +451,7 @@ function selectValues(){
 		<div class="item">
 		<input class="i_text" name="email1" id="email1" hname="{=_la('이메일')}" type="text"  maxbyte="50" style="width:100px"  required >@<input name="email2" id="email2" hname="이메일" type="text"  maxbyte="50" required />
 										
-										<select name="emailSelect1" onchange = "emailSelect(this.value)">
+										<!--<select name="emailSelect1" onchange = "emailSelect(this.value)">
 											<option value="">Email 주소 선택</option>
 											<option value="">직접입력</option>
 											<option value="gmail.com">구글(G메일)</option>
@@ -463,7 +463,7 @@ function selectValues(){
 											<option value="paran.com">파란</option>
 											<option value="hanmail.net">한메일</option>
 										</select>
-		
+		-->
 		
 		<a href="#none" onclick="cchk();"><img src="images/join/cloneBtn.gif" alt="{=_la('이메일 중복확인, 팝업창으로 뜹니다')}" /></a>
 
@@ -580,17 +580,19 @@ function selectValues(){
 		 <select name="str_plus1" required onchange="selectTmp1(this.value)" hname="가입경로">
 			<option value="">선택하여 주세요.</option>
 			<option value="인터넷검색">인터넷검색</option>
-			<option value="신문(기사,광고)">신문(기사,광고)</option>
+
+			<option value="페이스북광고">페이스북광고</option>
 			<option value="카페">카페</option>
 			<option value="블로그">블로그</option>
+             <option value="신문(기사,광고)">신문(기사,광고)</option>
 			<option value="주변사람의 소개">주변사람의 소개</option>
-		
+
 			<option value="SMS문자">SMS문자</option>
 			<option value="기타">기타</option>
 		 </select>
 		</div>  
 		<div class="item" id="etc_text" style="display:none;margin-top:10px">  
-		<span id="tmp_title"></span><input class="i_text"  type="text" name="str_plus2" hname="참가동기" required="false" maxbyte="50" value="{str_plus2}" value=""> 
+		<span id="tmp_title"></span><input class="i_text"  type="text" name="str_plus2" hname="참가동기"  maxbyte="50" value="{str_plus2}" value="">
 		</div>  
 	</td>  
 </tr>  
@@ -620,4 +622,6 @@ function selectValues(){
 
 </form>
 <br><br>
+
+
 

@@ -118,10 +118,10 @@ switch ($REQUEST_METHOD) {
 	if(date("Ymd") >= 20131112){
 		if($str_etc < 6){
 				
-				if($str_etc == 1) $datas[str_discount] = 80000;
+				if($str_etc == 1) $datas[str_discount] = 50000;
 				if($str_etc == 2) $datas[str_discount] = 50000;
 				
-				if($str_etc == 3) $datas[str_discount] = 80000;
+				if($str_etc == 3) $datas[str_discount] = 50000;
 				if($str_etc == 5) $datas[str_discount] = 50000;
 		}
 	}
@@ -133,8 +133,8 @@ switch ($REQUEST_METHOD) {
 	}else{
 	
 			//조기할인
-		if(date("Ymd") <= 20170512){
-			 $datas[str_discount] = 80000;
+		if(date("Ymd") <= 20171029){
+			 $datas[str_discount] = 50000;
 			 $datas[str_jo] = 'y';
 		}
 

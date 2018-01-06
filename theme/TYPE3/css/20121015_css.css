@@ -1,11 +1,4 @@
 /*basic */
-body, td, input, textarea { font-size:12px; color:#707070 ; FONT-FAMILY: "µ¸¿ò, Arial, AppleGothic"; 
-	 scrollbar-face-color: #f1f1f1; 
-	 scrollbar-shadow-color: #deeeee; 
-	 scrollbar-highlight-color: #fff; 
-	 scrollbar-3dlight-color: #f0f0f0; 
-	 scrollbar-darkshadow-color: #f7f7f7; 
-	 scrollbar-track-color: #f7f7f7; 
-	 scrollbar-arrow-color: #aeaeae;};
+body, td, input, textarea { font-size:12px; color:#707070 ;};
 
-td {font-size : 12px ; color : #707070 ; line-height : 180%; FONT-FAMILY: "µ¸¿ò, arial, AppleGothic"; }
+td {font-size : 12px ; color : #707070 ; line-height : 180%; }

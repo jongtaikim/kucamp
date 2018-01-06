@@ -46,7 +46,7 @@ switch ($REQUEST_METHOD) {
 	
 	//echo $add_where;
 	
-	$sql = "select str_sw , count(*) as cu from TAB_CAMP where num_oid = '$_OID' group by str_sw ";
+	$sql = "select str_sw , count(*) as cu from TAB_CAMP where num_oid = '$_OID' group by str_sw order by str_sw asc";
 	$row = $DB -> sqlFetchAll($sql);
 	$tpl->assign(array('camp_LIST'=>$row));
 
@@ -57,6 +57,7 @@ switch ($REQUEST_METHOD) {
 	if($ccode){
 		$where .= " and a.num_ccode = '".$ccode."' ";
 	}
+
 	
 	if($_GET[ins_num_serial]){
 		$add_where .= " and c.str_sw = '".$_GET[ins_num_serial]."' ";

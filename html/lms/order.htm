@@ -129,8 +129,8 @@
 			
 			<td  style="text-align:center"><p>{.str_target}</p></td>
 			<td style="color:#000;text-align:center"><p>
-			<? if(date("Ymd")<=20170430){ ?>
-				{=number_format(.num_price-80000)}원
+			<? if(date("Ymd")<=20171029){ ?>
+				{=number_format(.num_price-50000)}원
 			<? }else{ ?>
 				{=number_format(.num_price)}원
 			<? } ?>
@@ -139,7 +139,7 @@
 				<p>{? .num_st == "1"}<span style="color:#0033ff">
 				
 				
-					<? if(date("Ymd")<=20170430){ ?>조기 <?}?>
+					<? if(date("Ymd")<=20171029){ ?>조기 <?}?>
 					접수중</span>
 				
 				{/}
