@@ -25,7 +25,7 @@ switch($REQUEST_METHOD) {
 		
         $mtypes =  array(
 		
-		'g' => '학부모',
+		'g' => '일반',
 	
 		's' => '학생',
 		

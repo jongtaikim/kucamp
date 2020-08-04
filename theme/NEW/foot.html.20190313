@@ -1,0 +1,309 @@
+{? _GET.m}
+<!--Footer-->
+<footer id="landing-footer" class="clearfix" style="border-top:2px solid rgba(113,0,26,0.74);background-color: #fff">
+    <div class="row clearfix">
+
+        <p id="copyright" class="col-2">
+            <strong style="color:#000">고려대학교 KU캠프</strong>
+            136-701 서울시 성북구 안암로 145 고려대학교 자연계캠퍼스 미래기술육성센터 307호 <br> 대표전화 : 1599-3290 . FAX 02-3291-3295
+            <br>사업자등록번호 : 209-81-54456 | 통신판매 신고 : 제2011-서울성북-00890호 | 대표자 : 박선옥
+        </p>
+
+
+
+        <!--End of Social Icons in Footer-->
+    </div>
+</footer>
+
+{/}
+<!--End of Footer-->
+
+
+<div class="hide" id="login_form">
+    <div class="box r white ">
+        <div class="box-body padding">
+
+            <div class="text-center m-b20">
+                <img src="/theme/NEW/assets/logo.png" alt="" />
+            </div>
+
+            <div class="text-muted m-b20">
+                아이디와 비밀번호를 입력하세요.
+            </div>
+
+            <form name="form" action="member.login" method="post">
+
+                <input type="hidden" name="oid" value="<?=_OID?>"/>
+                <input type="hidden" name="new_login" value="y"/>
+                <input type="hidden" name="r_url" value="<?=$_SERVER[HTTP_HOST]?>"/>
+                <input type="hidden" name="re_url" value="<?=$_SERVER[HTTP_HOST]?>/?m=order"/>
+                <input type="hidden" name="redir" value=""/>
+                <input type="hidden" name="ssid" name="ssid2" value="<?=$_REQUEST[PHPSESSID]?>"/>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="userid" placeholder="아이디" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="passwd" class="form-control" placeholder="비밀번호" required="">
+                </div>
+
+
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-lg black p-x-lg m-t20">로그인</button>
+                </div>
+
+                <div class="text-left m-t30 ft12">
+                    <div class="">아직 회원이 아니신가요? <a href="/?m=signup">회원가입</a></div>
+                    <div class="m-t10">아이디/비밀번호를 잊으셨나요? <a href="/?m=findid">아이디/비밀번호 찾기</a></div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Include JavaScript resources -->
+<!--<script src="./js/jquery.1.8.3.min.js"></script>-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script>
+<script src="./js/wow.min.js"></script>
+<script src="./js/featherlight.min.js"></script>
+<script src="./js/featherlight.gallery.min.js"></script>
+<script src="./js/jquery.enllax.min.js"></script>
+<script src="./js/jquery.scrollUp.min.js"></script>
+<script src="./js/jquery.easing.min.js"></script>
+<!--<script src="js/jquery.stickyNavbar.min.js"></script>-->
+<script src="./js/jquery.waypoints.min.js"></script>
+<script src="./js/images-loaded.min.js"></script>
+<script src="./js/lightbox.min.js"></script>
+<script src="./js/jquery.flexslider-min.js"></script>
+<script src="./js/site.js"></script>
+<script src="./js/bootstrap.js"></script>
+<script src="./js/jquery.cookie.js"></script>
+<script src="./js/bootbox.js?v={=time()}"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        $('.autoheight').height($(window).height()-$('#landing-footer').height()-$('#header').height());
+    });
+    $(window).resize(function(){
+
+        $('.autoheight').height($(window).height()-$('#landing-footer').height()-$('#header').height());
+    });
+
+
+
+    function login_pop() {
+
+        bootbox.alert({
+            title:'로그인',
+            message: $('#login_form').html(),
+
+        });
+
+        $('.modal-footer').hide();
+    }
+
+    function yak_view(mode,title) {
+        //new.kucamp.com/admin.pra_view?mode=user
+        bootbox.alert({
+            title:title,
+            message: '<iframe src ="/admin.pra_view?mode='+mode+'" frameborder="0" width="100%" height="600px" name="" scrolling="yes"></iframe>'
+
+
+        });
+
+    }
+
+    function bootbox_ifr(url,title) {
+        if($(window).width()>900) {
+            var window_h = $(window).height() - 220;
+            var window_w = $(window).width() - 300;
+        }else{
+            var window_h = $(window).height()-180;
+            var window_w = $(window).width()-20;
+        }
+        bootbox.alert({
+            title:title,
+            message: '<iframe src ="'+url+'" frameborder="0" width="100%" height="'+window_h+'px" style="min-width:880px" name="" scrolling="yes"></iframe>'
+
+
+        });
+        $('.modal-dialog').width(window_w).css('max-width','920px');
+        $('.modal-footer').remove();
+
+    }
+
+    $(document).ready(function(){
+
+        $(".phone-number-check").on('keydown', function(e){
+            // 숫자만 입력받기
+            var trans_num = $(this).val().replace(/-/gi,'');
+            var k = e.keyCode;
+
+            if(trans_num.length >= 11 && ((k >= 48 && k <=126) || (k >= 12592 && k <= 12687 || k==32 || k==229 || (k>=45032 && k<=55203)) ))
+            {
+                e.preventDefault();
+            }
+        }).on('blur', function(){ // 포커스를 잃었을때 실행합니다.
+            if($(this).val() == '') return;
+
+            // 기존 번호에서 - 를 삭제합니다.
+            var trans_num = $(this).val().replace(/-/gi,'');
+
+            // 입력값이 있을때만 실행합니다.
+            if(trans_num != null && trans_num != '')
+            {
+                // 총 핸드폰 자리수는 11글자이거나, 10자여야 합니다.
+                if(trans_num.length==11 || trans_num.length==10)
+                {
+                    // 유효성 체크
+                    var regExp_ctn = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})([0-9]{3,4})([0-9]{4})$/;
+                    if(regExp_ctn.test(trans_num))
+                    {
+                        // 유효성 체크에 성공하면 하이픈을 넣고 값을 바꿔줍니다.
+                        trans_num = trans_num.replace(/^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?([0-9]{3,4})-?([0-9]{4})$/, "$1-$2-$3");
+                        $(this).val(trans_num);
+                    }
+                    else
+                    {
+                        alert("유효하지 않은 전화번호 입니다.");
+                        $(this).val("");
+                        $(this).focus();
+                    }
+                }
+                else
+                {
+                    alert("유효하지 않은 전화번호 입니다.");
+                    $(this).val("");
+                    $(this).focus();
+                }
+            }
+        });
+
+    });
+
+    function st_open(codes) {
+        {? !_SESSION.USERID}
+            login_pop();
+        {:}
+            if($(window).width()>900) {
+                var window_h = $(window).height() - 220;
+                var window_w = $(window).width() - 300;
+            }else{
+                var window_h = $(window).height()-180;
+                var window_w = $(window).width()-20;
+            }
+
+            var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
+
+
+            if (varUA.match('android') != null) {
+                //안드로이드 일때 처리
+                window.open('/lms.order?mcode=1211&cate=1211&ccode='+codes);
+            } else if (varUA.indexOf("iphone")>-1||varUA.indexOf("ipad")>-1||varUA.indexOf("ipod")>-1) {
+                //IOS 일때 처리
+
+                window.open('/lms.order?mcode=1211&cate=1211&ccode='+codes);
+            } else {
+
+                bootbox.alert({
+                    title:'신청하기',
+                    message: '<iframe src ="/lms.order?mcode=1211&cate=1211&ccode='+codes+'" frameborder="0" width="100%" height="'+window_h+'" name="" scrolling="yes"></iframe>',
+
+                });
+                $('.modal-dialog').width(window_w).css('max-width','920px');
+                $('.modal-footer').remove();
+            }
+
+
+
+
+        {/}
+    }
+
+        function mp_open(codes) {
+            {? !_SESSION.USERID}
+            login_pop();
+            {:}
+            if($(window).width()>900) {
+                var window_h = $(window).height() - 220;
+                var window_w = $(window).width() - 300;
+            }else{
+                var window_h = $(window).height()-180;
+                var window_w = $(window).width()-20;
+            }
+
+            bootbox.alert({
+                title:'신청하기',
+                message: '<iframe src ="/member.mypage" frameborder="0" width="100%" height="'+window_h+'" name="" scrolling="yes"></iframe>',
+
+            });
+            $('.modal-dialog').width(window_w).css('max-width','920px');
+            $('.modal-footer').remove();
+            {/}
+            }
+
+
+            function mypage_open(codes) {
+
+                if($(window).width()>900) {
+                    var window_h = $(window).height() - 220;
+                    var window_w = $(window).width() - 300;
+                }else{
+                    var window_h = $(window).height()-180;
+                    var window_w = $(window).width()-20;
+                }
+
+                bootbox.alert({
+                    title:'회원정보수정',
+                    message: '<iframe src ="/member.modify" frameborder="0" width="100%" height="'+window_h+'" name="" scrolling="yes"></iframe>',
+
+                });
+                $('.modal-dialog').width(window_w).css('max-width','920px');
+                $('.modal-footer').remove();
+
+                }
+
+            function in_animated_text(texta) {
+                var texta_ = texta;
+                var text_arr = texta_.split("");
+                var re_text='';
+                for(i=0; i<text_arr.length; i++) {
+                    re_text += '<span class="animated-letter wave" >'+text_arr[i]+'</span>';
+                }
+                return re_text;
+            }
+
+
+            $('.ani_texts').each(function () {
+                $(this).html(in_animated_text($(this).text()));
+            });
+
+</script>
+
+
+<!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 -->
+<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"> </script>
+<script type="text/javascript">
+    if (!wcs_add) var wcs_add={};
+    wcs_add["wa"] = "s_30543923423b";
+    if (!_nasa) var _nasa={};
+    wcs.inflow("kucamp.com");
+    wcs_do(_nasa);
+</script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-78129655-1', 'auto');
+    ga('send', 'pageview');
+
+</script>

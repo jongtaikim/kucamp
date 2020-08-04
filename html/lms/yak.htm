@@ -1,22 +1,3 @@
-<link rel="stylesheet" type="text/css" href="/css/doc_style.css">
-<div class="progress" style="margin-bottom:30px">
-<strong class="tit">현위치</strong> 
-	<ol>
-		<li >
-			<span>캠프목록</span>
-		</li>
-		
-		<li class="on">
-			<span>참가신청 약관 동의</span>
-		</li>
-		<li>
-			<span>신청서 작성</span>
-		</li>
-		<li>
-			<span>신청완료</span>
-		</li>
-	</ol>
-</div>
 
 <!--
 <p class="buTitle02">참가신청 약관동의 안내</p>
@@ -230,21 +211,31 @@
 <?}?>
 
 </div>
-<p style="color:#000;"><input type="checkbox" name="ysks" id="ysks" value="y"><strong>위 <span style="color:red">약관</span> 및 <span style="color:red">환불규정</span>을 모두 숙지하고 동의하십니까?</strong></p> 
+<p style="color:#000;"><input type="checkbox" name="ysks" id="ysks" value="y" style="height:14px"><strong>위 <span style="color:red">약관</span> 및 <span style="color:red">환불규정</span>을 모두 숙지하고 동의하십니까?</strong></p>
 <div style="text-align:center;padding:10px;line-height:200%;margin-top:20px">
 	
 	
-	<span class="btn_pack medium"><a href="javascript:sksk();">계속신청하기</a></span>
+	<a href="javascript:sksk();" class="btn  info">계속신청하기</a>
 </div>
 
 <script type="text/javascript">
 // <![CDATA[
+
+function $$(ids) {
+    return document.getElementById(ids);
+}
 function sksk(){
-	if($("ysks").checked != true){
-		alert('약관 및 환불 규정에 동의하여주시기 바랍니다.');
+	if($("#ysks").is(':checked')){
+        location.href='/lms.view?mcode={mcode}&cate={cate}&ccode={ccode}&serial={serial}&hold={_GET.hold}';
 	}else{
-		location.href='/lms.view?mcode={mcode}&cate={cate}&ccode={ccode}&serial={serial}&hold={_GET.hold}';
+        alert('약관 및 환불 규정에 동의하여주시기 바랍니다.');
+
 	}
 }
+
+
+
 // ]]>
+
+
 </script>

@@ -1,0 +1,338 @@
+;<?php die(')'); /* WebApp Configuration File : DO NOT EDIT MANUALY */?>
+
+[top_menu]
+name = "top_menu"
+title = "TOP메뉴"
+file = "array('main'=>'attach/attach.top_menu.htm','sub'=>'attach/attach.top_menu.htm','sub2'=>'attach/attach.top_menu.htm','sub3'=>'attach/attach.top_menu.htm','sub4'=>'attach/attach.top_menu.htm','sub5'=>'attach/attach.top_menu.htm','sub6'=>'attach/attach.top_menu.htm','sub7'=>'attach/attach.top_menu.htm','sub8'=>'attach/attach.top_menu.htm','sub9'=>'attach/attach.top_menu.htm','sub10'=>'attach/attach.top_menu.htm')"
+avail_width = "650"
+avail_height = 30
+avail_layer = "NONE"
+removable = 1
+
+[copyright]
+name = "copyright"
+title = "사이트하단"
+file = "array('main'=>'attach/attach.copyright.htm','sub'=>'attach/attach.copyright.htm','sub2'=>'attach/attach.copyright.htm','sub3'=>'attach/attach.copyright.htm','sub4'=>'attach/attach.copyright.htm','sub5'=>'attach/attach.copyright.htm','sub6'=>'attach/attach.copyright.htm','sub7'=>'attach/attach.copyright.htm','sub8'=>'attach/attach.copyright.htm','sub9'=>'attach/attach.copyright.htm','sub10'=>'attach/attach.copyright.htm')"
+avail_width = "650"
+avail_height = 80
+avail_layer = "NONE"
+removable = 1
+
+[logo]
+name = "logo"
+title = "로고"
+file = "array('main'=>'attach/attach.logo.htm','sub'=>'attach/attach.logo.htm','sub2'=>'attach/attach.logo.htm','sub3'=>'attach/attach.logo.htm','sub4'=>'attach/attach.logo.htm','sub5'=>'attach/attach.logo.htm','sub6'=>'attach/attach.logo.htm','sub7'=>'attach/attach.logo.htm','sub8'=>'attach/attach.logo.htm','sub9'=>'attach/attach.logo.htm','sub10'=>'attach/attach.logo.htm')"
+avail_width = "140"
+avail_height = 30
+avail_layer = "NONE"
+removable = 1
+
+[sub_content]
+name = "sub_content"
+title = "서브페이지"
+file = "array('sub'=>'attach/attach.sub_content.htm','sub2'=>'attach/attach.sub_content.htm','sub3'=>'attach/attach.sub_content.htm','sub4'=>'attach/attach.sub_content.htm','sub5'=>'attach/attach.sub_content.htm','sub6'=>'attach/attach.sub_content.htm','sub7'=>'attach/attach.sub_content.htm','sub8'=>'attach/attach.sub_content.htm','sub9'=>'attach/attach.sub_content.htm','sub10'=>'attach/attach.sub_content.htm')"
+avail_width = "650"
+avail_height = 300
+avail_layer = "NONE"
+removable = 1
+
+[main_title]
+name = "main_title"
+title = "메인타이틀"
+file = "array('main'=>'attach/attach.main_title.htm','sub'=>'attach/attach.main_title.htm','sub2'=>'attach/attach.main_title.htm','sub3'=>'attach/attach.main_title.htm','sub4'=>'attach/attach.main_title.htm','sub5'=>'attach/attach.main_title.htm','sub6'=>'attach/attach.main_title.htm','sub7'=>'attach/attach.main_title.htm','sub8'=>'attach/attach.main_title.htm','sub9'=>'attach/attach.main_title.htm','sub10'=>'attach/attach.main_title.htm')"
+avail_width = "338"
+avail_height = 80
+avail_layer = "NONE"
+removable = 1
+
+[login]
+name = "login"
+title = "로그인"
+file = "array('main'=>'attach/attach.login.htm','sub'=>'attach/attach.login.htm','sub2'=>'attach/attach.login.htm','sub3'=>'attach/attach.login.htm','sub4'=>'attach/attach.login.htm','sub5'=>'attach/attach.login.htm','sub6'=>'attach/attach.login.htm','sub7'=>'attach/attach.login.htm','sub8'=>'attach/attach.login.htm','sub9'=>'attach/attach.login.htm','sub10'=>'attach/attach.login.htm')"
+avail_width = "140"
+avail_height = 80
+avail_layer = "NONE"
+removable = 1
+
+[latestboard]
+name = "latestboard"
+title = "새로운게시물"
+modules = latestboard
+file = "array('main'=>'attach/attach.latestboard.htm','sub'=>'attach/attach.latestboard.htm','sub2'=>'attach/attach.latestboard.htm','sub3'=>'attach/attach.latestboard.htm','sub4'=>'attach/attach.latestboard.htm','sub5'=>'attach/attach.latestboard.htm','sub6'=>'attach/attach.latestboard.htm','sub7'=>'attach/attach.latestboard.htm','sub8'=>'attach/attach.latestboard.htm','sub9'=>'attach/attach.latestboard.htm','sub10'=>'attach/attach.latestboard.htm')"
+avail_width = "140"
+avail_height = 110
+avail_layer = "NONE"
+removable = 1
+
+[submenu]
+name = "submenu"
+title = "세로메뉴"
+file = "array('main'=>'attach/attach.submenu.htm','sub'=>'attach/attach.submenu.htm','sub2'=>'attach/attach.submenu.htm','sub3'=>'attach/attach.submenu.htm','sub4'=>'attach/attach.submenu.htm','sub5'=>'attach/attach.submenu.htm','sub6'=>'attach/attach.submenu.htm','sub7'=>'attach/attach.submenu.htm','sub8'=>'attach/attach.submenu.htm','sub9'=>'attach/attach.submenu.htm','sub10'=>'attach/attach.submenu.htm')"
+avail_width = "140"
+avail_height = 150
+avail_layer = "NONE"
+removable = 1
+
+[counter]
+name = "counter"
+title = "카운터"
+file = "array('main'=>'attach/attach.counter.htm','sub'=>'attach/attach.counter.htm','sub2'=>'attach/attach.counter.htm','sub3'=>'attach/attach.counter.htm','sub4'=>'attach/attach.counter.htm','sub5'=>'attach/attach.counter.htm','sub6'=>'attach/attach.counter.htm','sub7'=>'attach/attach.counter.htm','sub8'=>'attach/attach.counter.htm','sub9'=>'attach/attach.counter.htm','sub10'=>'attach/attach.counter.htm')"
+avail_width = "140"
+avail_height = 34
+avail_layer = "NONE"
+removable = 1
+
+[poll]
+name = "poll"
+title = "설문조사"
+file = "array('main'=>'attach/attach.vote.htm','sub'=>'attach/attach.vote.htm','sub2'=>'attach/attach.vote.htm','sub3'=>'attach/attach.vote.htm','sub4'=>'attach/attach.vote.htm','sub5'=>'attach/attach.vote.htm','sub6'=>'attach/attach.vote.htm','sub7'=>'attach/attach.vote.htm','sub8'=>'attach/attach.vote.htm','sub9'=>'attach/attach.vote.htm','sub10'=>'attach/attach.vote.htm')"
+avail_height = 106
+avail_width = "140"
+avail_layer = "NONE"
+removable = 1
+
+[main_web]
+name = "main_web"
+title = "메인대문"
+file = "array('main'=>'attach/attach.main_web.htm')"
+avail_height = 80
+avail_width = "140"
+avail_layer = "array('main'=>array('NONE'))"
+removable = 1
+
+[sub_top]
+name = "sub_top"
+title = "서브상단"
+file = "array('sub'=>'attach/attach.sub_top.htm','sub2'=>'attach/attach.sub_top.htm','sub3'=>'attach/attach.sub_top.htm','sub4'=>'attach/attach.sub_top.htm','sub5'=>'attach/attach.sub_top.htm','sub6'=>'attach/attach.sub_top.htm','sub7'=>'attach/attach.sub_top.htm','sub8'=>'attach/attach.sub_top.htm','sub9'=>'attach/attach.sub_top.htm','sub10'=>'attach/attach.sub_top.htm')"
+avail_width = "400"
+avail_height = 30
+avail_layer = "NONE"
+removable = 1
+
+[out_bbs1]
+name = "out_bbs1"
+title = "게시판영역1"
+modules = out_bbs1
+file = "array('main'=>'attach/attach.out_bbs1.htm','sub'=>'attach/attach.out_bbs1.htm','sub2'=>'attach/attach.out_bbs1.htm','sub3'=>'attach/attach.out_bbs1.htm','sub4'=>'attach/attach.out_bbs1.htm','sub5'=>'attach/attach.out_bbs1.htm','sub6'=>'attach/attach.out_bbs1.htm','sub7'=>'attach/attach.out_bbs1.htm','sub8'=>'attach/attach.out_bbs1.htm','sub9'=>'attach/attach.out_bbs1.htm','sub10'=>'attach/attach.out_bbs1.htm')"
+avail_width = "140"
+avail_height = 110
+avail_layer = "NONE"
+removable = 1
+
+[out_bbs2]
+name = "out_bbs2"
+title = "게시판영역2"
+modules = out_bbs2
+file = "array('main'=>'attach/attach.out_bbs2.htm','sub'=>'attach/attach.out_bbs2.htm','sub2'=>'attach/attach.out_bbs2.htm','sub3'=>'attach/attach.out_bbs2.htm','sub4'=>'attach/attach.out_bbs2.htm','sub5'=>'attach/attach.out_bbs2.htm','sub6'=>'attach/attach.out_bbs2.htm','sub7'=>'attach/attach.out_bbs2.htm','sub8'=>'attach/attach.out_bbs2.htm','sub9'=>'attach/attach.out_bbs2.htm','sub10'=>'attach/attach.out_bbs2.htm')"
+avail_width = "140"
+avail_height = 110
+avail_layer = "NONE"
+removable = 1
+
+[out_bbs3]
+name = "out_bbs3"
+title = "게시판영역3"
+modules = out_bbs3
+file = "array('main'=>'attach/attach.out_bbs3.htm','sub'=>'attach/attach.out_bbs3.htm','sub2'=>'attach/attach.out_bbs3.htm','sub3'=>'attach/attach.out_bbs3.htm','sub4'=>'attach/attach.out_bbs3.htm','sub5'=>'attach/attach.out_bbs3.htm','sub6'=>'attach/attach.out_bbs3.htm','sub7'=>'attach/attach.out_bbs3.htm','sub8'=>'attach/attach.out_bbs3.htm','sub9'=>'attach/attach.out_bbs3.htm','sub10'=>'attach/attach.out_bbs3.htm')"
+avail_width = "140"
+avail_height = 110
+avail_layer = "NONE"
+removable = 1
+
+[out_bbs4]
+name = "out_bbs4"
+title = "게시판영역4"
+modules = out_bbs4
+file = "array('main'=>'attach/attach.out_bbs4.htm','sub'=>'attach/attach.out_bbs4.htm','sub2'=>'attach/attach.out_bbs4.htm','sub3'=>'attach/attach.out_bbs4.htm','sub4'=>'attach/attach.out_bbs4.htm','sub5'=>'attach/attach.out_bbs4.htm','sub6'=>'attach/attach.out_bbs4.htm','sub7'=>'attach/attach.out_bbs4.htm','sub8'=>'attach/attach.out_bbs4.htm','sub9'=>'attach/attach.out_bbs4.htm','sub10'=>'attach/attach.out_bbs4.htm')"
+avail_width = "140"
+avail_height = 110
+avail_layer = "NONE"
+removable = 1
+
+[out_bbs5]
+name = "out_bbs5"
+title = "게시판영역5"
+modules = out_bbs5
+file = "array('main'=>'attach/attach.out_bbs5.htm','sub'=>'attach/attach.out_bbs5.htm','sub2'=>'attach/attach.out_bbs5.htm','sub3'=>'attach/attach.out_bbs5.htm','sub4'=>'attach/attach.out_bbs5.htm','sub5'=>'attach/attach.out_bbs5.htm','sub6'=>'attach/attach.out_bbs5.htm','sub7'=>'attach/attach.out_bbs5.htm','sub8'=>'attach/attach.out_bbs5.htm','sub9'=>'attach/attach.out_bbs5.htm','sub10'=>'attach/attach.out_bbs5.htm')"
+avail_width = "140"
+avail_height = 110
+avail_layer = "NONE"
+removable = 1
+
+[banner]
+name = "banner"
+title = "배너영역"
+modules = banner
+file = "array('main'=>'attach/attach.banner.htm','sub'=>'attach/attach.banner.htm','sub2'=>'attach/attach.banner.htm','sub3'=>'attach/attach.banner.htm','sub4'=>'attach/attach.banner.htm','sub5'=>'attach/attach.banner.htm','sub6'=>'attach/attach.banner.htm','sub7'=>'attach/attach.banner.htm','sub8'=>'attach/attach.banner.htm','sub9'=>'attach/attach.banner.htm','sub10'=>'attach/attach.banner.htm')"
+avail_width = "140"
+avail_height = 110
+avail_layer = "NONE"
+removable = 1
+
+[calendar]
+name = "calendar"
+title = "일정관리"
+modules = calendar
+file = "array('main'=>'attach/attach.calendar.htm','sub'=>'attach/attach.calendar.htm','sub2'=>'attach/attach.calendar.htm','sub3'=>'attach/attach.calendar.htm','sub4'=>'attach/attach.calendar.htm','sub5'=>'attach/attach.calendar.htm','sub6'=>'attach/attach.calendar.htm','sub7'=>'attach/attach.calendar.htm','sub8'=>'attach/attach.calendar.htm','sub9'=>'attach/attach.calendar.htm','sub10'=>'attach/attach.calendar.htm')"
+avail_width = "140"
+avail_height = 110
+avail_layer = "NONE"
+removable = 1
+
+[lunch]
+name = "lunch"
+title = "오늘의 식단"
+modules = lunch
+file = "array('main'=>'attach/attach.lunch.htm','sub'=>'attach/attach.lunch.htm','sub2'=>'attach/attach.lunch.htm','sub3'=>'attach/attach.lunch.htm','sub4'=>'attach/attach.lunch.htm','sub5'=>'attach/attach.lunch.htm','sub6'=>'attach/attach.lunch.htm','sub7'=>'attach/attach.lunch.htm','sub8'=>'attach/attach.lunch.htm','sub9'=>'attach/attach.lunch.htm','sub10'=>'attach/attach.lunch.htm')"
+avail_width = "140"
+avail_height = 107px
+avail_layer = "NONE"
+removable = 1
+
+[admin_button]
+name = "admin_button"
+title = "관리자버튼"
+modules = admin_button
+file = "array('main'=>'attach/attach.admin_button.htm','sub'=>'attach/attach.admin_button.htm','sub2'=>'attach/attach.admin_button.htm','sub3'=>'attach/attach.admin_button.htm','sub4'=>'attach/attach.admin_button.htm','sub5'=>'attach/attach.admin_button.htm','sub6'=>'attach/attach.admin_button.htm','sub7'=>'attach/attach.admin_button.htm','sub8'=>'attach/attach.admin_button.htm','sub9'=>'attach/attach.admin_button.htm','sub10'=>'attach/attach.admin_button.htm')"
+avail_width = "978"
+avail_height = 60
+avail_layer = "NONE"
+removable = 1
+
+[mflash]
+name = "mflash"
+title = "메인플래시"
+modules = mflash
+file = "array('main'=>'attach/attach.mflash.htm','sub'=>'attach/attach.mflash.htm','sub2'=>'attach/attach.mflash.htm','sub3'=>'attach/attach.mflash.htm','sub4'=>'attach/attach.mflash.htm','sub5'=>'attach/attach.mflash.htm','sub6'=>'attach/attach.mflash.htm','sub7'=>'attach/attach.mflash.htm','sub8'=>'attach/attach.mflash.htm','sub9'=>'attach/attach.mflash.htm','sub10'=>'attach/attach.mflash.htm')"
+avail_width = "220"
+avail_height = 220
+avail_layer = "NONE"
+removable = 1
+
+[teacher]
+name = "teacher"
+title = "강사리스트"
+modules = teacher
+file = "array('main'=>'attach/attach.teacher.htm','sub'=>'attach/attach.teacher.htm','sub2'=>'attach/attach.teacher.htm','sub3'=>'attach/attach.teacher.htm','sub4'=>'attach/attach.teacher.htm','sub5'=>'attach/attach.teacher.htm','sub6'=>'attach/attach.teacher.htm','sub7'=>'attach/attach.teacher.htm','sub8'=>'attach/attach.teacher.htm','sub9'=>'attach/attach.teacher.htm','sub10'=>'attach/attach.teacher.htm')"
+avail_width = "220"
+avail_height = 220
+avail_layer = "NONE"
+removable = 1
+
+[dday]
+name = "dday"
+title = "D-day"
+modules = dday
+file = "array('main'=>'attach/attach.dday.htm','sub'=>'attach/attach.dday.htm','sub2'=>'attach/attach.dday.htm','sub3'=>'attach/attach.dday.htm','sub4'=>'attach/attach.dday.htm','sub5'=>'attach/attach.dday.htm','sub6'=>'attach/attach.dday.htm','sub7'=>'attach/attach.dday.htm','sub8'=>'attach/attach.dday.htm','sub9'=>'attach/attach.dday.htm','sub10'=>'attach/attach.dday.htm')"
+avail_width = "100"
+avail_height = 100
+avail_layer = "NONE"
+removable = 1
+
+[memo]
+name = "memo"
+title = "쪽지관리"
+modules = memo
+file = "array('main'=>'attach/attach.memo.htm','sub'=>'attach/attach.memo.htm','sub2'=>'attach/attach.memo.htm','sub3'=>'attach/attach.memo.htm','sub4'=>'attach/attach.memo.htm','sub5'=>'attach/attach.memo.htm','sub6'=>'attach/attach.memo.htm','sub7'=>'attach/attach.memo.htm','sub8'=>'attach/attach.memo.htm','sub9'=>'attach/attach.memo.htm','sub10'=>'attach/attach.memo.htm')"
+avail_width = "140"
+avail_height = 110
+avail_layer = "NONE"
+removable = 1
+
+[lms_search]
+name = "lms_search"
+title = "강좌검색창"
+modules = lms_search
+file = "array('main'=>'attach/attach.lms_search.htm','sub'=>'attach/attach.lms_search.htm','sub2'=>'attach/attach.lms_search.htm','sub3'=>'attach/attach.lms_search.htm','sub4'=>'attach/attach.lms_search.htm','sub5'=>'attach/attach.lms_search.htm','sub6'=>'attach/attach.lms_search.htm','sub7'=>'attach/attach.lms_search.htm','sub8'=>'attach/attach.lms_search.htm','sub9'=>'attach/attach.lms_search.htm','sub10'=>'attach/attach.lms_search.htm')"
+avail_width = "140"
+avail_height = 110
+avail_layer = "NONE"
+removable = 1
+
+[ani_text]
+name = "ani_text"
+title = "전광판"
+modules = ani_text
+file = "array('main'=>'attach/attach.ani_text.htm','sub'=>'attach/attach.ani_text.htm','sub2'=>'attach/attach.ani_text.htm','sub3'=>'attach/attach.ani_text.htm','sub4'=>'attach/attach.ani_text.htm','sub5'=>'attach/attach.ani_text.htm','sub6'=>'attach/attach.ani_text.htm','sub7'=>'attach/attach.ani_text.htm','sub8'=>'attach/attach.ani_text.htm','sub9'=>'attach/attach.ani_text.htm','sub10'=>'attach/attach.ani_text.htm')"
+avail_width = "140"
+avail_height = 110
+avail_layer = "NONE"
+removable = 1
+
+[birthday]
+name = "birthday"
+title = "생일축하"
+modules = birthday
+file = "array('main'=>'attach/attach.birthday.htm','sub'=>'attach/attach.birthday.htm','sub2'=>'attach/attach.birthday.htm','sub3'=>'attach/attach.birthday.htm','sub4'=>'attach/attach.birthday.htm','sub5'=>'attach/attach.birthday.htm','sub6'=>'attach/attach.birthday.htm','sub7'=>'attach/attach.birthday.htm','sub8'=>'attach/attach.birthday.htm','sub9'=>'attach/attach.birthday.htm','sub10'=>'attach/attach.birthday.htm')"
+avail_width = "140"
+avail_height = 110
+avail_layer = "NONE"
+removable = 1
+
+[edunet4u]
+name = "edunet4u"
+title = "교육정보검색"
+modules = edunet4u
+file = "array('main'=>'attach/attach.edunet4u.htm','sub'=>'attach/attach.edunet4u.htm','sub2'=>'attach/attach.edunet4u.htm','sub3'=>'attach/attach.edunet4u.htm','sub4'=>'attach/attach.edunet4u.htm','sub5'=>'attach/attach.edunet4u.htm','sub6'=>'attach/attach.edunet4u.htm','sub7'=>'attach/attach.edunet4u.htm','sub8'=>'attach/attach.edunet4u.htm','sub9'=>'attach/attach.edunet4u.htm','sub10'=>'attach/attach.edunet4u.htm')"
+avail_width = "140"
+avail_height = 110
+avail_layer = "NONE"
+removable = 1
+
+[britannica]
+name = "britannica"
+title = "브리테니커사전"
+modules = britannica
+file = "array('main'=>'attach/attach.britannica.htm','sub'=>'attach/attach.britannica.htm','sub2'=>'attach/attach.britannica.htm','sub3'=>'attach/attach.britannica.htm','sub4'=>'attach/attach.britannica.htm','sub5'=>'attach/attach.britannica.htm','sub6'=>'attach/attach.britannica.htm','sub7'=>'attach/attach.britannica.htm','sub8'=>'attach/attach.britannica.htm','sub9'=>'attach/attach.britannica.htm','sub10'=>'attach/attach.britannica.htm')"
+avail_width = "140"
+avail_height = 50
+avail_layer = "NONE"
+removable = 1
+
+[sub_top_menu]
+name = "sub_top_menu"
+title = "SUB_TOP메뉴"
+file = "array('main'=>'attach/attach.sub_top_menu.htm','sub'=>'attach/attach.sub_top_menu.htm','sub2'=>'attach/attach.sub_top_menu.htm','sub3'=>'attach/attach.sub_top_menu.htm','sub4'=>'attach/attach.sub_top_menu.htm','sub5'=>'attach/attach.sub_top_menu.htm','sub6'=>'attach/attach.sub_top_menu.htm','sub7'=>'attach/attach.sub_top_menu.htm','sub8'=>'attach/attach.sub_top_menu.htm','sub9'=>'attach/attach.sub_top_menu.htm','sub10'=>'attach/attach.sub_top_menu.htm')"
+avail_width = "650"
+avail_height = 30
+avail_layer = "NONE"
+removable = 1
+
+[class_select]
+name = "class_select"
+title = "학급홈페이지"
+file = "array('main'=>'attach/attach.class_select.htm','sub'=>'attach/attach.class_select.htm','sub2'=>'attach/attach.class_select.htm','sub3'=>'attach/attach.class_select.htm','sub4'=>'attach/attach.class_select.htm','sub5'=>'attach/attach.class_select.htm','sub6'=>'attach/attach.class_select.htm','sub7'=>'attach/attach.class_select.htm','sub8'=>'attach/attach.class_select.htm','sub9'=>'attach/attach.class_select.htm','sub10'=>'attach/attach.class_select.htm')"
+avail_width = "650"
+avail_height = 30
+avail_layer = "NONE"
+removable = 1
+
+[cafe_menu]
+name = "cafe_menu"
+title = "카페카테고리"
+modules = "cafe_menu"
+file = "array('main'=>'attach/attach.cafe_menu.htm','sub'=>'attach/attach.cafe_menu.htm','sub2'=>'attach/attach.cafe_menu.htm','sub3'=>'attach/attach.cafe_menu.htm','sub4'=>'attach/attach.cafe_menu.htm','sub5'=>'attach/attach.cafe_menu.htm','sub6'=>'attach/attach.cafe_menu.htm','sub7'=>'attach/attach.cafe_menu.htm','sub8'=>'attach/attach.cafe_menu.htm','sub9'=>'attach/attach.cafe_menu.htm','sub10'=>'attach/attach.cafe_menu.htm')"
+avail_width = "200"
+avail_height = "50"
+avail_layer = "NONE"
+removable = "1"
+
+[cafe_find]
+name = "cafe_find"
+title = "카페검색"
+modules = "cafe_find"
+file = "array('main'=>'attach/attach.cafe_find.htm','sub'=>'attach/attach.cafe_find.htm','sub2'=>'attach/attach.cafe_find.htm','sub3'=>'attach/attach.cafe_find.htm','sub4'=>'attach/attach.cafe_find.htm','sub5'=>'attach/attach.cafe_find.htm','sub6'=>'attach/attach.cafe_find.htm','sub7'=>'attach/attach.cafe_find.htm','sub8'=>'attach/attach.cafe_find.htm','sub9'=>'attach/attach.cafe_find.htm','sub10'=>'attach/attach.cafe_find.htm')"
+avail_width = "200"
+avail_height = "50"
+avail_layer = "NONE"
+removable = "1"
+
+[cafe_rank]
+name = "cafe_rank"
+title = "카페랭킹"
+modules = "cafe_rank"
+file = "array('main'=>'attach/attach.cafe_rank.htm','sub'=>'attach/attach.cafe_rank.htm','sub2'=>'attach/attach.cafe_rank.htm','sub3'=>'attach/attach.cafe_rank.htm','sub4'=>'attach/attach.cafe_rank.htm','sub5'=>'attach/attach.cafe_rank.htm','sub6'=>'attach/attach.cafe_rank.htm','sub7'=>'attach/attach.cafe_rank.htm','sub8'=>'attach/attach.cafe_rank.htm','sub9'=>'attach/attach.cafe_rank.htm','sub10'=>'attach/attach.cafe_rank.htm')"
+avail_width = "200"
+avail_height = "50"
+avail_layer = "NONE"
+removable = "1"

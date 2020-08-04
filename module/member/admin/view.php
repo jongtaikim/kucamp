@@ -52,6 +52,11 @@ switch($REQUEST_METHOD) {
 		$data[tel22] = $tel[1];
 		$data[tel33] = $tel[2];
 
+		$tel = explode("-",$data[str_stu_handphone]);
+		$data[tel111] = $tel[0];
+		$data[tel222] = $tel[1];
+		$data[tel333] = $tel[2];
+
 		$data[birthday1] = substr($data[num_birthday],0,4);
 		$data[birthday2] = substr($data[num_birthday],4,2);
 		$data[birthday3] = substr($data[num_birthday],6,2);

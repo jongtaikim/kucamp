@@ -362,7 +362,7 @@ function _format_data(&$arr) {
 	if($arr['str_category']){
 	$arr['str_title'] = "[".$arr['str_category']."] ".$arr['str_title'];
 	}else{
-	$arr['str_title'] = "[ÀÏ¹İ] ".$arr['str_title'];
+	$arr['str_title'] = $arr['str_title'];
 	}
 
 	if($arr['str_text']) $arr['content'] = $arr['str_text'];

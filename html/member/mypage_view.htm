@@ -50,8 +50,8 @@ function popup_zip() {
 
 <script type="text/javascript">
 	function update(select_ccode) {
-		
-		var params = 'select_ccode=' + select_ccode;  
+
+		var params = 'select_ccode=' + select_ccode;
 
 		sendRequest("/lms.admin.order_update", params, FromServer, "GET");
 	}
@@ -70,9 +70,9 @@ function popup_zip() {
 					$('info_price').innerHTML = str_text;
 					$('num_ch_price').value = "";
 				}
-				
+
 				def_ccodes();
-				
+
 			}
 		}
 	}
@@ -85,7 +85,7 @@ function popup_zip() {
 
 
 <fieldset>
-<legend>legend</legend>
+
 
 <p class="buTitle33" style="margin-bottom:0px;padding-left:18px">참가 학생 정보</p>
 
@@ -120,7 +120,7 @@ function def_ccodes(){
 			{=number_format(num_price - str_discount)}원
 			{? str_discount}<br><span style="color:red">특별할인 : {=number_format(str_discount)}원</span>{/}
 			<input type="hidden" name="num_ch_price"  id="num_ch_price" value="{num_ch_price}">
-			
+
 		</div>
 	</td>
 </tr>
@@ -144,13 +144,13 @@ function def_ccodes(){
 </table>
 
 </div>
-</fieldset> 
+</fieldset>
 
 
 
 
 <fieldset>
-<legend>legend</legend>
+
 
 <p class="buTitle33" style="margin-bottom:0px;padding-left:18px">참가 학생 정보</p>
 
@@ -171,7 +171,7 @@ function def_ccodes(){
 	<th scope="row">학생성명(영문)</th>
 	<td colspan="2">
 		<div class="item">
-			<input class="i_text" title="학생성명" type="text" name="str_st_eng_name" id="str_st_eng_name" value="{str_st_eng_name}" hname="{=_la('학생성명(영문')}"  required> 
+			<input class="i_text" title="학생성명" type="text" name="str_st_eng_name" id="str_st_eng_name" value="{str_st_eng_name}" hname="{=_la('학생성명(영문')}"  required>
 		</div>
 	</td>
 </tr-->
@@ -181,7 +181,7 @@ function def_ccodes(){
 	<td colspan="2">
 		<div class="item">
 		{? str_sex == "1"}남자{:}여자{/}
-		
+
 		</div>
 	</td>
 </tr>
@@ -190,9 +190,9 @@ function def_ccodes(){
 	<th scope="row">주민등록번호</th>
 	<td colspan="2">
 		<div class="item">
-			<input class="i_text" title="주민등록번호" type="text" name="jumin1" id="jumin1" value="{jumin1}" hname="주민등록번호" style="width:80px" required> 
+			<input class="i_text" title="주민등록번호" type="text" name="jumin1" id="jumin1" value="{jumin1}" hname="주민등록번호" style="width:80px" required>
 			-
-			<input class="i_text" title="주민등록번호" type="text" name="jumin2" id="jumin2" value="{jumin2}" hname="주민등록번호" style="width:80px" required> 
+			<input class="i_text" title="주민등록번호" type="text" name="jumin2" id="jumin2" value="{jumin2}" hname="주민등록번호" style="width:80px" required>
 		</div>
 	</td>
 </tr-->
@@ -203,7 +203,7 @@ function def_ccodes(){
 	<td colspan="2">
 		<div class="item">
 			{str_school} - {str_class}
-			
+
 		</div>
 	</td>
 </tr>
@@ -212,12 +212,12 @@ function def_ccodes(){
 <tr>
 	<th scope="row" >부모가 같은<br> 신청건</th>
 	<td colspan="2">
-		
+
 			<table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" class="tableTemp02" summary="">
 			<caption><span>caption</span></caption>
 				<thead>
 					<tr>
-						
+
 						<th style="text-align:center">프로그램명</th>
 						<th style="text-align:center">기수</th>
 						<th style="text-align:center">주문번호</th>
@@ -228,11 +228,11 @@ function def_ccodes(){
 				<tbody>
 					{@ brs_LIST}
 					<tr>
-						
+
 						<td>{.ccode_title}</td>
 						<td>{.num_serial}기</td>
 						<td><a href="/lms.admin.order_view?order_code={.str_order_code}">{.str_order_code}</a></td>
-						
+
 						<td>{.str_st_name}</td>
 						<td>
 						{? .str_order_st == "0"}
@@ -259,7 +259,7 @@ function def_ccodes(){
 </table>
 
 </div>
-</fieldset> 
+</fieldset>
 
 <p class="buTitle33" style="margin-bottom:0px;padding-left:18px">부모님 정보</p>
 
@@ -282,8 +282,8 @@ function def_ccodes(){
 	<td>
 		<div class="item">
 		{email1}@{email2}
-										
-			
+
+
 		</div>
 	</td>
 </tr>
@@ -296,7 +296,7 @@ function def_ccodes(){
 		{str_addr1} {str_addr2}
 
 		</div>
-		
+
 	</td>
 </tr>
 
@@ -305,8 +305,8 @@ function def_ccodes(){
 	<td>
 		<div class="item">
 		{tel1}-{tel2}-{tel3}
-	
-		
+
+
 		</div>
 	</td>
 </tr>
@@ -317,7 +317,7 @@ function def_ccodes(){
 		<div class="item">
 		{tel11}-{tel22}-{tel33}
 		</div>
-		
+
 	</td>
 </tr>
 
@@ -327,7 +327,7 @@ function def_ccodes(){
 		<div class="item">
 		 {str_memo}
 		</div>
-		
+
 	</td>
 </tr>
 
@@ -350,7 +350,7 @@ function scsledk(idx){
 		$('namet_2').innerHTML = '근무부서';
 		$('namet_3').innerHTML = '직급';
 	}
-	
+
 	if(idx == "3"){
 		$('namet_1').innerHTML = '학생성명';
 		$('namet_2').innerHTML = '참여과정';
@@ -367,9 +367,9 @@ function scsledk(idx){
 		{? tab_etc == "1"}고려대 교직원 자녀{/}
 		{? tab_etc == "2"}고려대 교우 자녀{/}
 		{? tab_etc == "3"}기존캠프 참여자{/}
-		
+
 		</div>
-		
+
 	</td>
 </tr>
 
@@ -377,7 +377,7 @@ function scsledk(idx){
 {/}
 </table>
 </div>
-</fieldset> 
+</fieldset>
 
 
 
@@ -394,7 +394,7 @@ function scsledk(idx){
 	<td>
 		<div class="item" style="padding-top:5px">
 			무통장 : <strong>{str_bank_number}</strong>
-		
+
 		</div>
 	</td>
 </tr>
@@ -456,15 +456,15 @@ function scsledk(idx){
 				{: str_order_st == "3"}
 				<span style="color:#73758c">회원취소</span>
 				{/}
-				
+
 			</td>
 		</tr>
-		
-		
+
+
 {/}
 </table>
 </div>
-</fieldset> 
+</fieldset>
 
 
 

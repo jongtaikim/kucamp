@@ -29,7 +29,7 @@ var all = document.getElementById("all").value;
 
 if ( all == 'Y')
 {
-uncheckall() 
+uncheckall()
  return;
 
 }else{
@@ -37,12 +37,12 @@ uncheckall()
   for (i=0; i < form.elements.length; i++) {
  if (form.elements[i].name =="ids[]") {
     form.elements[i].checked = true;
-	
+
  }
   }
   document.itemForm.all.value = "Y";
- 
-  
+
+
   return;
 }
 }
@@ -74,7 +74,7 @@ function selectItem() {
 	form = document.forms['itemForm'];
 	if (!checkSelected()) return false;
 	if (!confirm('선택하신 신청건 작업을 실행 하시겠습니까?')) return false;
-	
+
 	if(!$('mode')){
 		alert('작업을 선택하여 주세요.');
 		return false;
@@ -95,33 +95,15 @@ function selectItem() {
 	</div>
 </div-->
 
-<table cellpadding="0" cellspacing="0" border="0" style="margin-top:20px">
-	<tr>
-		<td width="14px"><img src="/html/admin/images/tip_icon.gif"></td>
-		<td class="tip_title" style="">안내</td>
-	</tr>
-</table>
-<table cellpadding="0" cellspacing="0" border="0" width="100%">
-	<tr >
-		<td width="14px" height="12px" style="padding:0px" background="/html/admin/images/bx_tip_top_left.gif"></td>
-		<td background="/html/admin/images/bx_tip_top_bg.gif"  style="padding:0px"></td>
-		<td width="14px" style="padding:0px" background="/html/admin/images/bx_tip_top_right.gif"></td>
-	</tr>				
-	<tr>
-		<td width="14px" background="/html/admin/images/bx_tip_mid_left.gif"></td>
-		<td class="tip_text" style="color:#000">
-			기수변경, 정보변경, 및 취소 관련 문의는 유선 연락바랍니다. (<? if(THEME =="TYPE3"){ ?>1599-3290<?}else{?>1599-3292<?}?>)
-		</td>
-		<td width="14px" background="/html/admin/images/bx_tip_mid_right.gif"></td>
-	</tr>
-	<tr >
-		<td width="14px"><img src="/html/admin/images/bx_tip_btm_left.gif"></td>
-		<td background="/html/admin/images/bx_tip_btm_bg.gif"></td>
-		<td width="14px"><img src="/html/admin/images/bx_tip_btm_right.gif"></td>
-	</tr>
-</table>
 
-<br>
+<div class=""><i class="fa fa-question-circle"></i> 안내</div>
+<div class="box r b-l b-r b-t b-b">
+
+    <div class="box-body">
+        기수 및 정보를 변경은 전화연락(1599-3290) 또는 상담 게시판에 남겨 주시기 바랍니다.
+    </div>
+</div>
+
 <br>
 
 
@@ -133,64 +115,69 @@ function selectItem() {
 
 	<p class="buTitle17" >총{total + 0}개의 캠프 신청건이 있습니다.</p>
 
-	<table class="tbl_type" border="1" cellspacing="0" summary="캠프 목록리스트" style="margin-top:20px">
-	<caption>등록별 캠프목록</caption>
+	<table class="table b-b" border="0" cellspacing="0" summary="캠프 목록리스트" style="margin-top:20px">
+
 	<colgroup>
-	
+
 		<col width="10%">
-		<col >  
+		<col >
 		<col width="14%">
 		<col width="15%">
 		<col width="13%">
-	
+
 		<col width="10%">
 		<col width="10%">
-	</colgroup>  
+	</colgroup>
 
 	<thead>
 		<tr >
-			
+
 			<th style="text-align:center">신청일</th>
-			
-			<th style="text-align:center">신청과정</th>
-			<th style="text-align:center">학생명</th>
-			<th style="text-align:center">학교/학년</th>
-			
+
+			<th style="text-align:center">신청정보</th>
+
+
+
 			<th style="text-align:center">보호자</th>
-			
+
 			<th style="text-align:center">결제방법</th>
 			<th style="text-align:center">상태</th>
-			
+
 		</tr>
 	</thead>
 	<tbody>
 		{@ LIST}
 		<tr>
-			
+
 			<td style="text-align:center">{=date("Y.m.d",.dt_date)}</td>
 			<td style="text-align:left">
-				
-					<p>
+
+
 						<a href="/member.mypage_view?order_code={.str_order_code}"><span style="color:#9933ff">{.str_ccode_text} 제{.camp.num_serial}기</span></a>
-					</p>
-					<p>{.camp.start_date}~{.camp.end_date}</p>
-				
+
+					<div>{.camp.start_date}~{.camp.end_date}</div>
+
+                <div class="p-t5  m-t5 b-t">
+                    <span class="label">학생명</span> <strong>{.str_st_name}</strong><br>
+                    {.str_school} {.str_class} {.str_ban}
+
+                    <div style="color:blue">
+                           입소방법 : {? .str_etc1 == '종합운동장역'}서울 - 2,9호선 종합운동장역 6번출구 {/}
+                            {? .str_etc1 == '오송역'}지방 - KTX오송역(경부,호남) {/}
+                            {? .str_etc1 == '개별입소'}개별입소 {/}
+
+                    </div>
+                </div>
+
 			</td>
-			<td style="text-align:center">
-			{.str_st_name}<br>
-			
-			
-			</td>
-			<td style="text-align:center">
-				{.str_school}<br>
-				{.str_class}
-			</td>
-			
-			<td style="text-align:center">
+
+
+
+			<td style="text-align:left">
 				부:{.str_pr_name1}<br>
 				모:{.str_pr_name2}
 			</td>
-			
+
 			<td style="text-align:center">
 				{? .str_pay_mes == "bank"}
 				무통장입금
@@ -200,6 +187,7 @@ function selectItem() {
 			</td>
 
 			<td style="text-align:center">
+
 				{? .str_order_st == "0"}
 				<span style="color:red">입금확인전</span>
 				{: .str_order_st == "1"}
@@ -210,10 +198,14 @@ function selectItem() {
 				<span style="color:#808080">취소</span>
 				{: .str_order_st == "3"}
 				<span style="color:#73758c">회원취소</span>
+                {: .str_order_st == "8"}
+                <span style="color:#73758c">취소환불</span>
+                {: .str_order_st == "7"}
+				<span style="color:#73758c">대기자 결제</span>
 				{/}
 			</td>
-			
-			
+
+
 
 		</tr>
 		{/}
@@ -228,50 +220,116 @@ function selectItem() {
 	</div>
 
 
-<!--div style=";border-bottom:1px solid #cdcdcd;float:left;width:100%;padding-bottom:10px;width:100%;float:left">
-		
-		<div style="float:left;width:48%">
-		
-		<span style="float:left">
-		선택한 건을 
-		<select name="modes" onchange="$('mode').value=this.value">
-			<option value="">-- 작업선택--</option>
-	
-			<option value="price_can">취소 처리</option>
-	
-		</select>
-		</span>
-		<span class="btn_pack small icon" style="margin-left:10px;float:left"><span class="refresh"></span><a href="#" onclick="selectItem();">적용하기</a></span>
-			
-		</div>
+<div class="box" style="padding:10px">
+    <div class="box-body">
+        <div class="">
+            <h4><strong>할인적용</strong></h4>
+            <table align="center"  border="0" cellspacing="0" cellpadding="0" class="type09"  style="margin:10px 0px">
 
-		<div style="float:right;text-align:right;width:48%">
-			<form method="get">
-			
-			
-			<select name="search_key">
-				<option value="str_st_name">학생명</option>
-				<option value="str_school">학교명</option>
-				<option value="num_serial">기수</option>
-				<option value="str_class">학년</option>
-			</select>
-			<input type="text" name="search_value" value="{search_value}" class="">
-			<span class="btn_pack small"><input type="submit"  value="검색하기"></span>
-			</form>
-		</div>
-			
-		
-		
-	</div-->
+                <thead>
+                <tr>
+                    <th class="text-left" >
+                        <strong>할인대상</strong>
+                    </th>
+                    <th class="text-left" >
+                        <strong>할인금액</strong>
+                    </th>
+                    <th class="text-left" >
+                        <strong>비고</strong>
+                    </th>
 
-<br>
-<br>
-<br>
-<br>
-<br>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="text-center" ><strong>패키지할인</strong></td>
 
-<? if(THEME =="TYPE3"){ ?>
-<img src="/hosts/kunetworks/menu/201606/1213.-2.1.1465359893_.jpg" alt="" />
-<?}else{?>
-<img src="/hosts/kunetworks/board_tmp/20170623/03f5f08de55ddd11b9c8a29a67f17e27/14982083741189571221.png" alt="" />
-<?}?>
+                    <td class="text-center"  >14만원</td>
+                    <td class="text-left" rowspan="5">
+                        중복할인 불가<br>
+                        ※ 조기등록 : 선착순 마감
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td class="text-center" ><strong>조기등록 신청자</strong></td>
+
+                    <td class="text-center"  style="border-right:1px solid #cdcdcd">각 7만원</td>
+
+
+
+
+                </tr>
+                <tr>
+                    <td class="text-center" ><strong>기참가자</strong></td>
+                    <td class="text-center"  rowspan="3" style="border-right:1px solid #cdcdcd">각 5만원</td>
+                </tr>
+                <tr>
+                    <td class="text-center" style="border-right:1px solid #cdcdcd"><strong>고려대학교 교우자녀</strong></td>
+                </tr>
+                <tr>
+                    <td class="text-center" style="border-right:1px solid #cdcdcd" ><strong>1가정 2자녀(형제, 자매 등)<br>단체등록 3인이상</strong></td>
+                </tr>
+
+
+                </tbody>
+            </table>
+            <div class="">
+                ※ 등록은 프로그램참가비, 기숙사비, 식비, 보험료, 교통비 등 포함<br>
+                ※ 금액은 반드시 전액 납부 되어야 등록 완료<br>
+                <span style="color:red">*패키지 할인은 2개이상의 캠프를 10일 연속해서 신청하는 경우 적용 <br>
+(ex)2019년 여름방학 진로적성캠프 1차+ 인문학캠프 2차 참가 시 14만원 할인</span><br>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="box" style="padding:10px">
+    <div class="box-body">
+        <div class="">
+            <h4><strong>납부기간</strong></h4>
+            <h5>공식 접수기간 내 신청서 제출 후 선착순 등록금 완납 기준</h5>
+            <h5>조기마감 될 수 있습니다. 기수별 마감 후 자동 종료합니다. 따라서 가급적 결정을 서둘러 주시길 바랍니다.</h5>
+        </div>
+    </div>
+</div>
+
+<div class="box" style="padding:10px">
+    <div class="box-body">
+        <div class="">
+            <h4><strong>납부방법</strong></h4>
+
+            <div class="clearfix">
+                <div class="col-2" style="padding-left:0px">
+                    <div style="border:1px solid #cdcdcd; border-radius: 3px;padding:10px" class="">
+                        <h5><strong>캠프운영본부</strong></h5>
+                        <h5>문의전화 : 1599-3290</h5>
+                        <h5>입금계좌  : KEB 하나은행 288-910006-23704
+                            케이유네트웍스 (주)</h5>
+                    </div>
+                </div>
+
+                <!--<div class="col-2"  style="padding-right:0px">
+                    <div style="border:1px solid #cdcdcd; border-radius: 3px;padding:10px">
+                        <h5><strong>KU창의공학캠프</strong></h5>
+                        <h5>문의전화 : 1599-3290</h5>
+                        <h5>입금계좌  : KEB 하나은행 288-910006-86004 케이유네트웍스 (주)</h5>
+                    </div>
+                </div>-->
+            </div>
+
+        </div>
+    </div>
+
+    <div class="p-l15 p-t20">
+        <div class=" m-t15">
+            <h5><strong><무통장 입금 시 유의사항></strong></h5>
+            <h5 style="color:#ff0000">※ 반드시 학생이름으로 기입하시어 입금 부탁드립니다.</h5>
+            <h5 style="color:#ff0000">※ 타인의 이름이나 보호자 이름으로 입금을 하시면 확인이 어렵습니다.</h5>
+            <h5 style="color:#ff0000">※ 학생 이외의 이름으로 입금 시 반드시 운영팀에 연락을 주시기 바랍니다. (운영본부 1599-3290)</h5>
+        </div>
+    </div>
+</div>
+

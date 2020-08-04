@@ -1,0 +1,121 @@
+<!--Gallery-->
+<section id="findid" class="secondary-color text-center  clearfix autoheight">
+
+    <div class="row wow fadeIn" data-wow-delay="0.2s">
+
+
+        <header class="section-heading">
+
+
+            <h2 class="section-title text-center">비밀번호 찾기</h2>
+
+
+
+        </header>
+
+
+
+
+
+        <div class="" style="width:450px;margin:auto">
+            <div class="box r white">
+                <div class="box-body padding">
+
+
+
+                    <div class="text-muted m-b20">
+                        아이디와 비밀번호를 입력하세요.
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="str_id" id="str_id" placeholder="아이디" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="str_name" id="str_name" placeholder="이름" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="str_email" id="str_email" class="form-control" placeholder="이메일" required="">
+                    </div>
+
+
+
+
+                    <button type="button" class="btn btn-lg black p-x-lg m-t20" onclick="findpw() ">비밀번호 찾기</button>
+
+
+
+                    <script type="text/javascript">
+                        function findpw() {
+
+                            if(!$('#str_id').val()){
+                                alert('아이디는 필수값입니다.');
+                                $('#str_id').focus();
+                                return false;
+                            }
+                            if(!$('#str_name').val()){
+                                alert('이름은 필수값입니다.');
+                                $('#str_name').focus();
+                                return false;
+                            }
+
+                            if(!$('#str_email').val()){
+                                alert('이메일은 필수값입니다.');
+                                $('#str_email').focus();
+                                return false;
+                            }
+
+                            $.ajax({
+                                type: 'POST',
+                                url: '/member.findid',
+                                data:'mode=pw&iconv=utf8&str_id='+encodeURIComponent($('#str_id').val())+'&str_name='+encodeURIComponent($('#str_name').val())+'&str_email='+encodeURIComponent($('#str_email').val()),
+                                dataType: 'json',
+                                success: function(data, status) {
+                                    console.log(data);
+                                    if(data.code==200){
+
+                                        $('#str_name').val('');
+                                        $('#str_id').val('');
+                                        $('#str_email').val('');
+
+                                        bootbox.alert({
+                                            title:'알림',
+                                            message: '<div class="text-center">'+data.msg+''+'</div>',
+
+
+                                        });
+                                    }else{
+
+                                        $('#str_name').val('');
+                                        $('#str_id').val('');
+                                        $('#str_email').val('');
+
+                                        bootbox.alert({
+                                            title:'알림',
+                                            message: '<div class="text-center">'+data.msg+''+'</div>',
+
+
+
+                                        });
+                                    }
+
+                                },
+                                error: function(request,status,error) {
+                                    alert(request.responseText);
+                                }
+                            });
+                        }
+                    </script>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+

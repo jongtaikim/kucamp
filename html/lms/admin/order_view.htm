@@ -1,4 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/css/doc_style.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script>
+
 <style type="text/css" title="">
 /* UI Object */
 .form_table{margin:1em 0;font-size:12px;font-family:Tahoma, Geneva, sans-serif}
@@ -34,6 +36,11 @@ input{color:#000}
 
 <script type="text/javascript">
 // <![CDATA[
+
+function $$(ids) {
+    return document.getElementById(ids);
+}
+
 function popup_zip() {
 	form = 'joinForm';
 	wZip = window.open('core.zipcode?el_addr=str_addr1&el_zip=str_zipcode&el_focus=str_addr2&form='+form,'zipsearch','width=400, height=200,scrollbars=yes');
@@ -51,29 +58,41 @@ function popup_zip() {
 
 <script type="text/javascript">
 	function update(select_ccode) {
-		
-		var params = 'select_ccode=' + select_ccode;  
 
-		sendRequest("/lms.admin.order_update", params, FromServer, "GET");
+
+	    //encodeURIComponent()
+	    $.ajax({
+	    type: 'GET',
+	    url: '/lms.admin.order_update',
+	    data:'select_ccode='+select_ccode,
+	    dataType: 'html',
+	    	success: function(str_text, status) {
+
+                $('#price_change').val("y");
+                if({num_price} != str_text){
+                    alert('해당 신청과정은 기존 과정과 금액 차이가 발생합니다.');
+                    $$('info_price').innerHTML = '{num_price} - '+str_text+' = <span style="color:red"> '+({num_price} - str_text)+"</span>";
+                    $$('info_price_text').value = '{num_price} - '+str_text+' = <span style="color:red"> '+({num_price} - str_text)+"</span>";
+                    $$('num_ch_price').value = ({num_price} - str_text);
+                    //$('log_text').value = '{str_title} {num_serial}기 =>'
+                }else{
+                    $$('info_price').innerHTML = str_text;
+                    $$('num_ch_price').value = "";
+                }
+
+                def_ccodes();
+	    	},
+	    	error: function(request,status,error) {
+	    		alert(request.responseText);
+	    	}
+	    });
+
 	}
 	function FromServer() {
 		if (httpRequest.readyState == 4) {
 			if (httpRequest.status == 200) {
-				var str_text = httpRequest.responseText;
-				$('price_change').value = "y";
-				if({num_price} != str_text){
-					alert('해당 신청과정은 기존 과정과 금액 차이가 발생합니다.');
-					$('info_price').innerHTML = '{num_price} - '+str_text+' = <span style="color:red"> '+({num_price} - str_text)+"</span>";
-					$('info_price_text').value = '{num_price} - '+str_text+' = <span style="color:red"> '+({num_price} - str_text)+"</span>";
-					$('num_ch_price').value = ({num_price} - str_text);
-					//$('log_text').value = '{str_title} {num_serial}기 =>'
-				}else{
-					$('info_price').innerHTML = str_text;
-					$('num_ch_price').value = "";
-				}
-				
-				def_ccodes();
-				
+
+
 			}
 		}
 	}
@@ -129,7 +148,7 @@ function def_ccodes(){
 	<th scope="row">신청과정</th>
 	<td colspan="2">
 		<div class="item">
-		
+
 		<input type="text" name="def_ccode_text" id="def_ccode_text" value="" readonly style="display:none;float:left;height:14px;padding:3px"><span style="display:none;float:left" id="isisi1">-></span>
 		<select name="select_ccode" onchange="update(this.value)" required>
 			{@ camp_LIST}
@@ -139,12 +158,12 @@ function def_ccodes(){
 			{/}
 			<option value="">-----------------------</option>
 			{@ camp_LIST}
-				
+
 					<option value="{.num_ccode}|{.num_serial}"  >{.camp_title} - {.num_serial}기 </option>
-				
+
 			{/}
 		</select>
-		
+
 		</div>
 	</td>
 </tr>
@@ -166,14 +185,14 @@ function def_ccodes(){
 	<th scope="row">금액</th>
 	<td colspan="2">
 		<div class="item" id="info_price">
-			
+
 			{=number_format(num_price - str_discount)}원
 			{? str_discount}<br><span style="color:red">특별할인 : {=number_format(str_discount)}원</span>{/}
 			<input type="hidden" name="num_ch_price"  id="num_ch_price" value="{num_ch_price}">
 			<!--input type="hidden1" name="num_price"  id="num_price" value="{num_price}"-->
 
 			<br>할인가격 : <input type="text" name="str_discount" value="{str_discount}"/>원을 할인합니다.
-			
+
 		</div>
 	</td>
 </tr>
@@ -196,13 +215,170 @@ function def_ccodes(){
 </table>
 
 </div>
-</fieldset> 
+</fieldset>
 
 
 
 
 <fieldset>
 <legend>legend</legend>
+
+
+
+
+
+    <p class="buTitle33" style="margin-bottom:0px;padding-left:18px">할인 / 추가정보</p>
+
+    <div class="form_table">
+        <table border="1" cellspacing="0" summary="표의 요약을 반드시 넣어 주세요">
+            <tbody>
+
+            <script type="text/javascript">
+                function scsledk(idx){
+
+                    $('#sale_select').val(idx);
+
+                    if(idx != 4){
+                        $$('skskvie1').style.display = 'block';
+                    }else{
+                        $$('skskvie1').style.display = 'none';
+
+                    }
+                    if(idx == "2"){
+                        $$('namet_1').innerHTML = '교우성명';
+                        $$('namet_2').innerHTML = '졸업학과';
+                        $$('namet_3').innerHTML = '입학학번';
+
+                        $('.etcss').hide();
+                        $('.etc_1,.etc_2,.etc_3').show();
+
+
+
+
+                    }
+                    if(idx == "1"){
+                        $$('namet_1').innerHTML = '교직원성명';
+                        $$('namet_2').innerHTML = '근무부서';
+                        $$('namet_3').innerHTML = '직급';
+
+                        $('.etcss').hide();
+                        $('.etc_1,.etc_2,.etc_3').show();
+
+
+
+
+                    }
+
+                    if(idx == "3"){
+                        $$('namet_1').innerHTML = '학생성명';
+                        $$('namet_2').innerHTML = '참여과정';
+                        $$('namet_3').innerHTML = '참여기수';
+
+                        $('.etcss').hide();
+                        $('.etc_1,.etc_2,.etc_3').show();
+
+
+
+                    }
+                    if(idx == "5"){
+                        $$('namet_1').innerHTML = '학생명1';
+                        $$('namet_2').innerHTML = '학생명2';
+
+                        $('.etcss').hide();
+                        $('.etc_1,.etc_2').show();
+
+
+                    }
+
+                    if(idx == "6"){
+                        $$('namet_1').innerHTML = '신청자1';
+                        $$('namet_2').innerHTML = '신청자2';
+                        $$('namet_3').innerHTML = '신청자3';
+
+                        $('.etcss').hide();
+                        $('.etc_1,.etc_2,.etc_3').show();
+
+
+                    }
+
+                    if(idx == "7"){
+
+                        $('.etcss').hide();
+                        $('.etc_4').show();
+
+
+                    }
+
+                }///
+            </script>
+            <tr>
+                <th scope="row">할인사항</th>
+                <td>
+                    <div class="item">
+                        <input type="radio" name="str_etc" value="1" onclick="scsledk(this.value)" {? str_etc == 1} checked{/}> 교직원 자녀
+                        <input type="radio" name="str_etc" value="2" onclick="scsledk(this.value)" {? str_etc == 2} checked{/}> 교우 자녀
+                        <input type="radio" name="str_etc" value="3" onclick="scsledk(this.value)" {? str_etc == 3} checked{/}> 재참여자
+                        <input type="radio" name="str_etc" value="5" onclick="scsledk(this.value)" {? str_etc == 5} checked{/}> 형제
+                        <input type="radio" name="str_etc" value="6" onclick="scsledk(this.value)" {? str_etc == 6} checked{/}> 단체3인
+                        <input type="radio" name="str_etc" value="7" onclick="scsledk(this.value)" {? str_etc == 7} checked{/}> 패키지
+
+                        <input type="radio" name="str_etc" value="4" onclick="scsledk(this.value)" {? str_etc == 4} checked{/}>  해당없음
+
+                    </div>
+                    <input type="hidden" name="def_etc" value="{str_etc}"/>
+
+                </td>
+            </tr>
+
+            <tr >
+                <th scope="row">할인적용</th>
+                <td scope="row" >
+
+
+                    <div class=""><strong>{=number_format(str_discount)}원 할인</strong></div>
+                    <div class="item"  id="skskvie1" style="display:none;padding:10px;;width:100%">
+                        <div class="">
+
+                            <input type="hidden" id="sale_select" value="4"/>
+
+                            <span id="namet_1" class="etc_1 etcss">교유성명</span> <input type="text" name="str_etc_text1"  id="str_etc_text1"  class="i_text etc_1 etcss" value="{str_etc_text1}" style="width:90px" >
+
+                            <span id="namet_2" class=" etc_2 etcss">교유성명</span> <input type="text" name="str_etc_text2"  id="str_etc_text2"  class="i_text  etc_2 etcss" value="{str_etc_text2}" style="width:90px" >
+
+                            <span id="namet_3" class=" etc_3 etcss">교유성명</span> <input type="text" name="str_etc_text3"  id="str_etc_text3"  class="i_text  etc_3 etcss" value="{str_etc_text3}" style="width:90px" >
+
+
+                            <span id="namet_4" class="etc_4 etcss">잔류여부</span>
+                            <select name="str_etc_text5" id="str_etc_text5" class="etc_4 etcss" >
+                                <option value="">-- 잔류여부 --</option>
+                                <option value="잔류" {?str_etc_text5=='잔류'}selected{/}>잔류</option>
+                                <option value="퇴소 후 재입소" {?str_etc_text5=='퇴소 후 재입소'}selected{/}>퇴소 후 재입소</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+
+
+            <tr>
+                <th scope="row" width="100px">입,퇴소 방법</th>
+                <td colspan="2">
+                    <div class="item">
+                        <input type="radio" name="str_etc1" value="종합운동장역" hname="str_etc1" {? str_etc1=="종합운동장역"}checked{/}>서울 - 2,9호선 종합운동장역 6번출구 (교통비 별도) &nbsp;&nbsp;<br>
+                        <input type="radio" name="str_etc1" value="오송역" hname="str_etc1" {? str_etc1=="오송역"}checked{/}>지방 - KTX오송역(경부,호남) &nbsp;&nbsp;<br>
+                        <input type="radio" name="str_etc1" value="개별입소" hname="str_etc1" {? str_etc1=="개별입소"}checked{/}>개별입소 &nbsp;&nbsp;<br>
+
+                    </div>
+                </td>
+            </tr>
+
+
+            </tbody>
+
+        </table>
+
+        <br>
 
 <p class="buTitle33" style="margin-bottom:0px;padding-left:18px">참가 학생 정보</p>
 
@@ -219,10 +395,10 @@ function def_ccodes(){
 			<input type="radio" name="str_etc2" value="상경" hname="str_etc2"  {? str_etc2 == '상경' }checked{/} >상경 &nbsp;&nbsp;
 			<input type="radio" name="str_etc2" value="교육" hname="str_etc2"  {? str_etc2 == '교육' }checked{/} >교육 &nbsp;&nbsp;
 			<input type="radio" name="str_etc2" value="공학" hname="str_etc2"  {? str_etc2 == '공학' }checked{/} >공학 &nbsp;&nbsp;
-			<input type="radio" name="str_etc2" value="자연" hname="str_etc2"  {? str_etc2 == '자연' }checked{/} >자연 &nbsp;&nbsp;			
+			<input type="radio" name="str_etc2" value="자연" hname="str_etc2"  {? str_etc2 == '자연' }checked{/} >자연 &nbsp;&nbsp;
 			<input type="radio" name="str_etc2" value="의학" hname="str_etc2"  {? str_etc2 == '의학' }checked{/} >의학 &nbsp;&nbsp;
 			<input type="radio" name="str_etc2" value="기타" hname="str_etc2"  {? str_etc2 == '기타' }checked{/} >기타 &nbsp;&nbsp;
-		
+
 			<br>
 			<div class="" id="etc_3_s" style="padding:10px;">
 				기타 선택시 입력 : <input type="text" name="str_etc3" value="{str_etc3}" class="">
@@ -239,7 +415,7 @@ function def_ccodes(){
 		<input type="radio" name="str_tsize" id="str_tsize3" value="m" {? str_tsize == "m"}checked{/}><label for="str_tsize3">m</label>
 		<input type="radio" name="str_tsize" id="str_tsize4" value="L" {? str_tsize == "L"}checked{/}><label for="str_tsize4">L</label>
 		<input type="radio" name="str_tsize" id="str_tsize5" value="XL" {? str_tsize == "XL"}checked{/}><label for="str_tsize5">XL</label>
-		
+
 		<input type="radio" name="str_tsize" id="str_tsize6" value="XXL" {? str_tsize == "XXL"}checked{/}><label for="str_tsize6">XXL</label>
 		<input type="radio" name="str_tsize" id="str_tsize7" value="XXXL" {? str_tsize == "XXXL"}checked{/}><label for="str_tsize7">XXXL</label>
 
@@ -250,7 +426,7 @@ function def_ccodes(){
 	<th scope="row">학생성명</th>
 	<td colspan="2">
 		<div class="item">
-		<input class="i_text" title="학생성명" type="text" name="str_st_name" id="str_st_name" value="{str_st_name}" hname="{=_la('학생성명')}"  required> 
+		<input class="i_text" title="학생성명" type="text" name="str_st_name" id="str_st_name" value="{str_st_name}" hname="{=_la('학생성명')}"  required>
 		</div>
 	</td>
 </tr>
@@ -259,7 +435,7 @@ function def_ccodes(){
 	<th scope="row">학생성명(영문)</th>
 	<td colspan="2">
 		<div class="item">
-			<input class="i_text" title="학생성명" type="text" name="str_st_eng_name" id="str_st_eng_name" value="{str_st_eng_name}" hname="{=_la('학생성명(영문')}"  required> 
+			<input class="i_text" title="학생성명" type="text" name="str_st_eng_name" id="str_st_eng_name" value="{str_st_eng_name}" hname="{=_la('학생성명(영문')}"  required>
 		</div>
 	</td>
 </tr-->
@@ -271,7 +447,7 @@ function def_ccodes(){
 			<input type="radio" name="str_etc1" value="개별입,퇴소" hname="str_etc1" {? str_etc1 == '개별입,퇴소' }checked{/}>개별입,퇴소 &nbsp;&nbsp;
 			<input type="radio" name="str_etc1" value="서울역" hname="str_etc1" {? str_etc1 == '서울역' }checked{/}>서울역 &nbsp;&nbsp;
 			<input type="radio" name="str_etc1" value="용산역" hname="str_etc1" {? str_etc1 == '용산역' }checked{/}>용산역 &nbsp;&nbsp;
-			
+
 		</div>
 	</td>
 </tr-->
@@ -293,9 +469,9 @@ function def_ccodes(){
 	<th scope="row">주민등록번호</th>
 	<td colspan="2">
 		<div class="item">
-			<input class="i_text" title="주민등록번호" type="text" name="jumin1" id="jumin1" value="{jumin1}" hname="주민등록번호" style="width:80px" required> 
+			<input class="i_text" title="주민등록번호" type="text" name="jumin1" id="jumin1" value="{jumin1}" hname="주민등록번호" style="width:80px" required>
 			-
-			<input class="i_text" title="주민등록번호" type="text" name="jumin2" id="jumin2" value="{jumin2}" hname="주민등록번호" style="width:80px" required> 
+			<input class="i_text" title="주민등록번호" type="text" name="jumin2" id="jumin2" value="{jumin2}" hname="주민등록번호" style="width:80px" required>
 		</div>
 	</td>
 </tr>
@@ -305,8 +481,8 @@ function def_ccodes(){
 	<th scope="row">{=_la('학교/학년')}</th>
 	<td colspan="2">
 		<div class="item">
-			
-			<input class="i_text" title="학교명" type="text" name="str_school" id="str_school" value="{str_school}" hname="{=_la('학교명')}"  required> 
+
+			<input class="i_text" title="학교명" type="text" name="str_school" id="str_school" value="{str_school}" hname="{=_la('학교명')}"  required>
 
 			<select  name="str_class" id="str_class" hname="학년정보" required>
 				<option value="">-- {=_la('학년정보')} --</option>
@@ -323,7 +499,7 @@ function def_ccodes(){
 
 			</select>
 
-			<input class="i_text" title="반" type="text" name="str_ban" id="str_ban" value="{str_ban}" hname="{=_la('반')}" style="width:60px"  > 
+			<input class="i_text" title="반" type="text" name="str_ban" id="str_ban" value="{str_ban}" hname="{=_la('반')}" style="width:60px"  >
 		</div>
 	</td>
 </tr>
@@ -332,12 +508,12 @@ function def_ccodes(){
 <tr>
 	<th scope="row" >부모가 같은<br> 신청건</th>
 	<td colspan="2">
-		
+
 			<table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" class="tableTemp02" summary="">
 			<caption><span>caption</span></caption>
 				<thead>
 					<tr>
-						
+
 						<th style="text-align:center">프로그램명</th>
 						<th style="text-align:center">기수</th>
 						<th style="text-align:center">주문번호</th>
@@ -348,11 +524,11 @@ function def_ccodes(){
 				<tbody>
 					{@ brs_LIST}
 					<tr>
-						
+
 						<td>{.ccode_title}</td>
 						<td>{.num_serial}기</td>
 						<td><a href="/lms.admin.order_view?order_code={.str_order_code}">{.str_order_code}</a></td>
-						
+
 						<td>{.str_st_name}</td>
 						<td>
 						{? .str_order_st == "0"}
@@ -369,7 +545,7 @@ function def_ccodes(){
 						<span style="color:#808080">취소환불</span>
 						{: .str_order_st == "6"}
 						<span style="color:#73758c">대기자 변경(결제)</span>
-						
+
 						{: .str_order_st == "7"}
 						<span style="color:#73758c">대기자 변경</span>
 						{/}
@@ -384,7 +560,7 @@ function def_ccodes(){
 </table>
 
 </div>
-</fieldset> 
+</fieldset>
 
 <p class="buTitle33" style="margin-bottom:0px;padding-left:18px">부모님 정보</p>
 
@@ -407,8 +583,8 @@ function def_ccodes(){
 	<td>
 		<div class="item">
 		<input class="i_text" name="email1" id="email1" hname="{=_la('이메일')}" type="text"  maxbyte="50" style="width:100px" value="{email1}"  required >@<input name="email2" id="email2" hname="이메일" type="text"  value="{email2}" maxbyte="50" required />
-										
-			
+
+
 		</div>
 	</td>
 </tr>
@@ -467,12 +643,12 @@ function def_ccodes(){
 							  }).open();
 						    }
 						</script>
-		
-		
+
+
 	</td>
 </tr>
 
-<tr>
+<!--<tr>
 	<th scope="row">{=_la('전화번호')}</th>
 	<td>
 		<div class="item">
@@ -484,7 +660,7 @@ function def_ccodes(){
 
 		</div>
 	</td>
-</tr>
+</tr>-->
 
 <tr>
 	<th scope="row">{=_la('휴대폰')}</th>
@@ -498,7 +674,23 @@ function def_ccodes(){
 
 		<br>
 		</div>
-		
+
+	</td>
+</tr>
+
+<tr>
+	<th scope="row">자녀휴대폰</th>
+	<td>
+		<div class="item">
+		<input class="i_text" name="tel111" id="tel111" value="{tel111}"  hname="{=_la('핸드폰')}" type="text" style="width:60px" maxbyte="50"  style="ime-mode:active" maxlength="4">
+		-<input class="i_text"  name="tel222" id="tel222" value="{tel222}" hname="{=_la('핸드폰')}" type="text" style="width:60px"  maxbyte="50"  style="ime-mode:active" maxlength="4">
+		-<input class="i_text"  name="tel333" id="tel333" value="{tel333}"  hname="{=_la('핸드폰')}" type="text" style="width:60px"  maxbyte="50"  style="ime-mode:active" maxlength="4">
+
+            {tel111}{tel222}{tel333}
+
+		<br>
+		</div>
+
 	</td>
 </tr>
 
@@ -506,104 +698,27 @@ function def_ccodes(){
 	<th scope="row">{=_la('메모')}</th>
 	<td>
 		<div class="item">
-		 <textarea  class="i_text" cols="50" rows="5" name="str_memo" id="str_memo" hname="{=_la('메모')}">{str_memo}</textarea> 
+		 <textarea  class="i_text" cols="50" rows="5" name="str_memo" id="str_memo" hname="{=_la('메모')}">{str_memo}</textarea>
 		</div>
-		
+
 	</td>
 </tr>
 
 
-<script type="text/javascript">
-// <![CDATA[
-function scsledk(idx){
-	$('namet_3').style.display = 'block';
-	$('str_etc_text3').style.display = 'block';
 
-	if(idx != 4){
-		$('skskvie1').style.display = 'block';
-	}else{
-		$('skskvie1').style.display = 'none';
-	}
-	if(idx == "2"){
-		$('namet_1').innerHTML = '교우성명';
-		$('namet_2').innerHTML = '졸업학교';
-		$('namet_3').innerHTML = '입학학번';
-	}
-	if(idx == "1"){
-		$('namet_1').innerHTML = '교직원성명';
-		$('namet_2').innerHTML = '근무부서';
-		$('namet_3').innerHTML = '직급';
-	}
-	
-	if(idx == "3"){
-		$('namet_1').innerHTML = '학생성명';
-		$('namet_2').innerHTML = '참여과정';
-		$('namet_3').innerHTML = '참여기수';
-	}
-	if(idx == "5"){
-		$('namet_1').innerHTML = '신청자1 학생명';
-		$('namet_2').innerHTML = '신청자2 학생명';
-		$('namet_3').style.display = 'none';
-		$('str_etc_text3').style.display = 'none';
-	}
-}
-// ]]>
-</script>
-<tr>
-	<th scope="row">추가사항</th>
-	<td>
-		<div class="item">
-		<input type="radio" name="str_etc" value="1" onclick="scsledk(this.value)" {? str_etc == 1} checked{/}> 고려대 교직원 자녀
-		<input type="radio" name="str_etc" value="2" onclick="scsledk(this.value)" {? str_etc == 2} checked{/}> 고려대 교우 자녀
-		<input type="radio" name="str_etc" value="3" onclick="scsledk(this.value)" {? str_etc == 3} checked{/}> 기존캠프 참여자
-		<input type="radio" name="str_etc" value="5" onclick="scsledk(this.value)" {? str_etc == 5} checked{/}> 형제 및 단체
-            <input type="radio" name="str_etc" value="4" onclick="scsledk(this.value)" {? str_etc == 4} checked{/}>  해당없음
-		
-		</div>
-		<input type="hidden" name="def_etc" value="{str_etc}"/>
-		
-	</td>
-</tr>
+
 
 <tr>
-	<th scope="row" width="100px">입,퇴소 방법</th>
-	<td colspan="2">
-		<div class="item">
-			<input type="radio" name="str_etc1" value="종합운동장역" hname="str_etc1" {? str_etc1=="종합운동장역"}checked{/}>서울 - 2,9호선 종합운동장역 6번출구 (교통비 별도) &nbsp;&nbsp;<br>
-			<input type="radio" name="str_etc1" value="오송역" hname="str_etc1" {? str_etc1=="오송역"}checked{/}>지방 - KTX오송역(경부,호남) &nbsp;&nbsp;<br>
-			<input type="radio" name="str_etc1" value="개별입소" hname="str_etc1" {? str_etc1=="개별입소"}checked{/}>개별입소 &nbsp;&nbsp;<br>
-			
-		</div>
-	</td>
-</tr>
-
-
-<tr >
-    <th scope="row">기타</th>
-	<td scope="row" >
-
-        <div id="skskvie1" style="display:none">
-            <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" class="tableTemp01 " summary="^!">
-
-            	<tbody>
-            		<tr>
-            			<td><label id="namet_1">교유성명</label></td>
-            			<td><input type="text" name="str_etc_text1" id="str_etc_text1" value="{str_etc_text1}" class="" ></td>
-            		</tr>
-                    <tr>
-            			<td><label id="namet_2">교유성명</label></td>
-            			<td><input type="text" name="str_etc_text2" id="str_etc_text2" value="{str_etc_text2}" class="" ></td>
-            		</tr>
-                    <tr>
-            			<td><label id="namet_3">교유성명</label></td>
-            			<td><input type="text" name="str_etc_text3" id="str_etc_text3" value="{str_etc_text3}" class="" ></td>
-            		</tr>
-            	</tbody>
-            </table>
-
+    <th scope="row">1365아이디</th>
+    <td>
+        <div class="item" style="padding-top:5px">
+            <input class="i_text" title="1365아이디" type="text" name="str_etc_text4" id="str_etc_text4" value="{str_etc_text4}" hname="{=_la('1365아이디')}"  >
         </div>
-	</td>
+    </td>
 </tr>
+
+
+
 <script type="text/javascript">
 // <![CDATA[
 scsledk({str_etc})
@@ -612,7 +727,7 @@ scsledk({str_etc})
 
 </table>
 </div>
-</fieldset> 
+</fieldset>
 
 
 
@@ -638,7 +753,7 @@ scsledk({str_etc})
 	<th scope="row">입금예정자</th>
 	<td>
 		<div class="item" style="padding-top:5px">
-			<input class="i_text" title="입금예정자 명" type="text" name="str_bank_name" id="str_bank_name" value="{str_bank_name}" hname="{=_la('입금예정자 명')}"  required> 
+			<input class="i_text" title="입금예정자 명" type="text" name="str_bank_name" id="str_bank_name" value="{str_bank_name}" hname="{=_la('입금예정자 명')}"  required>
 		</div>
 	</td>
 </tr>
@@ -647,7 +762,9 @@ scsledk({str_etc})
 	<th scope="row">입금예정일</th>
 	<td>
 		<div class="item" style="padding-top:5px">
-            <strong style="color:blue">{dt_bank_date}</strong>
+            <!--<strong style="color:blue">{dt_bank_date}</strong>-->
+
+            <input class="i_text" title="입금예정일" type="text" name="dt_bank_date" id="dt_bank_date" value="{dt_bank_date}" hname="{=_la('예정일')}"  required>
 		</div>
 	</td>
 </tr>
@@ -666,7 +783,7 @@ scsledk({str_etc})
 	<th scope="row">현금영수증 번호</th>
 	<td style="text-align:left">
 		<div class="item" style="padding-top:5px">
-			<input class="i_text" title="현금영수증 번호" type="text" style="width:140px" name="str_money_number" id="str_money_number" value="{str_money_number}" hname="현금영수증 번호"> 
+			<input class="i_text" title="현금영수증 번호" type="text" style="width:140px" name="str_money_number" id="str_money_number" value="{str_money_number}" hname="현금영수증 번호">
 		</div>
 	</td>
 </tr>
@@ -710,10 +827,10 @@ scsledk({str_etc})
 				{str_card_text}
 			</td>
 		</tr>
-		
+
 {/}
 {? str_etc1=="종합운동장역"}
-<tr>
+<!--<tr>
     <th scope="row">교통비 결제 상태</th>
     <td >
         <select name="str_busbi"  id="str_busbi">
@@ -724,14 +841,14 @@ scsledk({str_etc})
         </select>
         <input type="hidden" name="order_st_hi" value="{str_order_st}">
     </td>
-</tr>
+</tr>-->
 {:}
 
 {/}
 
 </table>
 </div>
-</fieldset> 
+</fieldset>
 
 
 <div style="text-align:center;margin-top:20px">
@@ -739,7 +856,7 @@ scsledk({str_etc})
 	<span class="btn_pack medium "><a href="javascript:history.go(-1)">취소</a></span>
 </div>
 
-</form>  
+</form>
 
 </div>
 <div style="width:220px;float:left;">
@@ -757,7 +874,7 @@ scsledk({str_etc})
 		<p class="buTitle01" style="margin-top:00px">회원 메모 로그</p>
 		<wa:applet module="log" code="{str_id}"/>
 	</div>
-	
+
 </div>
 
 </div>

@@ -1,0 +1,54 @@
+<!--Gallery-->
+<section id="login" class="secondary-color text-center  clearfix autoheight">
+
+    <div class="row wow fadeIn" data-wow-delay="0.2s">
+
+
+
+            <div class="" style="width:420px;margin:auto">
+                <div class="box r white">
+                    <div class="box-body padding">
+
+                        <div class="text-center m-b20">
+                            <img src="/theme/NEW/assets/logo.png" alt="" />
+                        </div>
+
+                        <div class="text-muted m-b20">
+                            아이디와 비밀번호를 입력하세요.
+                        </div>
+
+                        <form name="form" action="member.login" method="post">
+
+                            <input type="hidden" name="oid" value="<?=_OID?>"/>
+                            <input type="hidden" name="r_url" value="<?=$_SERVER[HTTP_HOST]?>"/>
+                            <input type="hidden" name="re_url" value="<?=$_SERVER[HTTP_HOST]?>{? reurl}{reurl}{:}{act3}{/}"/>
+                            <input type="hidden" name="redir" value=""/>
+                            <input type="hidden" name="ssid" name="ssid2" value="<?=$_REQUEST[PHPSESSID]?>"/>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="userid" placeholder="아이디" required="">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="passwd" class="form-control" placeholder="비밀번호" required="">
+                            </div>
+
+
+
+                            <button type="submit" class="btn btn-lg black p-x-lg m-t20">로그인</button>
+
+                            <div class="text-left m-t30 ft12">
+                                <div class="">아직 회원이 아니신가요? <a href="/?m=signup">회원가입</a></div>
+                                <div class="m-t10">아이디/비밀번호를 잊으셨나요? <a href="/?m=signup">아이디/비밀번호 찾기</a></div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+
+    </div>
+
+</section>
+

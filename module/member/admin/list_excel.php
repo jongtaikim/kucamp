@@ -99,7 +99,7 @@ break;
 
 header( "Content-type: application/vnd.ms-excel" ); 
 header( "Content-Disposition: attachment; filename=".$excelnm.".xls" ); 
-header( "Content-Description: PHP5 Generated Data" ); 
+header( "Content-Description: PHP5 Generated Data" );
 
 $sql = "
 SELECT 
@@ -144,7 +144,11 @@ function member_type($type) { //DB 회원 등급 변환
 }
 ?>
 
-<html> 
+<!DOCTYPE html>
+<html>
+<head lang="ko">
+    <meta charset="EUC-KR">
+</head>
 <body>
 
 	<table cellspacing="0" cellpadding="0" border="1">
@@ -160,8 +164,8 @@ function member_type($type) { //DB 회원 등급 변환
 		<td width="100"><div align="center">이름</div></td>
 		<td width="100"><div align="center">email</div></td>
 
-		<td width="130"><div align="center">휴대폰</div></td>
-		<td width="130"><div align="center">집전화</div></td>
+		<td width="130"><div align="center">연락처</div></td>
+		<td width="130"><div align="center">자녀휴대폰</div></td>
 		<td width="130"><div align="center">주소</div></td>
 		<td width="130"><div align="center">자기소개</div></td>
 		<td width="72"><div align="center">로그인수</div></td>
@@ -184,7 +188,7 @@ function member_type($type) { //DB 회원 등급 변환
 		<td><?=$data[$i][str_name]?></td>
 		<td><?=$data[$i][str_email]?></td>
 		<td><?=$data[$i][str_handphone]?></td>
-		<td><?=$data[$i][str_phone]?></td>
+		<td><?=$data[$i][str_stu_handphone]?></td>
 		<td><?=$data[$i][chr_zip]?> <?=$data[$i][str_addr1]?><?=$data[$i][str_addr2]?></td>
 		<td><?=$data[$i][str_introduct]?></td>
 		<td><?=$data[$i][num_login_cnt]?></td>

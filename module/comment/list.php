@@ -1,69 +1,76 @@
 <?
 /* vim: set expandtab tabstop=4 shiftwidth=4 foldmethod=marker: */
 /**
-* ÀÛ¼ºÀÏ: 2010-01-29
-* ÀÛ¼ºÀÚ: ±èÁ¾ÅÂ
-* ¼³   ¸í: URL µ¡±Û À§Á¬¿ë ¸®½ºÆ® ÀÌÁ¨ URL¿¡ µ¡±ÛÀ» ´ÞÀÚ
-*****************************************************************
-* 
-*/
+ * ìž‘ì„±ì¼: 2010-01-29
+ * ìž‘ì„±ìž: ê¹€ì¢…íƒœ
+ * ì„¤   ëª…: URL ë§ê¸€ ìœ„ì ¯ìš© ë¦¬ìŠ¤íŠ¸ ì´ì   URLì— ë§ê¸€ì„ ë‹¬ìž
+ *****************************************************************
+ *
+ */
 
 $DB = &WebApp::singleton('DB');
-	
-	global $mcode,$id,$module;
 
-	$template = "/html/comment/skin/".$comment_skin."/list.html";
-	$tpl->define($mou_name.'_W_',$template);
-	
-	if(!$param[code]){
-		echo "wa:applet °ª¿¡ code °ªÀÌ ´©¶ôµÇ¾ú½À´Ï´Ù.";
-		exit;
-	}
+global $mcode,$id,$module;
 
-	if(!$param[idx]){
-		echo "wa:applet °ª¿¡ idx °ªÀÌ ´©¶ôµÇ¾ú½À´Ï´Ù.";
-		exit;
-	}
+$template = "/html/comment/skin/".$comment_skin."/list.html";
+$tpl->define($mou_name.'_W_',$template);
+
+if(!$param[code]){
+    echo "wa:applet ê°’ì— code ê°’ì´ ëˆ„ë½ë˜ì—ˆìŠµë‹ˆë‹¤.";
+    exit;
+}
+
+if(!$param[idx]){
+    echo "wa:applet ê°’ì— idx ê°’ì´ ëˆ„ë½ë˜ì—ˆìŠµë‹ˆë‹¤.";
+    exit;
+}
 
 
-	$code = $param[code].".".$param[idx];
-	$code = str_replace("&","|",$code);
+$code = $param[code].".".$param[idx];
+$code = str_replace("&","|",$code);
 
-	// ¼Ò½º ÀÔ·ÂºÎºÐ
-	$sql = "select 
-	
-	 num_oid, num_code, num_serial,  num_group, str_user, str_name, str_pass, str_comment,  dt_date, 
-       str_ip, chr_mtype, str_tmp1, str_tmp2, str_tmp3,num_main_serial,num_del,num_dtb
 
-	from TAB_COMMENT where num_oid = '"._OID."' and num_code = '".$code."' order by   num_group asc , num_step asc";
-	
 
-	$row = $DB -> sqlFetchAll($sql);
+if(!$listnum) $listnum = 50;
 
-	for($ii=0; $ii<count($row); $ii++) {
-		$a = explode("-",$row[$ii]['dt_date']);
-	
-		$row[$ii]['dt_date1']= $a[0];
-		
-		$row[$ii]['dt_date2']= $a[1];
-		$row[$ii]['dt_date3']= $a[2];
-		
-		if(!$_SESSION[ADMIN]) $row[$ii]['str_ip']= substr(md5($row[$ii]['str_ip']),0,8);
+$sql = "select count(*) from comments where code = '".$code."'";
+$total = $DB->sqlFetchOne($sql);
+if(!$total) $total = 0;
 
-	}
-		
-	
+$page = $_REQUEST['page'];
+if (!$page) $page = 1;
 
-	$tpl->assign(array(
-	'comment_LIST'=>$row,
-	'code_url'=>$code,
-	
-	));
-	
-	
-	// ¼Ò½º ÀÔ·ÂºÎºÐ
-    
-    
-    $content = $tpl->fetch($mou_name.'_W_');
-    echo $content;
+$seek = $listnum * ($page - 1);
+$offset = $seek + $listnum;
+
+// ì†ŒìŠ¤ ìž…ë ¥ë¶€ë¶„
+$sql = "select * from comments where code = '".$code."' order by   no desc limit  $seek,   $listnum";
+$row = $DB -> sqlFetchAll($sql);
+
+for($ii=0; $ii<count($row); $ii++) {
+    $a = explode("-",$row[$ii]['dt_date']);
+
+    $row[$ii]['dt_date1']= $a[0];
+
+    $row[$ii]['dt_date2']= $a[1];
+    $row[$ii]['dt_date3']= $a[2];
+
+}
+
+
+
+$tpl->assign(array(
+    'comment_LIST'=>$row,
+    'code_url'=>$code,
+    'listnum'=>$listnum,
+    'total'=>$total,
+
+));
+
+
+// ì†ŒìŠ¤ ìž…ë ¥ë¶€ë¶„
+
+
+$content = $tpl->fetch($mou_name.'_W_');
+echo $content;
 ?>

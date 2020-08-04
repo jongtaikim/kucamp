@@ -1,211 +1,380 @@
-<link rel="stylesheet" href="/css/mypage.css" type="text/css" />
-<script type="text/javascript" src="/js/lib.validate.js"></script>
-<script language="Javascript" type="text/javascript">
-function emailSelect(idx){
-	$('email2').value=idx;
-}
+<style>body{margin: 0px;padding: 0px}</style>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script>
+<!--Gallery-->
 
-function popup_zip() {
-	form = 'joinForm';
-	wZip = window.open('core.zipcode?el_addr=str_addr1&el_zip=str_zipcode&el_focus=str_addr2&form='+form,'zipsearch','width=400, height=200,scrollbars=yes');
-}
+<div class="row  wow fadeIn" data-wow-delay="0.2s" id="pw_input">
+    <div class="" style="margin:auto;max-width:680px">
+            <div class="box r white  b-b b-l b-t b-r" style="overflow:auto;">
+                <div class="box-body padding">
 
-</script>
+                    <div class="text-center m-b20">
+                        <img src="/theme/NEW/assets/logo.png" alt="" />
+                        <div class="ft16">
+                            <strong>비밀번호 확인</strong>
+                        </div>
+                    </div>
 
-<body>
-<!--서브컨텐츠 영역 시작-->
-<div id="subContentArea">
+                    <div class="form-group">
+                        <div class="col-xs-12 col-md-12">
 
-
-
-	<div id="subPage">
-		<h2>서브페이지 내용 영역</h2>
-		<div class="mypageContent">
-			<div id="myInfoTop">
-				<h3 class="mypageTitle">회원 개인정보 수정</h3>
-				<img src="/images/school/mypage/mypageTop.gif" alt="" />
-			</div>
-			<div id="myInfo">
-				<form method='post'  name = "joinForm" enctype="multipart/form-data" onsubmit="return validate(this);" >
-				<input type="hidden" name="mode" value = "update" />
-				<input type="hidden" name="str_id" value = "{str_id}" />
-				<fieldset>
-					<legend>회원 개인정보 수정을 위한 입력폼</legend>
-					<div class="row name">
-						<div class="title">이름<span class="colon">:</span></div>
-						<div class="input">{str_name}</div>
-					</div>
-					<div class="row id">
-						<div class="title">아이디<span class="colon">:</span></div>
-						<div class="input">{str_id}</div>
-					</div>
-					
-							<div class="row password">
-							<div class="title"><label for="password"><span class="inputTitle">기존 비밀번호</span></label></div>
-							<div class="input"><input  name="old_passwd" hname="기존 비밀번호" maxlength="10" pattern="^([a-zA-Z0-9]{4,10})?$"  type="password" match="str_passwd_2" /> 
-							<input type="hidden" name="password" id="str_passwd_2" value="{str_passwd}">					
-						</div>
-						</div>
-				
-						<div class="row password">
-							<div class="title"><label for="password"><span class="inputTitle">새 비밀번호</span></label></div>
-							<div class="input"><input  name="str_passwd" id="str_passwd" hname="비밀번호" maxlength="10" pattern="^([a-zA-Z0-9]{4,10})?$" match="str_passwd2" type="password"  /> 
-												
-						</div>
-						</div>
-						<div class="row rePassword">
-							<div class="title"><label for="str_passwd2"><span class="inputTitle">새비밀번호 확인</span></label></div>
-							<div class="input"><input name="str_passwd2" id="str_passwd2" hname="새비밀번호 확인" type="password" maxlength="10"    ></div>
-						</div>
+                            <input type="password" class="form-control"  id="is_passwd" placeholder="현재 비밀번호를 입력하세요.">
 
 
-					
-					{? chr_mtype == "s"}
-						<div class="row">
-							<div class="left name">
-								<div class="title"><label for="nameInput"><span class="inputTitle">학급선택</span></label></div>
-								<div class="input">
-								
-								<select  name="num_fcode" id="num_fcode" hname="학급선택" required>
-									<option value="">-- 학급 선택 --</option>
-									{@ FMT}
-									<optgroup label="{.str_grade}">
-										{@ classTop}
-										<option value="{..str_cafe_id}" {? ..str_cafe_id  == num_fcode} selected{/}>{.str_grade} {?.str_grade !=..str_class}{..str_class}{/} ({..counter +0})</option>
-										{/}
-									</optgroup>
-									{/}
-								</select>
-								<input type="hidden" name="num_fcode_def" value="{num_fcode}"/>
-								</div>
-							</div>
-							
-						</div>
-						{/}
+                            <div class="text-center padding">
+                                <input type="button" name="" onclick="ch_pw()" value="확인" class="btn btn-lg info" style="height:50px;background-color: #71001a">
+                                <script type="text/javascript">
+                                    function ch_pw() {
+                                        if(!$('#is_passwd').val()){
+                                            alert('현재 비밀번호를 입력하세요.');
+                                            return false;
+                                        }
+
+                                        if($('#is_passwd').val() !='{str_passwd}'){
+                                            alert('현재 비밀번호가 틀립니다.');
+                                            return false;
+                                        }
 
 
-					<div class="row email">
-						<div class="title"><label for="id">이메일<span class="colon">:</span></label></div>
-						<div class="input">
-							
-							<input name="email1" hname="이메일" type="text"  maxbyte="50"  value="{email1}" required  />
-							
-							<span class="divide">@</span>
-							
-							<input name="email2" id="email2" hname="이메일" type="text"  maxbyte="50"  value="{email2}" required />
+                                        $('#logins').show();
+                                        $('#pw_input').hide();
+                                    }
+                                </script>
+                            </div>
 
-							<select name="emailSelect1" onchange = "emailSelect(this.value)">
-								<option value="">Email 주소 선택</option>
-								<option value="">직접입력</option>
-								<option value="gmail.com">구글(G메일)</option>
-								<option value="naver.com">네이버</option>
-								<option value="nate.com">네이트</option>
-								<option value="dreamwiz.com">드림위즈</option>
-								<option value="yahoo.co.kr">야후</option>
-								<option value="empal.com">엠파스</option>
-								<option value="paran.com">파란</option>
-								<option value="hanmail.net">한메일</option>
-							</select>
-							
-			
-						</div>
-					</div>
-					
-					<div class="row address">
-						<div class="title">주소<span class="colon">:</span></div>
-						<div class="input">
-						<div>
-										
-						<input type="text" id="sample6_postcode" name="chr_zip" value="{chr_zip}" placeholder="우편번호" class="i_text" style="width:80px">
-						<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-						<input type="text" id="sample6_address" name="str_addr1" placeholder="주소" value="{str_addr1}" required maxbyte="100" readonly class="i_text" style="width:400px"><br>
-						<input type="text" id="sample6_address2" name="str_addr2" placeholder="상세주소" value="{str_addr2}" required maxbyte="100" trim="trim" class="i_text" style="width:400px">
+                        </div>
+                    </div>
+            </div>
+        </div>
 
-						<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-						<script>
-						    function sample6_execDaumPostcode() {
-							  new daum.Postcode({
-								oncomplete: function(data) {
-								    // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-								    // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-								    // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-								    var fullAddr = ''; // 최종 주소 변수
-								    var extraAddr = ''; // 조합형 주소 변수
-
-								    // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-								    if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-									  fullAddr = data.roadAddress;
-
-								    } else { // 사용자가 지번 주소를 선택했을 경우(J)
-									  fullAddr = data.jibunAddress;
-								    }
-
-								    // 사용자가 선택한 주소가 도로명 타입일때 조합한다.
-								    if(data.userSelectedType === 'R'){
-									  //법정동명이 있을 경우 추가한다.
-									  if(data.bname !== ''){
-										extraAddr += data.bname;
-									  }
-									  // 건물명이 있을 경우 추가한다.
-									  if(data.buildingName !== ''){
-										extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-									  }
-									  // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
-									  fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
-								    }
-
-								    // 우편번호와 주소 정보를 해당 필드에 넣는다.
-								    document.getElementById('sample6_postcode').value = data.zonecode; //5자리 기초구역번호 사용
-								    document.getElementById('sample6_address').value = fullAddr;
-
-								    // 커서를 상세주소 필드로 이동한다.
-								    document.getElementById('sample6_address2').focus();
-								}
-							  }).open();
-						    }
-						</script>
-
-						</div>
-					</div>
-					<div class="row phone">
-						<div class="title">전화번호<span class="colon">:</span></div>
-						<div class="input">
-						
-						<input name="tel1"  hname="연락처" type="text" maxbyte="50" value="{tel1}" style="ime-mode:active" maxlength="4">
-						<span class="divide">-</span>
-						<input name="tel2"  hname="연락처" type="text" maxbyte="50" value="{tel2}" style="ime-mode:active" maxlength="4">
-						<span class="divide">-</span>
-						<input name="tel3"  hname="연락처" type="text" maxbyte="50"  value="{tel3}" style="ime-mode:active" maxlength="4">
-						
-						</div>
-					</div>
-					<div class="row cellPhone last">
-						<div class="title">휴대폰<span class="colon">:</span></div>
-						<div class="input">
-							
-
-							<input name="tel11" hname="핸드폰" type="text" maxbyte="50" value="{tel11}"  style="ime-mode:active" required maxlength="4">
-							<span class="divide">-</span>
-							<input name="tel22" hname="핸드폰" type="text" maxbyte="50" value="{tel22}" style="ime-mode:active" required maxlength="4">
-							<span class="divide">-</span>
-							<input name="tel33" hname="핸드폰" type="text" maxbyte="50" value="{tel33}"  style="ime-mode:active" required maxlength="4">
-
-
-						</div>
-					</div>
-				</fieldset>
-				<div id="btnArea">
-					<input type="image" src="/images/common/submitBtn.gif" alt="확인버튼, 현재 내용을 저장합니다." />
-					<a href="#"><img src="/images/common/cancelBtn.gif" alt="취소버튼" /></a>
-				</div>
-				</form>
-				<img src="/images/school/mypage/mypageBottom.gif" class="bg" alt="" />
-			</div>
-
-		</div>
-	</div>
+    </div>
 </div>
-<!--서브컨텐츠 영역 끝-->
-</body>
-</html>
+
+<div class="" id="logins" style="display:none">
+<section id="" class="  text-center  clearfix ">
+
+    <div class=" wow fadeIn" data-wow-delay="0.2s">
+
+        <div class="" style="margin:auto;max-width:680px">
+            <div class="box r white">
+                <div class="box-body padding">
+
+                    <div class="text-center m-b20">
+                        <img src="/theme/NEW/assets/logo.png" alt="" />
+                        <div class="">
+                            <strong class="ft22">회원정보수정</strong>
+                        </div>
+                    </div>
+
+                    <div class="text-left">
+
+                        <form name="joinForm" id="joinForm" method="post"   enctype="multipart/form-data">
+                            <input type="hidden" name="mode" value = "update" />
+                            <input type="hidden" name="str_id" value = "{str_id}" />
+
+
+                            <div class="clearfix">
+
+                                <div class="form-group">
+
+                                    <div class="col-xs-12 col-md-12">
+                                        <label> {=_la('회원유형')} : </label>
+                                        <strong>{? chr_mtype=="s"}학생회원{: chr_mtype=="g"}학부모회원{/}</strong>
+
+                                    </div>
+
+                                    {? chr_mtype == "s"}
+                                    <div class="col-xs-12 col-md-12  animated fadeIn" id="school_info">
+                                        <label ><span class="text-danger">*</span>{=_la('학교/학년')}</label>
+                                        <input class="form-control" title="학교명" type="text" name="str_school" id="str_school" hname="{=_la('학교명')}" placeholder="학교명을 입력해주세요. (고등학교,중학교,초등학교)"  >
+
+                                        <select  name="str_class" id="str_class" hname="학년정보" class="form-control">
+                                            <option value="">-- {=_la('학년정보')} --</option>
+
+                                            <optgroup label="초등학교">
+
+                                                <option value="초등학교 1학년">1학년</option>
+                                                <option value="초등학교 2학년">2학년</option>
+                                                <option value="초등학교 3학년">3학년</option>
+                                                <option value="초등학교 4학년">4학년</option>
+                                                <option value="초등학교 5학년">5학년</option>
+                                                <option value="초등학교 6학년">6학년</option>
+
+                                            </optgroup>
+
+                                            <optgroup label="중학교">
+
+                                                <option value="중학교 1학년">1학년</option>
+                                                <option value="중학교 2학년">2학년</option>
+                                                <option value="중학교 3학년">3학년</option>
+
+                                            </optgroup>
+
+                                            <optgroup label="고등학교">
+
+                                                <option value="고등학교 1학년" {? str_class =='고등학교 1학년'} selected{/}>1학년</option>
+                                                <option value="고등학교 2학년" {? str_class =='고등학교 2학년'} selected{/}>2학년</option>
+                                                <option value="고등학교 3학년" {? str_class =='고등학교 3학년'} selected{/}>3학년</option>
+
+                                            </optgroup>
+
+                                        </select>
+                                    </div>
+                                    {/}
+
+                                    <div class="col-xs-12 col-md-12">
+                                        <label >{=_la('아이디')}</label>
+                                        <input type="text" class="form-control"  hname="이름" maxbyte="50" value="{str_id}" placeholder="아이디를 입력하세요."
+                                               name="str_id" id="str_id" hname="{=_la('아이디')}" maxlength="10" maxbyte="10" minbyte="5" readonly>
+
+
+
+                                    </div>
+
+                                    <div class="col-xs-12 col-md-12">
+                                        <label>{=_la('이름')}</label>
+                                        <input type="text" class="form-control" name="str_name" hname="이름" maxbyte="50" value="{str_name}" placeholder="이름을 입력하세요." readonly>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <label><span class="text-danger">*</span>{=_la('성별')}</label>
+                                        <select name="str_sex" id="str_sex" class="form-control">
+                                            <option value="1" selected>남자</option>
+                                            <option value="2" >여자</option>
+                                        </select>
+                                    </div>
+
+
+
+                                    <div class="col-xs-12 col-md-6">
+
+                                        <label><span class="text-danger">*</span>{=_la('생년월일')}</label>
+                                        <input type="date" class="form-control" id="birthday" hname="생년월일" name="num_birthday" maxbyte="50" value="{=substr(num_birthday,0,4)}-{=substr(num_birthday,4,2)}-{=substr(num_birthday,6,2)}" onchange="chk_birth()" placeholder="2000-01-01" required>
+                                        <script type="text/javascript">
+                                            function chk_birth() {
+
+                                                var str = $('#birthday').val();
+
+                                                var pattern = /[0-9]{4}-[0-9]{2}-[0-9]{2}/;
+
+                                                if(pattern.test(str)) {
+
+                                                    $('#num_birthday,#chr_birthday ').val(str_replace('-', '',$('#birthday').val()));
+
+                                                } else {
+                                                    bootbox.alert({
+                                                        title:'알림',
+                                                        message: "생년월일 형식을 체크해주세요. (2000-00-00)",
+                                                        size:'small',
+
+                                                        callback: function (result) {
+                                                            $('#birthday').val('').focus();
+                                                        }
+                                                    });
+
+
+                                                }
+
+
+                                            }
+                                        </script>
+                                    </div>
+
+
+                                    <div class="col-xs-12 col-md-6">
+                                        <label ><span class="text-danger">*</span>{=_la('비밀번호')}</label>
+
+
+                                        <input class="form-control" name="str_passwd" id="str_passwd" hname="{=_la('비밀번호')}" maxlength="10" maxbyte="10" minbyte="5" match="str_passwd2" type="password"   id="str_passwd"  onchange="chk_pw1()" placeholder="비밀번호를 변경시에만 입력하세요.">
+
+                                        <div class="text-info " id="pw_info1">
+                                            {=_la('5~10의 영문,숫자,특수문자 조합')}<br />
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="col-xs-12 col-md-6">
+                                        <label><span class="text-danger">*</span>{=_la('비밀번호 확인')}</label>
+
+                                        <input class="form-control" name="str_passwd2" id="str_passwd2" onchange="chk_pw2()" hname="{=_la('비밀번호 확인')}" type="password" maxlength="10"   placeholder="비밀번호 재확인"  >
+                                        <div class="text-info " id="pw_info2">
+                                            비밀번호를 확인합니다.
+
+                                        </div>
+
+                                        <script type="text/javascript">
+                                            function chk_pw1(){
+                                                var pw = $('#str_passwd').val();
+                                                var num = pw.search(/[0-9]/g);
+                                                var eng = pw.search(/[a-z]/ig);
+                                                var spe = pw.search(/[`~!@@#$%^&*|???'?";:?/?]/gi);
+
+                                                if(pw.length < 8 || pw.length > 20){
+
+                                                    $('#pw_info1').html('<span class="text-danger">8자리 ~ 20자리 이내로 입력해주세요.</span>');
+                                                    $('#str_passwd').val('').focus();
+                                                    return false;
+                                                }
+                                                if(pw.search(/?s/) != -1){
+
+                                                    $('#pw_info1').html('<span class="text-danger">비밀번호는 공백없이 입력해주세요.</span>');
+                                                    $('#str_passwd').val('').focus();
+                                                    return false;
+                                                } if(num < 0 || eng < 0 || spe < 0 ){
+
+                                                    $('#pw_info1').html('<span class="text-danger">영문,숫자, 특수문자를 혼합하여 입력해주세요.</span>');
+                                                    $('#str_passwd').val('').focus();
+                                                    return false;
+                                                }
+                                                $('#pw_info1').html('<span class="text-info">비밀번호가 통과되었습니다.</span>');
+                                                return true;
+                                            }
+
+
+
+
+
+                                            function chk_pw2() {
+                                                //encodeURIComponent()
+                                                if($('#str_passwd').val() != $('#str_passwd2').val() ){
+                                                    $('#pw_info2').html('<span class="text-danger">비밀번호가 일치 하지 않습니다.</span>');
+                                                    $('#str_passwd2').val('').focus();
+                                                }else{
+                                                    $('#pw_info2').html('<span class="text-info">비밀번호가 확인되었습니다.</span>');
+                                                }
+                                            }
+                                        </script>
+
+
+
+                                    </div>
+
+
+                                    <div class="col-xs-12 col-md-12">
+                                        <label ><span class="text-danger">*</span>{=_la('이메일')}</label>
+                                        <input class="form-control" name="str_email" id="email" placeholder="OOOO@gmail.com" hname="{=_la('이메일')}" type="email"  maxbyte="255" onchange="chk_email()" value="{str_email}" required >
+                                        <div class="" id="email_pr"></div>
+                                        <script type="text/javascript">
+                                            function chk_email() {
+                                                //encodeURIComponent()
+                                                $.ajax({
+                                                    type: 'GET',
+                                                    url: '/member.emailchk',
+                                                    data:'&mode=email&email='+$('#email').val(),
+                                                    dataType: 'html',
+                                                    success: function(html, status) {
+                                                        if(html=='Y'){
+                                                            $('#email_pr').html('<span class="text-danger">사용할 수 없는 이메일입니다.</span>');
+                                                            $('#email').val('').focus();
+                                                        }else{
+                                                            $('#email_pr').html('<span class="text-info">사용가능합니다.</span>');
+                                                        }
+                                                    },
+                                                    error: function(request,status,error) {
+                                                        alert(request.responseText);
+                                                    }
+                                                });
+                                            }
+                                        </script>
+                                    </div>
+
+                                    <div class="col-xs-12 col-md-12">
+                                        <label ><span class="text-danger">*</span>{=_la('주소')}</label>
+
+
+                                        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+                                        <input type="text" id="postcode" name="str_zipcode" value="{chr_zip}" placeholder="우편번호" class="form-control  hide"  >
+                                        <input type="text" id="address" name="str_addr1" placeholder="주소" value="{str_addr1}" required   class="form-control " ><br>
+                                        <input type="text" id="address2" name="str_addr2" placeholder="상세주소" value="{str_addr2}" required  class="form-control " >
+
+                                        <script src="//dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+                                        <script>
+                                            function sample6_execDaumPostcode() {
+                                                new daum.Postcode({
+                                                    oncomplete: function(data) {
+                                                        // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                                                        // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                                                        // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                                                        var fullAddr = ''; // 최종 주소 변수
+                                                        var extraAddr = ''; // 조합형 주소 변수
+
+                                                        // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                                                        if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                                                            fullAddr = data.roadAddress;
+
+                                                        } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                                                            fullAddr = data.jibunAddress;
+                                                        }
+
+                                                        // 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+                                                        if(data.userSelectedType === 'R'){
+                                                            //법정동명이 있을 경우 추가한다.
+                                                            if(data.bname !== ''){
+                                                                extraAddr += data.bname;
+                                                            }
+                                                            // 건물명이 있을 경우 추가한다.
+                                                            if(data.buildingName !== ''){
+                                                                extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                                                            }
+                                                            // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+                                                            fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+                                                        }
+
+                                                        // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                                                        $('#postcode').val(data.zonecode);
+                                                        $('#address').val(fullAddr);
+
+
+                                                        // 커서를 상세주소 필드로 이동한다.
+                                                        $('#address2').focus();
+                                                    }
+                                                }).open();
+                                            }
+                                        </script>
+
+                                    </div>
+
+                                    <div class="col-xs-12 col-md-12">
+                                        <label ><span class="text-danger">*</span>{=_la('휴대폰')}</label>
+                                        <input class="form-control phone-number-check" name="phone" id="phone" value="{str_handphone}" placeholder="010-0000-0000" hname="{=_la('휴대폰')}" type="text"  maxbyte="100"   required >
+                                    </div>
+
+                                    {? chr_mtype == "g"}
+                                    <div class="col-xs-12 col-md-12 " id="chrd_phone">
+                                        <label ><span class="text-danger">*</span>{=_la('자녀 휴대폰')}</label>
+                                        <input class="form-control phone-number-check" name="str_stu_handphone" value="{str_stu_handphone}" id="str_stu_handphone" placeholder="010-0000-0000" hname="{=_la('자녀 휴대폰')}" type="text"  maxbyte="100"    >
+                                    </div>
+                                    {/}
+
+
+
+
+
+                                    <!---->
+
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="text-center padding">
+                                <input type="submit" name="" value="회원정보 수정" class="btn btn-lg info" style="height:50px;background-color: #71001a">
+                            </div>
+                        </form>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+</div>
+

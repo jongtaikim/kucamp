@@ -115,10 +115,10 @@
     /* =   가맹점 측 DB 처리 실패시 상세 결과 메시지 설정 끝                        = */
     /* ============================================================================== */
 
-    
+
 	 if($res_cd == "0000" && $app_no){
-		
-	
+
+
 
 		$DB = &WebApp::singleton('DB');
 
@@ -143,31 +143,40 @@
 		카드사 승인번호 : ".$app_no." <font color=red>:카드사에서 부여한 번호로 고유한값은 아닙니다. </font><br>
 		매입사코드 : ".$aqucd."<br>
 		";
-		
-		
+
+        include_once '__init__.php';
+
 		$datas[str_order_code] = $ordr_idxx;
 		$datas[str_email] = $email1."@".$email2;;
 
 		$datas[str_phone] = $tel1."-".$tel2."-".$tel3;
 		$datas[str_handphone] = $tel11."-".$tel22."-".$tel33;
 		$datas[str_st_email] =  $st_email1."@".$st_email2;
-		
+
 		$datas[dt_date] = mktime();
 		$datas[num_ccode] = $ccode;
 		$datas[num_serial] = $serial;
 		$datas[str_id] = $_SESSION[USERID];
 		$datas[str_jumin] = $jumin1."-".$jumin2;
 
+         $datas[str_etc_text4] = $_POST['str_etc_text4'];
+         $datas[str_etc_text5] = $_POST['str_etc_text5'];
+
 
 //조기할인
          if($_POST[discount]>0){
              $datas[str_discount] = $_POST[discount];
-             $datas[str_jo] = 'y';
+             //$datas[str_jo] = 'y';
+
+             if(date("Ymd") <= $sa_date){
+                 $datas[str_discount] = 70000;
+                 $datas[str_jo] = 'y';
+             }
          }else{
 
              //조기할인
-             if(date("Ymd") <= 20171029){
-                 $datas[str_discount] = 50000;
+             if(date("Ymd") <= $sa_date){
+                 $datas[str_discount] = 70000;
                  $datas[str_jo] = 'y';
              }
 
@@ -179,12 +188,12 @@
 
          if($_SESSION[USERID]=="now17"){
 		//	$sqlV ='y';
-			$DB->insertQuery("TAB_ORDER",$datas);	
+			$DB->insertQuery("TAB_ORDER",$datas);
 			//exit;
 		}else{
 			$DB->insertQuery("TAB_ORDER",$datas);
 		}
-			
+
 		?>
 		<script type="text/javascript">
 		// <![CDATA[
@@ -193,9 +202,9 @@
 
 		// ]]>
 		</script>
-		<!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 --> 
-		<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"> </script> 
-		<script type="text/javascript"> 
+		<!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 -->
+		<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"> </script>
+		<script type="text/javascript">
 		if (!wcs_add) var wcs_add={};
 		wcs_add["wa"] = "s_30543923423b";
 		if (!_nasa) var _nasa={};
@@ -211,7 +220,7 @@
 
 		  ga('create', 'UA-78129655-1', 'auto');
 		  ga('send', 'pageview');
-		  
+
 
 		  <? if(THEME =="TYPE3"){ ?>
 		   ga('send', 'event', '진로캠프','카드결제완료');
@@ -219,14 +228,25 @@
 		    ga('send', 'event', '공학캠프','카드결제완료');
 		   <?}?>
 		</script>
-		<?
+
+         <script type="text/javascript">
+             //<![CDATA[
+             var DaumConversionDctSv="type=P,orderID={$order_id},amount={$total_order_price}";
+             var DaumConversionAccountID="kxux-fOYUoFoBT4ofm5hvw00";
+             if(typeof DaumConversionScriptLoaded=="undefined"&&location.protocol!="file:"){
+                 var DaumConversionScriptLoaded=true;
+                 document.write(unescape("%3Cscript%20type%3D%22text/javas"+"cript%22%20src%3D%22"+(location.protocol=="https:"?"https":"http")+"%3A//t1.daumcdn.net/cssjs/common/cts/vr200/dcts.js%22%3E%3C/script%3E"));
+             }
+             //]]>
+         </script>
+
+         <?
 		 echo '<script>alert("신청이 완료되었습니다.\n캠프 안내문을 다운로드 하세요.");</script>';
 		echo "<meta http-equiv='Refresh' Content=\"0; URL='/member.mypage'\">";
 
 	 }else{
 	 echo '<script>alert("카드승인 오류입니다. 관리자에게 문의해주시기 바랍니다.");</script>';
 	echo "<meta http-equiv='Refresh' Content=\"0; URL='/main'\">";
-	 
+
 	 }
 ?>
-          

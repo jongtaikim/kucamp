@@ -23,10 +23,13 @@ switch($mode) {
 	case "id":
 
 
-		
-		$str_name	= trim($_POST['str_name']);
-		$str_jumin	= trim($_POST['str_jumin1'])."-".$_POST['str_jumin2'];
-		$str_email	= trim($_POST['str_email']);
+	    if($_POST['iconv'] == 'utf8'){
+            $str_name	= iconv('utf-8','euc-kr',trim($_POST['str_name']));
+            $str_email	=  iconv('utf-8','euc-kr',trim($_POST['str_email']));
+        }else{
+            $str_name	= trim($_POST['str_name']);
+            $str_email	= trim($_POST['str_email']);
+        }
 
 
 		$DB = &WebApp::singleton('DB');
@@ -34,20 +37,41 @@ switch($mode) {
 		$data = $DB->sqlFetch($sql);
 		$tpl->assign($data);
 
+        if($_POST['iconv'] == 'utf8'){
+            if($data) {
+                $json['code'] = 200;
+                $json['str_id'] = $data['str_id'];
+                $json['msg'] = iconv('euc-kr','utf-8','일치하는 아이디를 찾았습니다.');
+            }else{
+                $json['code'] = 401;
+                $json['str_id'] = '';
+                $json['msg'] = iconv('euc-kr','utf-8','일치하는 아이디가 없습니다.');
+            }
+
+            echo json_encode($json);
+            exit;
+
+        }else{
+            if(!$mcode) $DOC_TITLE = "str:ID/비밀번호 찾기";
+            $tpl->setLayout();
+            $tpl->define('CONTENT',Display::getTemplate('member/findid_ok.htm'));
+        }
 		
-		if(!$mcode) $DOC_TITLE = "str:ID/비밀번호 찾기";
-		$tpl->setLayout();
-		$tpl->define('CONTENT',Display::getTemplate('member/findid_ok.htm'));
+
 
 	break;
 
 	case "pw":
-	
 
 
-		$str_name	= trim($_POST['str_name']);
-		$str_jumin	= trim($_POST['str_jumin1'])."-".$_POST['str_jumin2'];
-		$str_email	= trim($_POST['str_email']);
+
+        if($_POST['iconv'] == 'utf8'){
+            $str_name	= iconv('utf-8','euc-kr',trim($_POST['str_name']));
+            $str_email	=  iconv('utf-8','euc-kr',trim($_POST['str_email']));
+        }else{
+            $str_name	= trim($_POST['str_name']);
+            $str_email	= trim($_POST['str_email']);
+        }
 		
 
 		$DB = &WebApp::singleton('DB');
@@ -60,12 +84,9 @@ switch($mode) {
 
 
 
-		$title= "학교홈페이지 비밀번호 지원";
+		$title= _ONAME." 비밀번호 지원";
 
 		$email = $data['str_email'];
-		
-
-
 		$rmail = "Accounts-noreply@".DOMAIN_;
 		$name=$_ONAME;
 
@@ -94,13 +115,40 @@ switch($mode) {
 		mail($email,$title,$cont,$mail_header);
 
 
-		echo '<script>alert("회원가입시 입력했던 e-mail로 비밀번호를 보내드렸습니다. \n스팸편지함 까지 확인해주시기 바랍니다.");</script>';
-		echo "<meta http-equiv='Refresh' Content=\"0; URL='member.login'\">";
+            if($_POST['iconv'] == 'utf8'){
+                if($data) {
+                    $json['code'] = 200;
+                    $json['msg'] = iconv('euc-kr','utf-8','회원가입시 입력했던 이메일 비밀번호를 보내드렸습니다. <br>스팸편지함 까지 확인해주시기 바랍니다.');
+                }else{
+                    $json['code'] = 401;
+                    $json['str_id'] = '';
+                    $json['msg'] = iconv('euc-kr','utf-8','일치하는 정보가 없습니다.');
+                }
+
+                echo json_encode($json);
+                exit;
+
+            }else {
+                echo '<script>alert("회원가입시 입력했던 e-mail로 비밀번호를 보내드렸습니다. \n스팸편지함 까지 확인해주시기 바랍니다.");</script>';
+                echo "<meta http-equiv='Refresh' Content=\"0; URL='member.login'\">";
+            }
 
 
 
 		} else {
-			WebApp::moveBack("입력하신 이름과 이메일이 일치하는 회원을 찾지 못하였습니다.\n 정확한 정보를 입력하여 주십시오.");
+
+            if($_POST['iconv'] == 'utf8') {
+
+                    $json['code'] = 401;
+                    $json['str_id'] = '';
+                    $json['msg'] = iconv('euc-kr', 'utf-8', '일치하는 정보가 없습니다.');
+
+                echo json_encode($json);
+                exit;
+
+            }else {
+                WebApp::moveBack("입력하신 이름과 이메일이 일치하는 회원을 찾지 못하였습니다.\n 정확한 정보를 입력하여 주십시오.");
+            }
 		}
 
 	break;

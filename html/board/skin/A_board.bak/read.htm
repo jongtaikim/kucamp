@@ -1,0 +1,136 @@
+<link rel="stylesheet" type="text/css" href="./style.css">
+<link rel="stylesheet" type="text/css" href="/html/board/borderBasic.css">
+<link rel="stylesheet" type="text/css" href="/css/lightbox.css" media="screen,tv" />
+<script type="text/javascript" charset="UTF-8" src="/js/spica.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/js/lightbox_plus.js"></script>
+
+<style type="text/css" title="">
+	.boardReadTop{width:100%;float:left;}
+	.boardReadTop .left{width:50%;float:left;}
+	.boardReadTop .right{width:50%;float:right;text-align:right}
+	.boardFoot{width:100%;float:left;;border-top: 1px solid #cdcdcd;padding-top:10px}
+	.boardFoot div{float:left;margin:3px}
+	.boardFoot .right{float:right;}
+	.f11 {font-size:11px; color:656565; font-family:돋움;}
+	.f1 {font-size:11px; color:656565	; font-family:돋움;}
+
+	.boardReadBody{border:1px solid #cdcdcd;padding:10px;margin-top:10px;float:left;width:97%}
+	.boardReadComment{margin-top:10px;float:left}
+</style>
+
+{? str_scrab == 2}
+<script type="text/javascript">
+	document.oncontextmenu = new Function ('return false');
+	document.ondragstart = new Function ('return false');
+	document.onselectstart = new Function ('return false');
+</script>
+{/}
+<script type="text/javascript">
+// <![CDATA[
+function ChkDel(id) {
+	if(confirm("삭제하시겠습니까?")){
+		location.href="{delcommlink}?mcode={mcode}&main={id}&id="+id;
+	}
+}
+
+function ccopy(){
+
+	window.clipboardData.setData('Text','{URL}');
+	alert('URL이 복사 되었습니다. \nCtrl+V로 붙여넣으세요.')
+}
+
+function viewFile(){
+	if($('subco').style.display=='none'){
+		$('subco').style.display=''
+	}else{
+		$('subco').style.display='none'
+	}
+}
+
+// ]]>
+</script>
+
+
+
+<div class="boardReadTop">
+	<div class="left">{prevlink}&nbsp;{nextlink}&nbsp;</div>
+	<div class="right"><a href="{listlink}"><img src="./image/btn_list.gif" alt="목록보기"></a></div>
+</div>
+
+
+
+<div class="boardReadBody">
+
+		
+	<div class="{str_skin}">
+		<div class="readTop">
+		<div class="title div50"><b>{str_title}</b></div>
+		<div class="date div50">{reg_date}&nbsp;&nbsp;&nbsp;</div>
+
+		<div class="readLine">&nbsp;</div>
+
+		<div class="title div30"><b>{name}</b></div>
+		<div class="date div60"><a href="javascript:ccopy()">{URL} &nbsp;<img src="/image/copy.gif" align = "absmiddle" alt="URL 복사하기"></a>&nbsp;&nbsp;&nbsp;
+
+		</div>
+	</div>
+
+	<br><br><br>
+
+
+			<div class="smartOutput readBody" id="contentBody">
+			{content}
+			</div>
+			
+	<br>
+
+	{? chr_upload == 'Y' && FILE && str_download !='Y'}
+		<div class="readBodyFile2">
+			<div class="readBodyFileTitle">첨부파일</div>
+			<div class="readBodyFileItem">
+				<table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:3px">
+					{@ FILE}
+					<tr>
+						<td>
+							<a href="{.file_url}"><img src="/image/icon/{.str_ftype}.gif" align="absmiddle" onerror="this.src='/image/icon/unknown.gif';" border="0" alt=""> {.str_upfile}</a>
+							&nbsp;({=byte_convert(.num_size)})   
+						</td>
+						<td>
+							
+						</td>
+					</tr>
+					{/}
+				</table>
+			</div>
+		</div>
+	{/}
+
+
+
+
+	</div>
+
+
+</div>
+
+	<wa:applet module="comment.list" len="4000" comment_title="덧글" code="{mcode}" idx="{id}"/>
+
+
+
+<div class="boardFoot">
+
+	<!--{? env.writable}-->
+	<div >{hidden_s}<a href="{writelink}"><img src="./image/btn_write.gif" alt="글쓰기"></a>{hidden_e}</div>
+	<div >{hidden_s}{hidden_s2}<a href="{replylink}" ><img src="./image/btn_reply.gif" alt="답글달기"></a>{hidden_s2}{hidden_e}</div>
+	<div >{hidden_s}<a href="{modifylink}"><img src="./image/btn_modify.gif" alt="글수정"></a>{hidden_e}</div>
+	<div >{hidden_s}<a href="{deletelink}"><img src="./image/btn_delete.gif" alt="글삭제"></a>{hidden_e}</div>
+	<!--{/}-->
+	<div class="right"><a href="{listlink}"><img src="./image/btn_list.gif" alt="목록보기"></a></div>
+</div>
+
+<script type="text/javascript">
+// <![CDATA[
+	mediaPlayE('contentBody'); //동영상 테그 이미지가 있을경우엔 치환해라.. 2009-07-11 종태 ㅠㅠ
+	imgE('contentBody'); //동영상 테그 이미지가 있을경우엔 치환해라.. 2009-07-11 종태 ㅠㅠ
+// ]]>
+</script>

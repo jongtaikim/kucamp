@@ -9,7 +9,7 @@
 
 {? chr_hak ==1}
 <div class="boardCateBody" style="margin:5px 0px 15px 0px;padding-left:2px">
-					
+
 	<div class="tab">
 	<ul>
 		<li {? !str_category} class="on"{/}>
@@ -20,29 +20,29 @@
 			<a href="#" onclick="select1('{.str_category}');">{.str_category}</a>
 		</li>
 		{/}
-			
+
 		</ul>
 	</div>
-	
-	
+
+
 </div>
 {/}
 
 	<!--{? _SESSION.ADMIN && mcode}-->
-		<div style="width:100%;text-align:right">{? chr_hak ==1}<a href="javascript:fenster2('카테고리관리', '카테고리관리', '/board.admin.categorypop?mcode={mcode}',  '20%', '30%', '280px', '160px',this)"  style="font-size:11px;"><b>+카테고리관리</b></a>{/}</div>	
+		<div style="width:100%;text-align:right">{? chr_hak ==1}<a href="javascript:fenster2('카테고리관리', '카테고리관리', '/board.admin.categorypop?mcode={mcode}',  '20%', '30%', '280px', '160px',this)"  style="font-size:11px;"><b>+카테고리관리</b></a>{/}</div>
 	<!--{/}-->
 
 {? chr_hak ==1}
 
 					<div class="boardInfo">
-						<div class="infoleft"><a href="/board.xml?mcode={mcode}" target="_blank"><img src='/image/rss.gif' border='0' alt="게시판 RSS보기"></a>
+						<div class="infoleft">
 						총 <strong>{total}</strong>개의 게시물이 있습니다.</div>
-						
+
 					</div>
 
 					<div class="boardInfo">
 					<div class="infoleft">
-						
+
 					{? chr_hak ==1}
 					<div style="float:left">
 						<select name="str_category" id="str_category" >
@@ -56,17 +56,17 @@
 					<div style="float:left;margin-left:5px; ">
 						<a href="javascript:select1($('str_category').value);" title="카테고리보기"><img src='/image/btn_search.gif' alt="카테고리보기" align="absmiddle" ></a>
 					</div>
-			   		{/} 
+			   		{/}
 					</div>
 
-					
+
 					<div class="inforight search">
 							<form class="boardSearchForm" name="searchform" action="/board.list">
 								<fieldset>
-									<legend>게시물 검색</legend>
-									<img src="/images/board/boardSearchFormTit.gif" alt="검색" method="get" />
+
+
 									<input type="hidden" name="mcode" value="{mcode}"/>
-									<select name="key" id="key" style="float:right">
+									<select name="key" id="key" >
 										<option value="str_title">제목</option>
 										<option value="str_name">글쓴이</option>
 									</select>
@@ -74,11 +74,11 @@
 
 
 									<input class="inputtxt" type="text" title="검색"  id="search" name="search"  value="{search}"/>
-									
+
 									<span class="button02 smallarrowIcon">
 										<span><input type="submit" value="검색" /></span>
 									</span>
-									
+
 								</fieldset>
 							</form>
 						</div>
@@ -87,24 +87,24 @@
 
 {:}
 					<div class="boardInfo">
-						<div class="infoleft"><a href="/board.xml?mcode={mcode}"><img src='/image/rss.gif' border='0' alt="게시판 RSS보기"></a> 총 <strong>{total}</strong>개의 게시물이 있습니다.</div>
+						<div class="infoleft"> 총 <strong>{total}</strong>개의 게시물이 있습니다.</div>
 						<div class="inforight search">
 							<form class="boardSearchForm" name="searchform" action="/board.list">
 								<fieldset>
-									<legend>게시물 검색</legend>
-									<img src="/images/board/boardSearchFormTit.gif" alt="검색" method="get" />
+
+
 									<input type="hidden" name="mcode" value="{mcode}"/>
-									<select name="key" id="key" style="float:right">
+									<select name="key" id="key" >
 										<option value="str_title">제목</option>
 										<option value="str_name">글쓴이</option>
 									</select>
 
 									<input class="inputtxt" type="text" title="검색"  id="search" name="search"  value="{search}"/>
-									
+
 									<span class="button02 smallarrowIcon">
 										<span><input type="submit" value="검색" /></span>
 									</span>
-									
+
 								</fieldset>
 							</form>
 						</div>
@@ -126,7 +126,7 @@ var all = document.getElementById("all").value;
 
 if ( all == 'Y')
 {
-uncheckall() 
+uncheckall()
  return;
 
 }else{
@@ -134,12 +134,12 @@ uncheckall()
   for (i=0; i < form.elements.length; i++) {
  if (form.elements[i].name =="ids[]") {
     form.elements[i].checked = true;
-	
+
  }
   }
   document.listForm.all.value = "Y";
- 
-  
+
+
   return;
 }
 }

@@ -6,9 +6,9 @@
 * 작성자: 거친마루
 * 설  명: 게시판 글 새로 작성
 *****************************************************************
-* 
+*
 */
-
+error_reporting(E_ALL ^ E_NOTICE);
 if($_SESSION[nonBoard]){
 	$PERM->apply('menu',$_SESSION[nonBoard],'w');
 }else{
@@ -21,10 +21,10 @@ $DB = &WebApp::singleton('DB');
 
 switch ($REQUEST_METHOD) {
 	case "GET":
-	
+
 		$timestamp = date('U');
-		
-		
+
+
 		switch ($_conf[chr_listtype]) {
 			case "B":
 			$tpl->define("CONTENT", WebApp::getTemplate("board/skin/".$skin."/write.htm"));
@@ -40,11 +40,11 @@ switch ($REQUEST_METHOD) {
 			 break;
 			}
 
-        
+
 		$str_title = "";
 		$tpl->assign(array('str_title'=>$str_title));
-		
-	
+
+
 
 		//2009-03-18 현민 선생님들 공지랑 관리할 수 있는 관리 권한
 		$env['admin'] = ($env['admin'] || ($_SESSION['CHR_MTYPE'] == 't'));
@@ -54,7 +54,7 @@ switch ($REQUEST_METHOD) {
 			'env'=>$env,
 			'edit'=>$edit
 		));
-		
+
 		$data['user_id'] = $_SESSION['USERID'];
 		$data['name2'] = $_SESSION['NAME'];
 		$data['e_mail'] = $_SESSION['E_MAIL'];
@@ -118,8 +118,8 @@ switch ($REQUEST_METHOD) {
 		include "gpin.php";
 
 
-		break; 
-	
+		break;
+
 	case "POST":
 
 
@@ -150,7 +150,7 @@ switch ($REQUEST_METHOD) {
 
 		$que = " num_oid = '$_OID' and ";
 
-		
+
 
 		$serial = $DB->sqlFetchOne("
 			SELECT
@@ -174,9 +174,9 @@ switch ($REQUEST_METHOD) {
 			WHERE
 				$que num_mcode=$mcode
 		");
-		
 
-		
+
+
 
 		if (!$group) $group = 1;
 		$depth = 0;
@@ -192,25 +192,25 @@ switch ($REQUEST_METHOD) {
 
 
 
-		
-	
+
+
 		if(!$_POST['content']) {
 			WebApp::moveBack('본문을 입력해주십시오.');
 		}
 
-	
-		
+
+
 		$str_text = $_POST['content'];
 		if(!$str_text) $str_text = "<p></p>";
 		$str_text = WebApp::ImgChaneDe($str_text, $serial);
 
 		$title = str_replace("'","''",$title);
 		//$str_text = str_replace("'","\'",$str_text);
-		
-		
 
-	
-	
+
+
+
+
 
 		//비속어처리 2009-07-25 종태
 		include $_SERVER["DOCUMENT_ROOT"].'/module/bi.php';
@@ -225,20 +225,20 @@ switch ($REQUEST_METHOD) {
 		$ip = getenv('REMOTE_ADDR');
         $num_hit = $_POST['num_hit'] ? $_POST['num_hit'] : 0;
 		if((strlen($_POST['dt_date'])>0) && substr(trim($_POST['dt_date']),0,2) != '20') $_POST['dt_date'] = "20".trim($_POST['dt_date']);
-        
-		
+
+
 		if($_POST['dt_date']){
 			$dt_date = WebApp::mkday($_POST['dt_date']);
 		}else{
 			$dt_date = mktime();
-		}	
+		}
 
 
 		if(!$str_tag_use) {
 			$str_tag = '';
 		}
 
-		
+
 		if($_conf[chr_listtype] =="D"){
 		if(!$str_view)  $str_view = "N";
 		$listsql = ",str_view";
@@ -247,7 +247,7 @@ switch ($REQUEST_METHOD) {
 		}
 
 
-		$sql = 
+		$sql =
 			"INSERT INTO $ARTICLE_TABLE
 				(num_oid, num_mcode, num_serial, num_notice, num_group, num_step, num_depth, str_user, str_name, str_pass,
 					str_email, str_title, str_text, chr_html, dt_date, str_ip, num_hit, str_hak, num_input_pass,str_category,str_tmp1, str_tmp2, str_tmp3,  str_tmp4, str_tmp5, str_tmp6,  str_tmp7, str_tmp8, str_tmp9, str_tmp10,str_tag,str_coment,str_scrab,str_rss,str_nick,str_vr_no,num_unix_time $listsql) 
@@ -258,8 +258,8 @@ switch ($REQUEST_METHOD) {
 
 		if ($DB->query($sql)) {
 			$DB->commit();
-			
-				
+
+
 			//2011-07-11 종태 검색엔진에 키워드 등록
 			$sch_data[num_oid] = _OID;
 			$sch_data[str_url] = "/board.view?mcode=".$mcode."&id=".$serial;
@@ -271,12 +271,12 @@ switch ($REQUEST_METHOD) {
 
 			$DB->insertQuery("TAB_SCH",$sch_data);
 			$DB->commit();
-				
+
 
 			if($str_setup) {
 
 				 $str_setup_val = $str_coment."|".$str_scrab."|".$str_rss;
-				
+
 				 $sql = "UPDATE ".TAB_MEMBER." SET STR_SETUP='$str_setup_val' WHERE num_oid=$_OID and str_id = '".$_SESSION['USERID']."'";
 				 $DB->query($sql);
 				 $DB->commit();
@@ -291,7 +291,7 @@ switch ($REQUEST_METHOD) {
 
 				$sql = "select $plus_point from TAB_ORGAN where num_oid = $_OID ";
 				$chw = $DB -> sqlFetchOne($sql);
-				
+
 				//2008-11-10 현민 - 게시글 등록시 포인트는 하루에 2건만으로 제한.
 				$sql = "select count(*) from $ARTICLE_TABLE where num_oid = $_OID and str_user = '".$_SESSION['USERID']."'";
 				$bcnt = $DB -> sqlFetchOne($sql);
@@ -309,19 +309,19 @@ switch ($REQUEST_METHOD) {
 		//2009-07-01 종태 신규 업로드 프로세서
 		$FH = &WebApp::singleton('FileHost');
 		$FTP = &WebApp::singleton('FtpClient',WebApp::getConf('account'));
-		
+
 		$FTP->mkdir($FH->file_dir);
 		$FTP->chmod($FH->file_dir,777);
 		$FTP->mkdir($FH->file_dir."/".date("Ym")."/");
 		$FTP->chmod($FH->file_dir."/".date("Ym")."/",777);
 
 
-		
+
 		for($ii=1; $ii<11; $ii++) {
 			uploadFile($ii);
 		}
 
-		
+
 		  if ($DB->query("
                 UPDATE
                     $ARTICLE_TABLE
@@ -330,7 +330,7 @@ switch ($REQUEST_METHOD) {
                 WHERE
                     $que num_mcode=$mcode AND num_serial=$serial"
                 )) $DB->commit();
-			
+
 			$_SESSION['get_thumb_filename'] = "";
 			unset($_SESSION['get_thumb_filename']);
 
@@ -358,7 +358,7 @@ function deleteCacheFiles($mcode) {
 		  $dellist[]="inc.main.out_bbs4.htm";
 		  $dellist[]="inc.main.out_bbs5.htm";
 		  $dellist[]="inc.main.new_bbs.htm";
-		
+
 
 		for($ii=0; $ii<count($dellist); $ii++) {
 		$FTP->delete(_DOC_ROOT.'/hosts/'.HOST.'/'.$dellist[$ii]);

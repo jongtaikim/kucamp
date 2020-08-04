@@ -7,6 +7,7 @@
 *****************************************************************
 * 
 */
+header("Content-Type: text/html; charset=EUC-KR");
 $_MEMBER = WebApp::getConf('member');
 $tpl->assign($_MEMBER);
 $tpl->assign(array('GPIN'=>_GPIN));

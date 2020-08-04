@@ -7,6 +7,9 @@
 *****************************************************************
 * 
 */
+
+
+
 $DB = &WebApp::singleton('DB');
 
 
@@ -15,9 +18,18 @@ switch ($REQUEST_METHOD) {
 	
 	if(!$_SESSION[USERID]){
 		//reurl
-		echo '<script>alert("로그인이 필요합니다.");</script>';
-		echo "<meta http-equiv='Refresh' Content=\"0; URL='/member.login?reurl=".urlencode($_SERVER["REQUEST_URI"])."'\">";
-		exit;
+
+        if(THEME == 'NEW'){
+
+            echo '<script>top.login_pop();</script>';
+
+            exit;
+
+        }else {
+            echo '<script>alert("로그인이 필요합니다.");</script>';
+            echo "<meta http-equiv='Refresh' Content=\"0; URL='/member.login?reurl=" . urlencode($_SERVER["REQUEST_URI"]) . "'\">";
+            exit;
+        }
 		
 	}
 	

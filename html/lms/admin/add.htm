@@ -20,10 +20,10 @@ function selectCate(idx){
 </script>
 
 <form method="post" onsubmit="return validate(this);" enctype="multipart/form-data" name="basicinfo">
-	
+
 	<input type="hidden" name="serial" value="{serial}">
 	<input type="hidden" name="types" value="{types}">
-	
+
 	<p class="buTitle17" style="margin-bottom:10px">캠프 기본 정보</p>
 
 	<table width="100%" cellspacing="0" border="1" summary="커리큘럼 캠프 입력/수정" class="tbl_type">
@@ -32,11 +32,11 @@ function selectCate(idx){
 			<col width="140"><col><col width="120"><col>
 		</colgroup>
 	<tbody>
-		
+
 		<tr>
 			<th scope="row">캠프 프로그램</th>
 			<td colspan="3">
-			
+
 
 			<select name="num_ccode" id="num_ccode"  hname="캠프과정"  required>
 					{@ title_LIST}
@@ -55,22 +55,42 @@ function selectCate(idx){
 		<tr>
 			<th scope="row">캠프 시즌선택</th>
 			<td colspan="3">
-			
+
 
 			<select name="str_sw" id="str_sw"  hname="캠프시즌"  required>
-					<option value="">-- 시즌선택 --</option>
-					<option value="2015년 여름방학">2015년 여름방학</option>
-					<option value="2015년 겨울방학">2015년 겨울방학</option>
-					<option value="2016년 여름방학">2016년 여름방학</option>
-					<option value="2016년 겨울방학">2016년 겨울방학</option>
-					<option value="2017년 여름방학">2017년 여름방학</option>
-					<option value="2017년 겨울방학">2017년 겨울방학</option>
-					<option value="2018년 여름방학">2018년 여름방학</option>
-                    <option value="2018년 겨울방학">2018년 겨울방학</option>
+				<option value="">-- 시즌선택 --</option>
+				<option value="2015년 여름방학">2015년 여름방학</option>
+				<option value="2015년 겨울방학">2015년 겨울방학</option>
+				<option value="2016년 여름방학">2016년 여름방학</option>
+				<option value="2016년 겨울방학">2016년 겨울방학</option>
+				<option value="2017년 여름방학">2017년 여름방학</option>
+				<option value="2017년 겨울방학">2017년 겨울방학</option>
+				<option value="2018년 여름방학">2018년 여름방학</option>
+				<option value="2018년 겨울방학">2018년 겨울방학</option>
+				<option value="2019년 여름방학">2019년 여름방학</option>
+				<option value="2019년 겨울방학">2019년 겨울방학</option>
+
+				<option value="2020년 여름방학">2020년 여름방학</option>
+				<option value="2020년 겨울방학">2020년 겨울방학</option>
+
+				<option value="2021년 여름방학">2021년 여름방학</option>
+				<option value="2021년 겨울방학">2021년 겨울방학</option>
+
+				<option value="2022년 여름방학">2022년 여름방학</option>
+				<option value="2022년 겨울방학">2022년 겨울방학</option>
+
+				<option value="2023년 여름방학">2023년 여름방학</option>
+				<option value="2023년 겨울방학">2023년 겨울방학</option>
+
+				<option value="2024년 여름방학">2024년 여름방학</option>
+				<option value="2024년 겨울방학">2024년 겨울방학</option>
+
+				<option value="2024년 여름방학">2024년 여름방학</option>
+				<option value="2024년 겨울방학">2024년 겨울방학</option>
 
 
-					
-				</select>
+
+			</select>
 
 				<script type="text/javascript">
 				// <![CDATA[
@@ -96,7 +116,7 @@ function selectCate(idx){
 				<div id="gkdate">
 				<wa:datepicker name="start_date" value="{start_date}"/> ~ <wa:datepicker name="end_date" value="{end_date}"/>
 				</div>
-				
+
 			</td>
 		</tr>
 
@@ -108,7 +128,7 @@ function selectCate(idx){
 					<option value="2" {? num_st == "2"} selected{/}>마감임박</option>
 					<option value="4" {? num_st == "4"} selected{/}>마감임박-전화요망</option>
 					<option value="3" {? num_st == "3"} selected{/}>마감</option>
-					
+
 				</select>
 			</td>
 		</tr>
@@ -126,7 +146,7 @@ function selectCate(idx){
 
 	</tbody>
 	</table>
-	
+
 	<br/>
 	<br/>
 
@@ -138,7 +158,7 @@ function selectCate(idx){
 			<col width="140"><col><col width="120"><col>
 		</colgroup>
 	<tbody>
-		
+
 		<!--tr>
 			<th scope="row">대표이미지</th>
 			<td colspan="3">
@@ -160,7 +180,7 @@ function selectCate(idx){
 				ex) 국민 000-00-000000
 			</td>
 		</tr>
-		
+
 		<tr>
 			<th scope="row">과정특징</th>
 			<td colspan="3">
@@ -188,7 +208,7 @@ function selectCate(idx){
 				<textarea name="str_text4" id="str_text4"  style="height:250px;width:100%">{str_text4}</textarea>
 			</td>
 		</tr>
-		
+
 
 	</tbody>
 	</table>

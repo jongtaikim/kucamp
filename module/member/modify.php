@@ -17,52 +17,14 @@ switch($REQUEST_METHOD) {
 
 		
 
-        $sql = "SELECT
-		   str_name, 
-		   str_id, 
-		   str_passwd, 
-		   num_jumin,
-   		   str_email, 
-		   str_phone, 
-		   str_handphone, 
-		   chr_zip, 
-		   str_addr1, 
-		   str_addr2, 
-		
-
-		   chr_mtype, 
-		   num_fcode, 
-		   
-		   str_introduct, 
-		   str_photo, 
-		   num_auth, 
-		   num_login_cnt, 
-		   str_ip, 
-		   dt_date, 
-		   str_job, 
-		   str_voll, 
-		   str_group, 
-		   str_state, 
-		   num_grade, 
-		   num_hid,
-		   num_login_point,
-		   num_board_point,
-		   num_commint_point,
-		   num_repaly_point,
-		   str_plus1,
-		   str_plus2,
-		   str_plus3,
-		   str_plus4,
-		   str_plus5,
-		   str_nick
-
-           FROM TAB_MEMBER  WHERE num_oid=$_OID AND str_id='$str_id' ";
+        $sql = "SELECT * FROM TAB_MEMBER  WHERE num_oid=$_OID AND str_id='$str_id' ";
 
 
         if(!$data = $DB->sqlFetch($sql)) {
             WebApp::alert('데이타가 존재하지 않습니다.');
             WebApp::moveBack();
         }
+
         $data['id'] = $str_id;
         $mem_types = WebApp::get('member',array('key'=>'member_types'));
         $data['mtype'] = $mem_types[$data['chr_mtype']];
@@ -104,62 +66,11 @@ switch($REQUEST_METHOD) {
 	break;
 	case "POST":
 
-	$FH = &WebApp::singleton('FileHost');
-
-	$FTP = &WebApp::singleton('FtpClient',WebApp::getConf('account'));
-
-	$FTP->mkdir(_DOC_ROOT."/hosts/".HOST."/files/member/");
-	$FTP->chmod(_DOC_ROOT."/hosts/".HOST."/files/member/",777);
-
-	if($upfile1) {
-	$file = new FileUpload("upfile1"); // datafile은 form에서의 이름 
-	$file->Path = _DOC_ROOT."/hosts/".HOST."/files/member/";  // 마지막에 /꼭 붙여야함
-
-	//$file->file_mkdir(); 
-	if(!$file->Ext("gif,jpg,png"))  {
-	echo '<script>alert("이미지 파일만 가능합니다.");   history.go(-1); </script>';
-	exit;
-	 }
-	$mk = mktime();
-
-	$file->file_rename($str_id); 
-	if(!$file->upload()){
-	//echo '<script>alert("업로드에 실패 했습니다.");   history.go(-1); </script>';
-	//exit;
-	}
-	$file->upload();
-	GDImageResize(_DOC_ROOT."/hosts/".HOST."/files/member/".$file->SaveName , _DOC_ROOT."/hosts/".HOST."/files/member/".$file->SaveName."_100" , 80, 60);
-	}
 
 
 
-$str_email = $email1."@".$email2;
-
-
-/*
-$sql = "update TAB_MEMBER_INDEX set 
-
-str_passwd = '$str_passwd',
-
-str_email = '$str_email',
-
-chr_zip = '$str_zipcode',
-str_addr1 = '$str_addr1',
-str_addr2 = '$str_addr2',
-str_phone = '".$tel11."-".$tel22."-".$tel33."', 
-str_handphone = '".$tel1."-".$tel2."-".$tel3."' 
-
-where 
-
-str_id ='$str_id' and num_jumin = '".$num_jumin."'";
-
-
-$DB->query($sql);
-$DB->commit();
-*/
-
-if($str_passwd){
-$pwsql = " str_passwd = '$str_passwd',";
+if($_POST['str_passwd'] && $_POST['str_passwd2']){
+    $pwsql = " str_passwd = '".$_POST['str_passwd']."',";
 }
 
 
@@ -176,8 +87,9 @@ str_addr1 = '$str_addr1',
 str_addr2 = '$str_addr2',
 str_introduct = '$str_introduct',
 
-str_phone = '".$tel11."-".$tel22."-".$tel33."', 
-str_handphone = '".$tel1."-".$tel2."-".$tel3."' ,
+
+str_handphone = '".$_POST['phone']."' ,
+str_stu_handphone = '".$_POST['str_stu_handphone']."' ,
 
 str_job = '$job',
 
@@ -196,22 +108,10 @@ num_oid = '$_OID' and str_id ='$str_id' ";
 $DB->query($sql);
 $DB->commit();
 
-if($num_fcode_def != $num_fcode){
-	 $sql = "UPDATE ".TAB_PARTY_MEMBER." SET num_pcode=$num_fcode, str_mtype='u' WHERE num_oid=$_OID and str_id = 'str_id' and num_pcode = '$num_fcode' ";
-
-	 if($DB->query($sql)){
-	 $DB->commit();
 
 
-	 }else{
-	 echo "sql 에러 : ".$sql;
-	 exit;
-	 }
-
-}
-
-echo '<script>alert("저장하였습니다.");</script>';
- WebApp::moveBack();
+echo '<script>alert("저장하였습니다."); top.location.reload();</script>';
+ //WebApp::moveBack();
   
 
 	break;

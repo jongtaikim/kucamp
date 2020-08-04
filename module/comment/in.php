@@ -1,123 +1,55 @@
 <?
 /* vim: set expandtab tabstop=4 shiftwidth=4 foldmethod=marker: */
 /**
-* ÀÛ¼ºÀÏ: 2010-01-29
-* ÀÛ¼ºÀÚ: ±èÁ¾ÅÂ
-* ¼³   ¸í: µ¡±Û ÀÔ·Â
-*****************************************************************
-* 
-*/
+ * ìž‘ì„±ì¼: 2010-01-29
+ * ìž‘ì„±ìž: ê¹€ì¢…íƒœ
+ * ì„¤   ëª…: ë§ê¸€ ìž…ë ¥
+ *****************************************************************
+ *
+ */
 $DB = &WebApp::singleton('DB');
 
 
 switch ($REQUEST_METHOD) {
-	case "POST":
-	
-	if(!$_SESSION[USERID]){
-	echo "<script>history.go(-1)</script>";
-	exit;
-	}
-	
-	$code_url = str_replace("&","|",$code_url);
-	if(!$mserial) $serial = WebApp::maxSerial("TAB_COMMENT","num_serial","and num_code='$code_url'");
-	$num_group = WebApp::maxSerial("TAB_COMMENT","num_group","and num_code='$code_url'");
-	
-	$sql = "select max(num_step) from TAB_COMMENT where num_oid = '"._OID."' and num_code='$code_url' ";
-	$max_step = $DB -> sqlFetchOne($sql);
-	if(!$max_step) $max_step = 1; else $max_step = $max_step +1;
-	
-	//ºñ¼Ó¾îÃ³¸® 2009-07-25 Á¾ÅÂ
-	include $_SERVER["DOCUMENT_ROOT"].'/module/bi.php';
-	
-	
-	$content = str_replace("'","''",$content);
-      $dt_date = "'".date("Y-m-d H:i:s")."'";
-	$ip = getenv('REMOTE_ADDR');
-	
+    case "POST":
 
-	if(!$mserial){
-		if(!$main_serial){
-		$sql = "INSERT INTO ".TAB_COMMENT." (
-			num_oid, num_code , num_serial, num_group, str_user, str_name, str_pass, str_comment, dt_date, str_ip, chr_mtype, str_tmp1,str_tmp2,str_tmp3,num_step 
-			) VALUES (
-			'"._OID."', '".$code_url."','".$serial ."', '".$num_group ."' , '".$_SESSION[USERID]."' ,'".$cmt_name."' ,'".$cmt_pass."' ,'".$content."', NOW(), '".$ip."', '".$_SESSION['CHR_MTYPE']."' , '".$str_tmp1."' , '".$str_tmp2."' , '".$str_tmp3."', '".$max_step."'
-			) ";
-		}else{
-			
+        $sql = " select count(*) from comments where userid = '".$_POST['userid']."' and code = '".$_POST['code']."' ";
+        $total = $DB->sqlFetchOne($sql);
+        if($total){
+            $json['code'] = 502;
+            $json['msg'] = "ì´ë¯¸ ì°¸ì—¬í•˜ì…¨ìŠµë‹ˆë‹¤.";
+
+            echo json_encode($json);
+            exit;
+        }
+
+        $sql = "INSERT INTO comments 
+        ( code, comment , regdate,userid) 
+        VALUES 
+        ('".$_POST['code']."' , '".iconv('UTF-8','EUC-KR',$_POST['comment'])."' ,'".date("Y-m-d H:i:s")."','".$_POST['userid']."') ";
 
 
-		
-			$sql = "select * from TAB_COMMENT where num_oid = '"._OID."' and num_code='$code_url' and num_group = '".$main_group."' and num_serial = '".$main_serial."' order by num_step desc ";
-			$parent_info = $DB -> sqlFetch($sql);
-			
-			$sql = "select count(*)+1 from TAB_COMMENT where num_oid = '"._OID."' and num_code='$code_url' and num_group = '".$parent_info['num_group']."' and num_step like '".$parent_info['num_step']."|%' ";
-			
-			$max_step = $DB -> sqlFetchOne($sql);
-			
-			
-			$group = $parent_info['num_group'];
-			$depth = (int)$parent_info['num_dtb'] + 1;
 
-			$max_step =  $parent_info['num_step']."|".$max_step;
+        if($DB->query($sql)){
+            $DB->commit();
 
-			$step = $max_step;
-		
-			
-			
+            $json['code'] = 200;
+            $json['msg'] = "ë§ê¸€ì´ ìž‘ì„±ë˜ì—ˆìŠµë‹ˆë‹¤.";
 
+            echo json_encode($json);
+            exit;
 
-			$sql = "INSERT INTO ".TAB_COMMENT." (
-			num_oid, num_code , num_serial, num_group, str_user, str_name, str_pass, str_comment, dt_date, str_ip, chr_mtype, str_tmp1,str_tmp2,str_tmp3,num_main_serial , num_dtb,num_step
-			) VALUES (
-			'"._OID."', '".$code_url."','".$serial ."', '".$group ."' , '".$_SESSION[USERID]."' ,'".$cmt_name."' ,'".$cmt_pass."' ,'".$content."', NOW(), '".$ip."', '".$_SESSION['CHR_MTYPE']."' , '".$str_tmp1."' , '".$str_tmp2."' , '".$str_tmp3."' , ".$main_serial.", ".$depth.",'".$step."'
-			) ";
-		}
-	
-	}else{
-	
-		
-			 $sql = "UPDATE ".TAB_COMMENT." SET str_comment='$content' , dt_date = $dt_date WHERE num_oid="._OID." and num_code='$code_url' and num_serial = '".$mserial."' ";
-		
-	
-	}
-	
-			 if($DB->query($sql)){
-			 $DB->commit();
-			
-			if(!$mserial){
-				//2010-01-29 Á¾ÅÂ point ¿Ã¸®±â (board|comment, ¿Ã¸±¼ö, up|mu)
-				WebApp::pointUpdate("comment","1","up");
-				
-				if($num_main && $mcode){
-					$sql = "SELECT COUNT(*) FROM TAB_COMMENT WHERE num_oid="._OID." AND num_code='$code_url'";
-					$ttoal = $DB -> sqlFetchOne($sql);
+        }else{
+            $json['code'] = 501;
+            $json['msg'] = "ë§ê¸€ìž‘ì„±ì¤‘ ì—ëŸ¬ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.";
 
-					
-					
-					$sql = "
-						UPDATE TAB_BOARD SET
-							num_comment='$ttoal'
-						WHERE num_oid="._OID."AND num_mcode=$mcode AND num_serial=$num_main
-					";
-					$DB->query($sql);
-					$DB->commit();
-			
-					
-				}
-			}
+            echo json_encode($json);
+            exit;
+        }
 
 
-			WebApp::moveBack();
-			exit;
-			 
-			 }else{
-			 echo "sql ¿¡·¯ : ".$sql;
-			 exit;
-			 }				
-			
-	
 
-	 break;
-	}
+        break;
+}
 
 ?>

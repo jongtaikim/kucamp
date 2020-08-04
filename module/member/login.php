@@ -252,7 +252,12 @@ exit;
        
 
           if(!$redir) {
-			$redir = '/';
+		    if(THEME=="NEW"){
+                $redir = '/?m=order';
+            }else{
+                $redir = '/';
+            }
+
           }
 
       }else{

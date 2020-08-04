@@ -1,6 +1,6 @@
 <style type="text/css" title="">
 .metoBody{width:100%;float:left;}
-.metoBody .tdItem {width:168px;height:260px;float:left;;margin:10px 10px 12px 0}
+.metoBody .tdItem {width:15%;height:260px;float:left;;margin:10px 18px 12px 0}
 .metoBody .tdItem .itemFrm{border:3px solid #94102a;padding:10px;}
 .metoBody .tdItem .itemFrm .imgFrm{height:171px;overflow:hidden;text-align:center}
 
@@ -15,53 +15,34 @@
  .tip_text {background-color:#f6f6f6; font-size:11px; color:545963; line-height:18px; padding-top:2px;}
  .help_text {background-color:#f6f6f6; font-size:12px; color:545963; line-height:18px; padding-top:2px;}
 </style>
-<table cellpadding="0" cellspacing="0" border="0" style="">
-	<tr>
-		<td width="14px"><img src="/html/admin/images/tip_icon.gif"></td>
-		<td class="tip_title">알려드립니다.</td>
-	</tr>
-</table>
-<table cellpadding="0" cellspacing="0" border="0" width="100%">
-	<tr >
-		<td width="14px" height="12px" style="padding:0px" background="/html/admin/images/bx_tip_top_left.gif"></td>
-		<td background="/html/admin/images/bx_tip_top_bg.gif"  style="padding:0px"></td>
-		<td width="14px" style="padding:0px" background="/html/admin/images/bx_tip_top_right.gif"></td>
-	</tr>				
-	<tr>
-		<td width="14px" background="/html/admin/images/bx_tip_mid_left.gif"></td>
-		<td class="tip_text">
-			※ 사진을 클릭하면 자세한 멘토 프로필을 확인해 볼 수 있습니다.
-		</td>
-		<td width="14px" background="/html/admin/images/bx_tip_mid_right.gif"></td>
-	</tr>
-	<tr >
-		<td width="14px"><img src="/html/admin/images/bx_tip_btm_left.gif"></td>
-		<td background="/html/admin/images/bx_tip_btm_bg.gif"></td>
-		<td width="14px"><img src="/html/admin/images/bx_tip_btm_right.gif"></td>
-	</tr>
-</table>
 
-<br>
-<br>
+<div class=""><i class="fa fa-question-circle"></i> 안내</div>
+<div class="box r b-l b-r b-t b-b">
 
-<div class="metoBody">
-	{@ LIST}
-	<div class="tdItem">
-		<div class="itemFrm">
-			<div class="imgFrm">
-				<a href="javascript:winOpen('/lms.tach_view?serial={.num_serial}','680','400','yes','meto')">
-					<img src="/hosts/kunetworks/tach/{.str_file}_145"   style="border:2px solid #d8d8d8;"  />
-				</a>
-			</div>
-			<div class="title">{.str_name}</div>
-			
-		</div>
-		<div class="bottomImg"><img src="/images/metoBottom.gif" alt="" /></div>
-	</div>
-	{/}
+    <div class="box-body">
+        ※ 사진을 클릭하면 자세한 멘토 프로필을 확인해 볼 수 있습니다.
+    </div>
 </div>
 
 
+
+<br>
+
+
+<div class="clearfix">
+    {@ LIST}
+        <div class="col-md-2">
+            <a href="javascript:winOpen('/lms.tach_view?serial={.num_serial}','880','600','yes','meto')">
+                <div class="" style="overflow: hidden;height:150px;border-radius: 5px;background-color: #fcfcfc">
+                    <img src="/hosts/kunetworks/tach/{.str_file}_145"   style="width:100%"   />
+                </div>
+            </a>
+            <div class="title text-center ft14"><strong>{.str_name}</strong></div>
+            <div class="bottomImg text-center m-t10"><img src="/images/metoBottom.gif" alt="" width="100%"/></div>
+        </div>
+    {/}
+</div>
+
 <div style="margin-top:20px;margin-bottom:20px;text-align:center;width:100%;float:left">
-	<wa:paging runat="server" total="{total}" numberformat=" %n " listnum="{listnum}" previcon="/html/board/skin/A_board/image/btn_prevpage.gif" nexticon="/html/board/skin/A_board/image/btn_nextpage.gif" firsticon="/html/board/skin/A_board/image/btn_firstpage.gif" lasticon="/html/board/skin/A_board/image/btn_lastpage.gif"/>
+	<wa:paging runat="server" total="{total}" numberformat=" %n " listnum="{listnum}"/>
 </div>

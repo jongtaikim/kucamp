@@ -1,60 +1,61 @@
-<link rel="stylesheet" href="/css/board.css" type="text/css" />
 
 <!-- 게시판 영역 시작 -->
 				<div class="board">
 					<div class="boardWrite">
-					<h4 class="title"><img src="/images/board/boardWriteTit.gif" alt="글쓰기수정답변" /></h4>
+
 					<form class="boardWriteFrom" name="writeForm" method="post" enctype="multipart/form-data" onsubmit="return validate(this);">
-					<input type="hidden" name="id" value="{id}" required="false"/>
-					<input type="hidden" name="str_thumb" value="{str_thumb}"  required="false"/>
-					<input type="hidden" name="origin_num_file" value="{num_file}" required="false"/>
+					<input type="hidden" name="id" value="{id}" />
+					<input type="hidden" name="str_thumb" value="{str_thumb}"  />
+					<input type="hidden" name="origin_num_file" value="{num_file}" />
 						<fieldset>
-						<legend>글쓰기 수정 답변</legend>
+						<legend class="m-b15">글쓰기 </legend>
 
 							<div class="boardWriteHeader">
 
 								<div class="infoArea">
 
-									<dl class="title">
-										<dt><label for="title">제목</label></dt>
-										
-										<dd>
-					 					{? chr_hak ==1}	<select name="str_category"  id="str_category" style = "font-size:11px;" >
-										<option value="일반">--구분--</option>
-										{? !cate_LIST}<option value="일반">일반</option>{/}
-										<!--{@ cate_LIST}-->
-										<option value="{.str_category}" {? .str_category == str_category} selected{/}>{.str_category}</option>
-										<!--{/}-->
+
+
+
+                                        제목
+
+					 					{? chr_hak ==1}
+                                        <select name="str_category"  id="str_category" style = "font-size:11px;" >
+										    <option value="일반">--구분--</option>
+                                            {? !cate_LIST}<option value="일반">일반</option>{/}
+                                            <!--{@ cate_LIST}-->
+                                            <option value="{.str_category}" {? .str_category == str_category} selected{/}>{.str_category}</option>
+                                            <!--{/}-->
 										</select>
 										{/}
-										</dd>
 
-										<dd>
-										<input name="str_title" type="text" class="inputtxt" id="str_title2"  value="{str_title}" hname="제목" required  maxbyte="100" title="제목"/>
-										</dd>
+										<input name="str_title" type="text" class="inputtxt w300" id="str_title2"  value="{str_title}" hname="제목" required  maxbyte="300" title="제목"/>
+                                        <!--<input type="checkbox" name="num_input_pass"  id="num_input_pass"value = "1" {? num_input_pass}checked{/} style = "border:0px;height:12px">비밀글-->
+
 										
 										
-									</dl>
-									 
-									<label for="num_input_pass">
-									<input type="checkbox" name="num_input_pass"  id="num_input_pass"value = "1" {? num_input_pass}checked{/} style = "border:0px">비밀글</label> 
-									
+
+
 
 									{? _SESSION.ADMIN}
-									<dl class="title" style="width:90%">
+									<div class="title box r white m-t15 " style="width:90%">
 										<dt>관리기능</dt>
-										<dd>										
-										<input type="radio" name="num_notice" value="0"{? !num_notice} checked{/} style = "border:0px"  required="false">일반
+										<div>
+										<input type="radio" name="num_notice" value="0"{? !num_notice} checked{/} style = "border:0px;height:12px"  >일반
 								
-										<input type="radio" name="num_notice" value="2"{? num_notice == 2} checked{/} style = "border:0px"  required="false">전체공지
+										<input type="radio" name="num_notice" value="2"{? num_notice == 2} checked{/} style = "border:0px;height:12px"  >전체공지
 										
-										<input type="radio" name="num_notice" value="1"{? num_notice == 1} checked{/} style = "border:0px"  required="false"> 
+										<input type="radio" name="num_notice" value="1"{? num_notice == 1} checked{/} style = "border:0px;height:12px"  >
 										공지
-										날짜<wa:datepicker name="dt_date" value="{dt_date}"/>  
-										
-										조회수<input type="text" name="num_hit" value="{num_hit}" style = "width:40px" class = "button"  required="false">
-										</dd>
-									</dl>
+
+                                            |
+
+										조회수<input type="text" name="num_hit" value="{num_hit+0}" style = "width:40px;height:24px" class = ""  >
+                                            |
+
+										날짜<input type="date" name="dt_date" value="{dt_date}" style = "height:24px" class = ""  >
+										</div>
+									</div>
 									{/}
 
 
@@ -90,10 +91,10 @@
 									</dl>
 
 									{:}
-									<input type="hidden" name="str_name" value = "{? !name}{NAME}{:}{name}{/}"  required="false"/>
-									<input type="hidden" name="str_pass" value = "{? ! pass}{PASSWD}{:}{pass}{/}"  required="false"/>
-									<input type="hidden" name="str_email" value = "{? !email}{EMAIL}{:}{email}{/}"  required="false"/>
-									<input type="hidden" name="str_nick" value="{_SESSION.NICKNAME}"  required="false"/>
+									<input type="hidden" name="str_name" value = "{? !name}{NAME}{:}{name}{/}"  />
+									<input type="hidden" name="str_pass" value = "{? ! pass}{PASSWD}{:}{pass}{/}"  />
+									<input type="hidden" name="str_email" value = "{? !email}{EMAIL}{:}{email}{/}"  />
+									<input type="hidden" name="str_nick" value="{_SESSION.NICKNAME}"  />
 									{/}
 								</div>
 
@@ -103,7 +104,7 @@
 								<wa:upload part="editor_SE" sect="menu" code="{mcode}" name="content" width="100%" height="350px">{content}</wa:upload>
 							</div>
 							
-
+ 
 							<div class="boardWriteHeader">
 							    <div class="infoArea">
 							
@@ -146,31 +147,31 @@
 
 
 
-				 
-	
-			<div class="replyForm">
-						&nbsp;&nbsp;<b>복사</b> <input type="radio" name="str_scrab" id="str_scrab1" value="1"  {? str_scrab_use =="1"}checked{/}  required="false"/><label for="str_scrab1">허용</label> 
-						<input type="radio" name="str_scrab" id="str_scrab2" value="2" {? str_scrab_use =="2"}checked{/}  required="false"/><label for="str_scrab2">허용안함</label>
+
+
+                                <div class="replyForm" style="display:none">
+						&nbsp;&nbsp;<b>복사</b> <input type="radio" name="str_scrab" id="str_scrab1" value="1"  {? str_scrab_use =="1"}checked{/}  /><label for="str_scrab1">허용</label> 
+						<input type="radio" name="str_scrab" id="str_scrab2" value="2" {? str_scrab_use =="2"}checked{/}  /><label for="str_scrab2">허용안함</label>
 						&nbsp;|&nbsp;
 						<b>RSS공개</b>
-						<input type="radio" name="str_rss" id="str_rss1" value="Y" {? str_rss_use =="Y"}checked{/}  required="false"/><label for="str_rss1">허용</label>
-						<input type="radio" name="str_rss" id="str_rss2" value="N" {? str_rss_use =="N"}checked{/}  required="false"/><label for="str_rss2">허용안함 </label>
+						<input type="radio" name="str_rss" id="str_rss1" value="Y" {? str_rss_use =="Y"}checked{/}  /><label for="str_rss1">허용</label>
+						<input type="radio" name="str_rss" id="str_rss2" value="N" {? str_rss_use =="N"}checked{/}  /><label for="str_rss2">허용안함 </label>
 						&nbsp;|&nbsp;
-						<input type="checkbox" name="str_setup" value="Y"  required="false"> 현재설정을 계속유지합니다. 
-					</div>
+						<input type="checkbox" name="str_setup" value="Y"  > 현재설정을 계속유지합니다. 
+            </div>
 		
-				<div class="boardNavigation">
+				<div class="boardNavigation m-t20 text-center">
 							
 						
 						<div class="buttonRight">
 							<span class="button01 smallarrowIcon">
-								<span><input type="submit" value="등록"  onclick="_onSubmit(this);" onkeypress="_onSubmit(this);"  /></span> 
+								<span><input type="submit" value="등록"  onclick="_onSubmit(this);" onkeypress="_onSubmit(this);" class="btn "  /></span>
 							</span>
 				 			<span class="button01 arrowIcon">
-								<a href="javascript:history.go(-1)"><span>취소</span></a> 
+								<a href="javascript:history.go(-1)" class="btn white"><span>취소</span></a>
 							</span>
 							<span class="button01 arrowIcon">
-								<a href="/board/{mcode}"><span>목록</span></a>
+								<a href="/board/{mcode}" class="btn white"><span>목록</span></a>
 							</span> 
 						</div>
 					</div>

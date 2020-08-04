@@ -1,0 +1,243 @@
+
+
+<script src="/theme/NEW/js/jquery.1.8.3.min.js"></script>
+<section id="order" class="secondary-color text-center  clearfix ">
+
+    <div class="row wow fadeIn" data-wow-delay="0.2s">
+
+    <header class="section-heading">
+
+        <div class="text-center"><img src="/theme/NEW/assets/f.png" alt=""></div>
+        <h2 class="section-title text-center">고려대학교 KU캠프 신청하기</h2>
+        <div class="m-t20">
+            {? !_SESSION.USERID}
+                <span class="text-info ft20">로그인이 필요합니다.</span>
+                <div class="m-t5">
+                    <button class="btn dark" onclick="login_pop();">로그인</button>
+                    <button class="btn white" onclick="location.href='/?m=signup'">회원가입</button>
+                </div>
+            {:}
+                 <span class="text-info ft20">{_SESSION.USERID}님으로 로그인되었습니다.</span>
+            <div class="m-t10">
+                <button class="btn dark" onclick="mp_open()">신청내역확인</button>
+                <button class="btn white b-l b-b b-t b-r m-l5" onclick="mypage_open()">회원정보수정</button>
+                <button class="btn white m-l5" onclick="location.href='/member.logout'">로그아웃</button>
+            </div>
+            {/}
+        </div>
+
+
+    </header>
+
+
+    <div class="padding col-md-12">
+
+        <div class="col-md-4 col-xs-12 padding" >
+            <div class="p-t10 p-b10">
+                <div class="box r white">
+                    <div class="box-body padding text-center">
+
+                        <img src="/theme/NEW/images/n_t1.gif" alt="" style="height:100px">
+                        <h4 class="m-t20 ">고려대학교 진로적성캠프</h4>
+                        <div class="">동기부여, 적성검사 명문대 멘토와 함께 미래 설계</div>
+
+
+                        {? date("Ymd")<=sa_date}
+                        <div class="ft12 text-info m-t10 ani_texts">
+                            <조기등록 할인중>
+                        </div>
+                        {/}
+
+                        <button onclick="st_open('17')" class="btn  dark m-t20" style="background-color: #71001a">신청하기</button>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xs-12 padding" >
+            <div class="p-t10 p-b10">
+                <div class="box r white">
+                    <div class="box-body padding text-center">
+
+                        <img src="/theme/NEW/images/n_t2.gif" alt="" style="height:100px">
+                        <h4 class="m-t20 ">고려대학교 인문학캠프</h4>
+                        <div class="">청소년 인문학으로 생각 넓히기</div>
+
+
+                        {? date("Ymd")<=sa_date}
+                        <div class="ft12 text-info m-t10 ani_texts">
+                            <조기등록 할인중>
+                        </div>
+                        {/}
+
+                        <button onclick="st_open('20')" class="btn  dark m-t20" style="background-color: #71001a">신청하기</button>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xs-12 padding" >
+            <div class="p-t10 p-b10">
+                <div class="box r white">
+                    <div class="box-body padding text-center">
+
+                        <img src="/theme/NEW/images/n_t3.gif" alt="" style="height:100px">
+                        <h4 class="m-t20 ">고려대학교 창의공학캠프</h4>
+                        <div class="">아두이노, 드론, 3D프린터, RC카</div>
+
+
+                        {? date("Ymd")<=sa_date}
+                        <div class="ft12 text-info m-t10 ani_texts">
+                            <조기등록 할인중>
+                        </div>
+                        {/}
+
+                        <button onclick="st_open('16')" class="btn  dark m-t20" style="background-color: #71001a">신청하기</button>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!--<div class="col-md-4 col-xs-12 padding" style="">
+            <div class="box r white">
+                <div class="p-t10 p-b10">
+                    <div class="box-body padding text-center">
+
+                    <img src="/theme/NEW/assets/arduino-UNO.png" alt="" style="height:100px">
+                    <h4 class="m-t20 ">고려대학교 공학캠프B </h4>
+                    <div class="">RC카 제작,엔트리,3D 프린터 모델링 출력체험</div>
+
+
+                    <button onclick="st_open('19')" class="btn  dark m-t20" style="background-color: #71001a">신청하기</button>
+
+
+                </div>
+                </div>
+            </div>
+        </div>
+-->
+
+    </div>
+
+
+</div>
+
+</section>
+<section id="order" class="secondary-color text-center  clearfix ">
+
+    <div class="row wow fadeIn" data-wow-delay="0.2s" style="margin-top: 10px;padding-top:10px">
+
+    <header class="section-heading">
+
+
+        <h2 class="section-title text-center">9박 10일 패키지 캠프 신청시 14만원 할인적용</h2>
+
+
+
+    </header>
+
+
+    <div class="padding col-md-12">
+
+        <div class="col-md-4 col-xs-12 padding" >
+
+
+
+            <div class="p-t10 p-b10">
+                <div class="box r white">
+                    <div class="box-body padding text-center">
+                        <img src="/theme/NEW/images/n_t1.gif" alt="" style="height:100px">
+                        <i class="fa fa-plus " style="font-size:30px;margin-top: 35px"></i>
+                        <img src="/theme/NEW/images/n_t2.gif" alt="" style="height:100px">
+
+                        <h4 class="m-t20 ">진로 + 인문</h4>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="col-md-4 col-xs-12 padding" >
+
+
+
+            <div class="p-t10 p-b10">
+                <div class="box r white">
+                    <div class="box-body padding text-center">
+                        <img src="/theme/NEW/images/n_t2.gif" alt="" style="height:100px">
+                        <i class="fa fa-plus " style="font-size:30px;margin-top: 35px"></i>
+                        <img src="/theme/NEW/images/n_t3.gif" alt="" style="height:100px">
+
+                        <h4 class="m-t20 ">인문 + 공학</h4>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-4 col-xs-12 padding" >
+
+
+
+            <div class="p-t10 p-b10">
+                <div class="box r white">
+                    <div class="box-body padding text-center">
+                        <img src="/theme/NEW/images/n_t3.gif" alt="" style="height:100px">
+                        <i class="fa fa-plus " style="font-size:30px;margin-top: 35px"></i>
+                        <img src="/theme/NEW/images/n_t1.gif" alt="" style="height:100px">
+
+                        <h4 class="m-t20 ">공학 + 진로</h4>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+        <header class="section-heading">
+
+
+            <h2 class="section-title text-center">신청문의 1599-3290</h2>
+
+
+
+        </header>
+
+
+</div>
+
+</section>
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+
+    });
+</script>
+

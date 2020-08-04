@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="/css/onlinePollSub.css" type="text/css" />
+
+<script language="javaScript" src="js/lib.validate.js"></script>
+<script language="javaScript">
+<!--
+function viewList() {
+	location.href = "/poll.list?mcode={mcode}&type={type}";
+}
+
+function deleteComment(id) {
+	if(id) location.href = "poll.cmt_delete?main={id}&id="+id;
+
+}
+//-->
+</script>
+
+<script language="javascript">
+			<!--
+			function pollCheck(form) {
+				var els = form.elements['cid'];
+				if(els == undefined) return false;
+				if(!els.length) els = new Array(els);
+				var chk_item;
+				for( var i=0; i < els.length; i++ ) {
+					if(els[i].checked) {
+						chk_item = els[i].value;
+						break;
+					}
+				}
+				if(!chk_item) {
+					alert("설문에 대한 답이 선택되지 않았습니다. 설문에 대한 답을 보기에서 선택해 주세요.");
+					return false;
+				}
+				return true;
+			}
+
+
+
+function keyInputWord3 (val,count){
+	
+	if(strlen(val) > count) {
+	alert('덧글은 '+count+'자 이내로 작성하셔야합니다.') 
+	$('cmt_comment').value = substr(val,0,strlen(val) -1);	
+
+	$('textlimit').innerHTML = '<div id="textlimit">'+strlen($('cmt_comment').value)+'/<span class="textlimit">'+count+'</span>';
+	}else{
+	$('textlimit').innerHTML = '<div id="textlimit">'+strlen(val)+'/<span class="textlimit">'+count+'</span>';
+	}
+		
+	}
+			
+			//-->
+</script>
+
+
+<div id="onlinePollSub">
+					<div  id="chart">
+						<h4>설문조사 투표결과 조회</h4>
+						<form name="pollForm" method="post" onsubmit="return pollCheck(this);">
+						<input type="hidden" name="type2" value="{type2}">
+						<input type="hidden" name="mcode" value="{mcode}">
+						<input type="hidden" name="id" value="{id}">
+						<dl>
+							<dt class="subject"><span>설문주제</span><span class="title">{str_title}</span></dt>
+							
+							{@ LIST}
+							
+							<dd class="choice1" ><input type="radio" name="cid" value="{.num_serial}" id="choice{.index_}" {? !use_poll}disabled{/}><label for="choice{.index_}"><span class="character">{.str_contents}</span></label>
+								<div class="gauge" >
+									<div class="gaugeBar" style="width:{.rate}%;"><span><em>{.rate}%</em></span></div>
+								</div>
+								<span class="percent">{.num_vote}명({.rate}%)</span>
+							</dd>
+							
+							{/}
+						</dl>
+						
+					</div>
+
+					<div style="text-align:center;padding-top:10px;padding-bottom:10px"><input type="submit" value="   투표하기   " style="height:23px;border:1px solid;background-color:#FFFFFF;font-weight:bold;cursor:hand;"></div>
+					</form>
+					
+
+					<!-- 나도한마디 시작 -->
+						<form id="replyForm" method="post" method="post" action="poll.cmt_write" onsubmit="return validate(this);">
+						<input type="hidden" name="sect" value="{sect}">
+						<input type="hidden" name="main" value="{id}">
+							<h4 class="title">나도한마디</h4>
+							<fieldset>
+								<legend>나도한마디</legend>
+									<div class="replyFormArea">
+										<div class="replyContent">나도한마디는 공백포함 한글기준 500자 이내로 작성 가능합니다.</div>
+										{? _SESSION.USERID}
+										<div class="replyInfo">
+											<dl class="info">
+												<dt><label for="name">이름</label></dt>
+												<dd><input id="name" class="inputtxt" type="text" name="str_name" hname="이름" maxbyte="16" value="{_SESSION.NAME}" {? _SESSION.NAME}readonly{/} required/></dd>
+												<dt><label for="pw">비밀번호</label></dt>
+												<dd><input id="pw" class="inputtxt" type="password" name="str_pass" {? _SESSION.PASSWORD} value="{_SESSION.PASSWORD}" readonly{/} hname="비밀번호" maxbyte="10"  required/></dd>
+											</dl>
+											<div id="textlimit" class="count">0/<span class="textlimit">500</span></div>
+										</div>
+										{/}
+										<div class="reply">
+											<textarea title="댓글" rows="3" cols="50" name="str_comment" hname="나도 한마디 내용" maxbyte="500" onkeyup="keyInputWord3(this.value,this.maxbyte)"  required {? !_SESSION.USERID}onclick="alert('로그인이 필요합니다.');location.href='/member.login'" readonly{/}></textarea> 
+											<span class="replyBtn"><input value="등록하기" type="submit" /></span>
+										</div>
+									</div>
+									
+									<!-- 나도한마디 리스트 시작 -->
+									<div class="feedbackList">
+										{@ COMMENT_LIST}
+										<dl class="pre">
+											<dt class="title">{.str_name}</dt>
+											<dd class="text">{=nl2br(.str_comment)} <img src="/html/board/skin/B_board/image/icon_del.gif" onclick="deleteComment({.num_serial});" alt="덧글삭재"></dd>
+											<dd class="date">{.dt_date}</dd>
+											<dd class="time">{.dt_date2}</dd>
+										</dl>
+										{/}
+									</div>
+									<!-- 나도한마디 리스트 끝 -->
+							</fieldset>
+						</form>
+						<!-- 나도한마디 끝 -->
+
+				</div>
+
+
+			<center><input type="button" value="{?type2}온라인투표 {:}설문주제 {/}목록" onclick="viewList();" style="height:23px;border:1px solid;background-color:#FFFFFF;font-weight:bold;cursor:hand;"></center>

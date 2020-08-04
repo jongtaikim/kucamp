@@ -9,14 +9,17 @@
 *
 */
 
+
+
 if($_SESSION[nonBoard]){
 	$PERM->apply('menu',$_SESSION[nonBoard],'l');
 }else{
 	$PERM->apply('menu',$mcode,'l');
 }
 $DB = &WebApp::singleton('DB');
-$FH = &WebApp::singleton('FileHost','menu',$mcode);
-$FH->set_oid($oid);
+//$FH = &WebApp::singleton('FileHost','menu',$mcode);
+//$FH->set_oid($oid);
+
 
 
 if($_GET[str_rss_url]) $_conf[str_rss_url] = $_GET[str_rss_url];
@@ -25,7 +28,8 @@ if($_GET[str_iconv]) $_conf[str_iconv] = $_GET[str_iconv];
 if($_GET[str_rss_cate]) $_conf[str_rss_cate] = $_GET[str_rss_cate];
 
 
-if($_SESSION[rss_update][$mcode] !="y" && !$page && $_SESSION[ADMIN]) require_once dirname(__FILE__).'/rss.php';
+
+//if($_SESSION[rss_update][$mcode] !="y" && !$page && $_SESSION[ADMIN]) require_once dirname(__FILE__).'/rss.php';
 
 $caption_file = "hosts/$HOST/contents/$mcode.board.caption.htm";
 if(is_file($caption_file)) $CAPTION = str_replace("\n","<br>\n",file_get_contents($caption_file));
@@ -54,8 +58,12 @@ if ($str_category) $whereadd .= "AND str_category = '$str_category'";
 $tpl->assign(array('str_category'=>$str_category));
 
 $sql = "SELECT COUNT(*) FROM $ARTICLE_TABLE WHERE num_oid= ".$_OID." and  num_mcode=$mcode and num_notice = '0' $whereadd";
+
 $total = $DB->sqlFetchOne($sql);
+
+
 if(!$total) $total = 0;
+
 
 
 $page = $_REQUEST['page'];
@@ -74,6 +82,7 @@ for($ii=0; $ii<count($row); $ii++) {
 	$row[$ii][counter] = $DB -> sqlFetchOne($sql);
 
 }
+
 
 
 $tpl->assign(array('cate_LIST'=>$row));
@@ -134,6 +143,8 @@ num_oid=$oid AND  num_notice=1  and num_mcode=$mcode    $whereadd  $orders
 ";
 $data222 = $DB->sqlFetchAll($sql2);
 @array_walk($data222,'cb_format_list');
+
+
 
 //2008-02-26 종태 전체공지사항
 
@@ -202,12 +213,12 @@ function cb_format_list(&$arr,$key,$param) {
 	global $oid,$total,$seek,$listnum, $titlelen, $colors,$dataformat,$search,$search,$URL,$FH, $nnum, $DB, $_OID,$mcode,$_conf;
 	static $num;
 	$nnum++;
-	
+
 	$arr['dt_date'] = date("Y-m-d",$arr['dt_date']);
 	if(strtotime($arr['dt_date']) > 1236058040) $arr['str_nick'] = $arr['str_name'];
 
 	$dt_date_= explode("-",$arr['dt_date']);
-	
+
 	$arr['dt_date1'] = $dt_date_[0];
 	$arr['dt_date2'] = $dt_date_[1];
 	$arr['dt_date3'] = $dt_date_[2];
@@ -228,35 +239,35 @@ function cb_format_list(&$arr,$key,$param) {
 	$arr['title2'] = cut_str($arr['str_title'], 16);
 
 	if($arr['num_notice'] ==1){
-		
+
 			if(!$arr['str_category']){
 				$arr['title']= "[공지] ".$arr['title'];
 			}else{
 				$arr['title']= "[".$arr['str_category']."] ".$arr['title'];
 			}
-		
+
 		}else if($arr['num_notice'] ==2){
-		
+
 			if(!$arr['str_category']){
 			$arr['title']= "[전체공지] ".$arr['title'];
 			}else{
 				$arr['title']= "[".$arr['str_category']."] ".$arr['title'];
 			}
-		
+
 		}else{
 
 		if($arr['str_category']) {
-		
+
 		$arr['title']= "[".$arr['str_category']."] ".$arr['title'];
-		
+
 		}else{
 		$arr['title']= "[일반] ".$arr['title'];
 		}
-		
+
 	}
 
 	if($arr['str_text']) $arr['str_text'] = $arr['str_text'];
-	
+
 
 
 	/*if($arr['num_rank']) {
@@ -264,45 +275,45 @@ function cb_format_list(&$arr,$key,$param) {
 	$arr['title2'] = $arr['title2']." <img src = '/image/rebtn.gif'> <font style= 'color:#993333;font-size:11px'>(".$arr['num_rank'].")</font>";
 	}*/
 
-	
+
 
 	/*
 	2008-05-06 종태
 	파일목록을 가져올꺼에여~
-	*/
+	*//*
 	$sql = "select str_ftype  from tab_files where num_oid = '$_OID' and str_sect = 'menu' and str_code = '".$mcode."'
 	and num_main ='".$arr['num_serial']."'";
-	$arr[str_ftype] = $DB -> sqlFetchOne($sql);
+	$arr[str_ftype] = $DB -> sqlFetchOne($sql);*/
 
-	
+
 
 	$arr['is_recent'] = date('U') - strtotime($arr['dt_date']) < 241920;
 
-	$arr['thumb_url']= $FH->get_thumb_url($arr['str_thumb'],"100",$mcode,$arr['num_serial']);
-	
-	if(!is_file(_DOC_ROOT."/".$arr['thumb_url'])){
+	//$arr['thumb_url']= $FH->get_thumb_url($arr['str_thumb'],"100",$mcode,$arr['num_serial']);
 
-		$s = $arr['str_text']; 
-		$s = preg_match_all("/<img\s+.*?src=[\"\']([^\"\']+)[\"\'\s][^>]*>/is", $s, $m); 
+	/*if(!is_file(_DOC_ROOT."/".$arr['thumb_url'])){
+
+		$s = $arr['str_text'];
+		$s = preg_match_all("/<img\s+.*?src=[\"\']([^\"\']+)[\"\'\s][^>]*>/is", $s, $m);
 		$tmp_img_list = $m[1];
 
 		//echo $tmp_img_list[0]."<br>";
 
 		$arr['thumb_url'] = $tmp_img_list[0];
-	
+
 		$arr['thumb_url'] = str_replace("%FILE_HOST%",$_SERVER[HTTP_HOST],$arr['thumb_url']);
 		$arr['thumb_url'] = str_replace("http://".$_SERVER[HTTP_HOST],"",$arr['thumb_url']);
-		$arr['thumb_url'] = trim($arr['thumb_url']);	
+		$arr['thumb_url'] = trim($arr['thumb_url']);
 		if(!is_file( _DOC_ROOT.$arr['thumb_url']."_100") ){
-			
+
 				if( !is_file( _DOC_ROOT.$arr['thumb_url'])){
-					
-				
+
+
 
 					if(strstr($tmp_img_list[0],'http://')){
 					$ch = curl_init($tmp_img_list[0]);
 					$fp = fopen(_DOC_ROOT."/tmp/"._OID.".".$mcode.".".$arr['num_serial'], "w");
-					
+
 					curl_setopt($ch, CURLOPT_REFERER, $tmp_img_list[0]);
 					curl_setopt($ch, CURLOPT_FILE, $fp);
 					curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -311,8 +322,8 @@ function cb_format_list(&$arr,$key,$param) {
 					curl_close($ch);
 					fclose($fp);
 					flush();
-					
-				
+
+
 					$ext = strtolower(array_pop(explode('.',$tmp_img_list[0])));
 					$refile[$ii] = 'board_img/menu.'.$arr['num_mcode'].".".$arr['num_serial']."_100";
 					$target_path = $FH->file_dir.'/'.$refile[$ii];
@@ -320,38 +331,38 @@ function cb_format_list(&$arr,$key,$param) {
 			}
 
 		$FH->GDImageResize(_DOC_ROOT."/tmp/"._OID.".".$arr['num_mcode'].".".$arr['num_serial'] , $target_path , "100", "75");
-		
+
 		unlink(_DOC_ROOT."/tmp/"._OID.".".$mcode.".".$arr['num_serial']);
 		$arr['thumb_url']= $FH->get_thumb_url($arr['str_thumb'],"100",$mcode,$arr['num_serial']);
 		}
-		
-		if(!is_file(_DOC_ROOT.'/'.$arr['thumb_url'])) $arr['thumb_url'] = $arr['thumb_url']."_100";
-		
 
-	}
-	
-	if(!is_file(_DOC_ROOT."/".$arr['thumb_url'])){
+		if(!is_file(_DOC_ROOT.'/'.$arr['thumb_url'])) $arr['thumb_url'] = $arr['thumb_url']."_100";
+
+
+	}*/
+
+	/*if(!is_file(_DOC_ROOT."/".$arr['thumb_url'])){
 	$sql = "select str_refile  from tab_files where num_oid = $_OID and str_sect = 'menu' and str_code = '".$mcode."'
 	and num_main ='".$arr['num_serial']."' and str_ftype in ('jpg','gif','png')";
 	$tmpSubimg = $DB -> sqlFetchOne($sql);
 	$arr['thumb_url']= $FH->get_thumb_url($tmpSubimg);
-	
+
 		if(!is_file( _DOC_ROOT.$arr['thumb_url'])){
-	
+
 		$FH->GDImageResize(_DOC_ROOT.$arr['thumb_url'] , _DOC_ROOT.$arr['thumb_url'] , "100", "75");
 		}
-	
 
-	}
-	
+
+	}*/
+
 	if(!is_file(_DOC_ROOT."/".$arr['thumb_url'])){
 		$arr['thumb_url'] = "/image/noimg.gif";
 	}
 
 
-	$normal_gallery=getimagesize(_DOC_ROOT.$arr['thumb_url']); 
+	/*$normal_gallery=getimagesize(_DOC_ROOT.$arr['thumb_url']);
 
-	
+
 	$bbs_width = 100;
 	$bbs_height = 75;
 
@@ -380,7 +391,7 @@ function cb_format_list(&$arr,$key,$param) {
 	}
 
 	$arr[img_w] = $img_w;
-	$arr[img_h] = $img_h;
+	$arr[img_h] = $img_h;*/
 
 
 
@@ -398,15 +409,15 @@ function cb_format_list(&$arr,$key,$param) {
 	}else {
 		$arr['name'] = $arr['str_name'];
 	}
-	
 
 
-	
-	
+
+
+
 	$arr['str_text'] =  str_replace("&nbsp;","",$arr['str_text']);;
 	$arr['str_text_full'] = $arr['str_text'];
 	$arr['str_text'] =  strip_tags($arr['str_text']);
-	
+
 	$arr['str_text'] = cut_str($arr['str_text'], 300);
 
 

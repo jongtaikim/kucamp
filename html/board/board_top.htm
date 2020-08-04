@@ -12,7 +12,7 @@
 
 
 <!--{? _SESSION.ADMIN && mcode}-->
-	<div style="width:100%;text-align:right">{? chr_hak ==1}<a href="javascript:fenster2('카테고리관리', '카테고리관리', '/board.admin.categorypop?mcode={mcode}',  '20%', '30%', '300', '300',this)"  style="font-size:11px;"><b>+카테고리관리</b></a>{/}</div>	
+	<div style="width:100%;text-align:right">{? chr_hak ==1}<a href="javascript:fenster2('카테고리관리', '카테고리관리', '/board.admin.categorypop?mcode={mcode}',  '20%', '30%', '300', '300',this)"  style="font-size:11px;"><b>+카테고리관리</b></a>{/}</div>
 <!--{/}-->
 
 
@@ -23,7 +23,7 @@
 	<div id="rssBtn"><a href="/board.xml?mcode={mcode}"><img src='/image/rss.gif' border='0' alt="게시판 RSS보기"></a></div>
 	<div id="boardCount">총 <b>{total}</b> 개 게시물이 있습니다.</div>
 	<div id="boardTool">
-	
+
 	{? chr_hak ==1}
 	<select name="str_category" onchange = "select1(this.value);" style = "font-size:11px;width:130px" >
 			<option value="">** 카테고리보기 **</option>
@@ -60,7 +60,7 @@ var all = document.getElementById("all").value;
 
 if ( all == 'Y')
 {
-uncheckall() 
+uncheckall()
  return;
 
 }else{
@@ -68,12 +68,12 @@ uncheckall()
   for (i=0; i < form.elements.length; i++) {
  if (form.elements[i].name =="ids[]") {
     form.elements[i].checked = true;
-	
+
  }
   }
   document.listForm.all.value = "Y";
- 
-  
+
+
   return;
 }
 }
@@ -114,32 +114,32 @@ if(val) {
 				<td class="bx1_stitle">RSS 연동 : </td>
 				<td width="4"></td>
 				<td class="bx1_text03">
-				
+
 				<input type="text" name="str_rss_url" id="str_rss_url" value="{str_rss_url}" class="fom01" style="width:170px">
-				
+
 				<SELECT name="num_rss_count"  id="num_rss_count" class="bx1_text03" style="width:40px">
-				
+
 				<option value="10" {? num_rss_count == "10"} selected{/}>10개</option>
 				<option value="20" {? num_rss_count == "20"} selected{/}>20개</option>
 				<option value="30" {? num_rss_count == "30"} selected{/}>30개</option>
 
 				</SELECT>
-				
-				
-				
+
+
+
 
 				<SELECT name="str_iconv"  id="str_iconv" class="bx1_text03" style="width:80px">
-				
+
 				<option value="UTF-8" {? str_iconv == "UTF-8"} selected{/}>UTF-8</option>
 				<option value="EUC-KR" {? str_iconv == "EUC-KR"} selected{/}>EUC-KR</option>
-				
-				
+
+
 				</SELECT>
 				카테고리 : <input type="text" name="str_rss_cate" value="{str_rss_cate}" class="fom01" style="width:50px">
-				
+
 				<input type="checkbox" name="img_in" value="y"> 이미지
 				<input type="submit" value="RSS가져오기" class="button">
-				
+
 				</td>
 			</tr>
 		</table>

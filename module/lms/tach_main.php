@@ -18,7 +18,7 @@ switch ($REQUEST_METHOD) {
 	case "GET":
 	
 	
-	if(!$listnum)$listnum = 40;
+	if(!$listnum)$listnum = 42;
 	if(!$page)$page = 1;
 	$sql = "SELECT COUNT(*) FROM ".TAB_TACH." WHERE NUM_OID=$_OID and STR_TYPE = '".$THEME."' ";
 	$total = $DB->sqlFetchOne($sql);

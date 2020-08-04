@@ -1,0 +1,449 @@
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script>
+<!--Gallery-->
+<section id="login" class="secondary-color text-center  clearfix ">
+
+    <div class="row wow fadeIn" data-wow-delay="0.2s">
+
+            <div class="" style="margin:auto;max-width:680px">
+                <div class="box r white">
+                    <div class="box-body padding">
+
+                        <div class="text-center m-b20">
+                            <img src="/theme/NEW/assets/logo.png" alt="" />
+                        </div>
+
+                        <div class="text-left">
+
+                            <form name="joinForm" id="joinForm" method="post" action="/member.join"  enctype="multipart/form-data">
+                                <input type="hidden" name="mode" id="mode" value="join"/>
+                                <input type="hidden" name="new_mode"  value="true"/>
+                                <input type="hidden" name="emailchk" id="emailchk"/>
+
+                                <input type="hidden" name="num_birthday" id="num_birthday" value="{num_birthday}"/>
+                                <input type="hidden" name="chr_birthday" id="chr_birthday" value="{chr_birthday}"/>
+
+                                <input type="hidden" name="str_sms" id="str_sms" value="y"/>
+                                <input type="hidden" name="str_mailring" id="str_mailring" value="Y"/>
+
+
+                                <div class="clearfix">
+
+                                    <div class="form-group">
+                                        <div class="col-xs-12 col-md-12">
+                                            <label><span class="text-danger">*</span> {=_la('회원유형')}</label>
+                                            <select class="form-control" name="uselecr" id="uselecr" required>
+                                                <option value="" {? chr_mtype==""}selected{/}>-- 회원유형을 선택해주세요. --</option>
+                                                <option value="s" {? chr_mtype=="s"}selected{/}>학생회원</option>
+                                                <option value="g" {? chr_mtype=="g"}selected{/}>학부모회원</option>
+                                            </select>
+
+                                            <script type="text/javascript">
+                                                $('#uselecr').change(function () {
+
+                                                    if($(this).val() == 's'){
+                                                        $('#school_info').show();
+                                                        $('#chrd_phone').hide();
+                                                        $('#str_school').focus();
+                                                    }else{
+                                                        $('#school_info').hide();
+                                                        $('#chrd_phone').show();
+                                                    }
+                                                });
+                                            </script>
+
+                                        </div>
+
+                                        <div class="col-xs-12 col-md-12 hide animated fadeIn" id="school_info">
+                                            <label ><span class="text-danger">*</span>{=_la('학교/학년')}</label>
+                                            <input class="form-control" title="학교명" type="text" name="str_school" id="str_school" hname="{=_la('학교명')}" placeholder="학교명을 입력해주세요. (고등학교,중학교,초등학교)"  >
+
+                                            <select  name="str_class" id="str_class" hname="학년정보" class="form-control">
+                                                <option value="">-- {=_la('학년정보')} --</option>
+
+                                                <optgroup label="초등학교">
+
+                                                    <option value="초등학교 1학년">1학년</option>
+                                                    <option value="초등학교 2학년">2학년</option>
+                                                    <option value="초등학교 3학년">3학년</option>
+                                                    <option value="초등학교 4학년">4학년</option>
+                                                    <option value="초등학교 5학년">5학년</option>
+                                                    <option value="초등학교 6학년">6학년</option>
+
+                                                </optgroup>
+
+                                                <optgroup label="중학교">
+
+                                                    <option value="중학교 1학년">1학년</option>
+                                                    <option value="중학교 2학년">2학년</option>
+                                                    <option value="중학교 3학년">3학년</option>
+
+                                                </optgroup>
+
+                                                <optgroup label="고등학교">
+
+                                                    <option value="고등학교 1학년" {? str_class =='고등학교 1학년'} selected{/}>1학년</option>
+                                                    <option value="고등학교 2학년" {? str_class =='고등학교 2학년'} selected{/}>2학년</option>
+                                                    <option value="고등학교 3학년" {? str_class =='고등학교 3학년'} selected{/}>3학년</option>
+
+                                                </optgroup>
+
+                                            </select>
+                                        </div>
+
+                                        <div class="col-xs-12 col-md-12">
+                                            <label ><span class="text-danger">*</span>{=_la('아이디')}</label>
+                                            <input type="text" class="form-control"  hname="이름" maxbyte="50" value="{str_id}" placeholder="아이디를 입력하세요."
+                                                   name="str_id" id="str_id" hname="{=_la('아이디')}" maxlength="10" maxbyte="10" minbyte="5" onchange="chk_id()" required>
+
+                                            <div class="text-info " id="id_pr">
+                                                5~15자의 영문소문자, 숫자만 가능합니다.
+                                            </div>
+                                            <script type="text/javascript">
+                                                function chk_id() {
+                                                    //encodeURIComponent()
+                                                    var id = $('#str_id').val();
+                                                    if(id) {
+                                                        $.ajax({
+                                                            type: 'GET',
+                                                            url: '/member.check_masterid',
+                                                            data: 'id=' + id,
+                                                            dataType: 'html',
+                                                            success: function (cknum, status) {
+
+                                                                if (cknum == '00' || cknum == '0') {
+                                                                    $('#str_id_prev').val(id);
+                                                                    $('#id_pr').html('<span class="text-info">사용 가능한 ID 입니다.</span>');
+                                                                }
+                                                                else if (cknum == '99') {
+                                                                    $('#str_id_prev').val('');
+                                                                    $('#id_pr').html('<span  class="text-danger">이미 존재하거나 사용할 수 없는 ID 입니다.</span>');
+                                                                    $('#str_id').val('').focus();
+                                                                }
+                                                                else if (cknum == '98') {
+                                                                    $('#str_id_prev').val('');
+                                                                    $('#id_pr').html('<span class="text-danger">영문 소문자나 숫자, 3자리 이상 10자리 이하로 입력하여주십시오.</span>');
+                                                                    $('#str_id').val('').focus();
+                                                                }
+
+                                                            },
+                                                            error: function (request, status, error) {
+                                                                alert(request.responseText);
+                                                            }
+                                                        });
+                                                    }
+
+                                                }
+                                            </script>
+
+                                        </div>
+
+                                        <div class="col-xs-12 col-md-12">
+                                            <label><span class="text-danger">*</span>{=_la('이름')}</label>
+                                            <input type="text" class="form-control" name="str_name" hname="이름" maxbyte="50" value="{str_name}" placeholder="이름을 입력하세요." required>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <label><span class="text-danger">*</span>{=_la('성별')}</label>
+                                            <select name="str_sex" id="str_sex" class="form-control">
+                                                <option value="1" selected>남자</option>
+                                                <option value="2" >여자</option>
+                                            </select>
+                                        </div>
+
+
+
+                                        <div class="col-xs-12 col-md-6">
+                                            <label><span class="text-danger">*</span>{=_la('생년월일')}</label>
+                                            <input type="date" class="form-control" id="birthday" hname="생년월일" maxbyte="50" value="{num_birthday}" onchange="chk_birth()" placeholder="2000-01-01" required>
+                                            <script type="text/javascript">
+                                                function chk_birth() {
+
+                                                    var str = $('#birthday').val();
+
+                                                    var pattern = /[0-9]{4}-[0-9]{2}-[0-9]{2}/;
+
+                                                    if(pattern.test(str)) {
+
+                                                        $('#num_birthday,#chr_birthday ').val(str_replace('-', '',$('#birthday').val()));
+
+                                                    } else {
+                                                        bootbox.alert({
+                                                            title:'알림',
+                                                            message: "생년월일 형식을 체크해주세요. (2000-00-00)",
+                                                            size:'small',
+
+                                                            callback: function (result) {
+                                                                $('#birthday').val('').focus();
+                                                            }
+                                                        });
+
+
+                                                    }
+
+
+                                                }
+                                            </script>
+                                        </div>
+
+
+                                        <div class="col-xs-12 col-md-6">
+                                            <label ><span class="text-danger">*</span>{=_la('비밀번호')}</label>
+
+
+                                            <input class="form-control" name="str_passwd" id="str_passwd" hname="{=_la('비밀번호')}" maxlength="10" maxbyte="10" minbyte="5" match="str_passwd2" type="password"   id="str_passwd" required onchange="chk_pw1()" placeholder="비밀번호 입력하세요.">
+
+                                            <div class="text-info " id="pw_info1">
+                                                {=_la('5~10의 영문,숫자,특수문자 조합')}<br />
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="col-xs-12 col-md-6">
+                                            <label><span class="text-danger">*</span>{=_la('비밀번호 확인')}</label>
+
+                                            <input class="form-control" name="str_passwd2" id="str_passwd2" onchange="chk_pw2()" hname="{=_la('비밀번호 확인')}" type="password" maxlength="10"   placeholder="비밀번호 재입력"  required>
+                                            <div class="text-info " id="pw_info2">
+                                               비밀번호를 확인합니다.
+
+                                            </div>
+
+                                            <script type="text/javascript">
+                                                function chk_pw1(){
+                                                    var pw = $('#str_passwd').val();
+                                                    var num = pw.search(/[0-9]/g);
+                                                    var eng = pw.search(/[a-z]/ig);
+                                                    var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+                                                    if(pw.length < 8 || pw.length > 20){
+
+                                                        $('#pw_info1').html('<span class="text-danger">8자리 ~ 20자리 이내로 입력해주세요.</span>');
+                                                        $('#str_passwd').val('').focus();
+                                                        return false;
+                                                    }
+                                                    if(pw.search(/₩s/) != -1){
+
+                                                        $('#pw_info1').html('<span class="text-danger">비밀번호는 공백없이 입력해주세요.</span>');
+                                                        $('#str_passwd').val('').focus();
+                                                        return false;
+                                                    } if(num < 0 || eng < 0 || spe < 0 ){
+
+                                                        $('#pw_info1').html('<span class="text-danger">영문,숫자, 특수문자를 혼합하여 입력해주세요.</span>');
+                                                        $('#str_passwd').val('').focus();
+                                                        return false;
+                                                    }
+                                                    $('#pw_info1').html('<span class="text-info">비밀번호가 통과되었습니다.</span>');
+                                                    return true;
+                                                }
+
+
+
+
+
+                                                function chk_pw2() {
+                                                    //encodeURIComponent()
+                                                    if($('#str_passwd').val() != $('#str_passwd2').val() ){
+                                                        $('#pw_info2').html('<span class="text-danger">비밀번호가 일치 하지 않습니다.</span>');
+                                                        $('#str_passwd2').val('').focus();
+                                                    }else{
+                                                        $('#pw_info2').html('<span class="text-info">비밀번호가 확인되었습니다.</span>');
+                                                    }
+                                                }
+                                            </script>
+
+
+
+                                        </div>
+
+
+                                        <div class="col-xs-12 col-md-12">
+                                            <label ><span class="text-danger">*</span>{=_la('이메일')}</label>
+                                            <input class="form-control" name="email" id="email" placeholder="OOOO@gmail.com" hname="{=_la('이메일')}" type="email"  maxbyte="255" onchange="chk_email()"  required >
+                                            <div class="" id="email_pr"></div>
+                                            <script type="text/javascript">
+                                                function chk_email() {
+                                                    //encodeURIComponent()
+                                                    $.ajax({
+                                                    type: 'GET',
+                                                    url: '/member.emailchk',
+                                                    data:'&mode=email&email='+$('#email').val(),
+                                                    dataType: 'html',
+                                                    	success: function(html, status) {
+                                                            if(html=='Y'){
+                                                                $('#email_pr').html('<span class="text-danger">사용할 수 없는 이메일입니다.</span>');
+                                                                $('#email').val('').focus();
+                                                            }else{
+                                                                $('#email_pr').html('<span class="text-info">사용가능합니다.</span>');
+                                                            }
+                                                    	},
+                                                    	error: function(request,status,error) {
+                                                    		alert(request.responseText);
+                                                    	}
+                                                    });
+                                                }
+                                            </script>
+                                        </div>
+
+                                        <div class="col-xs-12 col-md-12">
+                                            <label ><span class="text-danger">*</span>{=_la('주소')}</label>
+
+
+                                            <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+                                            <input type="text" id="postcode" name="str_zipcode" value="" placeholder="우편번호" class="form-control  hide"  >
+                                            <input type="text" id="address" name="str_addr1" placeholder="주소" value="" required   class="form-control " ><br>
+                                            <input type="text" id="address2" name="str_addr2" placeholder="상세주소" value="" required  class="form-control " >
+
+                                            <script src="//dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+                                            <script>
+                                                function sample6_execDaumPostcode() {
+                                                    new daum.Postcode({
+                                                        oncomplete: function(data) {
+                                                            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                                                            // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                                                            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                                                            var fullAddr = ''; // 최종 주소 변수
+                                                            var extraAddr = ''; // 조합형 주소 변수
+
+                                                            // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                                                            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                                                                fullAddr = data.roadAddress;
+
+                                                            } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                                                                fullAddr = data.jibunAddress;
+                                                            }
+
+                                                            // 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+                                                            if(data.userSelectedType === 'R'){
+                                                                //법정동명이 있을 경우 추가한다.
+                                                                if(data.bname !== ''){
+                                                                    extraAddr += data.bname;
+                                                                }
+                                                                // 건물명이 있을 경우 추가한다.
+                                                                if(data.buildingName !== ''){
+                                                                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                                                                }
+                                                                // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+                                                                fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+                                                            }
+
+                                                            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                                                            $('#postcode').val(data.zonecode);
+                                                            $('#address').val(fullAddr);
+
+
+                                                            // 커서를 상세주소 필드로 이동한다.
+                                                            $('#address2').focus();
+                                                        }
+                                                    }).open();
+                                                }
+                                            </script>
+
+                                        </div>
+
+                                        <div class="col-xs-12 col-md-12">
+                                            <label ><span class="text-danger">*</span>{=_la('휴대폰')}</label>
+                                            <input class="form-control phone-number-check" name="phone" id="phone" placeholder="010-0000-0000" hname="{=_la('휴대폰')}" type="text"  maxbyte="100"   required >
+                                        </div>
+
+                                        <div class="col-xs-12 col-md-12 hide" id="chrd_phone">
+                                            <label ><span class="text-danger">*</span>{=_la('자녀 휴대폰')}</label>
+                                            <input class="form-control phone-number-check" name="str_stu_handphone" id="str_stu_handphone" placeholder="010-0000-0000" hname="{=_la('자녀 휴대폰')}" type="text"  maxbyte="100"    >
+                                        </div>
+
+                                        <div class="col-xs-12 col-md-12">
+                                            <label ><span class="text-danger">*</span>{=_la('가입경로')}</label>
+                                            <div class="item">
+                                                <script type="text/javascript">
+                                                    // <![CDATA[
+                                                    function selectTmp1(idx){
+                                                        if(idx == "카페"){
+                                                            $('#etc_text').show();
+                                                            $('#tmp_title').html('카페명 입력');
+                                                        }else if(idx == "블로그"){
+                                                            $('#etc_text').show();
+                                                            $('#tmp_title').html('블로그명 입력 ');
+                                                        }else if(idx == "기타"){
+                                                            $('#etc_text').show();
+                                                            $('#tmp_title').html('기타사유 ');
+                                                        }else{
+                                                            $('#etc_text').hide();
+                                                            $('#tmp_title').html('');
+                                                        }
+                                                    }
+                                                    // ]]>
+                                                </script>
+                                                <select name="str_plus1" required onchange="selectTmp1(this.value)" hname="가입경로" class="form-control">
+                                                    <option value="">선택하여 주세요.</option>
+                                                    <option value="인터넷검색">인터넷검색</option>
+
+                                                    <option value="페이스북광고">페이스북광고</option>
+                                                    <option value="인스타그램">인스타그램</option>
+                                                    <option value="카페">카페</option>
+                                                    <option value="블로그">블로그</option>
+                                                    <option value="지면광고">지면광고</option>
+                                                    <option value="신문(기사,광고)">신문(기사,광고)</option>
+                                                    <option value="주변사람의 소개">주변사람의 소개</option>
+
+                                                    <option value="SMS문자">SMS문자</option>
+                                                    <option value="기타">기타</option>
+                                                </select>
+                                            </div>
+                                            <div class="item" id="etc_text" style="display:none;margin-top:10px">
+                                                <span id="tmp_title"></span><input class="form-control"  type="text" name="str_plus2" hname="참가동기" placeholder="참가동기 입력"  maxbyte="50" value="{str_plus2}" value="">
+                                            </div>
+
+
+
+                                        </div>
+
+                                        <div class="col-xs-12 col-md-12">
+                                            <label >{=_la('전달사항')}</label>
+                                            <textarea  class="form-control" cols="50" rows="3" name="str_introduct" id="str_introduct" hname="{=_la('자기소개')}" placeholder="가입시 전달할 말씀을 100자 이내로 기입해주세요." ></textarea>
+                                        </div>
+
+
+                                        <div class="col-xs-12 col-md-12">
+
+                                                <div class="clearfix">
+                                                    <span class="checkbox pull-left">
+                                                        <label ><input type="checkbox" id="chk1" value="Y" style="height:14px" required="required"> 회원약관을 확인하였으며 동의합니다.</label>
+                                                    </span>
+                                                    <a href="#arrsw1" class="text-info pull-right" onclick="yak_view('user','회원약관')">약관보기</a>
+                                                </div>
+
+                                            <div class="clearfix">
+                                                    <span class="checkbox pull-left">
+                                                        <label ><input type="checkbox" id="chk2" value="Y" style="height:14px" required="required"> 개인정보 보호정책을 확인하였으며 동의합니다.</label>
+                                                    </span>
+                                                <a href="#arrsw2" class="text-info pull-right" onclick="yak_view('pra','개인정보 취급 방침')">약관보기</a>
+                                            </div>
+
+
+                                        </div>
+
+                                        <!---->
+
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="text-center padding">
+                                    <input type="submit" name="" value="회원가입 완료" class="btn btn-lg info" style="height:50px;background-color: #71001a">
+                                </div>
+                            </form>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+    </div>
+
+</section>

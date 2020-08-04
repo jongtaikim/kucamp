@@ -1,16 +1,20 @@
 <?
 /* vim: set expandtab tabstop=4 shiftwidth=4 foldmethod=marker: */
 /**
-* ÀÛ¼ºÀÏ: 2010-01-29
-* ÀÛ¼ºÀÚ: ±èÁ¾ÅÂ
-* ¼³   ¸í: ¾Æ¹«µ¥³ª µ¡±Û ±Û·Î¹ú ÇÔ¼ö
-*****************************************************************
-* 
-*/
+ * ìž‘ì„±ì¼: 2010-01-29
+ * ìž‘ì„±ìž: ê¹€ì¢…íƒœ
+ * ì„¤   ëª…: ì•„ë¬´ë°ë‚˜ ë§ê¸€ ê¸€ë¡œë²Œ í•¨ìˆ˜
+ *****************************************************************
+ *
+ */
+
+header("Content-Type: text/html; charset=UTF-8");
+
+
 $tpl = &WebApp::singleton('Display');
 if(!$param['comment_skin']) $comment_skin = "basic"; else $comment_skin = $param['comment_skin'];
 if(!$param['len']) $len = "4000"; else $len = $param['len'];
-if(!$param['comment_title']) $title = "µ¡±Û"; else $title = $param['comment_title'];
+if(!$param['comment_title']) $title = "ë§ê¸€"; else $title = $param['comment_title'];
 
 $mou_name = "comment";
 

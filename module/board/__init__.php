@@ -5,7 +5,7 @@
 * 작성자: 김종태
 * 설   명: 게시판 공통 인쿠르드 파일
 *****************************************************************
-* 
+*
 */
 
 if($_OID == _AOID) {
@@ -15,7 +15,7 @@ if($_OID == _AOID) {
 		}else{
 			echo "<meta http-equiv='Refresh' Content=\"0; URL='".$REQUEST_URI_r."?mcode=$mcode'\">";
 		}
-		exit;	
+		exit;
 }
 
 require_once dirname(__FILE__).'/table_define.php';
@@ -38,7 +38,7 @@ $sql = "SELECT * FROM $CONFIG_TABLE WHERE NUM_OID=$_OID AND NUM_MCODE=$mcode";
 		unset($_SESSION[nonBoard]);
 	}
 
-	
+
 
 // }}}
 
@@ -91,7 +91,7 @@ $tpl->assign(array(
 	));
 
 
- 
+
 //==-- 환경변수 정의 --==//
 $PERM = &WebApp::singleton('Permission');
 
@@ -126,10 +126,10 @@ $tpl->assign(array(
 				'str_coment_use'=>$con_setup[0],
 				'str_scrab_use'=>$con_setup[1],
 				'str_rss_use'=>$con_setup[2],
-				
+
 				));
 
-	
+
 
 require_once _DOC_ROOT.'/module/file.php';
 

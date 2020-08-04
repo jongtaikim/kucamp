@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="kucamp.com" id="58c585d4-1e25-4fe2-9850-7c28a50ea69e" port="22" customName="kucamp.com" nameFormat="CUSTOM" username="kunetworks1" />
+    </configs>
+  </component>
+</project>

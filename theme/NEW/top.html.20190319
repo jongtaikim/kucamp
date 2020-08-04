@@ -1,0 +1,317 @@
+
+
+<header id="banner" class="scrollto clearfix" data-enllax-ratio=".5">
+    <div id="header" class="nav-collapse">
+        <div class="row clearfix" style="max-width:1300px">
+            <div class="col-1">
+
+                <!--Logo-->
+                <div id="logo">
+
+                    <!--Logo that is shown on the banner-->
+                    <img src="./assets/logo.png" id="banner-logo" alt="Landing Page" style="max-height:37px;"/>
+                    <!--End of Banner Logo-->
+
+                    <!--The Logo that is shown on the sticky Navigation Bar-->
+                    <a href="/"><img src="./assets/logo.png?v=2" id="navigation-logo" alt="Landing Page" style="min-height:37px"/></a>
+                    <!--End of Navigation Logo-->
+
+                </div>
+                <!--End of Logo-->
+
+                <aside>
+
+                    <!--Social Icons in Header-->
+                    <ul class="social-icons">
+                        <li>
+                            <a target="_blank" title="Facebook" href="https://www.facebook.com/koreaunivcamp">
+                                <i class="fa fa-facebook fa-1x"></i><span>Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" title="Instagram" href="https://www.instagram.com/koreaunivcamp/">
+                                <i class="fa fa-instagram fa-1x"></i><span>Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" title="네이버 카페" href="http://cafe.naver.com/koreaskymentor">
+                                {? _GET.m}
+                                <img src="./assets/band_w.png?v=1" alt="" style="height:18px">
+                                {:}
+                                <img src="./assets/band.png?v=3" alt="" style="height:18px">
+                                {/}
+                            </a>
+                        </li>
+
+                    </ul>
+                    <!--End of Social Icons in Header-->
+
+                </aside>
+
+                <!--Main Navigation-->
+                <nav id="nav-main">
+                    <ul>
+                        <li>
+                            <a href="?m=board" {? _GET.m=='board'}style="color:#A91611;font-weight: bold"{/}>공지사항</a>
+                        </li>
+                        <li>
+                            <a href="?m=menu1"  {? _GET.m=='menu1'}style="color:#A91611;font-weight: bold"{/}>KU진로적성캠프</a>
+                        </li>
+                        <li>
+                            <a href="?m=menu2" {? _GET.m=='menu2'}style="color:#A91611;font-weight: bold"{/}>KU창의공학캠프</a>
+                        </li>
+                        <li>
+                            <a href="?m=menu22" {? _GET.m=='menu22'}style="color:#A91611;font-weight: bold"{/}>KU인문학캠프</a>
+                        </li>
+                        <li>
+                            <a href="?m=gallery" {? _GET.m=='gallery'}style="color:#A91611;font-weight: bold"{/}>둘러보기</a>
+                        </li>
+                        <li>
+                            <a href="?m=menu3" {? _GET.m=='menu3'}style="color:#A91611;font-weight: bold"{/}>등록안내</a>
+                        </li>
+                        <li>
+                            <a href="?m=menu4" {? _GET.m=='menu4'}style="color:#A91611;font-weight: bold"{/}>입소안내</a>
+                        </li>
+                        <li>
+                            <a href="?m=menu9" {? _GET.m=='menu9'}style="color:#A91611;font-weight: bold"{/}>상담하기</a>
+                        </li>
+
+                       <!-- <li>
+                            <a href="?m=mento" {? _GET.m=='mento'}style="color:#A91611;font-weight: bold"{/}>멘토소개</a>
+                        </li>-->
+                        <li>
+                            <a href="?m=order" {? _GET.m=='order'}style="color:#A91611;font-weight: bold"{/}>신청하기</a>
+                        </li>
+                        <li>
+                            <a href="?m=menu7" {? _GET.m=='menu7'}style="color:#A91611;font-weight: bold"{/}>회사소개</a>
+                        </li>
+                        <!-- <li>
+                             <a href="#team">Team</a>
+                         </li>
+                         <li>
+                             <a href="#faq">F.A.Q</a>
+                         </li>
+                         <li>
+                             <a href="#pricing">Pricing</a>
+                         </li>-->
+                    </ul>
+                </nav>
+                <!--End of Main Navigation-->
+
+                <div id="nav-trigger"><span></span></div>
+                <nav id="nav-mobile"></nav>
+
+            </div>
+        </div>
+    </div><!--End of Header-->
+
+    <!--Banner Content-->
+    {? !_GET.m && !_GET.mcode}
+
+
+
+    <script language="JavaScript">
+
+        function setCookie(cname,cvalue,exdays)
+        {
+            var d = new Date();
+            d.setTime(d.getTime()+(exdays*24*60*60*1000));
+            var expires = "expires="+d.toGMTString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+
+        function getCookie(cname)
+        {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++)
+            {
+                var c = ca[i].trim();
+                if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+            }
+            return "";
+        }
+
+        function closeWin(flag) {
+            if ( flag == true ) {
+                setCookie( "ncookie", "done" , 1 );
+            }
+            document.getElementById("popup").style.display = "none";
+        }
+
+
+
+        function closeWin2(flag) {
+            if ( flag == true ) {
+                setCookie( "ncookie2", "done" , 1 );
+            }
+            document.getElementById("popup2").style.display = "none";
+        }
+
+
+    </script>
+
+    <style>
+        #popup {
+            display:none;
+            position:absolute;
+            width:440px;
+            height:520px;
+            margin-left:10px;
+            margin-top:10px;
+            z-index:100;
+            color:#fff;
+            border:10px solid #cdcdcd;
+            z-index: 99999999;
+        }
+
+        #popup img {
+            position:absolute;
+        }
+
+        #popup2 {
+            /*display:none;*/
+            position:absolute;
+            width:500px;
+            height:720px;
+            margin-left:540px;
+            margin-top:10px;
+            z-index:10000;
+            color:#fff;
+            border:10px solid #cdcdcd;
+        }
+
+        #popup2 img {
+            position:absolute;
+        }
+
+        div.popupUI {
+            width:100%;
+            position:absolute;
+            left:0;
+            bottom:0;
+            padding:0;
+            float:left;
+            text-align:right;
+            height:20px;
+            background-color:#1f1f1f;
+            color:#fff;
+        }
+
+        .popupUI a {
+            line-height:20px;
+            color:#eee;
+            margin-right:10px;
+        }
+
+
+
+    </style>
+
+    <!-- Layer popup Start -->
+
+    <? if($_COOKIE['ncookie'] != 'done' && date("Ymd") <= "20190403"){?>
+    <div id="popup" class="pos_r wow fadeInLeft " data-wow-delay="1.3s">
+        <a href="/?m=order" target="_blank">
+        <img src="/docs/19s_pop1.jpg?v={=time()}" style="width:100%"/>
+        </a>
+        <div class="popupUI " style="bottom:0px">
+            <a href="#" onclick="closeWin(true);" class="todayCloseDiv" >오늘하루열지않기</a>
+            <a href="#" onclick="closeWin();" class="closeDiv">닫기</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        setTimeout(function () {
+            $('#popup').show();
+        },300);
+    </script>
+    <?}?>
+
+    <? if($_COOKIE['ncookie2'] != 'done' && date("Ymd") < "20190431"){?>
+    <div id="popup2" class="pos_r wow fadeInLeft " data-wow-delay="1.9s" style="height:700px">
+
+        <a href="/?m=board&go_link={=urlencode('/board.read?mcode=1313&id=253')}" >
+            <img src="/docs/popup2.jpg?v={=time()}" style="width:100%"/>
+        </a>
+
+        <div class="popupUI " style="bottom:0px">
+            <a href="#" onclick="closeWin2(true);" class="todayCloseDiv" >오늘하루열지않기</a>
+            <a href="#" onclick="closeWin2();" class="closeDiv">닫기</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        setTimeout(function () {
+            $('#popup2').show();
+        },300);
+    </script>
+    <?}?>
+
+
+
+    <div id="banner-content" class="row clearfix">
+
+
+
+        <div class="text-center m-t30">
+            <!--Video-->
+            <div class="play-video wow fadeIn">
+
+                <!--Just include your Video ID which you can find in the URL of the Video-->
+                <a href="#" data-videoid="4sBqLXZQmjk" data-videosite="youtube" class="play-icon video link-lightbox">YouTube</a>
+
+                <!--Vimeo Link, delete if you dont need it <a href="#" data-videoid="109054393" data-videosite="vimeo" class="play-icon video link-lightbox">Vimeo</a> -->
+
+            </div>
+            <!--End of Video-->
+
+        </div>
+
+        <!--Content on the Left Side-->
+        <div class=" wow fadeInUp text-center">
+            <h1><strong class="text-shadow" style="text-shadow: 2px 2px #921930;">고려대학교 KU캠프</strong></h1>
+
+            <h2 class="text-shadow" style="text-shadow: 2px 2px #921930;font-size: 27px">고려대학교 기술지주 자회사가 운영하는 유일한 고려대학교 캠프 프로그램</h2>
+
+            <!--<h2 >Korea University KUCamp</h2>-->
+
+            <!--Call to Action-->
+            <div class="call-to-action wow fadeInUp">
+                <a href="#doc" class="button pill text-white" style="background-color: #921930;border-color:#6e162a " onclick="select_doc()"><i class="fa fa-file-pdf-o text-white"></i> 안내문 다운로드</a>
+                <a href="/?m=order" class="button pill m-l20 text-white" onclick="" style="background-color: #921930;border-color:#6e162a; "><i class="fa  fa-graduation-cap text-white"></i> 신청하기</a>
+                <!--<a href="#" class="button pill"><i class="fa fa-apple"></i> Available on the App Store</a>-->
+            </div>
+
+            <script type="text/javascript">
+                function select_doc() {
+                    bootbox.alert({
+                        title:'안내문 다운로드',
+                        message: "<div class='text-center'><div><a href='/docs/19s_1.pdf?v={=time()}' target='_blank' class='btn white btn-lg w210' style=\"background-color: #6e1324;border-color:#6e162a; color:#fff\"><i class=\"fa fa-file-pdf-o text-white\"></i> KU진로적성캠프 </a></div><div class='m-t10'><a href='/docs/19s_2.pdf?v={=time()}' target='_blank' class='btn white w210 btn-lg' style=\"background-color: #921930;border-color:#6e162a; color:#fff\" ><i class=\"fa fa-file-pdf-o text-white\"></i> KU창의공학캠프 </a></div><div class='m-t10'><a href='/docs/19s_3.pdf?v={=time()}' target='_blank' class='btn white  w210 btn-lg' style=\"background-color: #921930;border-color:#6e162a; color:#fff\" ><i class=\"fa fa-file-pdf-o text-white\"></i> KU인문학캠프 </a></div> <div class='text-muted m-t10'>PDF파일로 다운로드 됩니다.</div></div>",
+                        size:'small',
+
+                        callback: function (result) {
+                            if(result) location.href='/web/signup?email='+email;
+                        }
+                    });
+
+                    $('.modal-footer').remove();
+                }
+            </script>
+
+            <div class="wow fadeIn text-shadow">
+                <!--<h2 style="font-size:32px">2018년 여름방학 캠프 모집중</h2>-->
+            </div>
+            <!--End Call to Action-->
+
+
+
+
+        </div>
+
+
+
+
+
+
+    </div><!--End of Row-->
+    {/}
+</header>

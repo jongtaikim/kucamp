@@ -31,7 +31,7 @@ var all = document.getElementById("all").value;
 
 if ( all == 'Y')
 {
-uncheckall() 
+uncheckall()
  return;
 
 }else{
@@ -39,12 +39,12 @@ uncheckall()
   for (i=0; i < form.elements.length; i++) {
  if (form.elements[i].name =="ids[]") {
     form.elements[i].checked = true;
-	
+
  }
   }
   document.itemForm.all.value = "Y";
- 
-  
+
+
   return;
 }
 }
@@ -76,7 +76,7 @@ function selectItem() {
 	form = document.forms['itemForm'];
 	if (!checkSelected()) return false;
 	if (!confirm('선택하신 신청건 작업을 실행 하시겠습니까?')) return false;
-	
+
 	if(!$('mode')){
 		alert('작업을 선택하여 주세요.');
 		return false;
@@ -99,7 +99,7 @@ function selectItem() {
 		<div class="form_table" style="margin-top:5px;">
 		<table border="1" cellspacing="0" summary="표의 요약을 반드시 넣어 주세요" style="border-top:1px solid #cdcdcd">
 			<tbody>
-				
+
 				<tr>
 
 				<th scope="row"  style="text-align:center">시즌</th>
@@ -160,12 +160,12 @@ function selectItem() {
 
 						</select>
 
-						
+
 					</div>
 				</td>
-				
-				
-				
+
+
+
 				</tr>
 
 
@@ -182,7 +182,7 @@ function selectItem() {
 						<input type="text" size="50" name="like_str_school" value="{like_str_school}"  style="width:100px"/>
 						<select name="sch_str_class" onchange="$('sch_from').submit();">
 							<option value="" {? sch_str_class==''}selected{/}>학년선택</option>
-							
+
 							<option value="초3" {? sch_str_class=='초3'}selected{/}>초3</option>
 							<option value="초4" {? sch_str_class=='초4'}selected{/}>초4</option>
 							<option value="초5" {? sch_str_class=='초5'}selected{/}>초5</option>
@@ -201,7 +201,7 @@ function selectItem() {
 				<th scope="row"  style="text-align:center">상태검색</th>
 				<td>
 					<div class="item">
-						
+
 						<select name="sch_str_order_st" id="sch_str_order_st"  onchange="$('sch_from').submit();">
 							<option value="">-- 상태선택 -- </option>
 							<option value="all" {? sch_str_order_st == "all"} selected{/} >-전체-</option>
@@ -213,7 +213,7 @@ function selectItem() {
 							<option value="8" {? sch_str_order_st == "8"} selected{/}  style="color:#73758c">취소환불</option>
 							<option value="7" {? sch_str_order_st == "7"} selected{/}  style="color:#73758c">대기자 변경(비결제)</option>
 							<option value="6" {? sch_str_order_st == "6"} selected{/}  style="color:#73758c">대기자 변경(결제)</option>
-							
+
 						</select>
 
 					</div>
@@ -235,6 +235,19 @@ function selectItem() {
                             </select>
                         </div>
                     </td>
+
+                    <th scope="row" style="text-align:center">성별</th>
+                    <td>
+                        <div class="item">
+                            <select name="sch_str_sex" onchange="$('sch_from').submit();">
+                                <option value="" {? sch_str_sex==''}selected{/}>성별선택</option>
+
+                                <option value="1" {? sch_str_sex=='1'}selected{/}>남자</option>
+                                <option value="2" {? sch_str_sex=='2'}selected{/}>여자</option>
+
+                            </select>
+                        </div>
+                    </td>
                     <!--<th scope="row" style="text-align:center">교통비 결제여부</th>
                     <td>
                         <div class="item">
@@ -250,7 +263,7 @@ function selectItem() {
                     </td>-->
             </tr>
 
-			
+
 			</tbody>
 		</table>
 		</div>
@@ -258,8 +271,8 @@ function selectItem() {
 			<input type="hidden" name="all" value="{_GET.all}"/>
 			<input type="hidden" name="hold" value="{_GET.hold}"/>
 			<input type="hidden" name="cancel" value="{_GET.cancel}"/>
-			<wa:btn size="2" type="submit" id="btn_submit" value="검색"/> 
-			<wa:btn size="2" type="a" href="{act2}" value="검색해제"/> 
+			<wa:btn size="2" type="submit" id="btn_submit" value="검색"/>
+			<wa:btn size="2" type="a" href="{act2}" value="검색해제"/>
 		</div>
 </fieldset>
 </form>
@@ -281,7 +294,7 @@ function selectItem() {
 	<div class="div2">
 	<div class="left" style="font-size:15px">총<strong>{total + 0}</strong>개의 캠프 신청건이 있습니다.</div>
 	<div class="right">
-		
+
 						<wa:btn size="1" icon="download" type="a" href="/lms.admin.order_excel?sch_num_ccode={_GET.sch_num_ccode}&ins_num_serial=2016%B3%E2+%BF%A9%B8%A7%B9%E6%C7%D0" value="엑셀다운로드(전체)"/>
 						<wa:btn size="1" icon="download" type="a" href="{excel_url}?sch_num_ccode={_GET.sch_num_ccode}" value="엑셀다운로드(검색결과)"/>
 	</div>
@@ -293,31 +306,33 @@ function selectItem() {
 		<col width="5%">
 		<col width="6%">
 		<col width="8%">
-		<col >  
+		<col >
+		<col width="11%">
 		<col width="11%">
 		<col width="12%">
 		<col width="7%">
-	
+
 		<col width="9%">
 		<col width="10%">
 		<col width="10%">
-	</colgroup>  
+	</colgroup>
 
 	<thead>
 		<tr >
 			<th style="text-align:center"><input type="checkbox" name="" onclick ="checkall();"></th>
 			<th style="text-align:center">기수</th>
 			<th style="text-align:center">신청일</th>
-			
+
 			<th style="text-align:center">신청과정</th>
 			<th style="text-align:center">학생명</th>
+			<th style="text-align:center">할인사항</th>
 			<th style="text-align:center">학교/학년</th>
 
-			<th style="text-align:center">보호자</th>
+			<th styl="text-align:center">보호자</th>
 			<th style="text-align:center">연락처</th>
             <th style="text-align:center">입/퇴소</th>
 			<th style="text-align:center">상태</th>
-			
+
 		</tr>
 	</thead>
 	<tbody>
@@ -340,9 +355,20 @@ function selectItem() {
 			<td >
 
 			 {.str_st_name} ({? .str_sex==1}남{:}여{/})<br>
-			
-			
+
+
 			</td>
+            <td style="color:#003fff">
+                {? .str_etc == 1}교직원
+                {: .str_etc == 2}교우자녀
+                {: .str_etc == 3}재참여자
+                {: .str_etc == 5}형제,자매
+                {: .str_etc == 6}3인단체
+                {: .str_etc == 7}패키지
+                {:}
+                    {? .str_jo}조기등록{/}
+                {/}
+            </td>
 			<td>
 				{.str_school}<br>
 				{.str_class}
@@ -350,11 +376,17 @@ function selectItem() {
 
 			<td>
 				부:{.str_pr_name1}<br>
-				모:{.str_pr_name2}
+                <div class="" style="margin-top:10px">
+                    모:{.str_pr_name2}
+                </div>
+
 			</td>
 			<td>
-			{.str_phone}<br>
+
 			{.str_handphone}<br>
+                <div class="" style="margin-top:10px">
+                    {.str_stu_handphone}
+                </div>
 			</td>
             <td style="text-align:center" >
                 {.str_etc1}
@@ -404,17 +436,17 @@ function selectItem() {
 		<wa:paging runat="server" total="{total}" numberformat=" %n " listnum="{listnum}" class="paginate_complex"/>
 	</div>
 
-	
-	
+
+
 
 </form>
-	
+
 	<div style=";border-bottom:1px solid #cdcdcd;float:left;width:100%;padding-bottom:10px;width:100%;float:left">
-		
+
 		<div style="float:left;width:48%">
-		
+
 		<span style="float:left">
-		선택한 건을 
+		선택한 건을
 		<select name="modes" onchange="$('mode').value=this.value">
 			<option value="">-- 작업선택--</option>
 			<option value="price_w">입금대기 처리</option>
@@ -426,14 +458,14 @@ function selectItem() {
 		</select>
 		</span>
 		<span class="btn_pack small icon" style="margin-left:10px;float:left"><span class="refresh"></span><a href="#" onclick="selectItem();">적용하기</a></span>
-			
+
 		</div>
 
 		<div style="float:right;text-align:right;width:48%">
-			
+
 		</div>
-			
-		
-		
+
+
+
 	</div>
 
